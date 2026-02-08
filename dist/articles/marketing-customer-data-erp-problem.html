@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Marketing's Customer Data Problem is Actually an ERP Problem | The Full Stack</title>
+    <meta name="description" content="CDPs promised to unify customer data, but they missed the point entirely. The customer record that matters isn't behavioral data—it's in your ERP. Here's why data fabric architecture is the answer.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --accent: #1e3a5f; --accent-light: #3b82f6; --text: #333; --text-light: #666; --bg: #fff; --bg-alt: #f8f9fa; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Source Sans Pro', -apple-system, sans-serif; color: var(--text); line-height: 1.8; background: var(--bg); }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; line-height: 1.3; }
+        a { color: var(--accent-light); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        
+        header { background: var(--accent); color: white; padding: 1rem 0; }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: white; text-decoration: none; }
+        nav a { color: rgba(255,255,255,0.8); margin-left: 2rem; font-size: 0.9rem; }
+        nav a:hover { color: white; text-decoration: none; }
+        
+        .hamburger { display: none; flex-direction: column; cursor: pointer; }
+        .hamburger span { width: 25px; height: 3px; background: white; margin: 3px 0; transition: 0.3s; }
+        
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            nav { display: none; position: absolute; top: 60px; left: 0; right: 0; background: var(--accent); flex-direction: column; padding: 1rem; z-index: 100; }
+            nav.active { display: flex; }
+            nav a { margin: 0.5rem 0; }
+        }
+        
+        .article-hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); color: white; padding: 4rem 0; }
+        .article-hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .article-meta { opacity: 0.9; font-size: 1rem; }
+        .article-meta .category { background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; margin-right: 1rem; }
+        
+        article { padding: 3rem 0 4rem; }
+        article p { font-size: 1.15rem; margin-bottom: 1.5rem; color: #444; }
+        article h2 { font-size: 1.75rem; color: var(--accent); margin: 3rem 0 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid #e5e7eb; }
+        article h3 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 1rem; }
+        article h4 { font-size: 1.15rem; color: var(--accent); margin: 1.5rem 0 0.75rem; }
+        article ul, article ol { margin: 1.5rem 0; padding-left: 1.5rem; }
+        article li { margin-bottom: 0.75rem; font-size: 1.1rem; color: #444; }
+        article strong { color: var(--accent); }
+        article em { color: #555; }
+        article blockquote { border-left: 4px solid var(--accent-light); padding: 1rem 1.5rem; margin: 2rem 0; background: var(--bg-alt); font-style: italic; }
+        article blockquote p { margin-bottom: 0; }
+        
+        .opening-scene { background: linear-gradient(135deg, #fef2f2 0%, #fff7ed 100%); border-left: 4px solid #dc2626; padding: 2rem; margin: 2rem 0; border-radius: 0 12px 12px 0; }
+        .opening-scene p { margin-bottom: 1rem; }
+        .opening-scene p:last-child { margin-bottom: 0; }
+        
+        .key-insight { background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%); border-left: 4px solid var(--accent-light); padding: 2rem; margin: 2rem 0; border-radius: 0 12px 12px 0; }
+        .key-insight p { margin-bottom: 0; font-size: 1.2rem; }
+        
+        .use-case { background: var(--bg-alt); border: 1px solid #e5e7eb; padding: 2rem; border-radius: 12px; margin: 2rem 0; }
+        .use-case h4 { margin-top: 0; color: var(--accent); border-bottom: 2px solid var(--accent-light); padding-bottom: 0.5rem; }
+        .use-case p { margin-bottom: 1rem; }
+        .use-case p:last-child { margin-bottom: 0; }
+        
+        .example-box { background: #f0fdf4; border: 1px solid #a7f3d0; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        .example-box strong { color: #059669; }
+        
+        .contrast-box { background: #fef2f2; border: 1px solid #fecaca; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        .contrast-box strong { color: #dc2626; }
+        
+        .data-list { background: var(--bg-alt); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        .data-list ul { margin: 0; }
+        .data-list li { font-size: 1rem; margin-bottom: 0.5rem; }
+        
+        .pullquote { font-size: 1.4rem; font-family: 'Playfair Display', serif; color: var(--accent); text-align: center; padding: 2rem; margin: 2.5rem 0; border-top: 2px solid #e5e7eb; border-bottom: 2px solid #e5e7eb; }
+        
+        .cta-box { background: var(--accent); color: white; padding: 2.5rem; border-radius: 12px; margin: 3rem 0; text-align: center; }
+        .cta-box h3 { color: white; margin-bottom: 1rem; }
+        .cta-box p { color: white; opacity: 0.9; margin-bottom: 1.5rem; }
+        
+        .author-box { background: var(--bg-alt); padding: 2rem; border-radius: 12px; margin: 3rem 0; }
+        .author-box h4 { color: var(--accent); margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
+        .author-box p { margin-bottom: 0; font-size: 1rem; }
+        
+        footer { background: var(--accent); color: white; padding: 2rem 0; text-align: center; }
+        footer p { opacity: 0.8; margin: 0; }
+        
+        @media (max-width: 768px) {
+            .article-hero h1 { font-size: 1.8rem; }
+            .pullquote { font-size: 1.2rem; padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">The Full Stack</a>
+            <div class="hamburger" onclick="document.querySelector('nav').classList.toggle('active')">
+                <span></span><span></span><span></span>
+            </div>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../archive.html">Archive</a>
+                <a href="https://chrisohara.com">About Chris</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="article-hero">
+        <div class="container">
+            <span class="category">Enterprise Data</span>
+            <h1>Why Marketing's Customer Data Problem is Actually an ERP Problem</h1>
+            <p class="article-meta">February 2026 • Chris O'Hara</p>
+        </div>
+    </section>
+    
+    <article>
+        <div class="container">
+            
+            <div class="opening-scene">
+                <p>It's 10 AM on a Thursday, and your marketing team just launched a flash sale. Email open rates are strong. Click-throughs are above forecast. The ads are performing. By noon, you've driven 3x your daily average in orders for your hero product.</p>
+                <p>By 2 PM, customer service is fielding angry calls. The product sold out six weeks ago. It's backordered until March. Your warehouse in Memphis has 14 units. You just sold 300.</p>
+                <p>Sales is furious because they're now managing expectations with enterprise customers who saw the promotion and expect the same pricing. Finance is calculating the cost of goodwill credits and expedited shipping. Supply chain is trying to explain that you can't just "make more" when the supplier is in Shenzhen and Chinese New Year is next week.</p>
+                <p><strong>This isn't a hypothetical.</strong> Some version of this happens every day at companies with revenue over $100M. And it happens for one reason: marketing's "customer 360" lives in a system that has no idea what's actually happening in the business.</p>
+            </div>
+            
+            <h2>The CDP Detour</h2>
+            
+            <p>I wrote the book on Customer Data Platforms. Literally. In 2020, when I published <em>Customer Data Platforms</em>, the promise was elegant: unify all your customer data in one place, build a single customer view, enable personalization at scale.</p>
+            
+            <p>CDPs would be the system of record for customer data, the hub that connected all your marketing tools.</p>
+            
+            <p>It made sense at the time. Marketing was drowning in disconnected tools—email platforms, ad networks, web analytics, marketing automation, CRM. Each system had its own customer record. Nobody could answer basic questions like "how many customers do we actually have?" or "what's this person's actual relationship with us?"</p>
+            
+            <p>But here's what we got wrong: <strong>we built CDPs as if customer data was primarily <em>behavioral</em> data.</strong> Page views, email opens, ad clicks, form fills, session recordings. We obsessed over identity resolution—stitching together anonymous web visitors with known email addresses with CRM contacts. We built increasingly sophisticated audience segmentation engines.</p>
+            
+            <p>And we completely missed that none of this is the customer data that actually matters.</p>
+            
+            <div class="key-insight">
+                <p><strong>The customer record that matters isn't in your CDP. It's in your ERP.</strong></p>
+            </div>
+            
+            <p>It's the order they placed. The shipment that's delayed. The invoice they haven't paid. The support case they opened. The return they initiated. The contract they signed. The renewal that's coming up. The credit limit they've exceeded. The custom pricing they negotiated.</p>
+            
+            <p>CDPs emerged because marketers couldn't get access to this data. IT controlled ERP. Finance owned the billing system. Supply chain managed inventory. Customer service had its own ticketing platform. Sales protected Salesforce like nuclear codes.</p>
+            
+            <p>So marketing built a parallel universe. We created our own customer databases, our own identity graphs, our own segmentation engines, our own "truth" about who customers are and what they want.</p>
+            
+            <p><strong>This was always a workaround, not a solution.</strong></p>
+            
+            <p>And it's why marketing keeps launching campaigns for products that are backordered, sending upgrade offers to customers who are 60 days past due, promoting features that were deprecated last quarter, and wondering why "data-driven marketing" still feels like guesswork.</p>
+            
+            <h2>The Data Fabric Difference</h2>
+            
+            <p>Data fabric changes the game because it's designed to connect <em>deterministic</em> systems—systems where data has integrity, clear schemas, enforced relationships, and transactional guarantees.</p>
+            
+            <p>Your ERP knows exactly what was ordered, when it shipped, what was invoiced, and what was paid. Your supply chain system knows precisely what's in inventory, what's in transit, and what's allocated. Your finance system has authoritative records of customer credit status, payment terms, and profitability.</p>
+            
+            <p>These are deterministic systems. The data doesn't "kind of" reflect reality—it <em>is</em> reality. When SAP says you have 47 units in warehouse W01, you have 47 units. When Oracle says invoice #12847 is 60 days past due, it's past due. When your supply chain system says container #ABC123 is sitting on a ship in Long Beach, it's sitting on a ship in Long Beach.</p>
+            
+            <p>Data fabric technology—and SAP's Business Technology Platform (BTP) and Datasphere are the canonical examples—provides access to these authoritative systems without creating copies. No syncing. No batch jobs that run at 2 AM and are stale by 8 AM. No "eventual consistency" that's eventually wrong.</p>
+            
+            <p>More importantly, data fabric enables <em>bi-directional flows</em>. Marketing signals can inform supply chain forecasting. Sales commitments can trigger procurement. Customer service cases can adjust inventory allocation. Commerce demand patterns can influence production planning.</p>
+            
+            <p>This is fundamentally different from the CDP approach, which was always about pulling data <em>into</em> marketing's private database. Data fabric is about connecting systems so each can operate on a shared reality.</p>
+            
+            <p>Consider what this means in practice:</p>
+            
+            <ul>
+                <li>When SAP's ERP knows a product is backordered for six weeks, marketing should stop promoting it <em>immediately</em>—not when someone manually updates a spreadsheet that feeds into your audience segmentation logic.</li>
+                <li>When finance knows a customer is 60 days past due, sales should get an alert before sending a renewal proposal—not discover it during the deal review when finance blocks the contract.</li>
+                <li>When supply chain sees demand signals spiking in the Southeast, marketing should shift campaign budget there automatically—not wait for the monthly business review where someone shows a PowerPoint of "insights."</li>
+                <li>When customer service logs the third support case this month from a high-value account, the account team should be notified in real-time—not find out during the quarterly business review that you're at risk of churn.</li>
+            </ul>
+            
+            <p>This isn't "nice to have" integration. It's table stakes for modern business operations.</p>
+            
+            <div class="pullquote">
+                Customers don't think about their relationship with you in terms of email open rates and website sessions. They think about whether you delivered what you promised, when you promised it, at the price you quoted.
+            </div>
+            
+            <p>That's ERP data. That's finance data. That's supply chain data. That's service data.</p>
+            
+            <p>And if marketing doesn't have access to it—or worse, is working from stale copies of it—you're not doing "customer-centric marketing." You're doing theater.</p>
+            
+            <h2>Why This Matters Now</h2>
+            
+            <p>Something has shifted in the last three years that makes this conversation urgent rather than theoretical.</p>
+            
+            <p><strong>Customer expectations have changed.</strong> Not gradually—dramatically.</p>
+            
+            <p>Amazon didn't just train people to expect two-day shipping. They trained people to expect that when they interact with any part of your company, you know everything about their relationship with you.</p>
+            
+            <p>When a customer calls support, they expect you to know they just placed an order yesterday. When they're browsing your website, they expect you to know they have an open return. When sales reaches out, they expect you to know they've been a customer for five years and are up for renewal next month.</p>
+            
+            <p><strong>Your org chart is your problem, not theirs.</strong></p>
+            
+            <p>This creates an impossible situation for marketing. You're supposed to deliver "personalized experiences" but you don't know:</p>
+            
+            <div class="data-list">
+                <ul>
+                    <li>What they actually bought (commerce system)</li>
+                    <li>Whether it shipped (supply chain)</li>
+                    <li>If they paid for it (finance)</li>
+                    <li>Whether it's working (customer service)</li>
+                    <li>What they're contractually entitled to (sales/legal)</li>
+                    <li>How profitable they actually are (finance + product cost data)</li>
+                </ul>
+            </div>
+            
+            <p>So you personalize based on what you <em>do</em> know: they downloaded a whitepaper, they visited the pricing page, they're in the enterprise segment, they opened your last three emails.</p>
+            
+            <p>This is why marketing personalization so often feels creepy but useless. You know I looked at red shoes, but you don't know I already bought them from you last week and returned them because they didn't fit.</p>
+            
+            <p>The inverse problem is just as bad: the rest of the business doesn't know what marketing promised. Supply chain doesn't see that you just launched a campaign promising "ships within 24 hours" for a product that takes 72 hours to pick, pack, and hand off to carriers. Finance doesn't know that sales is offering payment terms that violate credit policies because the prospect came through a marketing campaign tagged as "enterprise."</p>
+            
+            <p>This isn't a data problem. It's an architecture problem. And it stems from a fundamental misunderstanding about what "customer data" actually is.</p>
+            
+            <p>Marketing thought customer data was engagement data—behavioral signals that indicate intent and interest. So we built systems to collect, unify, and activate that data.</p>
+            
+            <p>But customer data is actually <em>relationship</em> data. Orders. Shipments. Invoices. Payments. Support cases. Contracts. Entitlements. Returns. Credits. Renewals.</p>
+            
+            <p>That data lives in ERP, finance, supply chain, service, and commerce systems. It's structured, authoritative, and transactional. And it's been sitting there the whole time while marketing built elaborate systems to track which blog posts people read.</p>
+            
+            <p>The companies that figure out how to connect these worlds—the deterministic back-end of ERP/finance/supply chain with the customer-facing front-end of sales/service/commerce/marketing—will have an enormous operational advantage.</p>
+            
+            <p>Not because their marketing will be "better." But because their entire business will operate with shared context about what customers actually need and what the company can actually deliver.</p>
+            
+            <h2>Five Agentic Use Cases That Will Become Normal</h2>
+            
+            <p>Here's where this gets practical. AI agents are about to make this connection between back-end and front-end systems not just possible, but necessary.</p>
+            
+            <p>Agents are different from the automation we've had for the last decade. Marketing automation could send an email when someone downloaded a whitepaper. Agents can monitor inventory levels across 47 warehouses, detect regional demand patterns from web traffic, cross-reference that with sales pipeline data, forecast shortages six weeks out, and automatically adjust campaign spending by region—all before you finish your morning coffee.</p>
+            
+            <p>But agents only work if they have access to the authoritative data across your entire business. They can't operate on stale copies in a CDP. They need real-time access to ERP, finance, supply chain, service, and commerce systems.</p>
+            
+            <p>Here are five agentic use cases that will become standard operating procedure in the next 18 months:</p>
+            
+            <div class="use-case">
+                <h4>1. The Inventory-Aware Campaign Agent</h4>
+                
+                <p><strong>What it does:</strong> Continuously monitors product availability across all warehouses, distribution centers, and retail locations. Cross-references this with campaign performance data, sales pipeline, and historical demand patterns. Automatically adjusts marketing spend, pauses promotions for out-of-stock items, shifts budget to available inventory, and alerts supply chain to demand signals.</p>
+                
+                <p><strong>How it works:</strong> The agent has read access to your supply chain management system (actual inventory counts, allocated stock, in-transit shipments) and your marketing platforms (active campaigns, spend by SKU, conversion rates by region). It has write access to adjust campaign budgets and pause/activate promotions.</p>
+                
+                <p>Every 15 minutes, it evaluates: <em>Given current inventory levels, inbound shipments, and sell-through rates, what should we be promoting right now?</em></p>
+                
+                <div class="example-box">
+                    <p><strong>Real example:</strong> Agent detects that Product X is selling at 3x forecast in the Northeast. Current inventory in the Newark warehouse: 400 units. Expected depletion: 6 days at current rate. Nearest alternative inventory: Memphis warehouse, 1,200 units.</p>
+                    <p>The agent:</p>
+                    <ul>
+                        <li>Automatically reduces ad spend in Northeast by 40%</li>
+                        <li>Increases spend in Mid-South by 60%</li>
+                        <li>Requests expedited transfer of 300 units from Memphis to Newark</li>
+                        <li>Alerts supply chain that demand forecast for Product X needs revision</li>
+                        <li>Logs the decision with expected margin impact</li>
+                    </ul>
+                </div>
+                
+                <p>Marketing doesn't find out inventory is depleted when customers start complaining. Supply chain doesn't learn about the demand spike from an angry Slack message. The agent connects the systems and takes action.</p>
+            </div>
+            
+            <div class="use-case">
+                <h4>2. The Account Health Orchestration Agent</h4>
+                
+                <p><strong>What it does:</strong> Synthesizes data across finance (payment status, credit limits, profitability), customer service (open cases, satisfaction scores, escalations), sales (contract terms, renewal dates, expansion opportunities), and product (usage metrics, feature adoption, support tickets). Based on this holistic view, it triggers appropriate playbooks: customer success intervention, executive outreach, service escalation, or—critically—prevents marketing from making things worse.</p>
+                
+                <p><strong>How it works:</strong> The agent maintains a real-time health score for every account that combines financial health, operational health, product health, and relationship health. When the composite score crosses thresholds, the agent orchestrates responses across teams.</p>
+                
+                <div class="example-box">
+                    <p><strong>Real example:</strong> Enterprise Account #7429 triggers a critical alert:</p>
+                    <ul>
+                        <li>Finance data: Invoice 60 days past due, $240K outstanding</li>
+                        <li>Service data: 4 open P1 cases, average resolution time 40% above SLA</li>
+                        <li>Product data: Usage down 35% over last 90 days</li>
+                        <li>Sales data: Renewal in 45 days, no executive engagement in 6 months</li>
+                    </ul>
+                    <p>The agent blocks marketing from including this account in upsell campaigns, routes to customer success for immediate intervention, alerts the account executive with synthesized context, schedules executive sponsor outreach, pauses auto-renewal workflow, and flags finance to expect a challenging renewal negotiation.</p>
+                </div>
+                
+                <div class="contrast-box">
+                    <p><strong>Traditional approach:</strong> Marketing sends upgrade offer (because CDP shows they're "engaged"). Sales pitches expansion (because quota deadline is approaching). Finance sends collection notice (because AR is overdue). Customer gets three conflicting messages in one week and churns.</p>
+                </div>
+            </div>
+            
+            <div class="use-case">
+                <h4>3. The Dynamic Pricing & Promotion Agent</h4>
+                
+                <p><strong>What it does:</strong> Generates personalized offers that respect business constraints: minimum margin thresholds (from finance), inventory turn goals (from supply chain), channel economics (from sales), and customer lifetime value (from the complete order-to-cash history). This isn't "AI-powered discounting." It's intelligent offer optimization that knows what the business can actually afford to offer.</p>
+                
+                <div class="example-box">
+                    <p><strong>Real example:</strong> Strategic Account #3301 requests quote for Product Y. The agent knows:</p>
+                    <ul>
+                        <li>Finance: Customer has 5-year relationship, pays within terms, 32% gross margin historically</li>
+                        <li>Supply chain: Product Y is overstocked (147 days inventory), carrying cost $3/unit/month</li>
+                        <li>Sales: This is a strategic account, relationship owner is VP Sales</li>
+                        <li>Product: Product Y is being replaced next quarter with Product Z</li>
+                    </ul>
+                    <p>The agent offers: <strong>15% discount on orders over 150 units, with 60-day payment terms.</strong></p>
+                </div>
+                
+                <p>Contrast this with a new account with no payment history and slow-pay credit pattern: The agent offers <strong>list price, prepayment required.</strong></p>
+                
+                <p>Same product. Dramatically different offers. Both correct.</p>
+            </div>
+            
+            <div class="use-case">
+                <h4>4. The Order-to-Cash Intelligence Agent</h4>
+                
+                <p><strong>What it does:</strong> Tracks the complete customer journey from first marketing touch through sales opportunity, order placement, fulfillment, invoicing, payment, and post-sale support. Identifies friction points and closes the loop so marketing sees actual business outcomes, not vanity metrics.</p>
+                
+                <div class="example-box">
+                    <p><strong>Real example:</strong> The agent discovers that leads from Partner Channel A have 2x higher conversion rate than direct leads (good!). But 4x longer payment cycles (bad). And 3x higher support costs in first 90 days (worse). Net margin: 12% below direct channel after accounting for total cost to serve.</p>
+                    <p>Traditional marketing attribution would show Partner Channel A as a star performer (2x conversion!). <strong>The agent knows it's actually destroying value.</strong></p>
+                    <p>The agent automatically adjusts partner compensation models, alerts partner management to training gaps, revises channel attribution to include profitability, and shifts marketing budget toward more profitable channels.</p>
+                </div>
+            </div>
+            
+            <div class="use-case">
+                <h4>5. The Predictive Supply-Demand Matching Agent</h4>
+                
+                <p><strong>What it does:</strong> Uses leading indicators from marketing (engagement signals, search trends, campaign performance) and sales (pipeline velocity, deal sizes, regional patterns) to forecast demand <em>before</em> orders materialize. Informs procurement and production planning with enough lead time to actually respond.</p>
+                
+                <div class="example-box">
+                    <p><strong>Real example:</strong> The agent detects:</p>
+                    <ul>
+                        <li>Product page visits for Product Q up 240% week-over-week</li>
+                        <li>Sales pipeline for Product Q up 180%, with velocity 30% faster than normal</li>
+                        <li>Win/loss interviews mentioning Competitor R's recent price increase</li>
+                        <li>Historical pattern: This leading indicator combination preceded 3x order spike in Q3 2024</li>
+                    </ul>
+                    <p>Current inventory: 400 units. Typical supplier lead time: 8 weeks. Forecast demand: 1,800 units over next 10 weeks.</p>
+                    <p><strong>The agent alerts supply chain 6 weeks before the spike would hit.</strong> Procurement increases order quantity. When demand materializes, you have inventory. Marketing can launch aggressive campaigns with confidence in fulfillment.</p>
+                </div>
+                
+                <div class="contrast-box">
+                    <p><strong>Traditional approach:</strong> Marketing sees interest spiking, launches campaigns. Sales closes deals. Orders flood in. Supply chain gets an angry email: "Why don't we have inventory?!" Answer: "Nobody told us demand was spiking until it already spiked."</p>
+                </div>
+            </div>
+            
+            <h2>The Closing Argument</h2>
+            
+            <p><strong>None of these agents can run on top of a CDP.</strong></p>
+            
+            <p>CDPs don't have access to ERP data. They don't know what's in inventory, what's been invoiced, what's been paid, what's been shipped, what's been returned. They might have a copy of some of this data from last night's batch sync, but that's not good enough.</p>
+            
+            <p>Agents operate in real-time. They need authoritative data. They need bi-directional access—not just reading from enterprise systems, but writing back to them (adjust campaign spend, block risky offers, trigger procurement, alert teams).</p>
+            
+            <p>This is what data fabric enables. It's not about creating another copy of your data in another system. It's about connecting your systems so they operate on shared reality.</p>
+            
+            <p>And here's what marketing leaders need to understand: <strong>This isn't a marketing technology decision. This is a business architecture decision.</strong></p>
+            
+            <p>The question isn't "What's our CDP strategy?" The question is "How do we connect our deterministic back-end systems (ERP, finance, supply chain) to our customer-facing front-end systems (sales, service, commerce, marketing) so the entire business operates with shared context?"</p>
+            
+            <p>SAP's BTP and Datasphere are designed for exactly this. So are Snowflake's data sharing capabilities, Databricks' lakehouse architecture, and a handful of other enterprise data platforms. But the technology is just the enabler.</p>
+            
+            <p>The real shift is organizational: Marketing needs to stop thinking about "customer data platforms" and start thinking about connected business operations where customer experience is the outcome of enterprise systems working together, not a separate stack managed by marketing.</p>
+            
+            <p>The companies that make this shift will have an enormous advantage. They won't waste money marketing products they can't deliver. They won't offer pricing they can't afford. They won't promise experiences they can't fulfill. They won't churn customers because the left hand doesn't know what the right hand is doing.</p>
+            
+            <p>And their agents will actually work—because they'll have access to the data that matters.</p>
+            
+            <p>The companies that don't make this shift will keep running theater. Beautiful marketing campaigns for products that are backordered. Personalized emails to customers who are already angry. Data-driven strategies built on data that's incomplete, stale, and disconnected from business reality.</p>
+            
+            <p><strong>Your move.</strong></p>
+            
+            <div class="author-box">
+                <h4>About the Author</h4>
+                <p><strong>Chris O'Hara</strong> is VP of Product Marketing at SAP and author of <em>Customer Data Platforms</em> (Wiley, 2020) and <em>Data Driven</em> (McGraw Hill, 2018). He writes about marketing, technology, and enterprise data at <a href="https://thefullstack.chrisohara.com">thefullstack.chrisohara.com</a>.</p>
+            </div>
+            
+        </div>
+    </article>
+    
+    <footer>
+        <p>&copy; 2026 The Full Stack by Chris O'Hara</p>
+    </footer>
+</body>
+</html>
