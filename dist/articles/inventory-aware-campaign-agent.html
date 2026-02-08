@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Inventory-Aware Campaign Agent: Finding the Next-Best Dollar | The Full Stack</title>
+    <meta name="description" content="Marketing budgets can change fast. But without real-time connection to supply chain systems, that agility becomes liability. Here's how the Inventory-Aware Campaign Agent solves the fundamental challenge of business agility.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --accent-hover: #A84920;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --tag-text: #7A7168;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 720px;
+            --wide-width: 960px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(253, 251, 247, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { font-family: var(--mono); font-size: 15px; font-weight: 500; letter-spacing: -0.02em; color: var(--text-primary); text-decoration: none; }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { font-size: 14px; font-weight: 400; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header { max-width: var(--max-width); margin: 0 auto; padding: 64px 24px 32px; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-tertiary); text-decoration: none; margin-bottom: 32px; transition: color 0.2s; }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .article-date { font-size: 13px; color: var(--text-tertiary); }
+        .article-tag { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: rgba(192, 86, 38, 0.08); padding: 2px 8px; border-radius: 3px; }
+        .article-title { font-family: var(--serif); font-size: 42px; font-weight: 400; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; }
+        .article-subtitle { font-family: var(--serif); font-size: 20px; font-weight: 300; font-style: italic; color: var(--text-secondary); line-height: 1.5; }
+        
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 80px; font-family: var(--serif); font-size: 18px; line-height: 1.8; }
+        .article-body p { margin-bottom: 24px; }
+        .article-body strong { font-weight: 600; }
+        .article-body em { font-style: italic; }
+        .article-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(192, 86, 38, 0.3); transition: border-color 0.2s; }
+        .article-body a:hover { border-color: var(--accent); }
+        .article-body h2 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 48px 0 20px; line-height: 1.3; }
+        .article-body h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin: 36px 0 16px; line-height: 1.35; }
+        .article-body h4 { font-family: var(--serif); font-size: 19px; font-weight: 500; margin: 28px 0 12px; line-height: 1.4; }
+        .article-body ul, .article-body ol { margin: 0 0 24px 24px; }
+        .article-body li { margin-bottom: 12px; }
+        .article-body blockquote { border-left: 3px solid var(--accent); padding: 16px 24px; margin: 32px 0; background: var(--tag-bg); border-radius: 0 8px 8px 0; }
+        .article-body blockquote p { margin-bottom: 0; font-style: italic; color: var(--text-secondary); }
+        
+        .article-body pre { background: #1a1a1a; color: #e5e5e5; padding: 20px 24px; border-radius: 8px; overflow-x: auto; margin: 24px 0; font-family: var(--mono); font-size: 14px; line-height: 1.6; }
+        .article-body code { font-family: var(--mono); font-size: 0.9em; }
+        .article-body p code { background: var(--tag-bg); padding: 2px 6px; border-radius: 4px; }
+        
+        .scenario-box { background: linear-gradient(135deg, #fef2f2 0%, #fff7ed 100%); border-left: 3px solid #dc2626; padding: 24px; margin: 32px 0; border-radius: 0 12px 12px 0; }
+        .scenario-box p { margin-bottom: 12px; font-family: var(--sans); font-size: 15px; }
+        .scenario-box p:last-child { margin-bottom: 0; }
+        .scenario-box strong { color: #dc2626; }
+        
+        .decision-box { background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%); border-left: 3px solid #059669; padding: 24px; margin: 32px 0; border-radius: 0 12px 12px 0; }
+        .decision-box p { margin-bottom: 12px; font-family: var(--sans); font-size: 15px; }
+        .decision-box p:last-child { margin-bottom: 0; }
+        
+        .key-insight { background: var(--tag-bg); border: 1px solid var(--border); padding: 24px; margin: 32px 0; border-radius: 12px; }
+        .key-insight p { margin-bottom: 0; }
+        
+        .dashboard-example { background: #1a1a1a; color: #e5e5e5; padding: 24px; border-radius: 12px; margin: 32px 0; font-family: var(--mono); font-size: 13px; line-height: 1.7; white-space: pre-wrap; }
+        
+        .cta-box { background: linear-gradient(135deg, var(--accent) 0%, #A84920 100%); color: white; padding: 40px; border-radius: 12px; margin: 48px 0; text-align: center; }
+        .cta-box h3 { font-family: var(--serif); font-size: 24px; color: white; margin-bottom: 12px; }
+        .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 20px; font-family: var(--sans); }
+        .cta-box .btn { display: inline-block; background: white; color: var(--accent); padding: 14px 28px; border-radius: 8px; font-family: var(--sans); font-weight: 600; font-size: 15px; text-decoration: none; transition: transform 0.2s; }
+        .cta-box .btn:hover { transform: translateY(-2px); }
+        
+        .footnote { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); font-family: var(--sans); font-size: 15px; font-style: italic; color: var(--text-secondary); }
+        .footnote a { color: var(--accent); }
+        
+        footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
+        .footer-brand { font-family: var(--mono); font-size: 13px; color: var(--text-tertiary); }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-subtitle { font-size: 17px; }
+            .nav-links { gap: 20px; }
+            .article-body pre { font-size: 12px; padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="../index.html">Articles</a>
+                <a href="../archive.html">Archive</a>
+                <a href="https://chrisohara.com" target="_blank">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="../index.html" class="back-link">← Back to articles</a>
+        <div class="article-meta">
+            <span class="article-date">February 2026</span>
+            <span class="article-tag">AI Agents</span>
+            <span class="article-tag">Data Fabric</span>
+            <span class="article-tag">Supply Chain</span>
+        </div>
+        <h1 class="article-title">The Inventory-Aware Campaign Agent: Finding the Next-Best Dollar Through Business Agility</h1>
+        <p class="article-subtitle">Marketing budgets can change fast. But without real-time connection to supply chain systems, that agility becomes liability.</p>
+    </header>
+    
+    <article class="article-body">
+        <p>In my 2022 article on business agility, I wrote about an outdoor retailer that ran a promotion for a hiking shoe collaboration that went viral. Sneakerheads worldwide started buying, flooding the retailer with orders, running them out of stock, and adding a slew of new customers they weren't prepared to serve.</p>
+        
+        <p>I called it "the ultimate test of business agility, and a critical moment in time."</p>
+        
+        <p>Two years later, I realize I was describing the problem incompletely. The <em>real</em> test wasn't whether the business could respond to unexpected demand. The real test was whether their systems could talk to each other fast enough to prevent marketing from making the problem worse.</p>
+        
+        <p>Because here's what actually happens in that scenario:</p>
+        
+        <div class="scenario-box">
+            <p><strong>Day 1:</strong> Viral moment hits. Orders flood in.</p>
+            <p><strong>Day 2:</strong> Marketing sees campaign performing 10x above forecast. They increase ad spend.</p>
+            <p><strong>Day 3:</strong> Warehouse is out of stock. Supply chain scrambles to source more inventory.</p>
+            <p><strong>Day 4:</strong> Marketing is still driving traffic. Conversion rate drops because products are unavailable.</p>
+            <p><strong>Day 5:</strong> Customer service is overwhelmed with "where's my order?" inquiries.</p>
+            <p><strong>Day 6:</strong> Finance is calculating goodwill credits and expedited shipping costs.</p>
+            <p><strong>Day 7:</strong> Marketing finally gets the memo to pause campaigns.</p>
+        </div>
+        
+        <p>The business was agile enough to recognize the opportunity. But the systems weren't connected well enough to prevent seven days of wasted ad spend, customer frustration, and operational chaos.</p>
+        
+        <p>This is the problem the Inventory-Aware Campaign Agent solves.</p>
+        
+        <h2>The Business Agility Paradox</h2>
+        
+        <p>When I wrote about business agility and customer data management, I argued that the foundation for business agility is customer data management. I still believe that's true. But I now realize there's a deeper truth underneath it:</p>
+        
+        <p><strong>Business agility requires system agility.</strong></p>
+        
+        <p>And most companies don't have it.</p>
+        
+        <p>Here's the paradox: The things that <em>can</em> change fast—marketing budgets, campaigns, website messaging, webinar content, search keywords—are managed by systems that have no visibility into the things that <em>can't</em> change fast—product availability, supply chain lead times, warehouse capacity, production schedules.</p>
+        
+        <p>Marketing can pivot a campaign in hours. Supply chain needs weeks or months to adjust inventory levels.</p>
+        
+        <p>This asymmetry creates a dangerous gap. When marketing operates with agility but without context, that agility becomes liability.</p>
+        
+        <h3>The Seven-Day Disaster Scenario (Detailed)</h3>
+        
+        <p><strong>Monday, 9:00 AM:</strong> Social media campaign launches promoting spring collection hiking boots. Budget: $50K/week across Meta, Google, TikTok.</p>
+        
+        <p><strong>Monday, 3:00 PM:</strong> Campaign is performing 3x above forecast. Click-through rates are exceptional. Conversion rate is strong. Marketing increases budget to $150K/week to capitalize on momentum.</p>
+        
+        <p><strong>Tuesday, 10:00 AM:</strong> Orders continue flooding in. Warehouse in Memphis has 2,847 units. At current sell-through rate, that's 4.5 days of inventory.</p>
+        
+        <p><strong>Tuesday, 4:00 PM:</strong> Supply chain sees the spike in their weekly dashboard review. They note it. Primary supplier is in Vietnam. Lead time: 8 weeks. They send an email to procurement about increasing the next order.</p>
+        
+        <p><strong>Wednesday, 9:00 AM:</strong> Inventory down to 1,923 units. Marketing campaign still running at $150K/week. No one has connected these two facts.</p>
+        
+        <p><strong>Wednesday, 2:00 PM:</strong> Warehouse manager sends Slack message to ops channel: "Hiking boot inventory getting low, heads up." Message is seen by 4 people. None of them work in marketing.</p>
+        
+        <p><strong>Thursday, 11:00 AM:</strong> Inventory: 847 units. Marketing dashboard shows campaign performance remains strong. Budget is increased again to $200K/week. After all, why wouldn't you scale a winner?</p>
+        
+        <p><strong>Thursday, 5:00 PM:</strong> Inventory: 312 units. Supply chain finally sends email to marketing: "FYI we're running low on SKU #47382." Email arrives in shared inbox. It's read. No action is taken because the campaign is "performing well."</p>
+        
+        <p><strong>Friday, 9:00 AM:</strong> Inventory: 0 units. Website now shows "Out of Stock" on product page. But ads are still running. Click-through rate remains high (people still want the product). Conversion rate craters (they can't buy it). Marketing spends $40K driving traffic to an out-of-stock product.</p>
+        
+        <p><strong>Friday, 3:00 PM:</strong> Customer service is flooded with calls. People placed orders earlier in the week. Where are their shoes? When will they ship? Why is the website now saying out of stock?</p>
+        
+        <p><strong>Monday, 10:00 AM:</strong> Marketing finally pauses campaigns after weekend review shows conversion rate collapse. Total wasted spend: ~$80K. Customer service backlog: 400+ inquiries. Finance is calculating costs: expedited shipping ($47K), goodwill credits ($23K), overtime for customer service ($8K).</p>
+        
+        <p><strong>Total cost of the disconnect:</strong> $158K in direct costs, plus immeasurable damage to customer relationships and brand trust.</p>
+        
+        <p>And here's the thing: <em>everyone did their job correctly</em>. Marketing optimized for performance. Supply chain monitored inventory. Finance tracked costs. Customer service responded to inquiries.</p>
+        
+        <p>The problem wasn't people. The problem was that the systems didn't talk to each other in time to prevent the disaster.</p>
+        
+        <h2>What Marketing Agility Actually Requires</h2>
+        
+        <p>In my 2022 article, I said: "What can change fast? Marketing budgets, campaigns, website messaging, webinar content, and search keywords."</p>
+        
+        <p>That's still true. But I now understand that <em>speed without context is dangerous</em>.</p>
+        
+        <p>Marketing can change fast. But marketing <em>should only change as fast as the business can support those changes</em>.</p>
+        
+        <p>If supply chain needs 8 weeks to increase inventory, marketing shouldn't be able to 3x ad spend in 8 hours without triggering warnings that inventory can't support that demand.</p>
+        
+        <p>This is the next phase of customer data management that I was pointing toward in 2022. I wrote:</p>
+        
+        <blockquote>
+            <p>"This next phase of customer data management, which brings the backend of agile business process together with the front end of customer engagement, is not about the next-best action or offer. It's about finding the next-best dollar."</p>
+        </blockquote>
+        
+        <p>But I didn't have the vocabulary yet to describe <em>how</em> to do that. Now I do.</p>
+        
+        <p>The answer is agentic AI with real-time access to enterprise systems through data fabric architecture.</p>
+        
+        <h2>The Inventory-Aware Campaign Agent: How It Works</h2>
+        
+        <p>The Inventory-Aware Campaign Agent is not marketing automation. It's not a CDP. It's not a traditional "if-this-then-that" workflow.</p>
+        
+        <p>It's an autonomous system that continuously monitors both marketing performance AND supply chain constraints, makes decisions based on business rules you define, and takes action to optimize for profitability rather than just performance.</p>
+        
+        <h3>The Agent's Continuous Monitoring Loop</h3>
+        
+        <p><strong>Every 15 minutes, the agent evaluates:</strong></p>
+        
+        <ol>
+            <li><strong>Current inventory levels</strong> across all warehouses and distribution centers</li>
+            <li><strong>In-transit inventory</strong> (what's on ships, trucks, planes)</li>
+            <li><strong>Allocated inventory</strong> (what's already promised to other channels or customers)</li>
+            <li><strong>Historical sell-through rates</strong> for each product by region</li>
+            <li><strong>Current marketing campaign performance</strong> (spend, impressions, clicks, conversions)</li>
+            <li><strong>Forecast demand</strong> based on current campaign trajectory</li>
+        </ol>
+        
+        <p>Then it asks: <em>Given current inventory and inbound supply, what should we be promoting right now to maximize profitable revenue?</em></p>
+        
+        <h3>Decision Example: Tuesday, 2:00 PM</h3>
+        
+        <p><strong>Current state:</strong></p>
+        <ul>
+            <li>Memphis warehouse: 1,923 units of SKU #47382</li>
+            <li>Current sell-through rate: 450 units/day</li>
+            <li>Days of inventory remaining: 4.3 days</li>
+            <li>In-transit inventory: 0 units</li>
+            <li>Expected next shipment: 6 weeks</li>
+            <li>Marketing spend: $150K/week driving traffic to this product</li>
+            <li>Northeast region: 60% of sales volume</li>
+        </ul>
+        
+        <p><strong>Agent's analysis:</strong></p>
+        <ul>
+            <li>At current rate, inventory depletes Friday afternoon</li>
+            <li>Marketing spend is accelerating depletion</li>
+            <li>No near-term replenishment available</li>
+            <li>Northeast region disproportionately driving demand</li>
+        </ul>
+        
+        <div class="decision-box">
+            <p><strong>Agent's decision:</strong></p>
+            <p>1. Reduce ad spend in Northeast by 40% (where inventory will deplete first)</p>
+            <p>2. Increase ad spend in Southwest by 30% (where alternative warehouse has similar inventory)</p>
+            <p>3. Send alert to supply chain: "Demand forecast for SKU #47382 increased 3x, recommend expediting next order"</p>
+            <p>4. Send alert to marketing team: "Campaign #4738 performing strongly but inventory constraints detected. Agent has optimized spend by region."</p>
+            <p>5. Update website: Add "Only X left in stock" messaging to product page</p>
+            <p>6. Trigger email to recent site visitors: "This product is selling fast—order now before it's gone"</p>
+        </div>
+        
+        <p><strong>Business outcome:</strong></p>
+        <ul>
+            <li>Marketing spend is optimized for available inventory</li>
+            <li>Regional allocation matches supply constraints</li>
+            <li>Supply chain gets early warning with time to respond</li>
+            <li>Customers get transparency about scarcity</li>
+            <li>Revenue is maximized within operational constraints</li>
+        </ul>
+        
+        <h3>The Key Insight: Optimization for Profit, Not Just Performance</h3>
+        
+        <p>Traditional marketing automation optimizes for <em>performance metrics</em>: click-through rate, conversion rate, cost per acquisition, return on ad spend.</p>
+        
+        <p>The Inventory-Aware Campaign Agent optimizes for <em>profitable business outcomes</em>: revenue that can actually be fulfilled, at margins that make sense, without creating operational chaos or customer service nightmares.</p>
+        
+        <div class="key-insight">
+            <p><strong>Next-best action</strong> asks: What message should we send this customer?</p>
+            <p><strong>Next-best dollar</strong> asks: What revenue can we profitably capture given our actual operational constraints?</p>
+        </div>
+        
+        <p>The latter requires visibility into systems that marketing has never had access to before.</p>
+        
+        <h2>Why CDPs Can't Solve This</h2>
+        
+        <p>When I wrote <em>Customer Data Platforms</em> with Martin Kihn, we were solving for a different problem: unified customer identity and profile data to enable personalization across marketing channels.</p>
+        
+        <p>CDPs are brilliant at that problem. They can tell you everything about a customer's behavioral history, preferences, segment membership, and engagement patterns.</p>
+        
+        <p>But CDPs have two fatal limitations for this use case:</p>
+        
+        <h3>1. CDPs Don't Have Access to Supply Chain Data</h3>
+        
+        <p>Customer Data Platforms are designed to unify <em>customer</em> data: web behavior, email engagement, purchase history, support interactions, social media activity.</p>
+        
+        <p>They're not designed to connect to:</p>
+        <ul>
+            <li>Warehouse management systems (inventory levels)</li>
+            <li>Transportation management systems (in-transit goods)</li>
+            <li>Manufacturing execution systems (production schedules)</li>
+            <li>Supplier relationship management systems (lead times, capacity)</li>
+            <li>Enterprise resource planning systems (allocated inventory, committed orders)</li>
+        </ul>
+        
+        <p>This data lives in completely different systems with completely different data models, access patterns, and update frequencies.</p>
+        
+        <p>A CDP might have a snapshot of "what the customer bought." But it doesn't know "what we can actually sell them right now given current supply constraints."</p>
+        
+        <h3>2. CDPs Use Batch Syncs, Not Real-Time Connections</h3>
+        
+        <p>Most CDPs update data through batch processes—nightly syncs, hourly updates, or manual data imports.</p>
+        
+        <p>That's fine for behavioral data. If someone clicked an email at 2:47 PM and the CDP doesn't process it until 3:15 PM, no harm done.</p>
+        
+        <p>But inventory data changes <em>constantly</em>:</p>
+        <ul>
+            <li>Every completed order reduces available inventory</li>
+            <li>Every shipment received increases available inventory</li>
+            <li>Every warehouse transfer reallocates inventory</li>
+            <li>Every return adds inventory back</li>
+            <li>Every allocation removes inventory from available pool</li>
+        </ul>
+        
+        <p>By the time a batch sync runs, the inventory picture has changed 10 times.</p>
+        
+        <p>You cannot optimize marketing spend based on stale inventory data. The agent needs to query live systems, not yesterday's snapshot.</p>
+        
+        <p>This is why data fabric architecture is essential.</p>
+        
+        <h2>The Marketecture: Building the Inventory-Aware Campaign Agent</h2>
+        
+        <p>Let me walk through the ideal technical architecture for implementing this agent. This isn't theoretical—this is based on what we're seeing work at companies that have actually built this capability.</p>
+        
+        <h3>Layer 1: The Data Fabric Foundation</h3>
+        
+        <p>At the bottom of the stack, you need a data fabric that provides unified access to:</p>
+        
+        <p><strong>1. Supply Chain Systems</strong></p>
+        <ul>
+            <li>Warehouse Management System (WMS): Real-time inventory levels by SKU, location, condition</li>
+            <li>Transportation Management System (TMS): In-transit inventory, expected delivery dates</li>
+            <li>Manufacturing Execution System (MES): Production schedules, work-in-progress</li>
+            <li>Supplier Portal: Lead times, capacity constraints, order status</li>
+        </ul>
+        
+        <p><strong>2. Marketing Systems</strong></p>
+        <ul>
+            <li>Ad platforms (Meta, Google, TikTok): Current campaigns, spend, performance</li>
+            <li>Marketing automation: Email campaigns, journey orchestration</li>
+            <li>Web analytics: Traffic sources, conversion funnels</li>
+            <li>Marketing data warehouse: Historical performance, attribution models</li>
+        </ul>
+        
+        <p><strong>3. Commerce Systems</strong></p>
+        <ul>
+            <li>E-commerce platform: Product catalog, pricing, availability</li>
+            <li>Order management: Order status, fulfillment workflows</li>
+            <li>Customer service: Ticket volume, inquiry types, resolution status</li>
+        </ul>
+        
+        <p><strong>4. Finance Systems</strong></p>
+        <ul>
+            <li>ERP: Product costs, margin calculations, allocated inventory</li>
+            <li>Billing: Revenue recognition, payment terms</li>
+            <li>Business intelligence: P&L by product, channel, region</li>
+        </ul>
+        
+        <p><strong>Critical architectural requirement:</strong> The data fabric must provide <em>query-time access</em> to authoritative systems, not replicate data into another silo.</p>
+        
+        <p>Why? Because the agent needs to make decisions based on <em>current</em> state, not historical snapshots.</p>
+        
+        <p><strong>Example using SAP Datasphere:</strong></p>
+        
+<pre>-- Agent queries across systems in real-time
+SELECT 
+  i.sku,
+  i.warehouse_location,
+  i.available_quantity,
+  i.allocated_quantity,
+  t.in_transit_quantity,
+  t.expected_arrival_date,
+  c.active_campaign_spend,
+  c.daily_order_rate,
+  p.unit_cost,
+  p.unit_price
+FROM sap_s4hana.inventory i
+LEFT JOIN sap_tm.transportation t ON i.sku = t.sku
+LEFT JOIN salesforce_marketing_cloud.campaigns c ON i.sku = c.product_sku  
+LEFT JOIN sap_s4hana.product_master p ON i.sku = p.sku
+WHERE i.available_quantity < (c.daily_order_rate * 7)
+  AND t.in_transit_quantity = 0</pre>
+        
+        <p>This query spans three systems (SAP S/4HANA, SAP TM, Salesforce Marketing Cloud) and returns real-time data about inventory constraints that should trigger marketing adjustments.</p>
+        
+        <h3>Layer 2: The Agent Runtime Environment</h3>
+        
+        <p>The agent itself runs in a container orchestration platform (Kubernetes) with access to:</p>
+        
+        <ol>
+            <li><strong>LLM for reasoning</strong> (GPT-4, Claude, Llama)</li>
+            <li><strong>Tool access</strong> for taking actions:
+                <ul>
+                    <li>Marketing platform APIs (adjust budgets, pause campaigns)</li>
+                    <li>Communication APIs (Slack, email for alerts)</li>
+                    <li>Analytics APIs (log decisions, track outcomes)</li>
+                </ul>
+            </li>
+            <li><strong>Business rules engine</strong> that encodes:
+                <ul>
+                    <li>Minimum inventory thresholds before triggering reductions</li>
+                    <li>Maximum budget shift percentages per decision cycle</li>
+                    <li>Notification escalation paths</li>
+                    <li>Override permissions and approval workflows</li>
+                </ul>
+            </li>
+        </ol>
+        
+        <p><strong>Example agent logic (pseudocode):</strong></p>
+        
+<pre>class InventoryAwareCampaignAgent:
+    def evaluate_and_act(self):
+        # Query current state
+        inventory_state = self.query_inventory_across_warehouses()
+        campaign_state = self.query_active_campaigns()
+        forecast_demand = self.calculate_demand_forecast(campaign_state)
+        
+        # Find constraints
+        constrained_skus = self.identify_inventory_constraints(
+            inventory_state, 
+            forecast_demand
+        )
+        
+        for sku in constrained_skus:
+            # Calculate optimal action
+            action_plan = self.optimize_marketing_spend(
+                sku,
+                current_inventory=inventory_state[sku],
+                current_spend=campaign_state[sku],
+                business_rules=self.rules
+            )
+            
+            # Execute if within authority
+            if self.is_within_authority(action_plan):
+                self.execute_action(action_plan)
+                self.log_decision(action_plan)
+            else:
+                self.escalate_for_approval(action_plan)</pre>
+        
+        <h3>Layer 3: The Feedback Loop</h3>
+        
+        <p>The agent learns from outcomes by tracking:</p>
+        
+        <ol>
+            <li><strong>Decision effectiveness:</strong> Did reducing spend preserve inventory for higher-margin channels?</li>
+            <li><strong>Forecast accuracy:</strong> How well did predicted demand match actual orders?</li>
+            <li><strong>Operational impact:</strong> Did supply chain use early warnings effectively?</li>
+            <li><strong>Financial outcomes:</strong> What was the incremental profit vs. the counterfactual?</li>
+        </ol>
+        
+        <p>This feedback loop continuously improves the agent's decision-making over time.</p>
+        
+        <h3>Layer 4: The Human Interface</h3>
+        
+        <p>Critically, humans remain in the loop with:</p>
+        
+        <ol>
+            <li><strong>Dashboard showing agent decisions:</strong> What actions it took, why, and with what outcome</li>
+            <li><strong>Override capability:</strong> Humans can pause the agent or reverse decisions</li>
+            <li><strong>Rule tuning interface:</strong> Adjust thresholds, constraints, escalation paths</li>
+            <li><strong>Audit trail:</strong> Every decision is logged with full context for review</li>
+        </ol>
+        
+        <p><strong>Example dashboard view:</strong></p>
+        
+<div class="dashboard-example">Agent Decision Log - Last 24 Hours
+
+[2:15 PM] SKU #47382 - Hiking Boot
+├─ Detected: 4.3 days inventory remaining
+├─ Action: Reduced Northeast ad spend by 40% ($12K/day → $7K/day)
+├─ Action: Increased Southwest ad spend by 30% ($8K/day → $10K/day)
+├─ Result: Inventory depletion slowed to 7.2 days
+└─ Est. impact: $45K preserved revenue vs. stockout scenario
+
+[3:47 PM] SKU #52910 - Rain Jacket  
+├─ Detected: Supplier shipment delayed 2 weeks
+├─ Action: Paused planned campaign launch
+├─ Action: Notified product marketing team
+└─ Est. impact: Avoided $22K wasted spend on unavailable product</div>
+        
+        <h2>The Implementation Roadmap</h2>
+        
+        <p>You can't build this overnight. Here's a realistic phased approach:</p>
+        
+        <h4>Phase 1: Foundation (Months 1-3)</h4>
+        <ul>
+            <li>Implement data fabric connecting marketing and supply chain systems</li>
+            <li>Build real-time dashboards showing inventory + campaign performance side-by-side</li>
+            <li>Train teams to monitor both metrics together</li>
+            <li>Document current "inventory surprise" incidents for baseline</li>
+        </ul>
+        
+        <h4>Phase 2: Rules-Based Automation (Months 4-6)</h4>
+        <ul>
+            <li>Build simple rule-based alerts: "If inventory < 7 days AND campaigns spending > $X, send alert"</li>
+            <li>Create workflow for pausing campaigns when inventory hits thresholds</li>
+            <li>Track how many manual interventions happen and how long they take</li>
+        </ul>
+        
+        <h4>Phase 3: Agent Pilot (Months 7-9)</h4>
+        <ul>
+            <li>Deploy agent for single product category with limited authority</li>
+            <li>Agent can recommend actions but requires human approval</li>
+            <li>Measure decision quality: How often do humans approve agent recommendations?</li>
+        </ul>
+        
+        <h4>Phase 4: Graduated Autonomy (Months 10-12)</h4>
+        <ul>
+            <li>Give agent authority to make small budget adjustments automatically</li>
+            <li>Expand to additional product categories</li>
+            <li>Monitor false positive/negative rates</li>
+        </ul>
+        
+        <h4>Phase 5: Full Production (Months 13+)</h4>
+        <ul>
+            <li>Agent operates autonomously within defined guardrails</li>
+            <li>Humans monitor dashboard and handle escalations</li>
+            <li>Continuous improvement based on outcomes</li>
+        </ul>
+        
+        <h2>The Bottom Line: Agility Requires Architecture</h2>
+        
+        <p>In 2022, I wrote that business agility starts with customer data management. That's true, but incomplete.</p>
+        
+        <p><strong>Business agility actually requires:</strong></p>
+        <ol>
+            <li><strong>Data fabric architecture</strong> that connects front-end customer systems to back-end operational systems</li>
+            <li><strong>Agentic AI</strong> that can reason across those systems and take action</li>
+            <li><strong>Bi-directional data flows</strong> where marketing signals inform supply chain and vice versa</li>
+            <li><strong>Real-time access</strong> to authoritative data, not stale copies</li>
+            <li><strong>Human oversight</strong> of autonomous decisions with clear guardrails</li>
+        </ol>
+        
+        <p>The Inventory-Aware Campaign Agent is just one example. The same architectural pattern applies to:</p>
+        <ul>
+            <li>Dynamic pricing agents (connecting finance, supply chain, and commerce)</li>
+            <li>Account health agents (connecting sales, service, finance, and product usage)</li>
+            <li>Predictive demand agents (connecting marketing, sales, and supply chain)</li>
+        </ul>
+        
+        <p>The companies that build this architecture will have an enormous operational advantage. They won't waste money marketing products they can't deliver. They won't surprise supply chain with demand spikes. They won't create customer service nightmares.</p>
+        
+        <p>Their marketing will be agile. But it will be agile <em>in the context of what the business can actually support</em>.</p>
+        
+        <p>That's the difference between speed and wisdom.</p>
+        
+        <p>And in 2026, wisdom is what separates winners from disasters.</p>
+        
+        <div class="footnote">
+            <p>This article builds on concepts from my 2022 article "<a href="https://www.the-future-of-commerce.com/2022/04/12/business-agility-customer-data/">Turn on a dime: Business agility starts with customer data management</a>" published in The Future of Commerce. For more on the underlying data fabric architecture, see my article "<a href="marketing-customer-data-erp-problem.html">Why Marketing's Customer Data Problem is Actually an ERP Problem</a>".</p>
+        </div>
+        
+        <div class="cta-box">
+            <h3>More on AI Agents & Enterprise Architecture</h3>
+            <p>Explore the full archive of essays on marketing technology, data architecture, and the future of customer engagement.</p>
+            <a href="../index.html" class="btn">Browse The Full Stack →</a>
+        </div>
+    </article>
+    
+    <footer>
+        <div class="footer-inner">
+            <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+        </div>
+    </footer>
+</body>
+</html>
