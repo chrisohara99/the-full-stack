@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Parts of Your PMM Job Will AI Replace? A 37-Box Analysis | The Full Stack</title>
+    <meta name="description" content="We analyzed all 37 activities in Pragmatic Institute's product marketing framework and scored each one for AI disruption potential. Here's what PMMs need to know.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --accent: #1e3a5f; --accent-light: #3b82f6; --text: #333; --text-light: #666; --bg: #fff; --bg-alt: #f8f9fa; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Source Sans Pro', -apple-system, sans-serif; color: var(--text); line-height: 1.8; background: var(--bg); }
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; line-height: 1.3; }
+        a { color: var(--accent-light); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        
+        header { background: var(--accent); color: white; padding: 1rem 0; }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: white; text-decoration: none; }
+        nav a { color: rgba(255,255,255,0.8); margin-left: 2rem; font-size: 0.9rem; }
+        nav a:hover { color: white; text-decoration: none; }
+        
+        .article-hero { background: linear-gradient(135deg, #1e3a5f 0%, #1e40af 100%); color: white; padding: 4rem 0; }
+        .article-hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .article-meta { opacity: 0.9; font-size: 1rem; }
+        .article-meta .category { background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; margin-right: 1rem; }
+        
+        article { padding: 3rem 0 4rem; }
+        article p { font-size: 1.15rem; margin-bottom: 1.5rem; color: #444; }
+        article h2 { font-size: 1.75rem; color: var(--accent); margin: 3rem 0 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid #e5e7eb; }
+        article h3 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 1rem; }
+        article ul, article ol { margin: 1.5rem 0; padding-left: 1.5rem; }
+        article li { margin-bottom: 0.75rem; font-size: 1.1rem; color: #444; }
+        article strong { color: var(--accent); }
+        article blockquote { border-left: 4px solid var(--accent-light); padding: 1rem 1.5rem; margin: 2rem 0; background: var(--bg-alt); font-style: italic; }
+        
+        .executive-summary { background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%); border-left: 4px solid var(--accent-light); padding: 2rem; margin: 2rem 0; border-radius: 0 12px 12px 0; }
+        .executive-summary h3 { margin-top: 0; color: var(--accent); }
+        .executive-summary p:last-child { margin-bottom: 0; }
+        
+        .key-stat { background: var(--accent); color: white; padding: 2rem; border-radius: 12px; margin: 2rem 0; text-align: center; }
+        .key-stat .number { font-size: 3rem; font-weight: 700; font-family: 'Playfair Display', serif; }
+        .key-stat .label { font-size: 1.1rem; opacity: 0.9; margin-top: 0.5rem; }
+        
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 2rem 0; }
+        .stat-card { background: var(--bg-alt); padding: 1.5rem; border-radius: 8px; text-align: center; border: 1px solid #e5e7eb; }
+        .stat-card .num { font-size: 2rem; font-weight: 700; font-family: 'Playfair Display', serif; }
+        .stat-card .num.red { color: #dc2626; }
+        .stat-card .num.amber { color: #d97706; }
+        .stat-card .num.green { color: #059669; }
+        .stat-card .label { font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem; }
+        
+        .tier-section { margin: 2rem 0; padding: 1.5rem; border-radius: 12px; }
+        .tier-section.replaced { background: #fef2f2; border: 1px solid #fecaca; }
+        .tier-section.enhanced { background: #fffbeb; border: 1px solid #fde68a; }
+        .tier-section.never { background: #ecfdf5; border: 1px solid #a7f3d0; }
+        .tier-section h4 { margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .tier-section ul { margin: 0; }
+        
+        .recommendation-box { background: var(--bg-alt); border: 2px solid var(--accent-light); padding: 2rem; border-radius: 12px; margin: 2rem 0; }
+        .recommendation-box h4 { color: var(--accent); margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
+        
+        .cta-box { background: var(--accent); color: white; padding: 2.5rem; border-radius: 12px; margin: 3rem 0; text-align: center; }
+        .cta-box h3 { color: white; margin-bottom: 1rem; }
+        .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; }
+        .cta-box a.btn { background: white; color: var(--accent); padding: 12px 24px; border-radius: 6px; font-weight: 600; display: inline-block; }
+        .cta-box a.btn:hover { text-decoration: none; opacity: 0.9; }
+        
+        footer { background: var(--accent); color: white; padding: 2rem 0; text-align: center; }
+        footer p { opacity: 0.8; margin: 0; }
+        
+        @media (max-width: 768px) {
+            .stats-grid { grid-template-columns: 1fr; }
+            .article-hero h1 { font-size: 1.8rem; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">The Full Stack</a>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../archive.html">Archive</a>
+                <a href="https://chrisohara.com">About Chris</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="article-hero">
+        <div class="container">
+            <span class="category">AI & Career</span>
+            <h1>Which Parts of Your PMM Job Will AI Replace? A 37-Box Analysis</h1>
+            <p class="article-meta">February 2026 • Chris O'Hara</p>
+        </div>
+    </section>
+    
+    <article>
+        <div class="container">
+            
+            <div class="executive-summary">
+                <h3>Executive Summary</h3>
+                <p>We analyzed all 37 activities in Pragmatic Institute's product marketing framework — the industry-standard blueprint for PMM roles — and scored each one for AI disruption potential. The results are sobering but not surprising: <strong>19% of core PMM activities are likely to be fully automated within 2-3 years</strong>, while another 62% will be fundamentally transformed by AI augmentation.</p>
+                <p>But here's the counterintuitive insight: <strong>the activities AI can't touch are exactly the ones that define senior leadership</strong>. The PMMs who understand this shift aren't just surviving — they're positioning themselves for the C-suite.</p>
+            </div>
+            
+            <h2>The Numbers That Should Keep You Up at Night (And Why They Shouldn't)</h2>
+            
+            <p>Let's start with the uncomfortable truth. When you map AI capabilities against the Pragmatic Framework's 37 boxes, the data tells a clear story:</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="num red">7</div>
+                    <div class="label">Activities Likely Replaced<br>(85-95% AI capability)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="num amber">23</div>
+                    <div class="label">Activities AI-Enhanced<br>(50-75% AI capability)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="num green">7</div>
+                    <div class="label">Activities AI Can't Touch<br>(20-40% AI capability)</div>
+                </div>
+            </div>
+            
+            <p>The average AI impact score across all 37 activities is <strong>63%</strong> — meaning more than half of what PMMs do today can be meaningfully assisted or automated by current AI tools. Not future tools. Tools available right now.</p>
+            
+            <p>But before you update your LinkedIn headline to "Exploring Opportunities," consider this: <strong>the distribution matters more than the average</strong>. The activities clustering at the "never replaced" end of the spectrum are precisely the ones that differentiate good PMMs from great ones — and they command the highest salaries.</p>
+            
+            <h2>What's Getting Replaced (And Why It's Actually Good News)</h2>
+            
+            <div class="tier-section replaced">
+                <h4>⚡ Likely Replaced (7 Activities)</h4>
+                <ul>
+                    <li><strong>Competitive Landscape (95%)</strong> — AI monitors competitors 24/7, generates battlecards in 60 seconds</li>
+                    <li><strong>Content Creation (92%)</strong> — 30-50% reduction in content creation time already documented</li>
+                    <li><strong>Lead Nurturing (91%)</strong> — AI-powered sequences optimize timing, messaging, and channel automatically</li>
+                    <li><strong>Sales Tools (90%)</strong> — Battlecards, ROI calculators, and objection handlers generated per-deal</li>
+                    <li><strong>Measurement (89%)</strong> — Dashboards surface insights humans would miss entirely</li>
+                    <li><strong>Asset Assessment (88%)</strong> — AI catalogs and identifies leverage opportunities across portfolios</li>
+                    <li><strong>Use Scenarios (85%)</strong> — Synthetic user research generates day-in-the-life scenarios from data</li>
+                </ul>
+            </div>
+            
+            <p><strong>Here's why this is good news:</strong> These activities share a common thread — they're time-intensive, repetitive, and don't require human judgment to execute well. They're the tasks that eat your calendar but don't build your career.</p>
+            
+            <p>The PMM who spends 15 hours a week on competitive monitoring and battlecard updates isn't developing strategic skills. They're doing clerical work dressed up as strategy. AI liberates you from that trap.</p>
+            
+            <h2>What AI Enhances (The New Playing Field)</h2>
+            
+            <div class="tier-section enhanced">
+                <h4>🔄 AI-Enhanced (23 Activities)</h4>
+                <p>This middle tier is where the game gets interesting. Activities like <strong>Positioning (60%)</strong>, <strong>Pricing (65%)</strong>, <strong>Win/Loss Analysis (72%)</strong>, and <strong>Market Problems (70%)</strong> will be transformed — but not eliminated.</p>
+                <p>AI generates the first draft. AI surfaces the patterns. AI models the scenarios. <strong>You make the call.</strong></p>
+            </div>
+            
+            <p>The distinction here is critical: AI handles the <em>analytical substrate</em> while humans provide the <em>interpretive layer</em>. Consider win/loss analysis — AI can transcribe 500 calls, identify patterns, and surface that "integration complexity" appears in 34% of losses. But understanding <em>why</em> that objection resonates, how it connects to your product roadmap, and what messaging shift will address it? That's judgment. That's yours.</p>
+            
+            <h2>What AI Will Never Replace (Your Career Moat)</h2>
+            
+            <div class="tier-section never">
+                <h4>🛡️ Never Replaced (7 Activities)</h4>
+                <ul>
+                    <li><strong>Events (20%)</strong> — Physical presence, reading rooms, authentic human connection</li>
+                    <li><strong>Distinctive Competencies (30%)</strong> — Deep institutional knowledge and strategic self-awareness</li>
+                    <li><strong>Advocacy (32%)</strong> — Building trust with customers who become your champions</li>
+                    <li><strong>Innovation (35%)</strong> — Creative leaps, risk tolerance, vision</li>
+                    <li><strong>Stakeholder Communications (38%)</strong> — Political dynamics, coalition building, influence</li>
+                    <li><strong>Programs Support (40%)</strong> — Cross-team trust and organizational navigation</li>
+                </ul>
+            </div>
+            
+            <p>Notice anything? <strong>These are all relationship and judgment activities.</strong> They require emotional intelligence, organizational influence, creative risk-taking, and the kind of trust that only humans can build with other humans.</p>
+            
+            <p>They're also — not coincidentally — the activities that define VP and C-level marketing roles. The CMO isn't writing battlecards. They're building coalitions, driving innovation, and representing the company at industry events. AI accelerates the path to that level by clearing the busywork from your calendar.</p>
+            
+            <h2>The Strategic Implications</h2>
+            
+            <h3>1. The "PMM as Analyst" Era Is Over</h3>
+            <p>If your value proposition is "I research competitors and create content," you have 18-24 months before that value proposition is commoditized to near-zero. AI does that work better, faster, and cheaper. The research is clear: competitive intelligence that took days now takes minutes.</p>
+            
+            <h3>2. The "PMM as Orchestrator" Era Has Begun</h3>
+            <p>The winning move is to position yourself as the <em>conductor</em> of AI-powered workflows, not the <em>executor</em> of manual tasks. Your job becomes: defining what questions to ask, evaluating AI output for strategic fit, and making judgment calls on positioning, messaging, and market strategy.</p>
+            
+            <h3>3. Human Skills Are Appreciating Assets</h3>
+            <p>While AI capabilities compound annually, human skills in relationship-building, creative direction, and organizational influence remain scarce. The PMM who can walk into a room, read the political dynamics, and build consensus around a positioning shift? That person just became more valuable, not less.</p>
+            
+            <h2>Detailed Recommendations: Your 90-Day Action Plan</h2>
+            
+            <div class="recommendation-box">
+                <h4>Week 1-2: Audit Your Current Role</h4>
+                <p>Map your actual time allocation against the 37-box framework. Be honest. If you're spending 40% of your time on "likely replaced" activities, that's not sustainable. Calculate your "AI exposure score" by weighting time spent against AI capability percentages.</p>
+                <ul>
+                    <li>Track your calendar for two weeks</li>
+                    <li>Categorize every task against the 37 boxes</li>
+                    <li>Calculate weighted average AI exposure</li>
+                    <li>Identify your three highest-exposure activities</li>
+                </ul>
+            </div>
+            
+            <div class="recommendation-box">
+                <h4>Week 3-4: Deploy AI on High-Exposure Activities</h4>
+                <p>Don't wait for permission. Start using AI tools for competitive monitoring (Klue, Crayon), content drafts (Claude, Jasper), and measurement automation (Improvado, Power BI Copilot). Document time savings rigorously — you'll need this data.</p>
+                <ul>
+                    <li>Set up Klue or Crayon for competitive monitoring</li>
+                    <li>Create Claude/ChatGPT workflows for content drafts</li>
+                    <li>Build automated dashboards for key metrics</li>
+                    <li>Track time saved (aim for 10+ hours/week)</li>
+                </ul>
+            </div>
+            
+            <div class="recommendation-box">
+                <h4>Week 5-8: Reinvest Time in "Never Replaced" Activities</h4>
+                <p>Here's where most PMMs fail: they save time with AI but don't strategically reinvest it. Use your reclaimed hours to build the skills AI can't replicate.</p>
+                <ul>
+                    <li><strong>Stakeholder relationships:</strong> Schedule 1:1s with executives outside marketing</li>
+                    <li><strong>Customer advocacy:</strong> Personally engage three potential reference customers</li>
+                    <li><strong>Industry presence:</strong> Submit to speak at one conference, host one webinar</li>
+                    <li><strong>Innovation:</strong> Bring one "what if" idea to your product team with market backing</li>
+                </ul>
+            </div>
+            
+            <div class="recommendation-box">
+                <h4>Week 9-12: Reposition Your Role</h4>
+                <p>Update your job description — formally or informally — to reflect the new value you're delivering. Frame yourself as an "AI-augmented PMM" who delivers strategic outcomes, not task completion.</p>
+                <ul>
+                    <li>Document outcomes, not outputs (pipeline influenced vs. content pieces created)</li>
+                    <li>Present your "productivity multiplier" to leadership (10 hrs saved × strategic reinvestment)</li>
+                    <li>Propose eliminating low-value activities from your formal responsibilities</li>
+                    <li>Request involvement in higher-level strategic initiatives</li>
+                </ul>
+            </div>
+            
+            <h2>The Bottom Line</h2>
+            
+            <p>AI isn't coming for your job. It's coming for the parts of your job you shouldn't have been doing in the first place. The PMMs who thrive in the next three years will be those who:</p>
+            
+            <ol>
+                <li><strong>Automate ruthlessly</strong> — Every hour spent on "likely replaced" activities is an hour stolen from career development</li>
+                <li><strong>Elevate deliberately</strong> — Reinvest saved time in relationship-building, innovation, and organizational influence</li>
+                <li><strong>Position strategically</strong> — Frame yourself as an orchestrator of AI-powered go-to-market, not a manual executor</li>
+            </ol>
+            
+            <p>The 37-box analysis reveals an uncomfortable truth: the average PMM role is 63% automatable. But it also reveals an opportunity: the activities that remain human are the ones that define leadership. The choice is yours.</p>
+            
+            <div class="cta-box">
+                <h3>Explore the Interactive Analysis</h3>
+                <p>Dive deeper into all 37 activities with sortable data, tool recommendations, and cited evidence for each assessment.</p>
+                <a href="https://futureofpmm.com/pmm-skills-ai-impact" class="btn" target="_blank">View Interactive Tool →</a>
+            </div>
+            
+            <hr style="margin: 3rem 0; border: none; border-top: 1px solid #e5e7eb;">
+            
+            <p><em><strong>Methodology:</strong> AI impact scores are editorial assessments based on current tool capabilities, documented productivity gains, and market research from Harvard Business Review, McKinsey, Bain & Company, Gartner, and industry-specific sources. Framework definitions from Pragmatic Institute's Pragmatic Framework™. Full source citations available in the <a href="https://futureofpmm.com/pmm-skills-ai-impact">interactive version</a>.</em></p>
+            
+        </div>
+    </article>
+    
+    <footer>
+        <div class="container">
+            <p><strong>The Full Stack</strong> — Chris O'Hara</p>
+            <p>Thought leadership on marketing, technology, and the intersection of both.</p>
+        </div>
+    </footer>
+</body>
+</html>
