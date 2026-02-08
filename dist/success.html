@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribed! | The Full Stack</title>
+    <style>
+        :root {
+            --bg: #f8f6f2;
+            --text: #1a1a1a;
+            --accent: #c05626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Source Serif Pro', Georgia, serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .container {
+            text-align: center;
+            max-width: 500px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: #444;
+        }
+        a {
+            display: inline-block;
+            padding: 14px 28px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        a:hover {
+            background: #a04820;
+        }
+        .brand {
+            margin-top: 3rem;
+            font-size: 1rem;
+            color: #666;
+        }
+        .brand span { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>You're In! ✓</h1>
+        <p>Thanks for subscribing to The Full Stack. You'll receive updates on new essays about data, AI, and the future of enterprise software.</p>
+        <a href="/">← Back to The Full Stack</a>
+        <p class="brand">the<span>/</span>full<span>/</span>stack</p>
+    </div>
+</body>
+</html>

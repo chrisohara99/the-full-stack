@@ -1,6 +1,13 @@
 [build]
   publish = "dist"
 
+# Let success page load normally (not caught by SPA fallback)
+[[redirects]]
+  from = "/success.html"
+  to = "/success.html"
+  status = 200
+
+# SPA fallback for client-side routing
 [[redirects]]
   from = "/*"
   to = "/index.html"
