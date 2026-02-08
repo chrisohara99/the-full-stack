@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Full Stack — Chris O'Hara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --accent-hover: #A84920;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --tag-text: #7A7168;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 720px;
+            --wide-width: 960px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(253, 251, 247, 0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); transition: box-shadow 0.3s ease; }
+        nav.scrolled { box-shadow: var(--shadow-sm); }
+        .nav-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { font-family: var(--mono); font-size: 15px; font-weight: 500; letter-spacing: -0.02em; color: var(--text-primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { font-size: 14px; font-weight: 400; color: var(--text-secondary); text-decoration: none; letter-spacing: 0.01em; transition: color 0.2s; position: relative; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-links a.active { color: var(--text-primary); font-weight: 500; }
+        .nav-links a.active::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1.5px; background: var(--accent); border-radius: 1px; }
+        .hero { max-width: var(--wide-width); margin: 0 auto; padding: 64px 24px 48px; border-bottom: 1px solid var(--border); }
+        .hero h1 { font-family: var(--serif); font-size: 42px; font-weight: 400; letter-spacing: -0.03em; line-height: 1.15; color: var(--text-primary); margin-bottom: 16px; }
+        .hero h1 em { font-style: italic; color: var(--accent); }
+        .hero-sub { font-size: 17px; color: var(--text-secondary); line-height: 1.65; max-width: 580px; font-weight: 300; }
+        .hero-byline { margin-top: 24px; display: flex; align-items: center; gap: 12px; }
+        .hero-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #D4845A); display: flex; align-items: center; justify-content: center; color: white; font-family: var(--serif); font-size: 16px; font-weight: 500; }
+        .hero-byline-text { font-size: 14px; color: var(--text-secondary); }
+        .hero-byline-text strong { color: var(--text-primary); font-weight: 500; }
+        .section-header { max-width: var(--wide-width); margin: 0 auto; padding: 40px 24px 0; display: flex; align-items: baseline; justify-content: space-between; }
+        .section-header h2 { font-family: var(--sans); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary); }
+        .section-header .filter-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .filter-tag { font-size: 12px; padding: 4px 12px; border-radius: 20px; background: var(--tag-bg); color: var(--tag-text); cursor: pointer; border: 1px solid transparent; transition: all 0.2s; font-weight: 400; }
+        .filter-tag:hover { border-color: var(--border); color: var(--text-primary); }
+        .filter-tag.active { background: var(--text-primary); color: white; border-color: var(--text-primary); }
+        .articles { max-width: var(--wide-width); margin: 0 auto; padding: 24px 24px 80px; }
+        .article-item { padding: 32px 0; border-bottom: 1px solid var(--border-light); cursor: pointer; transition: opacity 0.2s; animation: fadeUp 0.5s ease both; }
+        .article-item:hover { opacity: 0.85; }
+        .article-item:last-child { border-bottom: none; }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+        .article-date { font-size: 13px; color: var(--text-tertiary); font-weight: 400; }
+        .article-tag { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: rgba(192, 86, 38, 0.08); padding: 2px 8px; border-radius: 3px; }
+        .article-source { font-size: 12px; color: var(--text-tertiary); font-style: italic; }
+        .article-title { font-family: var(--serif); font-size: 24px; font-weight: 400; line-height: 1.3; letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 8px; }
+        .article-excerpt { font-size: 15px; line-height: 1.65; color: var(--text-secondary); font-weight: 300; max-width: var(--max-width); }
+        .article-read-more { display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; letter-spacing: 0.01em; transition: color 0.2s; }
+        .article-read-more:hover { color: var(--accent-hover); }
+        .article-read-more::after { content: ' →'; }
+        .article-full { display: none; max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 80px; animation: fadeUp 0.4s ease both; }
+        .article-full.visible { display: block; }
+        .article-full .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-tertiary); text-decoration: none; margin-bottom: 32px; transition: color 0.2s; cursor: pointer; }
+        .article-full .back-link:hover { color: var(--text-primary); }
+        .article-full .article-meta { margin-bottom: 16px; }
+        .article-full .article-title { font-size: 36px; line-height: 1.2; margin-bottom: 12px; }
+        .article-full .article-subtitle { font-family: var(--serif); font-size: 19px; font-weight: 300; font-style: italic; color: var(--text-secondary); line-height: 1.5; margin-bottom: 32px; }
+        .article-full .article-body { font-family: var(--serif); font-size: 18px; line-height: 1.8; color: var(--text-primary); }
+        .article-full .article-body p { margin-bottom: 24px; }
+        .article-full .article-body strong { font-weight: 600; }
+        .article-full .article-body h2 { font-family: var(--sans); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-tertiary); margin: 48px 0 16px; }
+        .article-full .article-body ul { margin: 0 0 24px 24px; }
+        .article-full .article-body li { margin-bottom: 8px; }
+        .article-full .article-body blockquote { border-left: 2px solid var(--accent); padding-left: 20px; margin: 32px 0; font-style: italic; color: var(--text-secondary); }
+        .article-full .orig-pub { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border-light); font-size: 14px; color: var(--text-tertiary); font-style: italic; }
+        .about-page { display: none; max-width: var(--max-width); margin: 0 auto; padding: 64px 24px 80px; animation: fadeUp 0.4s ease both; }
+        .about-page.visible { display: block; }
+        .about-header { display: flex; gap: 32px; align-items: flex-start; margin-bottom: 40px; }
+        .about-avatar-lg { width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #D4845A); display: flex; align-items: center; justify-content: center; color: white; font-family: var(--serif); font-size: 38px; font-weight: 400; flex-shrink: 0; }
+        .about-header-text h1 { font-family: var(--serif); font-size: 32px; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 8px; }
+        .about-header-text .about-role { font-size: 16px; color: var(--text-secondary); font-weight: 300; margin-bottom: 16px; }
+        .about-links { display: flex; gap: 16px; }
+        .about-links a { font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+        .about-links a:hover { color: var(--accent-hover); }
+        .about-body { font-family: var(--serif); font-size: 18px; line-height: 1.8; color: var(--text-primary); }
+        .about-body p { margin-bottom: 24px; }
+        .about-body h2 { font-family: var(--sans); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary); margin: 48px 0 16px; }
+        .about-books { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 24px 0; }
+        .book-card { padding: 20px; background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 8px; transition: box-shadow 0.2s; }
+        .book-card:hover { box-shadow: var(--shadow-md); }
+        .book-card h3 { font-family: var(--serif); font-size: 17px; font-weight: 500; margin-bottom: 4px; }
+        .book-card .book-pub { font-size: 13px; color: var(--text-tertiary); margin-bottom: 8px; }
+        .book-card p { font-size: 14px; line-height: 1.55; color: var(--text-secondary); font-family: var(--sans); }
+        footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
+        .footer-inner { max-width: var(--wide-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .footer-brand { font-family: var(--mono); font-size: 13px; color: var(--text-tertiary); }
+        .footer-brand .slash { color: var(--accent); }
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a { font-size: 13px; color: var(--text-tertiary); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .article-item:nth-child(1) { animation-delay: 0.05s; }
+        .article-item:nth-child(2) { animation-delay: 0.1s; }
+        .article-item:nth-child(3) { animation-delay: 0.15s; }
+        .article-item:nth-child(4) { animation-delay: 0.2s; }
+        .article-item:nth-child(5) { animation-delay: 0.25s; }
+        .article-item:nth-child(6) { animation-delay: 0.3s; }
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 30px; }
+            .hero { padding: 40px 20px 32px; }
+            .section-header { flex-direction: column; gap: 12px; padding: 32px 20px 0; }
+            .articles { padding: 16px 20px 60px; }
+            .article-title { font-size: 20px; }
+            .article-full .article-title { font-size: 28px; }
+            .nav-links { gap: 20px; }
+            .about-header { flex-direction: column; gap: 20px; }
+            .about-books { grid-template-columns: 1fr; }
+            .footer-inner { flex-direction: column; gap: 12px; }
+        }
+        .home-view { display: block; }
+        .home-view.hidden { display: none; }
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-brand" onclick="showHome(event)">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="#" class="active" id="nav-articles" onclick="showHome(event)">Articles</a>
+                <a href="#" id="nav-about" onclick="showAbout(event)">About</a>
+                <a href="https://linkedin.com/in/christopherohara" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </nav>
+    <div class="home-view" id="homeView">
+        <div class="hero">
+            <h1>Writing about the future of <em>software &amp; data</em> — from ERP to CRM and everything in between.</h1>
+            <p class="hero-sub">Exploring how enterprise technology, data management, and AI are reshaping how businesses operate, compete, and connect with customers.</p>
+            <div class="hero-byline">
+                <div class="hero-avatar">CO</div>
+                <div class="hero-byline-text"><strong>Chris O'Hara</strong> · VP, Marketing at SAP</div>
+            </div>
+        </div>
+        <div class="section-header">
+            <h2>Recent Writing</h2>
+            <div class="filter-tags">
+                <span class="filter-tag active" onclick="filterArticles('all', this)">All</span>
+                <span class="filter-tag" onclick="filterArticles('cdp', this)">CDP</span>
+                <span class="filter-tag" onclick="filterArticles('cx', this)">CX</span>
+                <span class="filter-tag" onclick="filterArticles('data', this)">Data Strategy</span>
+                <span class="filter-tag" onclick="filterArticles('martech', this)">Martech</span>
+            </div>
+        </div>
+        <div class="articles" id="articleList">
+            <div class="article-item" data-tags="cx,cdp" data-id="0" onclick="showArticle(0)">
+                <div class="article-meta"><span class="article-date">January 2023</span><span class="article-tag">CX</span></div>
+                <h3 class="article-title">CX Live London</h3>
+                <p class="article-excerpt">How to put customers at the heart of your intelligent enterprise and facilitate experiences that drive lifetime value through an enterprise-wide customer data foundation.</p>
+                <a class="article-read-more">Read</a>
+            </div>
+            <div class="article-item" data-tags="cdp,cx,data" data-id="1" onclick="showArticle(1)">
+                <div class="article-meta"><span class="article-date">April 2022</span><span class="article-tag">CDP</span><span class="article-source">The Future of Customer Engagement</span></div>
+                <h3 class="article-title">Data Management is the Backbone of Enterprise Agility in CX</h3>
+                <p class="article-excerpt">Moving from next-best-action to next-best-dollar requires richer data, actionable intelligence, and pervasive automation. How the connection between ERP and CX defines the next era of customer experience.</p>
+                <a class="article-read-more">Read</a>
+            </div>
+            <div class="article-item" data-tags="cdp,data" data-id="2" onclick="showArticle(2)">
+                <div class="article-meta"><span class="article-date">April 2022</span><span class="article-tag">Data Strategy</span><span class="article-source">The Future of Customer Engagement</span></div>
+                <h3 class="article-title">The Data Gravity Effect</h3>
+                <p class="article-excerpt">When less is more — why better data beats more data, and how brands that focus on meaningful value exchange will amass the right first-party data gravity.</p>
+                <a class="article-read-more">Read</a>
+            </div>
+            <div class="article-item" data-tags="data,cdp" data-id="3" onclick="showArticle(3)">
+                <div class="article-meta"><span class="article-date">March 2022</span><span class="article-tag">Data Strategy</span></div>
+                <h3 class="article-title">The Five Vs of Data Virtuosity</h3>
+                <p class="article-excerpt">Rethinking enterprise data management in our new normal — how volume, velocity, variety, veracity, and value should be re-examined in the age of CDPs and connected enterprise data.</p>
+                <a class="article-read-more">Read</a>
+            </div>
+            <div class="article-item" data-tags="martech,data" data-id="4" onclick="showArticle(4)">
+                <div class="article-meta"><span class="article-date">August 2017</span><span class="article-tag">Martech</span><span class="article-source">AdExchanger</span></div>
+                <h3 class="article-title">The Three Principles of People-Based Marketing</h3>
+                <p class="article-excerpt">Every marketer wants to be the next Amazon. But personalization requires a commitment to identity, data obsession, and automation. Here are the core principles for the transformation.</p>
+                <a class="article-read-more">Read</a>
+            </div>
+            <div class="article-item" data-tags="martech" data-id="5" onclick="showArticle(5)">
+                <div class="article-meta"><span class="article-date">February 2016</span><span class="article-tag">Martech</span></div>
+                <h3 class="article-title">CPG Goes DMP</h3>
+                <p class="article-excerpt">Consumer packaged goods firms have the least consumer data — so why are so many licensing data management platforms? The answer lies in media efficiency and zero-based budgeting.</p>
+                <a class="article-read-more">Read</a>
+            </div>
+        </div>
+    </div>
+    <div class="article-full" id="articleFull">
+        <a class="back-link" onclick="backToList()">← Back to all articles</a>
+        <div class="article-meta"><span class="article-date" id="fullDate"></span><span class="article-tag" id="fullTag"></span></div>
+        <h1 class="article-title" id="fullTitle"></h1>
+        <p class="article-subtitle" id="fullSubtitle"></p>
+        <div class="article-body" id="fullBody"></div>
+    </div>
+    <div class="about-page" id="aboutPage">
+        <div class="about-header">
+            <div class="about-avatar-lg">CO</div>
+            <div class="about-header-text">
+                <h1>Chris O'Hara</h1>
+                <p class="about-role">VP, Marketing at SAP · Author · Data Strategist</p>
+                <div class="about-links">
+                    <a href="https://linkedin.com/in/christopherohara" target="_blank">LinkedIn →</a>
+                    <a href="https://www.chrisohara.com" target="_blank">chrisohara.com →</a>
+                </div>
+            </div>
+        </div>
+        <div class="about-body">
+            <p>I lead product marketing and solutions for SAP's Planning, Analytics, and Intelligent Applications within the BTP Data & Analytics Group. Before that, I spent five years running Salesforce Marketing Cloud's Data & Identity group. My career has been spent at the intersection of digital media, data management, and customer experience — from the early days of DMPs through the rise of CDPs and now into the era of AI-driven enterprise intelligence.</p>
+            <p>My writing explores the future of enterprise software and data — not just in marketing, but across the full stack from ERP to CRM. I'm interested in how data management, AI, and cloud platforms are reshaping the way businesses operate, plan, and connect with their customers.</p>
+            <p>My work has been published in AdExchanger, Econsultancy, The Future of Customer Engagement, and other industry publications. I've also written best practice guides on topics ranging from programmatic branding to the role of agencies in data management.</p>
+            <h2>Books</h2>
+            <div class="about-books">
+                <div class="book-card">
+                    <h3>Customer Data Platforms</h3>
+                    <p class="book-pub">Wiley, 2020 · with Martin Kihn</p>
+                    <p>The first book on the CDP category — a deep dive into how companies capture, unify, activate, and analyze customer data to steer toward the future of personalization.</p>
+                </div>
+                <div class="book-card">
+                    <h3>Data Driven</h3>
+                    <p class="book-pub">McGraw Hill, 2018 · with Tom Chavez & Vivek Vaidya</p>
+                    <p>The indispensable guide to data-powered marketing from the team behind the data management platform that helps fuel Salesforce.</p>
+                </div>
+            </div>
+            <p style="margin-top: 32px;">On the non-business side, I'm also the author of six books including <em>Great American Beer</em>, <em>The Bloody Mary</em>, <em>Ribs</em>, <em>Hot Toddies</em>, and <em>Wing It!</em> — covering topics I care about just as deeply as enterprise data.</p>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-inner">
+            <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+            <div class="footer-links">
+                <a href="https://linkedin.com/in/christopherohara" target="_blank">LinkedIn</a>
+                <a href="https://www.chrisohara.com" target="_blank">chrisohara.com</a>
+                <a href="https://chrisohara.wordpress.com" target="_blank">Archive</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const articles = [
+            { date: "January 2023", tag: "CX", title: "CX Live London", subtitle: "Grow Your Business Through Enterprise-Wide Customer Centricity", body: `<p>In this session, you'll learn how to put customers at the heart of your intelligent enterprise and facilitate experiences that drive lifetime value. You'll see how an enterprise-wide customer data foundation bridges organizational silos, enables real-time customer insights where decisions are made, and fuels personalized experiences that show that you truly know your customer.</p>` },
+            { date: "April 2022", tag: "CDP", title: "Data Management is the Backbone of Enterprise Agility in CX", subtitle: "Moving from next-best-action to next-best-dollar requires richer data, actionable intelligence, and pervasive automation", body: `<p>As Heraclitus reminds us, "No man ever steps in the same river twice, for it's not the same river and he's not the same man." This is arguably even more true since Heraclitus uttered the phrase, given the rapid and abrupt changes we have seen in the world lately and their impact on global business.</p><p>The framework for managing through this is broadly called "enterprise agility," or an organization's ability to quickly adapt to market changes.</p><h2>Data</h2><p>It starts, of course, with customer data management. First, you need the scaled ability to capture first party data with consent.</p><h2>Intelligence</h2><p>If a company has managed to create a unified data model across the systems described above, you still need to scale intelligence.</p><h2>Automation</h2><p>After intelligence comes automation. How do you action the insights you have aggregated?</p><p class="orig-pub">This post originally appeared in The Future of Customer Engagement on 12 April 2022.</p>` },
+            { date: "April 2022", tag: "Data Strategy", title: "The Data Gravity Effect", subtitle: "Why better data beats more data in the age of CDPs", body: `<p>Ben Bloom's recent post on the Gartner Blog shined a light on a topic we rarely hear about in the CDP world — the cost and effort associated with building a first-party data asset.</p><p>The basic model is a value exchange. Brands that want to go beyond the "more is better" methodology and start to amass meaningful data gravity must consider authentication, consent and preferences, and data governance.</p><p class="orig-pub">A version of this post appeared on the Future of Customer Engagement.</p>` },
+            { date: "March 2022", tag: "Data Strategy", title: "The Five Vs of Data Virtuosity", subtitle: "Rethinking enterprise data management in our new normal", body: `<p>Ever since Gartner's Doug Laney coined the "3 Vs of Big Data" back in 2001, there have been endless iterations. The core three were always "volume, velocity, and variety."</p><h2>Variety</h2><p>When it comes to leveraging data to drive customer experience, we are basically in the very first innings of a long and interesting game.</p><h2>Volume</h2><p>Managing data at scale has always been a challenge. We need to consider that better data is greater than more data.</p>` },
+            { date: "August 2017", tag: "Martech", title: "The Three Principles of People-Based Marketing", subtitle: "Identity, data obsession, and automation — the transformation playbook", body: `<p>Every marketer and media company these days is trying to unlock the secret to personalization. Everyone wants to be the next Amazon.</p><p>A true commitment to personalized marketing means that you have to understand people.</p><p class="orig-pub">This article originally appeared in AdExchanger on 8/7/2017.</p>` },
+            { date: "February 2016", tag: "Martech", title: "CPG Goes DMP", subtitle: "Why consumer packaged goods firms are betting big on data management platforms", body: `<p>If you think about the companies with perhaps the least amount of consumer data, you would automatically think about consumer packaged goods (CPG) manufacturers.</p><p>So, with little registration, website, or offline sales data, why are so many large CPG firms licensing an expensive first-party data management platform?</p>` }
+        ];
+        function showHome(e) { e && e.preventDefault(); document.getElementById('homeView').classList.remove('hidden'); document.getElementById('articleFull').classList.remove('visible'); document.getElementById('aboutPage').classList.remove('visible'); document.getElementById('nav-articles').classList.add('active'); document.getElementById('nav-about').classList.remove('active'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        function showAbout(e) { e && e.preventDefault(); document.getElementById('homeView').classList.add('hidden'); document.getElementById('articleFull').classList.remove('visible'); document.getElementById('aboutPage').classList.add('visible'); document.getElementById('nav-articles').classList.remove('active'); document.getElementById('nav-about').classList.add('active'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        function showArticle(id) { const a = articles[id]; document.getElementById('fullDate').textContent = a.date; document.getElementById('fullTag').textContent = a.tag; document.getElementById('fullTitle').textContent = a.title; document.getElementById('fullSubtitle').textContent = a.subtitle; document.getElementById('fullBody').innerHTML = a.body; document.getElementById('homeView').classList.add('hidden'); document.getElementById('aboutPage').classList.remove('visible'); document.getElementById('articleFull').classList.add('visible'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        function backToList() { document.getElementById('articleFull').classList.remove('visible'); document.getElementById('homeView').classList.remove('hidden'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        function filterArticles(tag, el) { document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active')); el.classList.add('active'); document.querySelectorAll('.article-item').forEach(item => { item.style.display = (tag === 'all' || item.dataset.tags.includes(tag)) ? '' : 'none'; }); }
+        window.addEventListener('scroll', () => { document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10); });
+    </script>
+</body>
+</html>
