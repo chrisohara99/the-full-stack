@@ -101,7 +101,7 @@
         .about-page { display: none; max-width: var(--max-width); margin: 0 auto; padding: 64px 24px 80px; }
         .about-page.visible { display: block; }
         .about-header { display: flex; gap: 32px; align-items: flex-start; margin-bottom: 40px; }
-        .about-avatar-lg { width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #D4845A); display: flex; align-items: center; justify-content: center; color: white; font-family: var(--serif); font-size: 38px; font-weight: 400; flex-shrink: 0; }
+        .about-avatar-lg { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
         .about-header-text h1 { font-family: var(--serif); font-size: 32px; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 8px; }
         .about-header-text .about-role { font-size: 16px; color: var(--text-secondary); font-weight: 300; margin-bottom: 16px; }
         .about-links { display: flex; gap: 16px; }
@@ -204,7 +204,7 @@
     </div>
     <div class="about-page" id="aboutPage">
         <div class="about-header">
-            <div class="about-avatar-lg">CO</div>
+            <img src="images/chris-headshot.jpg" alt="Chris O'Hara" class="about-avatar-lg">
             <div class="about-header-text">
                 <h1>Chris O'Hara</h1>
                 <p class="about-role">VP, Marketing at SAP · Author · Data Strategist</p>
