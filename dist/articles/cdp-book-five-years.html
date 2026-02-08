@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What We Got Right (and Wrong) About CDPs: A 5-Year Retrospective | The Full Stack</title>
+    <meta name="description" content="Revisiting the predictions Martin Kihn and I made in our 2020 book on Customer Data Platforms — and what we never saw coming.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --accent: #1e3a5f; --accent-light: #3b82f6; --text: #333; --text-light: #666; --bg: #fff; --bg-alt: #f8f9fa; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Source Sans Pro', -apple-system, sans-serif; color: var(--text); line-height: 1.8; background: var(--bg); }
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; line-height: 1.3; }
+        a { color: var(--accent-light); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        
+        header { background: var(--accent); color: white; padding: 1rem 0; }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: white; text-decoration: none; }
+        nav a { color: rgba(255,255,255,0.8); margin-left: 2rem; font-size: 0.9rem; }
+        nav a:hover { color: white; text-decoration: none; }
+        
+        /* Mobile hamburger */
+        .hamburger { display: none; flex-direction: column; cursor: pointer; }
+        .hamburger span { width: 25px; height: 3px; background: white; margin: 3px 0; transition: 0.3s; }
+        
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            nav { display: none; position: absolute; top: 60px; left: 0; right: 0; background: var(--accent); flex-direction: column; padding: 1rem; }
+            nav.active { display: flex; }
+            nav a { margin: 0.5rem 0; }
+        }
+        
+        .article-hero { background: linear-gradient(135deg, #1e3a5f 0%, #1e40af 100%); color: white; padding: 4rem 0; }
+        .article-hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .article-meta { opacity: 0.9; font-size: 1rem; }
+        .article-meta .category { background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; margin-right: 1rem; }
+        
+        article { padding: 3rem 0 4rem; }
+        article p { font-size: 1.15rem; margin-bottom: 1.5rem; color: #444; }
+        article h2 { font-size: 1.75rem; color: var(--accent); margin: 3rem 0 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid #e5e7eb; }
+        article h3 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 1rem; }
+        article ul, article ol { margin: 1.5rem 0; padding-left: 1.5rem; }
+        article li { margin-bottom: 0.75rem; font-size: 1.1rem; color: #444; }
+        article strong { color: var(--accent); }
+        article blockquote { border-left: 4px solid var(--accent-light); padding: 1rem 1.5rem; margin: 2rem 0; background: var(--bg-alt); font-style: italic; }
+        article blockquote p { margin-bottom: 0; }
+        
+        .intro-box { background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%); border-left: 4px solid var(--accent-light); padding: 2rem; margin: 2rem 0; border-radius: 0 12px 12px 0; }
+        .intro-box p:last-child { margin-bottom: 0; }
+        
+        .scorecard { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 2rem 0; }
+        .score-card { padding: 1.5rem; border-radius: 8px; text-align: center; }
+        .score-card.right { background: #ecfdf5; border: 2px solid #059669; }
+        .score-card.wrong { background: #fef2f2; border: 2px solid #dc2626; }
+        .score-card.missed { background: #fffbeb; border: 2px solid #d97706; }
+        .score-card .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+        .score-card .label { font-weight: 600; color: var(--accent); }
+        
+        .comparison-box { background: var(--bg-alt); border: 2px solid #e5e7eb; padding: 1.5rem; border-radius: 12px; margin: 2rem 0; }
+        .comparison-box .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+        .comparison-box .label { font-weight: 600; color: var(--text-light); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .comparison-box .old { color: #dc2626; }
+        .comparison-box .new { color: #059669; }
+        
+        .cta-box { background: var(--accent); color: white; padding: 2.5rem; border-radius: 12px; margin: 3rem 0; text-align: center; }
+        .cta-box h3 { color: white; margin-bottom: 1rem; }
+        .cta-box p { color: white; opacity: 0.9; margin-bottom: 1.5rem; }
+        .cta-box a.btn { background: white; color: var(--accent); padding: 12px 24px; border-radius: 6px; font-weight: 600; display: inline-block; }
+        .cta-box a.btn:hover { text-decoration: none; opacity: 0.9; }
+        
+        .author-box { background: var(--bg-alt); padding: 2rem; border-radius: 12px; margin: 3rem 0; }
+        .author-box h4 { color: var(--accent); margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
+        .author-box p { margin-bottom: 1rem; font-size: 1rem; }
+        .author-box p:last-child { margin-bottom: 0; }
+        
+        footer { background: var(--accent); color: white; padding: 2rem 0; text-align: center; }
+        footer p { opacity: 0.8; margin: 0; }
+        
+        @media (max-width: 768px) {
+            .scorecard { grid-template-columns: 1fr; }
+            .comparison-box .row { grid-template-columns: 1fr; }
+            .article-hero h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">The Full Stack</a>
+            <div class="hamburger" onclick="document.querySelector('nav').classList.toggle('active')">
+                <span></span><span></span><span></span>
+            </div>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../archive.html">Archive</a>
+                <a href="https://chrisohara.com">About Chris</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="article-hero">
+        <div class="container">
+            <span class="category">MarTech</span>
+            <h1>What We Got Right (and Wrong) About CDPs: A 5-Year Retrospective</h1>
+            <p class="article-meta">February 2026 • Chris O'Hara</p>
+        </div>
+    </section>
+    
+    <article>
+        <div class="container">
+            <p><em>Revisiting the predictions Martin Kihn and I made in 2020 — and what we never saw coming</em></p>
+            
+            <p>In December 2020, Martin Kihn and I published <em>Customer Data Platforms: Use People Data to Transform the Future of Marketing Engagement</em>. It was the first mainstream book on CDPs, written at a moment when the category was exploding with hype and confusion. Every vendor wanted to be a CDP. Every CMO wanted to buy one. Nobody agreed on what one actually was.</p>
+            
+            <div class="intro-box">
+                <p>I should say upfront: <strong>Martin is the smarter half of this partnership.</strong> He came to the project from Gartner, where he'd been the leading analyst covering marketing technology. Before that, he was an Emmy-nominated head writer for MTV's Pop-Up Video, a stand-up comic, and the author of <em>House of Lies</em> — the memoir that became the Showtime series starring Don Cheadle. The man has range.</p>
+                <p>Martin's still at Salesforce as SVP of Strategy for Marketing Cloud, where he's become the voice of their AI agent strategy. He just published <a href="https://www.amazon.com/Agentforce-Harnessing-Agency-Scale-Industry-ebook/dp/B0FCP4DMND"><em>Agentforce: Harnessing the Agency of AI to Scale, Grow, and Lead Any Industry</em></a> — with a foreword by Marc Benioff — which is essentially the definitive guide to autonomous AI agents in enterprise software. He also hosts the <a href="https://martinkihn.com">PaleoAdTech podcast</a>. If you want to understand where martech is heading, follow Martin.</p>
+            </div>
+            
+            <p>Five years later, I decided to go back and read our CDP book again. Not to admire our prescience, but to honestly assess: What did we nail? What did we whiff on? And what changes in the world were simply impossible to predict from the vantage point of 2020?</p>
+            
+            <p>The answer, as it turns out, is a mix of all three.</p>
+            
+            <div class="scorecard">
+                <div class="score-card right">
+                    <div class="icon">✅</div>
+                    <div class="label">What We Got Right</div>
+                </div>
+                <div class="score-card wrong">
+                    <div class="icon">❌</div>
+                    <div class="label">Where We Were Wrong</div>
+                </div>
+                <div class="score-card missed">
+                    <div class="icon">🔮</div>
+                    <div class="label">What We Couldn't Predict</div>
+                </div>
+            </div>
+            
+            <h2>The Thesis That Held Up</h2>
+            
+            <p>Our central argument was simple, even contrarian at the time: <strong>CDPs are not a revolution. They're an evolution of CRM.</strong></p>
+            
+            <p>This was Martin's insight, really — he'd watched the category emerge from his perch at Gartner and understood that the hype was obscuring something more fundamental. We wrote:</p>
+            
+            <blockquote>
+                <p>"The CDP category is not new; it is not an invention de novo. Rather it represents the latest evolution of the CRM category, applied to B2C and then to B2B contexts, and expanding (as CRM did) well beyond marketing into service, commerce, sales and beyond."</p>
+            </blockquote>
+            
+            <p>This framing has aged remarkably well. In 2020, CDP vendors were positioning themselves as something entirely new — the silver bullet that would finally unify customer data. We pushed back. We argued that the problems CDPs were solving were the same problems marketers had been wrestling with since the Society of the Divine Savior was running predictive models on IBM tape drives in 1961.</p>
+            
+            <p>Today, nobody serious debates this anymore. CDPs are understood as a layer in the stack, not a replacement for everything that came before. The hype has settled into reality.</p>
+            
+            <h2>The Problem We Diagnosed: Still the Problem</h2>
+            
+            <p>Perhaps our most durable insight was identifying what we called the <strong>"Frankenstack"</strong> — the accretion of disconnected marketing technologies that plague every enterprise.</p>
+            
+            <p>We described a luxury automotive brand that ended up with "at least four uncoordinated teams, and three different agencies, each aligned around a different channel." A single customer could have data sitting in twelve different databases, none of them connected.</p>
+            
+            <p>Sound familiar? It should. This is <em>still</em> the reality for most enterprises in 2026. If anything, the problem has gotten worse. Now there's a thirteenth database for the AI tools someone bought without telling IT.</p>
+            
+            <p>We also nailed the root cause:</p>
+            
+            <blockquote>
+                <p>"The problem is not a lack of data. In fact, marketers report using a median of 10 distinct data sources in 2020, and will expand that to 12 next year... So, lack of data is not the issue."</p>
+            </blockquote>
+            
+            <p>Data scarcity was never the problem. Data fragmentation was. That insight remains as true today as it was then.</p>
+            
+            <h2>The Framework That Became Industry Standard</h2>
+            
+            <p>In Chapter 4, Martin and I proposed a framework that would shape how the entire industry talked about CDPs for years to come: the distinction between <strong>Systems of Insight</strong> and <strong>Systems of Engagement</strong>.</p>
+            
+            <p>This came from Martin's analysis of 400+ RFPs at Salesforce. He noticed that buyers were asking for fundamentally different things, and crystallized them into two buckets:</p>
+            
+            <ul>
+                <li><strong>System of Insight:</strong> Focused on creating a "golden record" — a unified customer profile for analysis, segmentation, and measurement.</li>
+                <li><strong>System of Engagement:</strong> Focused on real-time personalization — making split-second decisions about what message to show, what offer to make.</li>
+            </ul>
+            
+            <p>We observed that most CDP vendors fell cleanly into one camp or the other. Very few could do both. We argued that true "Enterprise CDPs" would need to combine both capabilities.</p>
+            
+            <p>This framing stuck. Walk into any CDP evaluation today, and you'll hear buyers asking: "Is this an insights CDP or an engagement CDP?" We didn't invent the distinction, but we codified it.</p>
+            
+            <h2>The Privacy Prediction: Prophetic</h2>
+            
+            <p>Chapter 6, on building first-party data assets with consent, reads like prophecy now.</p>
+            
+            <p>We wrote extensively about the "Privacy Paradox" — the tension between consumers' demand for personalization and their distrust of data collection. We predicted that browser changes and regulatory pressure would fundamentally reshape how marketers collect and use data.</p>
+            
+            <blockquote>
+                <p>"While the exact contours of the browser solutions aren't clear, it's safe to say that the future of ad targeting and measurement will be driven by first-party data (where it's available); consumers who explicitly opt-in to collection and use of their data; and the use of aggregate — rather than user-level — information."</p>
+            </blockquote>
+            
+            <p>This was written before Chrome announced its cookie deprecation timeline. Before Apple's ATT bombshell. Before the cookieless future became the cookieless present.</p>
+            
+            <p>We got lucky on timing, but the underlying analysis was sound: the third-party data ecosystem was built on workarounds and borrowed time. First-party data with consent wasn't just a nice-to-have — it was going to be the only game in town.</p>
+            
+            <h2>Where We Were Wrong</h2>
+            
+            <p>Here's where the retrospective gets uncomfortable.</p>
+            
+            <h3>The Warehouse Blindspot</h3>
+            
+            <p>We assumed CDPs would <em>be</em> the data layer — the single source of truth that housed the golden customer record. We wrote about data ingestion, harmonization, and storage as core CDP functions.</p>
+            
+            <p>What we didn't see coming was the rise of the <strong>modern data stack</strong> and the composable CDP architecture.</p>
+            
+            <p>In 2026, the most sophisticated marketing organizations don't store their customer data in their CDP. They store it in Snowflake or BigQuery. The CDP — tools like Hightouch, Census, or the composable versions from legacy vendors — sits on top of the warehouse and activates that data.</p>
+            
+            <div class="comparison-box">
+                <div class="row">
+                    <div>
+                        <div class="label">Our 2020 View</div>
+                        <div class="old">CDP stores the golden record</div>
+                    </div>
+                    <div>
+                        <div class="label">2026 Reality</div>
+                        <div class="new">Warehouse stores the golden record; CDP activates it</div>
+                    </div>
+                </div>
+            </div>
+            
+            <p>This is a fundamental architectural shift we completely missed. The data engineering world (dbt, Fivetran, the whole modern data stack) evolved faster than the martech world, and CDPs had to adapt to sit on top of infrastructure they didn't control.</p>
+            
+            <h3>The LiveRamp Prediction</h3>
+            
+            <p>We wrote extensively about "data onboarding" as the critical bridge between known and unknown customer data. LiveRamp was the poster child:</p>
+            
+            <blockquote>
+                <p>"LiveRamp is the most widely-used of these companies, and it built a $3 billion business by providing the identity infrastructure marketers and publishers can license to connect the known and unknown together."</p>
+            </blockquote>
+            
+            <p>We assumed this onboarding model would remain central. Instead, the composable CDP architecture — connecting directly to data warehouses — made the middleman step less necessary for many use cases. LiveRamp is still around, but the model we described isn't the dominant paradigm anymore.</p>
+            
+            <h3>Cross-Device Identity Got Harder, Not Easier</h3>
+            
+            <p>We spent significant page count on Cross-Device Identity Management (CDIM), arguing it was critical infrastructure for the customer-driven future.</p>
+            
+            <p>We were right that it mattered. We were wrong about the trajectory.</p>
+            
+            <p>The cookie apocalypse didn't make cross-device identity easier — it made it nearly impossible for most brands. Deterministic matching relies on logged-in states that most publishers can't achieve at scale. Probabilistic matching got regulated into oblivion. Most marketers have simply accepted the loss and moved on.</p>
+            
+            <h3>Market Consolidation vs. Proliferation</h3>
+            
+            <p>We cited Scott Brinker's famous marketing technology landscape — 8,000+ vendors and counting. We anticipated continued proliferation.</p>
+            
+            <p>Instead, 2024-2025 brought a massive M&A wave. The CDP Institute's 90+ members? Maybe 30 independent ones remain. The rest were acquired, merged, or quietly shut down. The category didn't expand — it consolidated, violently.</p>
+            
+            <h2>What We Could Never Have Predicted</h2>
+            
+            <p>Some things simply weren't predictable from the vantage point of 2020.</p>
+            
+            <h3>Generative AI Changed Everything</h3>
+            
+            <p>Chapter 9 of our book covered artificial intelligence. We discussed machine learning for segmentation, propensity modeling, and product recommendations — the state of the art at the time.</p>
+            
+            <p>What we couldn't have imagined was ChatGPT, Claude, and the generative AI revolution that would arrive two years later.</p>
+            
+            <p>Today's CDPs don't just use AI to <em>score</em> customers. They use AI to <em>create</em> content, <em>write</em> campaigns, and in some cases, <em>autonomously execute</em> marketing programs without human intervention. The "Personalize" layer we described has been transformed by technology that didn't exist when we were writing.</p>
+            
+            <h3>AI Agents Are Making Decisions</h3>
+            
+            <p>We wrote about "Plan and React" capabilities — the ability for marketers to set up journeys and rules for handling real-time events.</p>
+            
+            <p>In 2026, the cutting edge isn't "Plan and React." It's "Plan and Let the AI React." Autonomous agents are embedded in CDPs, making optimization decisions, adjusting send times, selecting creative variants — all without a human in the loop.</p>
+            
+            <p>Martin has literally written the book on this — <em>Agentforce</em> covers why AI agents are the "third wave" of AI development, far beyond chatbots and copilots. He calls it "digital labor" — agents that don't just assist humans but act autonomously within guardrails. It's the natural evolution of everything we wrote about in the CDP book, but we couldn't have seen it coming in 2020.</p>
+            
+            <p>Our book described a world where AI <em>informed</em> human decisions. The reality is a world where AI increasingly <em>makes</em> the decisions.</p>
+            
+            <h3>The Modern Data Stack Emerged From Engineering, Not Marketing</h3>
+            
+            <p>The composable CDP paradigm didn't come from martech innovation. It came from data engineering teams who built the modern data stack (dbt, Fivetran, etc.) and then extended it to marketing use cases.</p>
+            
+            <p>This was a classic example of disruption from an adjacent field. We were watching the CDP vendors. We should have been watching the data engineers.</p>
+            
+            <h2>What We'd Write Differently Today</h2>
+            
+            <p>I ran this retrospective by Martin, and we agreed: if we were writing <em>Customer Data Platforms</em> in 2026, here's what would change:</p>
+            
+            <ol>
+                <li><strong>Start with the warehouse.</strong> The architectural assumption would flip. CDPs would be positioned as activation layers on top of data infrastructure, not replacements for it.</li>
+                <li><strong>Add a chapter on AI agents.</strong> The "Personalize" layer needs to account for autonomous decision-making, not just ML models that inform human choices.</li>
+                <li><strong>Less on DMPs.</strong> We spent significant pages on how DMPs would evolve into CDPs. That transition happened, but it's old news now. The DMP as a distinct category is effectively dead.</li>
+                <li><strong>More on organizational change.</strong> Chapter 7 touched on building a "customer-driven marketing machine," but the people and process challenges deserve more weight. Technology is 30% of the problem. The other 70% is getting humans to change how they work.</li>
+                <li><strong>Composable architecture.</strong> The entire "Organizing Customer Data" chapter would need a rewrite to account for reverse ETL, warehouse-native activation, and the composable paradigm.</li>
+            </ol>
+            
+            <h2>Predictions for 2030</h2>
+            
+            <p>Having been humbled by what we got wrong, let me make a few cautious predictions for the next five years:</p>
+            
+            <ol>
+                <li><strong>The CDP category name will fade.</strong> Not because the problems go away, but because the capabilities will be absorbed into broader platforms. Just as "email service provider" became a feature of marketing clouds, "CDP" will become a feature of data platforms.</li>
+                <li><strong>AI agents will handle 50%+ of campaign decisions.</strong> Humans will set guardrails and strategy. AI will handle execution and optimization.</li>
+                <li><strong>First-party data networks will emerge.</strong> Brands will form consortiums to share anonymized data in privacy-preserving ways — a decentralized alternative to the walled gardens.</li>
+                <li><strong>Real-time will matter less.</strong> Controversial take: the obsession with millisecond response times will fade as marketers realize that "fast enough" beats "instant" for most use cases.</li>
+                <li><strong>Identity will bifurcate.</strong> Enterprises with logged-in user bases will have incredible identity resolution. Everyone else will operate in probabilistic fog. The gap will widen.</li>
+            </ol>
+            
+            <h2>The Bottom Line</h2>
+            
+            <p>Five years ago, we wrote a book trying to make sense of a confusing, hype-filled technology category. We got the fundamentals right: the problems marketers face, the framework for thinking about solutions, and the inevitability of privacy-first data strategies.</p>
+            
+            <p>We got some specifics wrong: the architectural shift toward warehouses, the trajectory of cross-device identity, and the pace of market consolidation.</p>
+            
+            <p>And we couldn't have predicted the generative AI revolution that would reshape not just CDPs, but the entire practice of marketing.</p>
+            
+            <p>That's the nature of writing about technology. You do your best to identify durable truths and make educated guesses about the rest. Some of those guesses land. Some don't. The honest thing to do is go back, look at the record, and learn from both.</p>
+            
+            <p>The good news: the core problem we diagnosed — fragmented customer data preventing personalized experiences — hasn't been solved. If anything, it's gotten worse as AI tools add new data silos to the Frankenstack.</p>
+            
+            <p>Which means there's still work to do. Martin's already on it — his new book <em>Agentforce</em> tackles the autonomous AI future head-on. Maybe it's time for us to write a sequel. <em>Customer Data Platforms 2.0: Now With AI Agents</em> has a nice ring to it. Or maybe Martin's already written it.</p>
+            
+            <div class="author-box">
+                <h4>About the Authors</h4>
+                <p><strong>Chris O'Hara</strong> is VP of Product Marketing at SAP and co-author of <em>Customer Data Platforms</em> (Wiley, 2020) and <em>Data Driven</em> (McGraw Hill, 2018). He writes about marketing, technology, and the future of customer engagement at <a href="https://thefullstack.chrisohara.com">thefullstack.chrisohara.com</a>.</p>
+                <p><strong>Martin Kihn</strong> is SVP of Strategy for Salesforce Marketing Cloud and author of <a href="https://www.amazon.com/Agentforce-Harnessing-Agency-Scale-Industry-ebook/dp/B0FCP4DMND"><em>Agentforce: Harnessing the Agency of AI to Scale, Grow, and Lead Any Industry</em></a> (Wiley, 2025), <em>Customer Data Platforms</em> (Wiley, 2020), and <em>House of Lies</em> (Hachette), which became a Showtime series. He hosts the <a href="https://martinkihn.com">PaleoAdTech podcast</a> and writes about marketing trends for Forbes.</p>
+            </div>
+            
+            <div class="cta-box">
+                <h3>Get the Original Book</h3>
+                <p>Read the predictions we made in 2020 and judge for yourself.</p>
+                <a href="https://www.amazon.com/Customer-Data-Platforms-Transform-Engagement/dp/1119790115" class="btn">Customer Data Platforms on Amazon →</a>
+            </div>
+        </div>
+    </article>
+    
+    <footer>
+        <p>&copy; 2026 The Full Stack by Chris O'Hara</p>
+    </footer>
+</body>
+</html>
