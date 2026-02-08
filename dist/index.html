@@ -116,6 +116,17 @@
         .book-card h3 { font-family: var(--serif); font-size: 17px; font-weight: 500; margin-bottom: 4px; }
         .book-card .book-pub { font-size: 13px; color: var(--text-tertiary); margin-bottom: 8px; }
         .book-card p { font-size: 14px; line-height: 1.55; color: var(--text-secondary); font-family: var(--sans); }
+        /* Subscribe Section */
+        .subscribe-section { background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%); padding: 60px 24px; text-align: center; }
+        .subscribe-inner { max-width: 500px; margin: 0 auto; }
+        .subscribe-section h2 { font-family: var(--serif); font-size: 28px; color: white; margin-bottom: 12px; }
+        .subscribe-section p { color: rgba(255,255,255,0.8); margin-bottom: 24px; font-size: 16px; }
+        .subscribe-form { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .subscribe-form input[type="email"] { padding: 14px 18px; font-size: 16px; border: none; border-radius: 8px; width: 280px; font-family: var(--sans); }
+        .subscribe-form button { padding: 14px 28px; font-size: 16px; font-weight: 600; background: #3b82f6; color: white; border: none; border-radius: 8px; cursor: pointer; font-family: var(--sans); transition: background 0.2s; }
+        .subscribe-form button:hover { background: #2563eb; }
+        @media (max-width: 500px) { .subscribe-form input[type="email"] { width: 100%; } .subscribe-form button { width: 100%; } }
+        
         footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
         .footer-inner { max-width: var(--wide-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
         .footer-brand { font-family: var(--mono); font-size: 13px; color: var(--text-tertiary); }
@@ -223,6 +234,18 @@
             <p style="margin-top: 32px;">On the non-business side, I'm also the author of six books including <em>Great American Beer</em>, <em>The Bloody Mary</em>, <em>Ribs</em>, <em>Hot Toddies</em>, and <em>Wing It!</em> — covering topics I care about just as deeply as enterprise data.</p>
         </div>
     </div>
+    <section class="subscribe-section">
+        <div class="subscribe-inner">
+            <h2>Subscribe to The Full Stack</h2>
+            <p>Get notified when new essays are published. No spam, unsubscribe anytime.</p>
+            <form name="fullstack-subscribe" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="subscribe-form">
+                <input type="hidden" name="form-name" value="fullstack-subscribe">
+                <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+                <input type="email" name="email" placeholder="your@email.com" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
     <footer>
         <div class="footer-inner">
             <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
