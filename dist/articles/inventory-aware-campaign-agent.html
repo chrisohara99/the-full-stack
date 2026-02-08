@@ -78,6 +78,11 @@
         .key-insight { background: var(--tag-bg); border: 1px solid var(--border); padding: 24px; margin: 32px 0; border-radius: 12px; }
         .key-insight p { margin-bottom: 0; }
         
+        .company-intro { background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%); border-left: 3px solid #3b82f6; padding: 24px; margin: 32px 0; border-radius: 0 12px 12px 0; }
+        .company-intro p { margin-bottom: 12px; font-family: var(--sans); font-size: 15px; }
+        .company-intro p:last-child { margin-bottom: 0; }
+        .company-intro strong { color: #1e40af; }
+        
         .dashboard-example { background: #1a1a1a; color: #e5e5e5; padding: 24px; border-radius: 12px; margin: 32px 0; font-family: var(--mono); font-size: 13px; line-height: 1.7; white-space: pre-wrap; }
         
         .cta-box { background: linear-gradient(135deg, var(--accent) 0%, #A84920 100%); color: white; padding: 40px; border-radius: 12px; margin: 48px 0; text-align: center; }
@@ -85,6 +90,22 @@
         .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 20px; font-family: var(--sans); }
         .cta-box .btn { display: inline-block; background: white; color: var(--accent); padding: 14px 28px; border-radius: 8px; font-family: var(--sans); font-weight: 600; font-size: 15px; text-decoration: none; transition: transform 0.2s; }
         .cta-box .btn:hover { transform: translateY(-2px); }
+        
+        .hero-visual { background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%); color: white; padding: 40px; border-radius: 16px; margin: 32px 0 48px; }
+        .hero-visual h3 { font-family: var(--sans); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #60a5fa; margin-bottom: 8px; }
+        .hero-visual h4 { font-family: var(--serif); font-size: 26px; font-weight: 400; margin-bottom: 20px; color: white; }
+        .hero-visual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+        .hero-visual-box { background: rgba(255,255,255,0.08); padding: 20px; border-radius: 12px; }
+        .hero-visual-box h5 { font-family: var(--sans); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #fbbf24; margin-bottom: 12px; }
+        .hero-visual-box p { font-family: var(--sans); font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.9); margin: 0; }
+        .hero-visual-box ul { font-family: var(--sans); font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.9); margin: 0; padding-left: 18px; }
+        .hero-visual-box li { margin-bottom: 6px; }
+        .hero-visual-example { background: rgba(251, 191, 36, 0.15); border-left: 3px solid #fbbf24; padding: 16px 20px; border-radius: 0 8px 8px 0; }
+        .hero-visual-example p { font-family: var(--sans); font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.95); margin: 0; }
+        .hero-visual-example strong { color: #fbbf24; }
+        @media (max-width: 640px) { .hero-visual-grid { grid-template-columns: 1fr; } }
+        
+        .architecture-img { width: 100%; max-width: 100%; border-radius: 12px; margin: 32px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
         
         .footnote { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); font-family: var(--sans); font-size: 15px; font-style: italic; color: var(--text-secondary); }
         .footnote a { color: var(--accent); }
@@ -126,6 +147,32 @@
     </header>
     
     <article class="article-body">
+        <div class="hero-visual">
+            <h3>Use Case</h3>
+            <h4>The Inventory-Aware Campaign Agent</h4>
+            <div class="hero-visual-grid">
+                <div class="hero-visual-box">
+                    <h5>What It Does</h5>
+                    <p>Continuously monitors product availability across warehouses and automatically adjusts marketing spend, pauses out-of-stock promotions, and alerts supply chain to demand signals—all in real-time.</p>
+                </div>
+                <div class="hero-visual-box">
+                    <h5>The Problem It Solves</h5>
+                    <ul>
+                        <li>Marketing promotes products that are out of stock</li>
+                        <li>Supply chain learns about demand spikes too late</li>
+                        <li>Customers order products that can't be fulfilled</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="hero-visual-box" style="margin-bottom: 20px;">
+                <h5>Why Data Fabric Is Essential</h5>
+                <p>Inventory changes constantly—every order, shipment, return, and warehouse transfer. The agent needs real-time access to authoritative supply chain data, not stale snapshots from overnight batch syncs.</p>
+            </div>
+            <div class="hero-visual-example">
+                <p><strong>Real Example:</strong> Product X selling at 3x forecast in Northeast. Agent reduces ad spend by 40%, increases Mid-South by 60%, requests expedited transfer from Memphis warehouse, and alerts supply chain—all automatically.</p>
+            </div>
+        </div>
+        
         <p>In my 2022 article on business agility, I wrote about an outdoor retailer that ran a promotion for a hiking shoe collaboration that went viral. Sneakerheads worldwide started buying, flooding the retailer with orders, running them out of stock, and adding a slew of new customers they weren't prepared to serve.</p>
         
         <p>I called it "the ultimate test of business agility, and a critical moment in time."</p>
@@ -286,128 +333,120 @@
         
         <p>The latter requires visibility into systems that marketing has never had access to before.</p>
         
-        <h2>Why CDPs Can't Solve This</h2>
-        
-        <p>When I wrote <em>Customer Data Platforms</em> with Martin Kihn, we were solving for a different problem: unified customer identity and profile data to enable personalization across marketing channels.</p>
-        
-        <p>CDPs are brilliant at that problem. They can tell you everything about a customer's behavioral history, preferences, segment membership, and engagement patterns.</p>
-        
-        <p>But CDPs have two fatal limitations for this use case:</p>
-        
-        <h3>1. CDPs Don't Have Access to Supply Chain Data</h3>
-        
-        <p>Customer Data Platforms are designed to unify <em>customer</em> data: web behavior, email engagement, purchase history, support interactions, social media activity.</p>
-        
-        <p>They're not designed to connect to:</p>
-        <ul>
-            <li>Warehouse management systems (inventory levels)</li>
-            <li>Transportation management systems (in-transit goods)</li>
-            <li>Manufacturing execution systems (production schedules)</li>
-            <li>Supplier relationship management systems (lead times, capacity)</li>
-            <li>Enterprise resource planning systems (allocated inventory, committed orders)</li>
-        </ul>
-        
-        <p>This data lives in completely different systems with completely different data models, access patterns, and update frequencies.</p>
-        
-        <p>A CDP might have a snapshot of "what the customer bought." But it doesn't know "what we can actually sell them right now given current supply constraints."</p>
-        
-        <h3>2. CDPs Use Batch Syncs, Not Real-Time Connections</h3>
-        
-        <p>Most CDPs update data through batch processes—nightly syncs, hourly updates, or manual data imports.</p>
-        
-        <p>That's fine for behavioral data. If someone clicked an email at 2:47 PM and the CDP doesn't process it until 3:15 PM, no harm done.</p>
-        
-        <p>But inventory data changes <em>constantly</em>:</p>
-        <ul>
-            <li>Every completed order reduces available inventory</li>
-            <li>Every shipment received increases available inventory</li>
-            <li>Every warehouse transfer reallocates inventory</li>
-            <li>Every return adds inventory back</li>
-            <li>Every allocation removes inventory from available pool</li>
-        </ul>
-        
-        <p>By the time a batch sync runs, the inventory picture has changed 10 times.</p>
-        
-        <p>You cannot optimize marketing spend based on stale inventory data. The agent needs to query live systems, not yesterday's snapshot.</p>
-        
-        <p>This is why data fabric architecture is essential.</p>
-        
         <h2>The Marketecture: Building the Inventory-Aware Campaign Agent</h2>
         
-        <p>Let me walk through the ideal technical architecture for implementing this agent. This isn't theoretical—this is based on what we're seeing work at companies that have actually built this capability.</p>
+        <img src="images/architecture-diagram.jpg" alt="Inventory-Aware Campaign Agent Architecture - showing 4 layers: Data Sources, Data Fabric, Agent Intelligence, and Action Endpoints" class="architecture-img">
+        
+        <p>Let me walk through the ideal technical architecture using a fictional company—let's call them <strong>Summit Outdoor Co.</strong>—a $500M outdoor retailer with the following tech stack:</p>
+        
+        <div class="company-intro">
+            <p><strong>Summit Outdoor Co. — Current Systems:</strong></p>
+            <p>• <strong>ERP & Supply Chain:</strong> SAP S/4HANA (inventory, procurement, finance)</p>
+            <p>• <strong>Commerce:</strong> Salesforce Commerce Cloud (e-commerce platform)</p>
+            <p>• <strong>Media:</strong> The Trade Desk, Google Ads, TikTok (paid media)</p>
+            <p>• <strong>Analytics:</strong> SAP Analytics Cloud (business intelligence)</p>
+            <p>• <strong>Data Science:</strong> Databricks (ML models, forecasting)</p>
+        </div>
+        
+        <p>Summit has all the pieces. What they're missing is the connective tissue that allows these systems to work together in real-time.</p>
         
         <h3>Layer 1: The Data Fabric Foundation</h3>
         
-        <p>At the bottom of the stack, you need a data fabric that provides unified access to:</p>
+        <p>Summit implements <strong>SAP Datasphere</strong> as their data fabric layer, creating a unified semantic layer across all systems. Here's what gets connected:</p>
         
-        <p><strong>1. Supply Chain Systems</strong></p>
+        <p><strong>1. SAP S/4HANA (Supply Chain & ERP)</strong></p>
         <ul>
-            <li>Warehouse Management System (WMS): Real-time inventory levels by SKU, location, condition</li>
-            <li>Transportation Management System (TMS): In-transit inventory, expected delivery dates</li>
-            <li>Manufacturing Execution System (MES): Production schedules, work-in-progress</li>
-            <li>Supplier Portal: Lead times, capacity constraints, order status</li>
+            <li>Real-time inventory levels by SKU, warehouse location, condition</li>
+            <li>In-transit inventory from Transportation Management</li>
+            <li>Production schedules and work-in-progress from Manufacturing Execution</li>
+            <li>Product costs, margins, allocated inventory</li>
         </ul>
         
-        <p><strong>2. Marketing Systems</strong></p>
+        <p><strong>2. Salesforce Commerce Cloud (E-commerce)</strong></p>
         <ul>
-            <li>Ad platforms (Meta, Google, TikTok): Current campaigns, spend, performance</li>
-            <li>Marketing automation: Email campaigns, journey orchestration</li>
-            <li>Web analytics: Traffic sources, conversion funnels</li>
-            <li>Marketing data warehouse: Historical performance, attribution models</li>
+            <li>Product catalog, pricing, availability status</li>
+            <li>Order flow (new orders, order rate by SKU)</li>
+            <li>Customer browsing behavior, cart abandonment</li>
+            <li>Promotion performance</li>
         </ul>
         
-        <p><strong>3. Commerce Systems</strong></p>
+        <p><strong>3. Media Platforms (Marketing)</strong></p>
         <ul>
-            <li>E-commerce platform: Product catalog, pricing, availability</li>
-            <li>Order management: Order status, fulfillment workflows</li>
-            <li>Customer service: Ticket volume, inquiry types, resolution status</li>
+            <li>The Trade Desk: Programmatic display campaigns, spend, impressions</li>
+            <li>Google Ads: Search, Shopping, YouTube campaigns</li>
+            <li>TikTok: Social campaigns, creative performance</li>
+            <li>Unified view of spend and performance across channels</li>
         </ul>
         
-        <p><strong>4. Finance Systems</strong></p>
+        <p><strong>4. SAP Analytics Cloud (Business Intelligence)</strong></p>
         <ul>
-            <li>ERP: Product costs, margin calculations, allocated inventory</li>
-            <li>Billing: Revenue recognition, payment terms</li>
-            <li>Business intelligence: P&L by product, channel, region</li>
+            <li>Historical performance by SKU, channel, region</li>
+            <li>Margin analysis, profitability by product</li>
+            <li>Forecast models for demand planning</li>
         </ul>
         
-        <p><strong>Critical architectural requirement:</strong> The data fabric must provide <em>query-time access</em> to authoritative systems, not replicate data into another silo.</p>
+        <p><strong>5. Databricks (Data Science)</strong></p>
+        <ul>
+            <li>ML models predicting demand elasticity</li>
+            <li>Inventory optimization algorithms</li>
+            <li>Customer lifetime value models</li>
+            <li>Attribution models</li>
+        </ul>
         
-        <p>Why? Because the agent needs to make decisions based on <em>current</em> state, not historical snapshots.</p>
+        <p><strong>Critical architectural requirement:</strong> SAP Datasphere provides <em>query-time access</em> to these authoritative systems without replicating data into another silo. Why? The agent needs decisions based on <em>current</em> state, not historical snapshots.</p>
         
-        <p><strong>Example using SAP Datasphere:</strong></p>
+        <p><strong>Example query across Summit's systems:</strong></p>
         
-<pre>-- Agent queries across systems in real-time
+<pre>-- Agent queries across Summit's tech stack in real-time
 SELECT 
   i.sku,
   i.warehouse_location,
   i.available_quantity,
   i.allocated_quantity,
-  t.in_transit_quantity,
-  t.expected_arrival_date,
-  c.active_campaign_spend,
-  c.daily_order_rate,
+  i.in_transit_quantity,
+  i.expected_arrival_date,
+  c.current_orders_last_24h,
+  c.product_page_views,
+  m.trade_desk_spend_daily,
+  m.google_ads_spend_daily,
+  m.tiktok_spend_daily,
   p.unit_cost,
-  p.unit_price
-FROM sap_s4hana.inventory i
-LEFT JOIN sap_tm.transportation t ON i.sku = t.sku
-LEFT JOIN salesforce_marketing_cloud.campaigns c ON i.sku = c.product_sku  
+  p.unit_price,
+  p.gross_margin_pct,
+  f.demand_forecast_7day
+FROM sap_s4hana.inventory_real_time i
+LEFT JOIN salesforce_commerce_cloud.orders c ON i.sku = c.product_sku
+LEFT JOIN media_platforms.campaign_performance m ON i.sku = m.product_sku  
 LEFT JOIN sap_s4hana.product_master p ON i.sku = p.sku
-WHERE i.available_quantity < (c.daily_order_rate * 7)
-  AND t.in_transit_quantity = 0</pre>
+LEFT JOIN databricks.ml_forecasts f ON i.sku = f.sku
+WHERE i.available_quantity < (f.demand_forecast_7day * 0.8)
+  AND i.in_transit_quantity = 0
+  AND (m.trade_desk_spend_daily + m.google_ads_spend_daily + m.tiktok_spend_daily) > 1000</pre>
         
-        <p>This query spans three systems (SAP S/4HANA, SAP TM, Salesforce Marketing Cloud) and returns real-time data about inventory constraints that should trigger marketing adjustments.</p>
+        <p>This single query spans five systems:</p>
+        <ul>
+            <li>SAP S/4HANA (inventory + product data)</li>
+            <li>Salesforce Commerce Cloud (order flow)</li>
+            <li>Media platforms (campaign spend)</li>
+            <li>Databricks (ML forecasts)</li>
+        </ul>
+        
+        <p>And returns real-time data showing: <strong>Which products are being heavily promoted but face inventory constraints with no near-term replenishment?</strong></p>
         
         <h3>Layer 2: The Agent Runtime Environment</h3>
         
-        <p>The agent itself runs in a container orchestration platform (Kubernetes) with access to:</p>
+        <p>Summit deploys the agent in their existing Kubernetes cluster with access to:</p>
         
         <ol>
             <li><strong>LLM for reasoning</strong> (GPT-4, Claude, Llama)</li>
             <li><strong>Tool access</strong> for taking actions:
                 <ul>
-                    <li>Marketing platform APIs (adjust budgets, pause campaigns)</li>
-                    <li>Communication APIs (Slack, email for alerts)</li>
-                    <li>Analytics APIs (log decisions, track outcomes)</li>
+                    <li>Trade Desk API (adjust programmatic campaigns)</li>
+                    <li>Google Ads API (modify search/shopping budgets)</li>
+                    <li>TikTok Ads API (pause/resume social campaigns)</li>
+                    <li>Salesforce Commerce Cloud API (update product availability messaging)</li>
+                    <li>Slack API (alert marketing and supply chain teams)</li>
+                    <li>SAP Analytics Cloud API (log decisions for reporting)</li>
                 </ul>
             </li>
             <li><strong>Business rules engine</strong> that encodes:
