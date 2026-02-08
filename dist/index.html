@@ -422,7 +422,13 @@
             document.getElementById('fullTag').textContent = a.tags[0].toUpperCase(); 
             document.getElementById('fullTitle').textContent = a.title; 
             document.getElementById('fullSubtitle').textContent = a.excerpt; 
-            document.getElementById('fullBody').innerHTML = a.content; 
+            // Handle content with fallback
+            if (a.content) {
+                document.getElementById('fullBody').innerHTML = a.content;
+            } else {
+                const wpUrl = 'https://chrisohara.wordpress.com/?s=' + encodeURIComponent(a.title.split(' ').slice(0,4).join(' '));
+                document.getElementById('fullBody').innerHTML = '<p>' + a.excerpt + '...</p><p class="orig-pub"><a href="' + wpUrl + '" target="_blank" rel="noopener">Read the full article on WordPress →</a></p>';
+            }
             document.getElementById('homeView').classList.add('hidden'); 
             document.getElementById('aboutPage').classList.remove('visible'); 
             document.getElementById('articleFull').classList.add('visible'); 
