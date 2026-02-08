@@ -49,25 +49,36 @@
         .hero-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #D4845A); display: flex; align-items: center; justify-content: center; color: white; font-family: var(--serif); font-size: 16px; font-weight: 500; }
         .hero-byline-text { font-size: 14px; color: var(--text-secondary); }
         .hero-byline-text strong { color: var(--text-primary); font-weight: 500; }
-        .section-header { max-width: var(--wide-width); margin: 0 auto; padding: 40px 24px 0; display: flex; align-items: baseline; justify-content: space-between; }
+        .section-header { max-width: var(--wide-width); margin: 0 auto; padding: 40px 24px 0; }
+        .section-header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
         .section-header h2 { font-family: var(--sans); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary); }
-        .section-header .filter-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .search-box { position: relative; }
+        .search-box input { font-family: var(--sans); font-size: 14px; padding: 8px 16px 8px 36px; border: 1px solid var(--border); border-radius: 24px; background: var(--bg-card); color: var(--text-primary); width: 220px; transition: all 0.2s; }
+        .search-box input:focus { outline: none; border-color: var(--accent); width: 280px; }
+        .search-box input::placeholder { color: var(--text-tertiary); }
+        .search-box svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--text-tertiary); }
+        .filter-row { display: flex; gap: 8px; flex-wrap: wrap; }
         .filter-tag { font-size: 12px; padding: 4px 12px; border-radius: 20px; background: var(--tag-bg); color: var(--tag-text); cursor: pointer; border: 1px solid transparent; transition: all 0.2s; font-weight: 400; }
         .filter-tag:hover { border-color: var(--border); color: var(--text-primary); }
         .filter-tag.active { background: var(--text-primary); color: white; border-color: var(--text-primary); }
-        .articles { max-width: var(--wide-width); margin: 0 auto; padding: 24px 24px 80px; }
+        .articles { max-width: var(--wide-width); margin: 0 auto; padding: 24px 24px 40px; }
         .article-item { padding: 32px 0; border-bottom: 1px solid var(--border-light); cursor: pointer; transition: opacity 0.2s; }
         .article-item:hover { opacity: 0.85; }
         .article-item:last-child { border-bottom: none; }
         .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
         .article-date { font-size: 13px; color: var(--text-tertiary); font-weight: 400; }
         .article-tag { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: rgba(192, 86, 38, 0.08); padding: 2px 8px; border-radius: 3px; }
-        .article-source { font-size: 12px; color: var(--text-tertiary); font-style: italic; }
         .article-title { font-family: var(--serif); font-size: 24px; font-weight: 400; line-height: 1.3; letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 8px; }
         .article-excerpt { font-size: 15px; line-height: 1.65; color: var(--text-secondary); font-weight: 300; max-width: var(--max-width); }
         .article-read-more { display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; letter-spacing: 0.01em; transition: color 0.2s; }
         .article-read-more:hover { color: var(--accent-hover); }
         .article-read-more::after { content: ' →'; }
+        .load-more-wrap { max-width: var(--wide-width); margin: 0 auto; padding: 0 24px 60px; text-align: center; }
+        .load-more { font-family: var(--sans); font-size: 14px; font-weight: 500; padding: 12px 32px; border: 1px solid var(--border); border-radius: 24px; background: var(--bg-card); color: var(--text-primary); cursor: pointer; transition: all 0.2s; }
+        .load-more:hover { border-color: var(--accent); color: var(--accent); }
+        .load-more:disabled { opacity: 0.5; cursor: default; }
+        .results-info { font-size: 13px; color: var(--text-tertiary); margin-bottom: 8px; }
+        .no-results { text-align: center; padding: 60px 24px; color: var(--text-secondary); font-size: 16px; }
         .article-full { display: none; max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 80px; }
         .article-full.visible { display: block; }
         .article-full .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-tertiary); text-decoration: none; margin-bottom: 32px; transition: color 0.2s; cursor: pointer; }
@@ -108,12 +119,14 @@
         .footer-links { display: flex; gap: 20px; }
         .footer-links a { font-size: 13px; color: var(--text-tertiary); text-decoration: none; transition: color 0.2s; }
         .footer-links a:hover { color: var(--text-primary); }
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
         @media (max-width: 640px) {
             .hero h1 { font-size: 30px; }
             .hero { padding: 40px 20px 32px; }
-            .section-header { flex-direction: column; gap: 12px; padding: 32px 20px 0; }
-            .articles { padding: 16px 20px 60px; }
+            .section-header { padding: 32px 20px 0; }
+            .section-header-top { flex-direction: column; gap: 16px; align-items: flex-start; }
+            .search-box input { width: 100%; }
+            .search-box input:focus { width: 100%; }
+            .articles { padding: 16px 20px 40px; }
             .article-title { font-size: 20px; }
             .article-full .article-title { font-size: 28px; }
             .nav-links { gap: 20px; }
@@ -123,6 +136,7 @@
         }
         .home-view { display: block; }
         .home-view.hidden { display: none; }
+        .highlight { background: rgba(192, 86, 38, 0.15); padding: 0 2px; border-radius: 2px; }
     </style>
 </head>
 <body>
@@ -146,8 +160,14 @@
             </div>
         </div>
         <div class="section-header">
-            <h2>All Writing — 32 Articles</h2>
-            <div class="filter-tags">
+            <div class="section-header-top">
+                <h2 id="sectionTitle">Recent Writing</h2>
+                <div class="search-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                    <input type="text" id="searchInput" placeholder="Search articles..." oninput="handleSearch(this.value)">
+                </div>
+            </div>
+            <div class="filter-row">
                 <span class="filter-tag active" onclick="filterArticles('all', this)">All</span>
                 <span class="filter-tag" onclick="filterArticles('cdp', this)">CDP</span>
                 <span class="filter-tag" onclick="filterArticles('cx', this)">CX</span>
@@ -156,6 +176,9 @@
             </div>
         </div>
         <div class="articles" id="articleList"></div>
+        <div class="load-more-wrap" id="loadMoreWrap">
+            <button class="load-more" id="loadMoreBtn" onclick="loadMore()">Load More Articles</button>
+        </div>
     </div>
     <div class="article-full" id="articleFull">
         <a class="back-link" onclick="backToList()">← Back to all articles</a>
@@ -241,27 +264,142 @@
             { date: "February 2016", tags: ["martech", "data"], title: "CPG goes DMP", excerpt: "If you think about the companies with perhaps the least amount of consumer data, you would automatically think about consumer packaged goods (CPG) manufacturers.", content: `<p>If you think about the companies with perhaps least amount of consumer data, you would automatically think about consumer packaged goods (CPG) manufacturers. Hardly anybody registers for their website or joins their loyalty clubs; moms don't flock to their branded diaper sites; and they are at arms-length from any valuable transaction data (store sales) until well after the fact.</p><p>So, with little registration, website, or offline sales data, why are so many large CPG firms licensing an expensive first-party data management platform?</p><h2>The Move to Purchase-Based Targeting (PBT)</h2><p>Marketers have come a long way from demographic targeting.</p><h2>Optimizing Category Reach</h2><p>CPG marketers are constantly thinking about how to grow the amount of product they sell.</p><h2>Increasing Lift through Cross-Channel Messaging</h2><p>CPG marketers have some highly evolved models that show just how much lift a working media dollar has on sales.</p>` },
             { date: "February 2016", tags: ["data", "martech"], title: "Data Triangulation: How Second-Party Data Will Eat The Digital World", excerpt: "Marketers are getting frustrated with spending up to 60% of their working media dollars to fund intermediaries between themselves and their publishing partners.", content: `<p>Marketers are getting frustrated with spending up to 60% of their working media dollars to fund intermediaries between themselves and their publishing partners. By the time a marketer pays his agency, trading desk, exchange, third-party data provider, and subsidizes the publisher's ad serving stack, dollars turn into dimes.</p><p>Put simply, second-party data is heralding a return to the good old days when big marketers depended on relationships with big publishers as the stewards of audiences, and they created deep, direct relationships to ensure an ongoing value exchange.</p><p class="orig-pub">This article originally appeared in AdExchanger on 1/25/16.</p>` }
         ];
+        
+        // State
+        let displayCount = 10;
+        let currentFilter = 'all';
+        let searchQuery = '';
+        
+        // Get filtered articles
+        function getFilteredArticles() {
+            return articles.filter(a => {
+                const matchesFilter = currentFilter === 'all' || a.tags.includes(currentFilter);
+                const matchesSearch = !searchQuery || 
+                    a.title.toLowerCase().includes(searchQuery) ||
+                    a.excerpt.toLowerCase().includes(searchQuery) ||
+                    a.content.toLowerCase().includes(searchQuery) ||
+                    a.tags.some(t => t.toLowerCase().includes(searchQuery));
+                return matchesFilter && matchesSearch;
+            });
+        }
+        
+        // Highlight search terms
+        function highlightText(text, query) {
+            if (!query) return text;
+            const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            return text.replace(regex, '<span class="highlight">$1</span>');
+        }
+        
         // Render article list
         function renderArticles() {
+            const filtered = getFilteredArticles();
+            const toShow = filtered.slice(0, displayCount);
             const list = document.getElementById('articleList');
-            list.innerHTML = articles.map((a, i) => `
-                <div class="article-item" data-tags="${a.tags.join(',')}" onclick="showArticle(${i})">
+            
+            if (filtered.length === 0) {
+                list.innerHTML = '<div class="no-results">No articles found matching your search.</div>';
+                document.getElementById('loadMoreWrap').style.display = 'none';
+                document.getElementById('sectionTitle').textContent = 'No Results';
+                return;
+            }
+            
+            list.innerHTML = toShow.map((a, i) => {
+                const originalIndex = articles.indexOf(a);
+                return `
+                <div class="article-item" onclick="showArticle(${originalIndex})">
                     <div class="article-meta">
                         <span class="article-date">${a.date}</span>
                         <span class="article-tag">${a.tags[0].toUpperCase()}</span>
                     </div>
-                    <h3 class="article-title">${a.title}</h3>
-                    <p class="article-excerpt">${a.excerpt}</p>
+                    <h3 class="article-title">${highlightText(a.title, searchQuery)}</h3>
+                    <p class="article-excerpt">${highlightText(a.excerpt, searchQuery)}</p>
                     <a class="article-read-more">Read</a>
                 </div>
-            `).join('');
+            `}).join('');
+            
+            // Update header
+            if (searchQuery) {
+                document.getElementById('sectionTitle').textContent = `${filtered.length} Result${filtered.length !== 1 ? 's' : ''} for "${searchQuery}"`;
+            } else if (currentFilter !== 'all') {
+                document.getElementById('sectionTitle').textContent = `${currentFilter.toUpperCase()} — ${filtered.length} Articles`;
+            } else {
+                document.getElementById('sectionTitle').textContent = 'Recent Writing';
+            }
+            
+            // Show/hide load more
+            const btn = document.getElementById('loadMoreBtn');
+            const wrap = document.getElementById('loadMoreWrap');
+            if (displayCount >= filtered.length) {
+                wrap.style.display = 'none';
+            } else {
+                wrap.style.display = 'block';
+                btn.textContent = `Load More (${filtered.length - displayCount} remaining)`;
+            }
         }
-        function showHome(e) { e && e.preventDefault(); document.getElementById('homeView').classList.remove('hidden'); document.getElementById('articleFull').classList.remove('visible'); document.getElementById('aboutPage').classList.remove('visible'); document.getElementById('nav-articles').classList.add('active'); document.getElementById('nav-about').classList.remove('active'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
-        function showAbout(e) { e && e.preventDefault(); document.getElementById('homeView').classList.add('hidden'); document.getElementById('articleFull').classList.remove('visible'); document.getElementById('aboutPage').classList.add('visible'); document.getElementById('nav-articles').classList.remove('active'); document.getElementById('nav-about').classList.add('active'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
-        function showArticle(id) { const a = articles[id]; document.getElementById('fullDate').textContent = a.date; document.getElementById('fullTag').textContent = a.tags[0].toUpperCase(); document.getElementById('fullTitle').textContent = a.title; document.getElementById('fullSubtitle').textContent = a.excerpt; document.getElementById('fullBody').innerHTML = a.content; document.getElementById('homeView').classList.add('hidden'); document.getElementById('aboutPage').classList.remove('visible'); document.getElementById('articleFull').classList.add('visible'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
-        function backToList() { document.getElementById('articleFull').classList.remove('visible'); document.getElementById('homeView').classList.remove('hidden'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
-        function filterArticles(tag, el) { document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active')); el.classList.add('active'); document.querySelectorAll('.article-item').forEach(item => { item.style.display = (tag === 'all' || item.dataset.tags.includes(tag)) ? '' : 'none'; }); }
-        window.addEventListener('scroll', () => { document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10); });
+        
+        function loadMore() {
+            displayCount += 10;
+            renderArticles();
+        }
+        
+        function handleSearch(value) {
+            searchQuery = value.toLowerCase().trim();
+            displayCount = 10;
+            renderArticles();
+        }
+        
+        function showHome(e) { 
+            e && e.preventDefault(); 
+            document.getElementById('homeView').classList.remove('hidden'); 
+            document.getElementById('articleFull').classList.remove('visible'); 
+            document.getElementById('aboutPage').classList.remove('visible'); 
+            document.getElementById('nav-articles').classList.add('active'); 
+            document.getElementById('nav-about').classList.remove('active'); 
+            window.scrollTo({ top: 0, behavior: 'smooth' }); 
+        }
+        
+        function showAbout(e) { 
+            e && e.preventDefault(); 
+            document.getElementById('homeView').classList.add('hidden'); 
+            document.getElementById('articleFull').classList.remove('visible'); 
+            document.getElementById('aboutPage').classList.add('visible'); 
+            document.getElementById('nav-articles').classList.remove('active'); 
+            document.getElementById('nav-about').classList.add('active'); 
+            window.scrollTo({ top: 0, behavior: 'smooth' }); 
+        }
+        
+        function showArticle(id) { 
+            const a = articles[id]; 
+            document.getElementById('fullDate').textContent = a.date; 
+            document.getElementById('fullTag').textContent = a.tags[0].toUpperCase(); 
+            document.getElementById('fullTitle').textContent = a.title; 
+            document.getElementById('fullSubtitle').textContent = a.excerpt; 
+            document.getElementById('fullBody').innerHTML = a.content; 
+            document.getElementById('homeView').classList.add('hidden'); 
+            document.getElementById('aboutPage').classList.remove('visible'); 
+            document.getElementById('articleFull').classList.add('visible'); 
+            window.scrollTo({ top: 0, behavior: 'smooth' }); 
+        }
+        
+        function backToList() { 
+            document.getElementById('articleFull').classList.remove('visible'); 
+            document.getElementById('homeView').classList.remove('hidden'); 
+            window.scrollTo({ top: 0, behavior: 'smooth' }); 
+        }
+        
+        function filterArticles(tag, el) { 
+            document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active')); 
+            el.classList.add('active'); 
+            currentFilter = tag;
+            displayCount = 10;
+            renderArticles();
+        }
+        
+        window.addEventListener('scroll', () => { 
+            document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10); 
+        });
+        
+        // Initial render
         renderArticles();
     </script>
 </body>
