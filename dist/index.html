@@ -325,7 +325,7 @@
                 const matchesSearch = !searchQuery || 
                     a.title.toLowerCase().includes(searchQuery) ||
                     a.excerpt.toLowerCase().includes(searchQuery) ||
-                    a.content.toLowerCase().includes(searchQuery) ||
+                    (a.content && a.content.toLowerCase().includes(searchQuery)) ||
                     a.tags.some(t => t.toLowerCase().includes(searchQuery));
                 return matchesFilter && matchesSearch;
             });
