@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Nuts and Bolts of Programmatic Direct | The Full Stack</title>
+    <meta name="description" content="An interview with Econsultancy's Monica Savut on the recently published programmatic direct whitepaper and what's driving this trend.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --accent: #1e3a5f; --accent-light: #3b82f6; --text: #333; --text-light: #666; --bg: #fff; --bg-alt: #f8f9fa; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Source Sans Pro', -apple-system, sans-serif; color: var(--text); line-height: 1.8; background: var(--bg); }
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; line-height: 1.3; }
+        a { color: var(--accent-light); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        header { background: var(--accent); color: white; padding: 1rem 0; }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: white; text-decoration: none; }
+        nav a { color: rgba(255,255,255,0.8); margin-left: 2rem; font-size: 0.9rem; }
+        nav a:hover { color: white; text-decoration: none; }
+        .article-hero { background: linear-gradient(135deg, #1e3a5f 0%, #1e40af 100%); color: white; padding: 4rem 0; }
+        .article-hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .article-meta { opacity: 0.9; font-size: 1rem; }
+        .article-meta .category { background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; margin-right: 1rem; }
+        article { padding: 3rem 0 4rem; }
+        article p { font-size: 1.15rem; margin-bottom: 1.5rem; color: #444; }
+        article h2 { font-size: 1.75rem; color: var(--accent); margin: 3rem 0 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid #e5e7eb; }
+        article h3 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 1rem; }
+        article ul, article ol { margin: 1.5rem 0; padding-left: 1.5rem; }
+        article li { margin-bottom: 0.75rem; font-size: 1.1rem; color: #444; }
+        article strong { color: var(--accent); }
+        article blockquote { border-left: 4px solid var(--accent-light); padding: 1rem 1.5rem; margin: 2rem 0; background: var(--bg-alt); font-style: italic; }
+        .interview-q { font-weight: 600; color: var(--accent); margin-top: 2rem; }
+        .archive-notice { background: #fef3c7; border: 1px solid #f59e0b; padding: 1rem 1.5rem; border-radius: 8px; margin-bottom: 2rem; font-size: 0.95rem; }
+        .archive-notice strong { color: #92400e; }
+        footer { background: var(--accent); color: white; padding: 2rem 0; text-align: center; }
+        footer p { opacity: 0.8; margin: 0; }
+        @media (max-width: 768px) {
+            .article-hero h1 { font-size: 1.8rem; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">The Full Stack</a>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../archive.html">Archive</a>
+                <a href="https://chrisohara.com">About Chris</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="article-hero">
+        <div class="container">
+            <span class="category">Programmatic Direct</span>
+            <h1>The Nuts and Bolts of Programmatic Direct</h1>
+            <p class="article-meta">December 2013 • Chris O'Hara</p>
+        </div>
+    </section>
+    
+    <article>
+        <div class="container">
+            <div class="archive-notice">
+                <strong>Archive:</strong> This article was originally published during Chris O'Hara's time at Bionic Advertising Systems (2013-2014), exploring the early days of programmatic direct technology.
+            </div>
+            
+            <p><em>An interview with Econsultancy's Monica Savut on the recently published programmatic direct whitepaper.</em></p>
+            
+            <p class="interview-q">Econsultancy: Why now? In other words, why has this "programmatic direct" trend been on the radar lately? What's driving all of the attention?</p>
+            
+            <p><strong>Chris O'Hara:</strong> There are a few key factors converging right now. First, programmatic RTB has matured enough that the industry understands what "programmatic" means—it's not just about real-time bidding on remnant inventory. Second, both publishers and agencies are feeling the operational pain of managing direct sales at scale. And third, venture capital has started flowing into companies trying to solve this problem, which always generates attention.</p>
+            
+            <p>But the biggest driver is simple math: 70-80% of digital media dollars still flow through direct channels, yet almost all the technology innovation has focused on the 20-30% that's transacted via RTB. That's a massive market opportunity.</p>
+            
+            <p class="interview-q">What exactly is programmatic direct, and how is it different from programmatic RTB?</p>
+            
+            <p>Programmatic direct is the application of technology to automate the direct-sold advertising process. Unlike RTB, which focuses on auction-based pricing and real-time decisioning at the impression level, programmatic direct is about streamlining the workflow between buyers and sellers for guaranteed inventory.</p>
+            
+            <p>Think about what happens when an agency wants to buy a homepage takeover on a premium publisher site. Today, that involves:</p>
+            
+            <ul>
+                <li>Sending an RFP (often via email or fax)</li>
+                <li>Waiting for the publisher to check availability</li>
+                <li>Negotiating rates back and forth</li>
+                <li>Creating an insertion order</li>
+                <li>Trafficking the creative</li>
+                <li>Reconciling delivery and billing</li>
+            </ul>
+            
+            <p>Each of those steps involves manual work, often across multiple systems that don't talk to each other. Programmatic direct aims to automate as much of that process as possible while preserving the relationship-based nature of premium advertising.</p>
+            
+            <p class="interview-q">What are the main benefits for publishers?</p>
+            
+            <p>Publishers are drowning in operational costs. They have sales teams, sales operations teams, ad operations teams—all of whom spend significant time on tasks that could be automated. Every hour a seller spends checking inventory availability or creating an IO is an hour they're not building relationships with clients.</p>
+            
+            <p>Programmatic direct offers publishers:</p>
+            
+            <ul>
+                <li><strong>Reduced operational costs</strong> — Automation means fewer people needed to process the same number of orders.</li>
+                <li><strong>Faster deal velocity</strong> — When buyers can see real-time availability and book instantly, deals close faster.</li>
+                <li><strong>Better yield management</strong> — Systems can help optimize which inventory to sell direct versus through other channels.</li>
+                <li><strong>Improved data</strong> — Digital workflows create data trails that can inform pricing and packaging decisions.</li>
+            </ul>
+            
+            <p class="interview-q">And what about agencies and advertisers?</p>
+            
+            <p>Agencies face their own operational nightmares. A large media agency might work with hundreds of publishers across thousands of campaigns. Every publisher has different processes, different systems, different formats for proposals and IOs. It's chaos.</p>
+            
+            <p>For buyers, programmatic direct means:</p>
+            
+            <ul>
+                <li><strong>Consolidated workflows</strong> — One interface to see availability and pricing across multiple publishers.</li>
+                <li><strong>Faster planning cycles</strong> — Real-time inventory data means no more waiting days for RFP responses.</li>
+                <li><strong>Reduced errors</strong> — Automated systems don't fat-finger impression counts or get creative specs wrong.</li>
+                <li><strong>Better reporting</strong> — Consistent data across publishers makes campaign analysis easier.</li>
+            </ul>
+            
+            <p class="interview-q">What are the challenges to adoption?</p>
+            
+            <p>The biggest challenge is change management. Publishers have built their businesses around their current processes, and those processes often involve relationships that people don't want to disrupt. Sellers worry that automation will commoditize their value. Operations teams worry about job security.</p>
+            
+            <p>There's also a chicken-and-egg problem: buyers won't adopt a system unless enough publishers are on it, and publishers won't invest unless enough buyers will use it. Someone has to go first.</p>
+            
+            <p>Finally, there's the technology integration challenge. Most publishers have multiple systems—ad servers, CRMs, order management systems, finance systems—that need to connect for programmatic direct to work effectively. That integration work is non-trivial.</p>
+            
+            <p class="interview-q">What should companies do if they're interested in exploring programmatic direct?</p>
+            
+            <p>Start by auditing your current processes. Map out every step in your direct sales workflow, from initial outreach to final billing. Identify where the bottlenecks are, where errors creep in, and where people are doing work that software could handle.</p>
+            
+            <p>Then, look at the vendor landscape. There are several companies attacking this problem from different angles—some focus on the publisher side, some on the agency side, and some are building marketplaces. The right solution depends on your specific needs and where you sit in the ecosystem.</p>
+            
+            <p>Most importantly, recognize that programmatic direct is not about replacing relationships—it's about freeing up time to invest in relationships by eliminating the administrative burden that currently consumes so much of everyone's day.</p>
+            
+            <hr style="margin: 3rem 0; border: none; border-top: 1px solid #e5e7eb;">
+            
+            <p><em>Chris O'Hara was Chief Revenue Officer at Bionic Advertising Systems. This interview was conducted in partnership with Econsultancy.</em></p>
+        </div>
+    </article>
+    
+    <footer>
+        <div class="container">
+            <p><strong>The Full Stack</strong> — Chris O'Hara</p>
+            <p>Thought leadership on marketing, technology, and the intersection of both.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I See Dead People… Responding to my Marketing! | The Full Stack</title>
+    <meta name="description" content="A meditation on the human element of marketing in an age of algorithms and attribution—and why storytelling matters more than optimization.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #FDFBF7; --bg-card: #FFFFFF; --text-primary: #1A1A1A; --text-secondary: #6B6B6B; --text-tertiary: #9A9A9A; --accent: #C05626; --accent-hover: #A84920; --border: #E8E4DE; --border-light: #F0ECE6; --tag-bg: #F5F1EB; --tag-text: #7A7168; --serif: 'Newsreader', Georgia, serif; --sans: 'DM Sans', -apple-system, sans-serif; --mono: 'JetBrains Mono', monospace; --max-width: 720px; --wide-width: 960px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(253, 251, 247, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { font-family: var(--mono); font-size: 15px; font-weight: 500; letter-spacing: -0.02em; color: var(--text-primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { font-size: 14px; font-weight: 400; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .article-header { max-width: var(--max-width); margin: 0 auto; padding: 64px 24px 32px; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-tertiary); text-decoration: none; margin-bottom: 32px; transition: color 0.2s; }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .article-date { font-size: 13px; color: var(--text-tertiary); }
+        .article-tag { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: rgba(192, 86, 38, 0.08); padding: 2px 8px; border-radius: 3px; }
+        .article-title { font-family: var(--serif); font-size: 42px; font-weight: 400; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; }
+        .article-subtitle { font-family: var(--serif); font-size: 20px; font-weight: 300; font-style: italic; color: var(--text-secondary); line-height: 1.5; }
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 80px; font-family: var(--serif); font-size: 18px; line-height: 1.8; }
+        .article-body p { margin-bottom: 24px; }
+        .article-body strong { font-weight: 600; }
+        .article-body h2 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 48px 0 20px; line-height: 1.3; }
+        .article-body h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin: 36px 0 16px; line-height: 1.35; }
+        .article-body blockquote { border-left: 3px solid var(--accent); padding: 16px 24px; margin: 32px 0; background: var(--tag-bg); border-radius: 0 8px 8px 0; }
+        .article-body blockquote p { margin-bottom: 0; font-style: italic; color: var(--text-secondary); }
+        .author-box { background: var(--tag-bg); padding: 32px; border-radius: 12px; margin: 48px 0; }
+        .author-box h4 { font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 16px; }
+        .author-box p { margin-bottom: 16px; font-family: var(--sans); font-size: 15px; line-height: 1.7; }
+        .author-box p:last-child { margin-bottom: 0; }
+        footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
+        .footer-inner { max-width: var(--wide-width); margin: 0 auto; }
+        .footer-brand { font-family: var(--mono); font-size: 13px; color: var(--text-tertiary); }
+        .footer-brand .slash { color: var(--accent); }
+        @media (max-width: 640px) { .article-title { font-size: 28px; } .article-subtitle { font-size: 17px; } .article-body { font-size: 17px; } }
+    </style>
+</head>
+<body>
+    <nav><div class="nav-inner"><a href="../index.html" class="nav-brand">the full stack <span class="slash">/</span></a><div class="nav-links"><a href="../index.html">Articles</a><a href="https://chrisohara.com">About</a></div></div></nav>
+
+    <header class="article-header">
+        <a href="../index.html" class="back-link">← Back to all articles</a>
+        <div class="article-meta">
+            <span class="article-date">August 28, 2014</span>
+            <span class="article-tag">Marketing</span>
+            <span class="article-tag">Attribution</span>
+        </div>
+        <h1 class="article-title">I See Dead People… Responding to my Marketing!</h1>
+        <p class="article-subtitle">A meditation on the human element of marketing in an age of algorithms—and why we might be too deep in the weeds.</p>
+    </header>
+
+    <article class="article-body">
+        <p>I was recently at a Digital Marketing Association awards dinner where data legend Charles Stryker was being honored. After accepting his award, he told a famous story about data that every digital marketer should know.</p>
+
+        <p>A long time ago, the US Postal Service discovered they were paying a ton of money to deliver mail to deceased people. Charles was hired to help them get a handle on their records and create a sort of "Do Not Mail" list. Part of doing the work involved considerable A/B testing to ensure he was making the correct assumptions about the data. Direct response mailers were being sent to groups of dead people and similar groups of folks who were still alive. Something astonishing happened when the results came in.</p>
+
+        <blockquote><p>The dead people responded at nearly twice the rate of the living.</p></blockquote>
+
+        <p>Of course everyone at the dinner (about a hundred senior direct marketing executives) laughed uproariously. They have seen all kinds of unpredictable results with direct marketing. In today's digital age, marketing is moving faster than ever. The velocity of data is increasing in orders of magnitude, and attribution is going to get even trickier.</p>
+
+        <h2>The Human Element</h2>
+
+        <p>What happened with the "dead" people was pretty interesting. It turns out that the successful mailers went to households where the husband of the family died, and the elderly spouses were taking great care to go through and read the mail of their deceased partners. The wives wanted to make sure there was nothing important in those letters—and probably were connecting with their husbands through that simple, daily task. Those widows made a great mailing list "select" since they actually opened and read the mail!</p>
+
+        <p>In today's digital marketing, where we seem increasingly dependent on algorithms and attribution models for targeting and measurement, I wonder if we are too deep in the weeds. Are we forgetting the real, human element of marketing? Do we really understand how success and failure happen with our campaigns?</p>
+
+        <p>At a recent iMedia agency conference, a lot of the talk was about trying not to forget that advertising is first and foremost about storytelling. Leading with emotion is so important. The marketer has to make an emotional connection with his audience and get them to care.</p>
+
+        <h2>Are We Tweaking a Broken Process?</h2>
+
+        <p>That struck me when watching a joint town hall workshop with Google and Kellogg's about dynamic creative. Yes, changing the background color or "call to action" on a 300×250 ad in real time can bump the lift of a campaign incrementally—but are we tweaking a broken process?</p>
+
+        <p>Can we really tell great stories on standardized banner ads?</p>
+
+        <p>With the rapid rise of programmatic, a lot of platforms and data companies are fully committed to a standardized industry where scale is king. Display, video, and mobile—biddable and accessible at full scale—is the mandate. Kellogg's wants inexpensive access to a large electronic palette where Frosted Flakes ads can be constantly tweaked to get optimal performance. Nothing wrong with that.</p>
+
+        <p>But that's all we are talking about: Optimizing the bottom of the funnel with standardized ads. Sorry, but we are not creating new customers with dynamic 300×250 ads that get a .05% click-through rate. If you are in this business, working for a venture backed startup or newly public adtech company whose value proposition is around driving audience targeting at scale, then you are not "creating stories" online.</p>
+
+        <h2>The Promise of Programmatic Direct</h2>
+
+        <p>As an industry, we need to create digital campaigns that get people to "open the mail." This is incredibly hard to do with standard display banners, today's woeful "native" executions, and interruptive social ads. Video has promise, but scale still eludes marketers, and low video completion rates erode available reach considerably.</p>
+
+        <p>So, how do you leverage programmatic technology to get great creative out at scale? The only real answer is to automate the workflow behind securing premium inventory and custom programs. That's where the promise of programmatic direct comes in. Marketers want great ideas from publishers, access to the best inventory they have, and non-standardized units. They just don't want to pay 10% of their media budgets for planners to cut and paste data into spreadsheets.</p>
+
+        <p>I think more and more digital advertising will go programmatic, and that programmatic RTB will command the lion's share of performance budgets. But, when it comes to building brands, bringing automation to the process of securing quality inventory will win.</p>
+
+        <div class="author-box">
+            <h4>About this article</h4>
+            <p>This article was originally published at Bionic Advertising Systems in August 2014 and AdExchanger. It has been republished here as part of The Full Stack archive.</p>
+        </div>
+    </article>
+
+    <footer><div class="footer-inner"><div class="footer-brand">the full stack <span class="slash">/</span> chris o'hara</div></div></footer>
+</body>
+</html>

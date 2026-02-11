@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Nuts and Bolts of Programmatic Direct | The Full Stack</title>
+    <meta name="description" content="An interview about programmatic direct—what it is, why it matters, and why change is hard but necessary.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #FDFBF7; --text-primary: #1A1A1A; --text-secondary: #6B6B6B; --text-tertiary: #9A9A9A; --accent: #C05626; --border: #E8E4DE; --border-light: #F0ECE6; --tag-bg: #F5F1EB; --serif: 'Newsreader', Georgia, serif; --sans: 'DM Sans', sans-serif; --mono: 'JetBrains Mono', monospace; --max-width: 720px; --wide-width: 960px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text-primary); line-height: 1.6; }
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(253, 251, 247, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { font-family: var(--mono); font-size: 15px; color: var(--text-primary); text-decoration: none; }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; }
+        .article-header { max-width: var(--max-width); margin: 0 auto; padding: 64px 24px 32px; }
+        .back-link { font-size: 14px; color: var(--text-tertiary); text-decoration: none; margin-bottom: 32px; display: inline-block; }
+        .article-meta { display: flex; gap: 12px; margin-bottom: 16px; }
+        .article-date { font-size: 13px; color: var(--text-tertiary); }
+        .article-tag { font-size: 11px; font-weight: 500; text-transform: uppercase; color: var(--accent); background: rgba(192, 86, 38, 0.08); padding: 2px 8px; border-radius: 3px; }
+        .article-title { font-family: var(--serif); font-size: 42px; font-weight: 400; line-height: 1.15; margin-bottom: 16px; }
+        .article-subtitle { font-family: var(--serif); font-size: 20px; font-weight: 300; font-style: italic; color: var(--text-secondary); }
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 80px; font-family: var(--serif); font-size: 18px; line-height: 1.8; }
+        .article-body p { margin-bottom: 24px; }
+        .article-body h2 { font-size: 28px; font-weight: 500; margin: 48px 0 20px; }
+        .article-body strong { font-weight: 600; }
+        .author-box { background: var(--tag-bg); padding: 32px; border-radius: 12px; margin: 48px 0; }
+        .author-box h4 { font-family: var(--serif); font-size: 20px; margin-bottom: 16px; }
+        .author-box p { font-family: var(--sans); font-size: 15px; }
+        footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
+        .footer-brand { font-family: var(--mono); font-size: 13px; color: var(--text-tertiary); }
+        .footer-brand .slash { color: var(--accent); }
+        @media (max-width: 640px) { .article-title { font-size: 28px; } }
+    </style>
+</head>
+<body>
+    <nav><div class="nav-inner"><a href="../index.html" class="nav-brand">the full stack <span class="slash">/</span></a><div class="nav-links"><a href="../index.html">Articles</a><a href="https://chrisohara.com">About</a></div></div></nav>
+
+    <header class="article-header">
+        <a href="../index.html" class="back-link">← Back to all articles</a>
+        <div class="article-meta">
+            <span class="article-date">December 13, 2013</span>
+            <span class="article-tag">Programmatic</span>
+            <span class="article-tag">Interview</span>
+        </div>
+        <h1 class="article-title">The Nuts and Bolts of Programmatic Direct</h1>
+        <p class="article-subtitle">An interview about programmatic direct—what it is, why it matters, and how it can free young planners to be truly creative.</p>
+    </header>
+
+    <article class="article-body">
+        <p><strong>Why has "programmatic direct" been on the radar lately?</strong></p>
+        <p>It's really something my boss Joe Pych calls the "Sutton Pivot," inspired by the famous thief Willie Sutton who robbed banks "because that's where the money was." Over 70% of digital display dollars are transacted in a very manual way today. Everybody wants a piece of the action, hence the "Sutton pivot," in which all the ad tech companies are running to try and provide automation technology for directly sold deals. Today's process for buying guaranteed digital media can take over 40 steps and suck up over 10% of media budgets just in man hours.</p>
+
+        <p><strong>What makes programmatic direct different from RTB?</strong></p>
+        <p>Real-time bidding has been a real boon to the industry. We now have a set of "pipes" which connect demand- and supply-side platforms that make digital media procurement hugely efficient. That said, 70% of buying that happens in digital is neither "real time" nor "bidded." It's just two organizations trying to make a deal. You need different technology to enable that kind of guaranteed transaction, and marketers are starting to wonder why they are paying so much in transactional costs to access higher classes of digital inventory.</p>
+
+        <p><strong>You say agencies have a "perverse incentive" to embrace efficiency. How so?</strong></p>
+        <p>Agencies make money when plans take 400 hours to create. Manually trafficking line items in an ad server, and cutting and pasting publisher insertion orders pays the bills for agencies who charge on a "cost-plus" basis. Digital media agencies have been operating that way for years: hire cheap, work the "23 year old media planner" hard, and earn a mark-up on their labor.</p>
+
+        <p>The RTB phenomenon—and marketers' experience with easy-to-use programmatic platforms in search and social marketing—have changed the dynamic entirely. Agencies have to do more than heavy lifting now to survive. The days of getting paid to traffic ads in MediaVisor are over.</p>
+
+        <h2>Who Benefits Most?</h2>
+        <p>I think publishers are the big winners, because they are starting to take some control back over the procurement process from the demand side. What really excites me is seeing high quality publishers that own high quality real estate on category specific properties finally get more control over pricing and partner selection.</p>
+
+        <p>Everything digital will be bought "programmatically" in 5 years. Some will be RTB display, and some will be display, native, and video inventory purchased through "programmatic direct" platforms. Addressable television, digital out-of-home (DOOH), and other channels will also factor in.</p>
+
+        <h2>Why Keep Fighting This Fight?</h2>
+        <p>Change is really hard, especially when the pace of change is as rapid as in digital ad technology. When I was on the publisher sales side, there was always something that bothered me about getting a $200,000 insertion order for digital advertising through a fax machine. That stuff still happens today.</p>
+
+        <p>I was watching a documentary the other night, and an engineer was talking about why he loved his job. He said he spent the last three years building a bridge that eliminated 10 minutes from the commute for some 20,000 people a day. "I saved people over 50,000 days of productivity last year," the engineer explained.</p>
+
+        <p>There are a lot of young people who go into an agency thinking that they are going to help make the next kick-ass viral ad, but they end up working until 10 o'clock at night pasting line items into an ad server. I really think that, if we can change that, great things will happen.</p>
+
+        <div class="author-box">
+            <h4>About this article</h4>
+            <p>Originally published as an interview with Econsultancy at Bionic Advertising Systems in December 2013. Republished as part of The Full Stack archive.</p>
+        </div>
+    </article>
+
+    <footer><div class="footer-inner"><div class="footer-brand">the full stack <span class="slash">/</span> chris o'hara</div></div></footer>
+</body>
+</html>

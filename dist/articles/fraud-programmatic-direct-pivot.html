@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud and the Programmatic Direct Pivot | The Full Stack</title>
+    <meta name="description" content="How ad fraud is pushing marketers toward programmatic direct, and why the path to brand advertising success lies in guaranteed inventory transparency.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --accent-hover: #A84920;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --tag-text: #7A7168;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 720px;
+            --wide-width: 960px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(253, 251, 247, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { font-family: var(--mono); font-size: 15px; font-weight: 500; letter-spacing: -0.02em; color: var(--text-primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { font-size: 14px; font-weight: 400; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header { max-width: var(--max-width); margin: 0 auto; padding: 64px 24px 32px; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-tertiary); text-decoration: none; margin-bottom: 32px; transition: color 0.2s; }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .article-date { font-size: 13px; color: var(--text-tertiary); }
+        .article-tag { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: rgba(192, 86, 38, 0.08); padding: 2px 8px; border-radius: 3px; }
+        .article-title { font-family: var(--serif); font-size: 42px; font-weight: 400; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; }
+        .article-subtitle { font-family: var(--serif); font-size: 20px; font-weight: 300; font-style: italic; color: var(--text-secondary); line-height: 1.5; }
+        
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 80px; font-family: var(--serif); font-size: 18px; line-height: 1.8; }
+        .article-body p { margin-bottom: 24px; }
+        .article-body strong { font-weight: 600; }
+        .article-body em { font-style: italic; }
+        .article-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(192, 86, 38, 0.3); transition: border-color 0.2s; }
+        .article-body a:hover { border-color: var(--accent); }
+        .article-body h2 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 48px 0 20px; line-height: 1.3; }
+        .article-body h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin: 36px 0 16px; line-height: 1.35; }
+        .article-body ul, .article-body ol { margin: 0 0 24px 24px; }
+        .article-body li { margin-bottom: 12px; }
+        .article-body blockquote { border-left: 3px solid var(--accent); padding: 16px 24px; margin: 32px 0; background: var(--tag-bg); border-radius: 0 8px 8px 0; }
+        .article-body blockquote p { margin-bottom: 0; font-style: italic; color: var(--text-secondary); }
+        
+        .author-box { background: var(--tag-bg); padding: 32px; border-radius: 12px; margin: 48px 0; }
+        .author-box h4 { font-family: var(--serif); font-size: 20px; font-weight: 500; margin-bottom: 16px; }
+        .author-box p { margin-bottom: 16px; font-family: var(--sans); font-size: 15px; line-height: 1.7; }
+        .author-box p:last-child { margin-bottom: 0; }
+        
+        footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
+        .footer-inner { max-width: var(--wide-width); margin: 0 auto; }
+        .footer-brand { font-family: var(--mono); font-size: 13px; color: var(--text-tertiary); }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-subtitle { font-size: 17px; }
+            .article-body { font-size: 17px; }
+            .article-body h2 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-brand">the full stack <span class="slash">/</span></a>
+            <div class="nav-links">
+                <a href="../index.html">Articles</a>
+                <a href="https://chrisohara.com">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="article-header">
+        <a href="../index.html" class="back-link">← Back to all articles</a>
+        <div class="article-meta">
+            <span class="article-date">September 25, 2014</span>
+            <span class="article-tag">Programmatic</span>
+            <span class="article-tag">Ad Fraud</span>
+        </div>
+        <h1 class="article-title">Fraud and the Programmatic Direct Pivot</h1>
+        <p class="article-subtitle">How endemic ad fraud is driving marketers toward guaranteed inventory—and why programmatic direct is the path to brand advertising success.</p>
+    </header>
+
+    <article class="article-body">
+        <p>There has been a lot of talk about the pervasive amount of click fraud and bot traffic happening in digital. Marketers are reportedly spending anywhere from 30% to 70% of their digital budgets on fake impressions and clicks, and an entire cottage industry is cropping up to help marketers combat fraud and try to protect their digital marketing investments.</p>
+
+        <p>Some people claim that the price of fraud is already built into the programmatic RTB ecosystem. Marketers are using programmatic RTB for direct marketing, and they are measuring sales using CPA metrics. If they are paying $100 per verified acquisition, should they care whether it takes 10 million or 20 million impressions to produce a conversion? Some say that they don't, and take the view that they only pay for results, justified by their backend conversion metrics which take media cost into consideration.</p>
+
+        <p>I hope this is not the case. Ignoring fraud with these justifications is what ultimately may kill the digital advertising business before we ever get to scale.</p>
+
+        <h2>The Problem of Faulty Attribution</h2>
+
+        <p>Another big problem is faulty, fraud-like attribution. Let's take the case of the big programmatic marketing platform that has been getting great conversions for their customers. Marketers look at the results of such platforms and think that the technology has managed to effectively separate the wheat from the chaff in popular ad exchanges and find the "sweet spot" of cookie targeting that converts.</p>
+
+        <p>But dig a little deeper and you notice that many of the conversions are happening on webmail subdomains (mail.yahoo.com). In other words, the platform is getting last-view attribution from successful e-mail marketing. This is a more subtle case of fraud—but really more of a tax on digital ignorance for marketers. The marketer sees this channel producing results that align with his CPA goals. Did the conversions get attributed correctly? Maybe not, but those questions get overlooked when the blended CPA is on target.</p>
+
+        <p>Cookie bombing and other types of fraud are just as likely to limit digital advertising to performance budgets, and keep real growth at bay.</p>
+
+        <h2>Who Benefits from the Current Scenario?</h2>
+
+        <p>If we are being honest with ourselves, we must admit that there doesn't seem to be a ton of desire to solve these inherent problems in programmatic RTB. There are too many people making too much money to want to fix it. And it's going to destroy programmatic RTB as we know it.</p>
+
+        <p><strong>Publishers:</strong> Most publishers benefit greatly from the programmatic RTB revenue stream. Big publishers "fill" their long tail inventory with ads. Mid-sized publishers without large direct sales teams depend greatly on network and programmatic fill for their revenue. Long tail pubs are fully committed to their AdSense checks for survival. A lot of publishers' Comscore numbers are a lot bigger than they should be, thanks to cheap inventory of unknown provenance.</p>
+
+        <p><strong>AdTech:</strong> Every vendor in programmatic RTB benefits from inventory flowing through their pipes. Most charge on a percentage-of-spend, which means they might sacrifice 50% of their revenue if they had to stop charging for fraudulent impressions. New fraud detection and measurement firms are also profiting (albeit in a virtuous way).</p>
+
+        <p><strong>Agencies:</strong> What would today's big agencies do without the ability to leverage programmatic RTB to arbitrage inventory, or charge a premium for "unpacking the ad tech space" for their clients? The new programmatic landscape has been a boon to smart, nimble agencies that have built, bought, or leveraged ad technology to pivot their dying media businesses. How eager are agencies to expose the fundamental flaws within the programmatic RTB ecosystem?</p>
+
+        <h2>The Path Forward: Programmatic Direct</h2>
+
+        <p>The biggest loser in the entire room is the poor marketer, who ultimately pays the bills. But it's easy to turn a blind eye because the numbers look good. How long will big marketers confuse true marketing success with today's flawed digital attribution metrics? Marketers are starting to think about real measurement frameworks (net new customers), rather than CPA metrics. They are also keenly interested in using brand messages to interact with their customers across screens. And they won't be using CPA to measure brand growth.</p>
+
+        <p>So why do marketers continue to leverage programmatic RTB despite the inherent risk of fraud and current limitations for brand advertising? To paraphrase Clear Channel's Bob Pittman at the recent IAB annual meeting, "Given a choice between quality and convenience, convenience always wins."</p>
+
+        <p>The biggest question lately is whether or not we can make it as convenient (and cheap) to buy guaranteed media at scale. Seeing this opportunity, a lot of players in programmatic RTB are looking hard at the money being spent on guaranteed media (the "transactional RFP" channel), and trying to add new "programmatic direct" tools to their arsenals.</p>
+
+        <p>RTB players know that brands are still uncomfortable executing brand campaigns in the wilds of the open exchange, and they know truly premium inventory won't be available unless publishers have more granular control over pricing, availability, and partner selection. Put more simply, the lion's share of digital money still gets transacted manually, with paper insertion orders, and successful automation means a big piece of the action.</p>
+
+        <p>Providing a layer of automation for direct deals helps with fraud (guaranteed deals, by their nature, offer inventory transparency), and adds the ability to scale within higher classes of inventory.</p>
+
+        <p>Marketers are actually looking forward to having their agencies leverage new technology to secure quality digital placements. Whether these innovations come from tweaking existing programmatic RTB technology (private exchanges) or from new, API-driven "programmatic direct" providers doesn't matter to them. They need to execute cross-channel digital campaigns at scale, and those campaigns (if they are for brand purposes) cannot contain fraud.</p>
+
+        <h2>The Future of Programmatic</h2>
+
+        <p>Does this spell the end of programmatic RTB? Nope. I think there will always be exchanges and technologies that let direct marketers plumb the depths of the Web to drive online sales. Ten years ago, folks were writing about the death of shady affiliate, click, and CPA networks—but they are still around.</p>
+
+        <p>But will today's programmatic RTB business have to fundamentally transform to win brand dollars? Yes, and the path to success is what we have been calling programmatic direct. It will be interesting to see the various technology executions of programmatic direct, as they form the gateway for branding to flourish online.</p>
+
+        <div class="author-box">
+            <h4>About this article</h4>
+            <p>This article was originally published at Bionic Advertising Systems in September 2014, during Chris O'Hara's tenure as Chief Revenue Officer. It has been republished here as part of The Full Stack archive.</p>
+        </div>
+    </article>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">the full stack <span class="slash">/</span> chris o'hara</div>
+        </div>
+    </footer>
+</body>
+</html>
