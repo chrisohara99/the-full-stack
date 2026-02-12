@@ -83,11 +83,14 @@
         }
         .market-snapshot {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
             margin-bottom: 2rem;
         }
-        @media (max-width: 500px) {
+        @media (max-width: 600px) {
+            .market-snapshot { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 400px) {
             .market-snapshot { grid-template-columns: 1fr; }
         }
         .town-card {
@@ -204,11 +207,11 @@
             <div class="criteria-grid">
                 <div class="criteria-item">
                     <div class="label">Location</div>
-                    <div class="value">Cold Spring Harbor</div>
+                    <div class="value">North Shore LI</div>
                 </div>
                 <div class="criteria-item">
-                    <div class="label">Radius</div>
-                    <div class="value">25 miles</div>
+                    <div class="label">Boundary</div>
+                    <div class="value">North of 25A</div>
                 </div>
                 <div class="criteria-item">
                     <div class="label">Bedrooms</div>
@@ -222,27 +225,37 @@
         </div>
         
         <div class="content">
-            <h2>📊 Market Snapshot</h2>
+            <h2>📊 North Shore Towns</h2>
             <div class="market-snapshot">
                 <div class="town-card">
                     <h3>Cold Spring Harbor</h3>
-                    <div class="count">14</div>
-                    <div class="label">homes on market</div>
+                    <div class="count">🌊</div>
+                    <div class="label">Lloyd Neck • Harbor views</div>
                 </div>
                 <div class="town-card">
-                    <h3>Huntington</h3>
-                    <div class="count">64</div>
-                    <div class="label">homes on market</div>
+                    <h3>Huntington Village</h3>
+                    <div class="count">🏘️</div>
+                    <div class="label">Walkable • Restaurants</div>
                 </div>
                 <div class="town-card">
-                    <h3>Syosset</h3>
-                    <div class="count">52</div>
-                    <div class="label">homes on market</div>
+                    <h3>Northport</h3>
+                    <div class="count">⛵</div>
+                    <div class="label">Village charm • Marina</div>
                 </div>
                 <div class="town-card">
                     <h3>Oyster Bay</h3>
-                    <div class="count">23</div>
-                    <div class="label">homes on market</div>
+                    <div class="count">🦪</div>
+                    <div class="label">Historic • Waterfront</div>
+                </div>
+                <div class="town-card">
+                    <h3>Glen Cove</h3>
+                    <div class="count">🏖️</div>
+                    <div class="label">Beach access • Morgan Park</div>
+                </div>
+                <div class="town-card">
+                    <h3>Sea Cliff</h3>
+                    <div class="count">🎨</div>
+                    <div class="label">Victorian • Artsy village</div>
                 </div>
             </div>
             
@@ -250,47 +263,47 @@
             <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 1rem;">Click to view listings with your filters pre-applied:</p>
             
             <div class="search-links">
-                <a href="https://www.zillow.com/homes/for_sale/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22Cold%20Spring%20Harbor%2C%20NY%22%2C%22mapBounds%22%3A%7B%22north%22%3A41.1%2C%22south%22%3A40.6%2C%22east%22%3A-73.1%2C%22west%22%3A-73.8%7D%2C%22filterState%22%3A%7B%22price%22%3A%7B%22min%22%3A650000%2C%22max%22%3A1300000%7D%2C%22beds%22%3A%7B%22min%22%3A3%7D%2C%22sort%22%3A%7B%22value%22%3A%22days%22%7D%7D%7D" class="search-link" target="_blank">
+                <a href="https://www.zillow.com/homes/for_sale/?searchQueryState=%7B%22mapBounds%22%3A%7B%22north%22%3A40.97%2C%22south%22%3A40.85%2C%22east%22%3A-73.20%2C%22west%22%3A-73.68%7D%2C%22filterState%22%3A%7B%22price%22%3A%7B%22min%22%3A650000%2C%22max%22%3A1300000%7D%2C%22beds%22%3A%7B%22min%22%3A3%7D%2C%22sort%22%3A%7B%22value%22%3A%22days%22%7D%7D%7D" class="search-link" target="_blank">
                     <div class="icon">🏠</div>
                     <div class="info">
                         <div class="name">Zillow</div>
-                        <div class="desc">Most popular • Great photos • Save favorites</div>
+                        <div class="desc">Map bounded to North Shore • Great photos</div>
                     </div>
                     <div class="arrow">→</div>
                 </a>
                 
-                <a href="https://www.redfin.com/city/22172/NY/Cold-Spring-Harbor/filter/min-price=650k,max-price=1.3M,min-beds=3,viewport=41.1:40.6:-73.1:-73.8" class="search-link" target="_blank">
+                <a href="https://www.redfin.com/zipcode/11724/filter/min-price=650k,max-price=1.3M,min-beds=3,viewport=40.97:40.85:-73.20:-73.68" class="search-link" target="_blank">
                     <div class="icon">🔴</div>
                     <div class="info">
                         <div class="name">Redfin</div>
-                        <div class="desc">Accurate data • Tour scheduling • Agent support</div>
+                        <div class="desc">Accurate data • Tour scheduling</div>
                     </div>
                     <div class="arrow">→</div>
                 </a>
                 
-                <a href="https://www.realtor.com/realestateandhomes-search/Cold-Spring-Harbor_NY/beds-3/price-650000-1300000/radius-25" class="search-link" target="_blank">
+                <a href="https://www.realtor.com/realestateandhomes-search/Cold-Spring-Harbor_NY/beds-3/price-650000-1300000" class="search-link" target="_blank">
                     <div class="icon">🏡</div>
                     <div class="info">
                         <div class="name">Realtor.com</div>
-                        <div class="desc">MLS direct • Open house info • School ratings</div>
+                        <div class="desc">MLS direct • Open house info</div>
                     </div>
                     <div class="arrow">→</div>
                 </a>
                 
-                <a href="https://www.compass.com/homes-for-sale/cold-spring-harbor-ny/?minPrice=650000&maxPrice=1300000&minBeds=3" class="search-link" target="_blank">
+                <a href="https://www.compass.com/homes-for-sale/huntington-ny/?minPrice=650000&maxPrice=1300000&minBeds=3" class="search-link" target="_blank">
                     <div class="icon">🧭</div>
                     <div class="info">
                         <div class="name">Compass</div>
-                        <div class="desc">Luxury focus • Exclusive listings • Modern interface</div>
+                        <div class="desc">Luxury focus • Exclusive listings</div>
                     </div>
                     <div class="arrow">→</div>
                 </a>
                 
-                <a href="https://www.danielgale.com/search/for-sale/cold-spring-harbor-ny/" class="search-link" target="_blank">
+                <a href="https://www.danielgale.com/search/for-sale/" class="search-link" target="_blank">
                     <div class="icon">🏛️</div>
                     <div class="info">
                         <div class="name">Daniel Gale Sotheby's</div>
-                        <div class="desc">Long Island experts • Luxury homes • Local knowledge</div>
+                        <div class="desc">Long Island experts • Local knowledge</div>
                     </div>
                     <div class="arrow">→</div>
                 </a>
@@ -299,7 +312,7 @@
                     <div class="icon">🍀</div>
                     <div class="info">
                         <div class="name">Lucky to Live Here Realty</div>
-                        <div class="desc">North Shore specialists • Community focused • 5 Harbors</div>
+                        <div class="desc">North Shore specialists • 5 Harbors experts</div>
                     </div>
                     <div class="arrow">→</div>
                 </a>
@@ -308,10 +321,10 @@
             <div class="tips">
                 <h3>💡 Pro Tips</h3>
                 <ul>
+                    <li><strong>North of 25A only</strong> — verify listings are north of Route 25A (the dividing line)</li>
                     <li><strong>Set up alerts</strong> on Zillow & Redfin for instant new listing notifications</li>
                     <li><strong>Sort by "Newest"</strong> to catch fresh listings first</li>
                     <li><strong>Check Sunday nights</strong> — many listings go live Monday morning</li>
-                    <li><strong>Save favorites</strong> to track price changes over time</li>
                 </ul>
             </div>
         </div>
