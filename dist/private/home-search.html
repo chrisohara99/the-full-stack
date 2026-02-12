@@ -201,6 +201,84 @@
             margin-left: 0.5rem;
             vertical-align: middle;
         }
+        .home-of-day {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-decoration: none;
+            display: block;
+            transition: all 0.2s;
+        }
+        .home-of-day:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245,158,11,0.25);
+        }
+        .home-of-day-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .home-of-day-header h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            color: #92400e;
+            margin: 0;
+        }
+        .home-of-day-badge {
+            background: #f59e0b;
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 100px;
+            text-transform: uppercase;
+        }
+        .home-of-day-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            align-items: center;
+        }
+        @media (max-width: 500px) {
+            .home-of-day-content { grid-template-columns: 1fr; }
+        }
+        .home-of-day-details h4 {
+            font-size: 1.4rem;
+            color: var(--ink);
+            margin-bottom: 0.25rem;
+        }
+        .home-of-day-details .address {
+            font-size: 0.95rem;
+            color: var(--muted);
+            margin-bottom: 0.75rem;
+        }
+        .home-of-day-stats {
+            display: flex;
+            gap: 1.25rem;
+        }
+        .home-of-day-stats .stat {
+            text-align: center;
+        }
+        .home-of-day-stats .stat-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--ink);
+        }
+        .home-of-day-stats .stat-label {
+            font-size: 0.75rem;
+            color: var(--muted);
+            text-transform: uppercase;
+        }
+        .home-of-day-cta {
+            text-align: right;
+            color: #92400e;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
@@ -233,6 +311,36 @@
         </div>
         
         <div class="content">
+            <a href="https://www.zillow.com/homedetails/175-North-St-Locust-Valley-NY-11560/31182270_zpid/" class="home-of-day" target="_blank">
+                <div class="home-of-day-header">
+                    <h3>🏠 Home of the Day</h3>
+                    <span class="home-of-day-badge">$800K–$1M</span>
+                </div>
+                <div class="home-of-day-content">
+                    <div class="home-of-day-details">
+                        <h4>$873,000</h4>
+                        <div class="address">175 North Street, Locust Valley</div>
+                        <div class="home-of-day-stats">
+                            <div class="stat">
+                                <div class="stat-value">3</div>
+                                <div class="stat-label">Beds</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">2</div>
+                                <div class="stat-label">Baths</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">1,500</div>
+                                <div class="stat-label">Sqft</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home-of-day-cta">
+                        View on Zillow →
+                    </div>
+                </div>
+            </a>
+            
             <h2>📊 North Shore Towns</h2>
             <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 1rem;">Click a town to search:</p>
             <div class="market-snapshot">
