@@ -98,6 +98,14 @@
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 1rem 1.25rem;
+            text-decoration: none;
+            display: block;
+            transition: all 0.2s;
+        }
+        .town-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 4px 12px rgba(45,106,79,0.15);
+            transform: translateY(-2px);
         }
         .town-card h3 {
             font-size: 1rem;
@@ -226,42 +234,43 @@
         
         <div class="content">
             <h2>📊 North Shore Towns</h2>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 1rem;">Click a town to search:</p>
             <div class="market-snapshot">
-                <div class="town-card">
+                <a href="https://www.zillow.com/lloyd-harbor-ny/homes/for_sale/?searchQueryState=%7B%22filterState%22%3A%7B%22price%22%3A%7B%22min%22%3A650000%2C%22max%22%3A1300000%7D%2C%22beds%22%3A%7B%22min%22%3A3%7D%2C%22sort%22%3A%7B%22value%22%3A%22days%22%7D%7D%7D" class="town-card" target="_blank">
                     <h3>Lloyd Harbor</h3>
                     <div class="count">🌲</div>
                     <div class="label">Estates • Private beaches</div>
-                </div>
-                <div class="town-card">
+                </a>
+                <a href="https://www.zillow.com/huntington-ny/homes/for_sale/?searchQueryState=%7B%22filterState%22%3A%7B%22price%22%3A%7B%22min%22%3A650000%2C%22max%22%3A1300000%7D%2C%22beds%22%3A%7B%22min%22%3A3%7D%2C%22sort%22%3A%7B%22value%22%3A%22days%22%7D%7D%7D" class="town-card" target="_blank">
                     <h3>Huntington</h3>
                     <div class="count">🏘️</div>
                     <div class="label">Walkable village • Dining</div>
-                </div>
-                <div class="town-card">
+                </a>
+                <a href="https://www.zillow.com/cold-spring-harbor-ny/homes/for_sale/?searchQueryState=%7B%22filterState%22%3A%7B%22price%22%3A%7B%22min%22%3A650000%2C%22max%22%3A1300000%7D%2C%22beds%22%3A%7B%22min%22%3A3%7D%2C%22sort%22%3A%7B%22value%22%3A%22days%22%7D%7D%7D" class="town-card" target="_blank">
                     <h3>Cold Spring Harbor</h3>
                     <div class="count">🌊</div>
                     <div class="label">Harbor views • Top schools</div>
-                </div>
-                <div class="town-card">
+                </a>
+                <a href="https://www.zillow.com/oyster-bay-ny/homes/for_sale/?searchQueryState=%7B%22filterState%22%3A%7B%22price%22%3A%7B%22min%22%3A650000%2C%22max%22%3A1300000%7D%2C%22beds%22%3A%7B%22min%22%3A3%7D%2C%22sort%22%3A%7B%22value%22%3A%22days%22%7D%7D%7D" class="town-card" target="_blank">
                     <h3>Oyster Bay</h3>
                     <div class="count">🦪</div>
                     <div class="label">Historic • Waterfront</div>
-                </div>
-                <div class="town-card">
+                </a>
+                <a href="https://www.zillow.com/northport-ny/homes/for_sale/?searchQueryState=%7B%22filterState%22%3A%7B%22price%22%3A%7B%22min%22%3A650000%2C%22max%22%3A1300000%7D%2C%22beds%22%3A%7B%22min%22%3A3%7D%2C%22sort%22%3A%7B%22value%22%3A%22days%22%7D%7D%7D" class="town-card" target="_blank">
                     <h3>Northport</h3>
                     <div class="count">⛵</div>
                     <div class="label">Village charm • Marina</div>
-                </div>
-                <div class="town-card">
+                </a>
+                <a href="https://www.zillow.com/locust-valley-ny/homes/for_sale/?searchQueryState=%7B%22filterState%22%3A%7B%22price%22%3A%7B%22min%22%3A650000%2C%22max%22%3A1300000%7D%2C%22beds%22%3A%7B%22min%22%3A3%7D%2C%22sort%22%3A%7B%22value%22%3A%22days%22%7D%7D%7D" class="town-card" target="_blank">
                     <h3>Locust Valley</h3>
                     <div class="count">🍂</div>
                     <div class="label">Gold Coast • Equestrian</div>
-                </div>
-                <div class="town-card">
+                </a>
+                <a href="https://www.zillow.com/centerport-ny/homes/for_sale/?searchQueryState=%7B%22filterState%22%3A%7B%22price%22%3A%7B%22min%22%3A650000%2C%22max%22%3A1300000%7D%2C%22beds%22%3A%7B%22min%22%3A3%7D%2C%22sort%22%3A%7B%22value%22%3A%22days%22%7D%7D%7D" class="town-card" target="_blank">
                     <h3>Centerport</h3>
                     <div class="count">🏡</div>
                     <div class="label">Quiet coves • Vanderbilt</div>
-                </div>
+                </a>
             </div>
             
             <h2>🔗 Search Links</h2>
