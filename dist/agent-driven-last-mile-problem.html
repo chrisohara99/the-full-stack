@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Last Mile Problem — Agent Driven | The Full Stack</title>
+    <meta name="description" content="Why everything you built for your customer is invisible to their agent. Part 1 of Agent Driven, the third book in the trilogy.">
+    <meta property="og:title" content="The Last Mile Problem: Why Everything You Built for Your Customer Is Invisible to Their Agent">
+    <meta property="og:description" content="From the trilogy: Data Driven → Customer Driven → Agent Driven">
+    <meta property="og:type" content="article">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --accent-hover: #A84920;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --tag-text: #7A7168;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 720px;
+            --wide-width: 960px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(253, 251, 247, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { font-family: var(--mono); font-size: 15px; font-weight: 500; color: var(--text-primary); text-decoration: none; }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+
+        .article-header { max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 32px; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-tertiary); text-decoration: none; margin-bottom: 32px; }
+        .back-link:hover { color: var(--text-primary); }
+        .series-badge { display: inline-block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: rgba(192, 86, 38, 0.08); padding: 4px 10px; border-radius: 4px; margin-bottom: 16px; }
+        .article-header h1 { font-family: var(--serif); font-size: 42px; font-weight: 400; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 12px; }
+        .article-header .subtitle { font-family: var(--serif); font-size: 22px; font-weight: 300; font-style: italic; color: var(--text-secondary); line-height: 1.4; margin-bottom: 24px; }
+        .article-meta { font-size: 14px; color: var(--text-tertiary); display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+        .article-meta .authors { color: var(--text-primary); font-weight: 500; }
+
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 80px; font-family: var(--serif); font-size: 19px; line-height: 1.8; }
+        .article-body p { margin-bottom: 24px; }
+        .article-body strong { font-weight: 600; color: var(--text-primary); }
+        .article-body em { font-style: italic; }
+        .article-body h2 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 56px 0 20px; line-height: 1.3; }
+        .article-body h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin: 40px 0 16px; }
+        .article-body blockquote { border-left: 3px solid var(--accent); padding-left: 24px; margin: 32px 0; font-style: italic; color: var(--text-secondary); }
+        .article-body ul, .article-body ol { margin: 0 0 24px 24px; }
+        .article-body li { margin-bottom: 8px; }
+        .article-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+        /* Special callout boxes */
+        .callout { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 24px 28px; margin: 32px 0; }
+        .callout.highlight { border-left: 4px solid var(--accent); }
+        .callout p:last-child { margin-bottom: 0; }
+
+        /* Trilogy visualization */
+        .trilogy-arc { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin: 40px 0; }
+        .trilogy-arc h3 { font-family: var(--sans); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary); margin-bottom: 24px; text-align: center; }
+        .trilogy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .trilogy-item { text-align: center; padding: 20px; background: var(--tag-bg); border-radius: 8px; position: relative; }
+        .trilogy-item:not(:last-child)::after { content: '→'; position: absolute; right: -14px; top: 50%; transform: translateY(-50%); color: var(--text-tertiary); font-size: 18px; z-index: 1; }
+        .trilogy-year { font-family: var(--mono); font-size: 12px; color: var(--text-tertiary); margin-bottom: 4px; }
+        .trilogy-title { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--text-primary); margin-bottom: 8px; }
+        .trilogy-hero { font-size: 13px; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+        .trilogy-method { font-size: 14px; color: var(--text-secondary); line-height: 1.4; }
+        .trilogy-item.current { background: linear-gradient(135deg, rgba(192,86,38,0.1), rgba(192,86,38,0.05)); border: 2px solid var(--accent); }
+
+        /* Five shifts */
+        .shifts-grid { display: grid; gap: 16px; margin: 32px 0; }
+        .shift-item { display: grid; grid-template-columns: 140px 1fr; gap: 16px; padding: 20px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; }
+        .shift-label { font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--accent); }
+        .shift-desc { font-family: var(--serif); font-size: 16px; color: var(--text-secondary); line-height: 1.5; }
+
+        /* Comparison table */
+        .comparison-table { width: 100%; margin: 32px 0; border-collapse: collapse; font-family: var(--sans); font-size: 15px; }
+        .comparison-table th { background: var(--text-primary); color: white; padding: 14px 16px; text-align: left; font-weight: 500; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .comparison-table td { padding: 14px 16px; border-bottom: 1px solid var(--border-light); vertical-align: top; }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .col-built { background: #fafafa; }
+        .comparison-table .col-needs { background: rgba(192,86,38,0.04); }
+
+        /* Pull quote */
+        .pull-quote { font-family: var(--serif); font-size: 26px; font-weight: 400; line-height: 1.4; color: var(--accent); text-align: center; padding: 40px 20px; margin: 48px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); font-style: italic; }
+
+        /* Series nav */
+        .series-nav { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 24px; margin: 48px 0; }
+        .series-nav-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary); margin-bottom: 12px; }
+        .series-nav-title { font-family: var(--serif); font-size: 18px; color: var(--text-primary); }
+        .series-nav-link { color: var(--accent); text-decoration: none; font-weight: 500; }
+
+        @media (max-width: 640px) {
+            .article-header h1 { font-size: 32px; }
+            .trilogy-grid { grid-template-columns: 1fr; }
+            .trilogy-item:not(:last-child)::after { display: none; }
+            .shift-item { grid-template-columns: 1fr; }
+            .comparison-table { font-size: 13px; }
+            .comparison-table th, .comparison-table td { padding: 10px 12px; }
+            .pull-quote { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+        <div class="nav-links">
+            <a href="/">Writing</a>
+            <a href="/about.html">About</a>
+        </div>
+    </div>
+</nav>
+
+<article>
+    <header class="article-header">
+        <a href="/" class="back-link">← Back to all posts</a>
+        <div class="series-badge">Agent Driven · Part 1 of 12</div>
+        <h1>The Last Mile Problem</h1>
+        <p class="subtitle">Why everything you built for your customer is invisible to their agent</p>
+        <div class="article-meta">
+            <span class="authors">Christopher O'Hara & Martin Kihn</span>
+            <span>February 2026</span>
+            <span>12 min read</span>
+        </div>
+    </header>
+
+    <div class="article-body">
+
+        <p><em>This is Part 1 of a 12-part series drawn from</em> Agent Driven: The Future of Customer in the AI Era, <em>the third book in the trilogy that began with</em> Data Driven <em>(2018) and</em> Customer Driven <em>(2021).</em></p>
+
+        <hr style="border: none; border-top: 1px solid var(--border); margin: 32px 0;">
+
+        <p>In 2015, Keurig's chief digital officer sat across the table from us and described his vision: a $5 data collection chip in every coffee maker. An optical scanner to identify which K-Cups people brewed. A beacon to detect household devices. An LCD screen to serve suggestions while you waited thirty seconds for your coffee.</p>
+
+        <p>The data would tell Keurig everything — what people drank, when, how much, and who else was in the house. It was a brilliant vision for 2015.</p>
+
+        <p>The whole apparatus was designed to <em>know the customer</em> — the foundational promise of data-driven marketing and the thesis of the first book in our trilogy.</p>
+
+        <p>The second book opened with a different story: Casey's General Stores getting a 300% conversion lift by putting a picture of each customer's usual pizza in a personalized email. The data existed — Casey's knew every order — but it lived in a silo that couldn't talk to the email platform. The Customer Data Platform was the answer. Break down the walls. Build the golden record. Orchestrate the journey.</p>
+
+        <p>Both visions — the connected coffee maker and the personalized email — represented the cutting edge of their eras. And both assumed the same thing: <strong>the brand is the active party.</strong></p>
+
+        <p>The brand captures data. The brand builds profiles. The brand decides what's relevant. The brand sends the message. The customer is a recipient.</p>
+
+        <p>This new book is about what happens when that assumption breaks.</p>
+
+        <!-- Trilogy Arc -->
+        <div class="trilogy-arc">
+            <h3>The Trilogy Arc</h3>
+            <div class="trilogy-grid">
+                <div class="trilogy-item">
+                    <div class="trilogy-year">2018</div>
+                    <div class="trilogy-title">Data Driven</div>
+                    <div class="trilogy-hero">DMP</div>
+                    <div class="trilogy-method">Capture Data<br>Know → Personalize → Engage</div>
+                </div>
+                <div class="trilogy-item">
+                    <div class="trilogy-year">2021</div>
+                    <div class="trilogy-title">Customer Driven</div>
+                    <div class="trilogy-hero">CDP</div>
+                    <div class="trilogy-method">Unify Data<br>Touchpoints → Journeys → Experiences</div>
+                </div>
+                <div class="trilogy-item current">
+                    <div class="trilogy-year">2026</div>
+                    <div class="trilogy-title">Agent Driven</div>
+                    <div class="trilogy-hero">CDAP</div>
+                    <div class="trilogy-method">Be Agent-Ready<br>Be Known → Available → Selected → Retained</div>
+                </div>
+            </div>
+        </div>
+
+        <h2>The Slow Leak</h2>
+
+        <p>Let me tell you about a company I'll call Apex Home Goods.</p>
+
+        <p>By 2024, Apex had built everything our first two books recommended. A DMP capturing behavioral signals across every digital touchpoint. A CDP unifying known and unknown data into golden records. Journey orchestration spanning email, SMS, web, mobile, and paid media. Real-time personalization at sub-second latency. Machine-learned microsegments. A Center of Excellence aligned around shared KPIs.</p>
+
+        <p>Apex was a Level 4 maturity organization. They'd spent eight figures getting there.</p>
+
+        <p>And in 2025, something started to go wrong.</p>
+
+        <p>Not dramatically — more like a slow leak in a tire you don't notice until you're driving on the rim.</p>
+
+        <p>Email open rates plateaued, then declined. Not because the emails were bad — because fewer customers were reading email at all. Their agents were triaging inboxes.</p>
+
+        <p>Organic search traffic dropped even as category search volume held steady. Something was answering questions before customers reached the website.</p>
+
+        <p>The strangest signal was in loyalty data. High-frequency purchasers — Apex's most valuable segment — were still buying at the same rate, but their behavior changed. Orders became more precise. Less browsing. Fewer page views. The shopping journey Apex had spent years optimizing was collapsing into something that looked like a procurement transaction.</p>
+
+        <p class="pull-quote">"The customers hadn't left. They'd delegated."</p>
+
+        <p>The customer's AI agent was doing the shopping. Researching options. Comparing prices. Evaluating quality signals. Managing reorders. Negotiating.</p>
+
+        <p>And the entire apparatus Apex had built — the DMP, the CDP, the journey orchestration, the personalization — was designed to engage with a <em>human</em> browsing a website, reading an email, scrolling an app.</p>
+
+        <p>The agent couldn't see any of it. Didn't care about it. Couldn't process it.</p>
+
+        <div class="callout highlight">
+            <p><strong>The agent needed structured product data, real-time inventory, competitive pricing, and a reliable API.</strong></p>
+            <p><strong>Apex had a gorgeous website.</strong></p>
+        </div>
+
+        <h2>What Keurig Actually Needed</h2>
+
+        <p>Here's what I'd tell Mike Cunningham today: you don't need the chip.</p>
+
+        <p>The customer's AI agent already knows that Dad drinks dark roast Sumatra at 6am, Mom prefers French Hazelnut at 7:30, and their twelve-year-old sneaks a Donut Shop K-Cup on weekends. The agent knows because the customer <em>told</em> it — directly, explicitly, voluntarily — in a way they'd never tell Keurig.</p>
+
+        <p>When the household runs low, the agent doesn't wait for a marketing email. It queries Keurig's product catalog, Amazon's pricing, Walmart's availability, and the local grocery store's promotions — simultaneously. It evaluates price, delivery speed, subscription discounts, and loyalty points. It places the order with whichever option wins.</p>
+
+        <p>The question Mike's CFO should have been asking wasn't "what's the value of a $5 chip?"</p>
+
+        <p>It was: <strong>"what's the value of being the agent's default choice?"</strong></p>
+
+        <p>And the answer depends on whether Keurig's product catalog is machine-readable. Whether its pricing is available in real-time via API. Whether its inventory data is accurate and structured. Whether the agent trusts Keurig's data enough to recommend it over a competitor with better information.</p>
+
+        <p>Keurig doesn't need a data collection chip. It needs an agent-accessible product catalog.</p>
+
+        <h2>The Infrastructure Wasn't Wrong — It Was Incomplete</h2>
+
+        <p>Here's the critical nuance: everything both previous books argued for was correct.</p>
+
+        <p>You <em>do</em> need to capture data. You <em>do</em> need to unify it. You <em>do</em> need identity resolution and journey orchestration and real-time personalization.</p>
+
+        <p>That infrastructure is the foundation on which the next layer must be built.</p>
+
+        <p>But it's a foundation, not a finished building.</p>
+
+        <p>The trilogy arc is a progression: <strong>capture</strong> data → <strong>unify</strong> data → <strong>be ready</strong> for the agent that makes both visions simultaneously obsolete and transcendent.</p>
+
+        <p>The agent makes the Keurig chip obsolete because it already knows the customer's preferences. It makes Casey's personalized email obsolete because it already knows the usual order.</p>
+
+        <p>But it makes both <em>transcendent</em> because the infrastructure they represent — structured data, unified profiles, real-time activation — is exactly what brands need to serve the agent effectively.</p>
+
+        <p>The gap is the last mile. You built the data pipeline. You unified the profile. You orchestrated the journey. Now you need to make all of that accessible to an entity that doesn't browse your website, doesn't open your emails, and doesn't feel the emotional pull of your brand story — but that controls a growing share of the purchase decisions your business depends on.</p>
+
+        <!-- Comparison Table -->
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th class="col-built">What You Built (Human-Facing)</th>
+                    <th class="col-needs">What the Agent Needs</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-built">Beautiful product pages</td>
+                    <td class="col-needs">Structured product data (machine-readable)</td>
+                </tr>
+                <tr>
+                    <td class="col-built">Personalized email campaigns</td>
+                    <td class="col-needs">Real-time pricing and availability APIs</td>
+                </tr>
+                <tr>
+                    <td class="col-built">Journey orchestration across channels</td>
+                    <td class="col-needs">Sub-second query response latency</td>
+                </tr>
+                <tr>
+                    <td class="col-built">Creative campaigns and brand storytelling</td>
+                    <td class="col-needs">Trust signals (verified ratings, certifications)</td>
+                </tr>
+                <tr>
+                    <td class="col-built">Loyalty programs and retention nudges</td>
+                    <td class="col-needs">Competitive comparison schemas</td>
+                </tr>
+                <tr>
+                    <td class="col-built">A/B tested checkout flows</td>
+                    <td class="col-needs">Agent-compatible transaction protocols</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="text-align: center; font-size: 15px; color: var(--text-secondary); margin-top: -16px;"><em>You need both. The human storefront AND the agent storefront.</em></p>
+
+        <h2>Five Shifts to Watch</h2>
+
+        <p>The agentic disruption manifests as five concurrent shifts that the rest of this book will explore:</p>
+
+        <div class="shifts-grid">
+            <div class="shift-item">
+                <div class="shift-label">Identity Shifts</div>
+                <div class="shift-desc">Your golden record — the CDP's crown jewel — becomes one layer of a triple identity: the human, their agent, and the authority scope that governs what the agent can do on their behalf.</div>
+            </div>
+            <div class="shift-item">
+                <div class="shift-label">Personalization Inverts</div>
+                <div class="shift-desc">Instead of painting a personalized page for a human visitor, you structure a response for an agent query. The agent doesn't need creative. It needs structured data, accurate specs, competitive pricing, and trust signals.</div>
+            </div>
+            <div class="shift-item">
+                <div class="shift-label">Journeys Collapse</div>
+                <div class="shift-desc">The multi-week, multi-touchpoint journey becomes a parallel evaluation completed in seconds. The agent evaluates twelve manufacturers simultaneously, negotiates with five dealers at once, and compresses what used to be a month-long consideration process into a structured query.</div>
+            </div>
+            <div class="shift-item">
+                <div class="shift-label">Trust Transfers</div>
+                <div class="shift-desc">The consumer trusts their agent. The agent evaluates your brand's trustworthiness through structured signals — data accuracy, fulfillment reliability, pricing consistency. You can't advertise your way to agent trust. You have to perform your way there.</div>
+            </div>
+            <div class="shift-item">
+                <div class="shift-label">The Funnel Flattens</div>
+                <div class="shift-desc">Awareness, consideration, evaluation, and purchase — the stages we've managed for a century — become a single evaluation event when an agent handles them simultaneously.</div>
+            </div>
+        </div>
+
+        <h2>The Job Hasn't Changed</h2>
+
+        <p>In 1961, Father Harvey Schmitt at the Catholic Diocese of Rockford, Illinois, used an IBM 650 to personalize fundraising letters and achieved an 80% response rate. His six operations — data input, storage, processing, activation, engagement, measurement — map perfectly to the marketing technology stack that took another fifty years to reach mainstream practice.</p>
+
+        <p>Father Schmitt would understand the CDAP. Different speed. Different scale. Same logic: know who you're talking to, and tailor what you say based on what you know.</p>
+
+        <p>The technology changes every decade. The job doesn't.</p>
+
+        <p>And the job, today, is to build the infrastructure that serves the customer's agent as brilliantly as we learned to serve the customer directly.</p>
+
+        <p>The brands that do this will thrive. The brands that keep painting beautiful pages for an audience that's increasingly sending agents instead of eyeballs will find themselves invisible to a growing share of commerce — not because they did anything wrong, but because they stopped one layer short of where the world was heading.</p>
+
+        <hr style="border: none; border-top: 1px solid var(--border); margin: 48px 0 32px;">
+
+        <div class="series-nav">
+            <div class="series-nav-label">Next in the Series</div>
+            <div class="series-nav-title">Chapter 2 — "From Customer Journeys to Agent Queries"</div>
+            <p style="font-size: 15px; color: var(--text-secondary); margin-top: 8px;">Where Joe Smith's car-shopping journey across three books reveals how the funnel from 1898 finally decomposes.</p>
+        </div>
+
+    </div>
+</article>
+
+</body>
+</html>
