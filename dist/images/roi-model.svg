@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="sh"><feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.1"/></filter>
+  </defs>
+  <rect width="1200" height="500" fill="#F8F9FA"/>
+  <rect width="1200" height="56" fill="#003366"/>
+  <text x="600" y="36" text-anchor="middle" fill="white" font-size="21" font-weight="bold">ROI Model — Account Health Orchestration Agent</text>
+
+  <rect x="40" y="80" width="360" height="240" rx="10" fill="white" stroke="#0070C0" stroke-width="2" filter="url(#sh)"/>
+  <rect x="40" y="80" width="360" height="50" rx="10" fill="#0070C0"/>
+  <text x="220" y="100" text-anchor="middle" fill="white" font-size="11" letter-spacing="1" font-weight="bold">CHURN PREVENTION</text>
+  <text x="220" y="118" text-anchor="middle" fill="#B8D4F0" font-size="10">Revenue Retention</text>
+  <text x="220" y="166" text-anchor="middle" fill="#0070C0" font-size="40" font-weight="bold">$1.0M</text>
+  <text x="220" y="186" text-anchor="middle" fill="#666" font-size="10">per year (conservative)</text>
+  <line x1="80" y1="200" x2="360" y2="200" stroke="#eee" stroke-width="1"/>
+  <text x="60" y="222" fill="#444" font-size="10">100 accounts x $500K ACV</text>
+  <text x="60" y="240" fill="#444" font-size="10">10% annual churn rate = $5M at risk</text>
+  <text x="60" y="258" fill="#444" font-size="10">20% save rate on at-risk accounts</text>
+  <text x="60" y="284" fill="#0070C0" font-size="10" font-weight="bold">At $2B portfolio scale: $32M/year</text>
+
+  <rect x="420" y="80" width="360" height="240" rx="10" fill="white" stroke="#2E8B57" stroke-width="2" filter="url(#sh)"/>
+  <rect x="420" y="80" width="360" height="50" rx="10" fill="#2E8B57"/>
+  <text x="600" y="100" text-anchor="middle" fill="white" font-size="11" letter-spacing="1" font-weight="bold">OPERATIONAL EFFICIENCY</text>
+  <text x="600" y="118" text-anchor="middle" fill="#C0EBC0" font-size="10">Coordination Cost Reduction</text>
+  <text x="600" y="166" text-anchor="middle" fill="#2E8B57" font-size="40" font-weight="bold">$168K</text>
+  <text x="600" y="186" text-anchor="middle" fill="#666" font-size="10">per year (conservative)</text>
+  <line x1="460" y1="200" x2="740" y2="200" stroke="#eee" stroke-width="1"/>
+  <text x="440" y="222" fill="#444" font-size="10">50 at-risk reviews/qtr x 4 hrs = 200 hrs</text>
+  <text x="440" y="240" fill="#444" font-size="10">10 fire-drills/qtr x 8 hrs = 80 hrs</text>
+  <text x="440" y="258" fill="#444" font-size="10">Blended rate: $150/hr</text>
+  <text x="440" y="284" fill="#2E8B57" font-size="10" font-weight="bold">+ Eliminated misdirected mktg spend</text>
+
+  <rect x="800" y="80" width="360" height="240" rx="10" fill="white" stroke="#D4A017" stroke-width="2" filter="url(#sh)"/>
+  <rect x="800" y="80" width="360" height="50" rx="10" fill="#D4A017"/>
+  <text x="980" y="100" text-anchor="middle" fill="white" font-size="11" letter-spacing="1" font-weight="bold">REVENUE EXPANSION</text>
+  <text x="980" y="118" text-anchor="middle" fill="#FFF0C0" font-size="10">Better Growth Targeting</text>
+  <text x="980" y="166" text-anchor="middle" fill="#D4A017" font-size="40" font-weight="bold">$500K</text>
+  <text x="980" y="186" text-anchor="middle" fill="#666" font-size="10">per year (conservative)</text>
+  <line x1="840" y1="200" x2="1120" y2="200" stroke="#eee" stroke-width="1"/>
+  <text x="820" y="222" fill="#444" font-size="10">2-3x higher upsell conversion on</text>
+  <text x="820" y="240" fill="#444" font-size="10">healthy, high-utilization accounts</text>
+  <text x="820" y="258" fill="#444" font-size="10">5% improvement on $10M pipeline</text>
+  <text x="820" y="284" fill="#D4A017" font-size="10" font-weight="bold">Better timing for expansion plays</text>
+
+  <rect x="40" y="340" width="1120" height="80" rx="10" fill="#003366" filter="url(#sh)"/>
+  <text x="300" y="375" text-anchor="middle" fill="white" font-size="16" font-weight="bold">TOTAL ANNUAL BENEFIT</text>
+  <text x="300" y="400" text-anchor="middle" fill="#B8D4F0" font-size="12">Conservative estimate</text>
+  <text x="780" y="390" text-anchor="middle" fill="white" font-size="44" font-weight="bold">$1,668,000</text>
+
+  <rect x="240" y="438" width="720" height="36" rx="8" fill="#D4A017"/>
+  <text x="600" y="461" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Implementation: $300K-$500K | Payback: Under 6 Months</text>
+
+  <text x="600" y="494" text-anchor="middle" fill="#AAA" font-size="9">The Full Stack · Conservative ROI Model · 2026</text>
+</svg>

@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="sh"><feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.1"/></filter>
+    <linearGradient id="scoreLine" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#DAA520"/><stop offset="50%" stop-color="#CC3333"/><stop offset="85%" stop-color="#CC3333"/><stop offset="100%" stop-color="#2E8B57"/></linearGradient>
+  </defs>
+  <rect width="1200" height="520" fill="#F8F9FA"/>
+  <rect width="1200" height="56" fill="#003366"/>
+  <text x="600" y="36" text-anchor="middle" fill="white" font-size="21" font-weight="bold">Meridian Manufacturing — Scenario Timeline</text>
+
+  <!-- Score chart area -->
+  <rect x="80" y="80" width="1060" height="200" rx="6" fill="white" stroke="#ddd" stroke-width="1" filter="url(#sh)"/>
+  <text x="50" y="110" fill="#999" font-size="9" text-anchor="end">100</text>
+  <text x="50" y="145" fill="#999" font-size="9" text-anchor="end">75</text>
+  <text x="50" y="180" fill="#999" font-size="9" text-anchor="end">50</text>
+  <text x="50" y="215" fill="#999" font-size="9" text-anchor="end">25</text>
+  <text x="50" y="250" fill="#999" font-size="9" text-anchor="end">0</text>
+  <line x1="80" y1="105" x2="1140" y2="105" stroke="#eee" stroke-width="1"/>
+  <line x1="80" y1="140" x2="1140" y2="140" stroke="#eee" stroke-width="1"/>
+  <line x1="80" y1="175" x2="1140" y2="175" stroke="#eee" stroke-width="1"/>
+  <line x1="80" y1="210" x2="1140" y2="210" stroke="#eee" stroke-width="1"/>
+  <line x1="80" y1="245" x2="1140" y2="245" stroke="#eee" stroke-width="1"/>
+
+  <!-- Green zone -->
+  <rect x="80" y="80" width="1060" height="60" fill="#2E8B57" opacity="0.06"/>
+  <text x="1130" y="96" text-anchor="end" fill="#2E8B57" font-size="8" font-weight="bold" opacity="0.5">GREEN</text>
+  <!-- Yellow zone -->
+  <rect x="80" y="140" width="1060" height="35" fill="#DAA520" opacity="0.06"/>
+  <text x="1130" y="156" text-anchor="end" fill="#DAA520" font-size="8" font-weight="bold" opacity="0.5">YELLOW</text>
+  <!-- Red zone -->
+  <rect x="80" y="175" width="1060" height="105" fill="#CC3333" opacity="0.04"/>
+  <text x="1130" y="196" text-anchor="end" fill="#CC3333" font-size="8" font-weight="bold" opacity="0.5">RED</text>
+
+  <!-- Score line: starts ~78 (6 wks ago), drifts to 62 (day 0), drops to 38 (day 14), recovers to 72 (day 45) -->
+  <!-- Y mapping: score 100=80, 75=140, 50=175, 25=210, 0=245 -->
+  <!-- score 78 → y=116, 62 → y=143, 38 → y=182, 72 → y=145 -->
+  <polyline points="140,116 300,126 460,134 580,143 700,182 860,174 1020,152 1080,145" fill="none" stroke="#D4A017" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Dots at key points -->
+  <circle cx="580" cy="143" r="6" fill="#DAA520" stroke="white" stroke-width="2"/>
+  <circle cx="700" cy="182" r="6" fill="#CC3333" stroke="white" stroke-width="2"/>
+  <circle cx="1080" cy="145" r="6" fill="#2E8B57" stroke="white" stroke-width="2"/>
+
+  <!-- Score labels -->
+  <text x="580" y="133" text-anchor="middle" fill="#DAA520" font-size="11" font-weight="bold">62</text>
+  <text x="700" y="172" text-anchor="middle" fill="#CC3333" font-size="11" font-weight="bold">38</text>
+  <text x="1080" y="135" text-anchor="middle" fill="#2E8B57" font-size="11" font-weight="bold">72</text>
+
+  <!-- X-axis labels -->
+  <text x="140" y="268" text-anchor="middle" fill="#666" font-size="10">6 weeks prior</text>
+  <text x="580" y="268" text-anchor="middle" fill="#DAA520" font-size="10" font-weight="bold">Day 0</text>
+  <text x="700" y="268" text-anchor="middle" fill="#CC3333" font-size="10" font-weight="bold">Day 14</text>
+  <text x="760" y="268" text-anchor="middle" fill="#003366" font-size="10" font-weight="bold">Day 15</text>
+  <text x="1080" y="268" text-anchor="middle" fill="#2E8B57" font-size="10" font-weight="bold">Day 45</text>
+
+  <!-- Vertical event markers -->
+  <line x1="580" y1="80" x2="580" y2="280" stroke="#DAA520" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="700" y1="80" x2="700" y2="280" stroke="#CC3333" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="760" y1="80" x2="760" y2="280" stroke="#003366" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+  <line x1="1080" y1="80" x2="1080" y2="280" stroke="#2E8B57" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Y-axis label -->
+  <text x="28" y="175" fill="#003366" font-size="10" font-weight="bold" transform="rotate(-90,28,175)">HEALTH SCORE</text>
+
+  <!-- Event detail boxes -->
+  <!-- Day 0 -->
+  <rect x="30" y="300" width="260" height="120" rx="8" fill="white" stroke="#DAA520" stroke-width="2" filter="url(#sh)"/>
+  <rect x="30" y="300" width="260" height="26" rx="8" fill="#DAA520"/><text x="160" y="318" text-anchor="middle" fill="white" font-size="11" font-weight="bold">DAY 0 — YELLOW (Score: 62)</text>
+  <text x="42" y="344" fill="#444" font-size="10">Usage: 78% → 51%</text>
+  <text x="42" y="362" fill="#444" font-size="10">Two P2 cases opened</text>
+  <text x="42" y="380" fill="#444" font-size="10">Invoice 15 days late (a first)</text>
+  <text x="42" y="400" fill="#DAA520" font-size="10" font-weight="bold">→ Added to weekly digest</text>
+
+  <!-- Day 14 -->
+  <rect x="310" y="300" width="280" height="120" rx="8" fill="white" stroke="#CC3333" stroke-width="2" filter="url(#sh)"/>
+  <rect x="310" y="300" width="280" height="26" rx="8" fill="#CC3333"/><text x="450" y="318" text-anchor="middle" fill="white" font-size="11" font-weight="bold">DAY 14 — RED (Score: 38)</text>
+  <text x="322" y="344" fill="#444" font-size="10">P1 case: critical integration failure</text>
+  <text x="322" y="362" fill="#444" font-size="10">Case count 200% above baseline</text>
+  <text x="322" y="380" fill="#444" font-size="10">Invoice 45 days overdue; usage at 43%</text>
+  <text x="322" y="400" fill="#CC3333" font-size="10" font-weight="bold">→ Agent acts immediately (6 actions)</text>
+
+  <!-- Agent Actions -->
+  <rect x="610" y="300" width="260" height="120" rx="8" fill="white" stroke="#003366" stroke-width="2" filter="url(#sh)"/>
+  <rect x="610" y="300" width="260" height="26" rx="8" fill="#003366"/><text x="740" y="318" text-anchor="middle" fill="white" font-size="11" font-weight="bold">AGENT ACTIONS</text>
+  <text x="622" y="342" fill="#CC3333" font-size="9.5" font-weight="bold">BLOCK</text><text x="668" y="342" fill="#444" font-size="9.5">Suppress campaigns</text>
+  <text x="622" y="358" fill="#0070C0" font-size="9.5" font-weight="bold">ROUTE</text><text x="668" y="358" fill="#444" font-size="9.5">CS retention case</text>
+  <text x="622" y="374" fill="#D4A017" font-size="9.5" font-weight="bold">ALERT</text><text x="668" y="374" fill="#444" font-size="9.5">AE + manager notified</text>
+  <text x="622" y="390" fill="#8B0000" font-size="9.5" font-weight="bold">ESCALATE</text><text x="686" y="390" fill="#444" font-size="9.5">Exec outreach</text>
+  <text x="622" y="406" fill="#666" font-size="9.5" font-weight="bold">PAUSE</text><text x="668" y="406" fill="#444" font-size="9.5">Dunning suspended</text>
+
+  <!-- Day 45 -->
+  <rect x="890" y="300" width="280" height="120" rx="8" fill="white" stroke="#2E8B57" stroke-width="2" filter="url(#sh)"/>
+  <rect x="890" y="300" width="280" height="26" rx="8" fill="#2E8B57"/><text x="1030" y="318" text-anchor="middle" fill="white" font-size="11" font-weight="bold">DAY 45 — RECOVERY (Score: 72)</text>
+  <text x="902" y="344" fill="#444" font-size="10">P1 resolved</text>
+  <text x="902" y="362" fill="#444" font-size="10">Usage recovering</text>
+  <text x="902" y="380" fill="#444" font-size="10">Invoice paid</text>
+  <text x="902" y="400" fill="#2E8B57" font-size="10" font-weight="bold">→ $1.2M renewal closes</text>
+
+  <!-- Bottom callout -->
+  <rect x="200" y="440" width="800" height="50" rx="10" fill="#003366" filter="url(#sh)"/>
+  <text x="600" y="462" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Without the agent: $1.2M account churns</text>
+  <text x="600" y="480" text-anchor="middle" fill="#B8D4F0" font-size="12">With the agent: renewal closes, relationship is stronger</text>
+
+  <text x="600" y="512" text-anchor="middle" fill="#AAA" font-size="9">The Full Stack · Meridian Manufacturing Scenario · 2026</text>
+</svg>

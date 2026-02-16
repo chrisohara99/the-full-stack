@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="sh"><feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.1"/></filter>
+  </defs>
+  <rect width="1200" height="700" fill="#F8F9FA"/>
+  <rect width="1200" height="56" fill="#003366"/>
+  <text x="600" y="36" text-anchor="middle" fill="white" font-size="21" font-weight="bold">Data Products Map — Account Health Agent</text>
+
+  <!-- Finance Domain -->
+  <rect x="30" y="80" width="565" height="275" rx="10" fill="#E8F4FD" stroke="#0070C0" stroke-width="2" filter="url(#sh)"/>
+  <rect x="30" y="80" width="565" height="36" rx="10" fill="#0070C0"/>
+  <text x="312" y="104" text-anchor="middle" fill="white" font-size="14" font-weight="bold">FINANCE DOMAIN — SAP S/4HANA ERP</text>
+
+  <rect x="45" y="128" width="258" height="215" rx="6" fill="white" stroke="#4A90D9" stroke-width="1.5"/>
+  <rect x="45" y="128" width="258" height="26" rx="6" fill="#4A90D9"/><text x="174" y="146" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Receivables Health</text>
+  <text x="58" y="172" fill="#444" font-size="10">• Open invoice amounts + aging</text>
+  <text x="58" y="190" fill="#444" font-size="10">• Payment history patterns</text>
+  <text x="58" y="208" fill="#444" font-size="10">• Credit limit utilization</text>
+  <text x="58" y="226" fill="#444" font-size="10">• Dunning level + history</text>
+  <text x="58" y="244" fill="#444" font-size="10">• Dispute cases (open/resolved)</text>
+  <text x="58" y="262" fill="#444" font-size="10">• DSO at account level</text>
+
+  <rect x="322" y="128" width="258" height="215" rx="6" fill="white" stroke="#4A90D9" stroke-width="1.5"/>
+  <rect x="322" y="128" width="258" height="26" rx="6" fill="#4A90D9"/><text x="451" y="146" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Revenue Trajectory</text>
+  <text x="335" y="172" fill="#444" font-size="10">• Contract value + billing (T12M)</text>
+  <text x="335" y="190" fill="#444" font-size="10">• Revenue run rate vs. contract</text>
+  <text x="335" y="208" fill="#444" font-size="10">• Billing adjustments/credit memos</text>
+  <text x="335" y="226" fill="#444" font-size="10">• Payment terms + modifications</text>
+
+  <!-- Service Domain -->
+  <rect x="610" y="80" width="565" height="275" rx="10" fill="#FFF8E7" stroke="#D4A017" stroke-width="2" filter="url(#sh)"/>
+  <rect x="610" y="80" width="565" height="36" rx="10" fill="#D4A017"/>
+  <text x="892" y="104" text-anchor="middle" fill="white" font-size="14" font-weight="bold">SERVICE DOMAIN — SAP Service Cloud V2</text>
+
+  <rect x="625" y="128" width="258" height="215" rx="6" fill="white" stroke="#D4A017" stroke-width="1.5"/>
+  <rect x="625" y="128" width="258" height="26" rx="6" fill="#D4A017"/><text x="754" y="146" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Case Activity</text>
+  <text x="638" y="172" fill="#444" font-size="10">• Open cases by priority (P1–P4)</text>
+  <text x="638" y="190" fill="#444" font-size="10">• Case aging since creation</text>
+  <text x="638" y="208" fill="#444" font-size="10">• Case velocity vs. baseline</text>
+  <text x="638" y="226" fill="#444" font-size="10">• Resolution time trends</text>
+  <text x="638" y="244" fill="#444" font-size="10">• Escalation history + status</text>
+  <text x="638" y="262" fill="#444" font-size="10">• CSAT scores from closures</text>
+
+  <rect x="902" y="128" width="258" height="215" rx="6" fill="white" stroke="#D4A017" stroke-width="1.5"/>
+  <rect x="902" y="128" width="258" height="26" rx="6" fill="#D4A017"/><text x="1031" y="146" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Service Engagement</text>
+  <text x="915" y="172" fill="#444" font-size="10">• SLA compliance rate</text>
+  <text x="915" y="190" fill="#444" font-size="10">• Reopened case count</text>
+  <text x="915" y="208" fill="#444" font-size="10">• Customer vs. proactive cases</text>
+  <text x="915" y="226" fill="#444" font-size="10">• Agent workload context</text>
+
+  <!-- Sales Domain -->
+  <rect x="30" y="375" width="565" height="290" rx="10" fill="#E8FDE8" stroke="#2E8B57" stroke-width="2" filter="url(#sh)"/>
+  <rect x="30" y="375" width="565" height="36" rx="10" fill="#2E8B57"/>
+  <text x="312" y="399" text-anchor="middle" fill="white" font-size="14" font-weight="bold">SALES DOMAIN — SAP Sales Cloud</text>
+
+  <rect x="45" y="423" width="258" height="230" rx="6" fill="white" stroke="#2E8B57" stroke-width="1.5"/>
+  <rect x="45" y="423" width="258" height="26" rx="6" fill="#2E8B57"/><text x="174" y="441" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Renewal / Pipeline</text>
+  <text x="58" y="467" fill="#444" font-size="10">• Contract end / renewal date</text>
+  <text x="58" y="485" fill="#444" font-size="10">• Renewal probability</text>
+  <text x="58" y="503" fill="#444" font-size="10">• Open upsell/cross-sell opps</text>
+  <text x="58" y="521" fill="#444" font-size="10">• Last sales engagement</text>
+  <text x="58" y="539" fill="#444" font-size="10">• Account owner + team</text>
+  <text x="58" y="557" fill="#444" font-size="10">• Competitive mentions/flags</text>
+
+  <rect x="322" y="423" width="258" height="230" rx="6" fill="white" stroke="#2E8B57" stroke-width="1.5"/>
+  <rect x="322" y="423" width="258" height="26" rx="6" fill="#2E8B57"/><text x="451" y="441" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Relationship Health</text>
+  <text x="335" y="467" fill="#444" font-size="10">• Contact engagement frequency</text>
+  <text x="335" y="485" fill="#444" font-size="10">• Executive sponsor status</text>
+  <text x="335" y="503" fill="#444" font-size="10">• Net Promoter Score (NPS)</text>
+  <text x="335" y="521" fill="#444" font-size="10">• Account tier / segment</text>
+  <text x="335" y="539" fill="#444" font-size="10">• Strategic account flag</text>
+
+  <!-- Usage Domain -->
+  <rect x="610" y="375" width="565" height="290" rx="10" fill="#F3E8FD" stroke="#7B2D8E" stroke-width="2" filter="url(#sh)"/>
+  <rect x="610" y="375" width="565" height="36" rx="10" fill="#7B2D8E"/>
+  <text x="892" y="399" text-anchor="middle" fill="white" font-size="14" font-weight="bold">USAGE DOMAIN — SAP Analytics Cloud / Custom</text>
+
+  <rect x="625" y="423" width="535" height="230" rx="6" fill="white" stroke="#7B2D8E" stroke-width="1.5"/>
+  <rect x="625" y="423" width="535" height="26" rx="6" fill="#7B2D8E"/><text x="892" y="441" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Product Adoption</text>
+  <text x="638" y="467" fill="#444" font-size="10">• Active users vs. licensed seats (utilization rate)</text>
+  <text x="638" y="485" fill="#444" font-size="10">• Feature adoption breadth (modules/features in use)</text>
+  <text x="638" y="503" fill="#444" font-size="10">• Usage volume trends (transactions, API calls, reports)</text>
+  <text x="638" y="521" fill="#444" font-size="10">• Usage trajectory (30/60/90 day: growing, flat, declining)</text>
+  <text x="638" y="539" fill="#444" font-size="10">• Last login date for key users</text>
+  <text x="638" y="557" fill="#444" font-size="10">• Threshold breaches (below 50% contracted capacity)</text>
+
+  <text x="600" y="690" text-anchor="middle" fill="#AAA" font-size="9">The Full Stack · 7 Data Products Across 4 Domains · 2026</text>
+</svg>

@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 920" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="hg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#003366"/><stop offset="100%" stop-color="#005A9C"/></linearGradient>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#E8F4FD"/><stop offset="100%" stop-color="#D0E8F7"/></linearGradient>
+    <linearGradient id="ag" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FFF8E7"/><stop offset="100%" stop-color="#FFEEB8"/></linearGradient>
+    <filter id="sh"><feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.12"/></filter>
+  </defs>
+  <rect width="1200" height="920" fill="#F8F9FA"/>
+  <rect width="1200" height="56" fill="url(#hg)"/>
+  <text x="600" y="36" text-anchor="middle" fill="white" font-size="21" font-weight="bold">Account Health Orchestration Agent — Solution Architecture</text>
+
+  <!-- Layer 1 -->
+  <text x="30" y="86" fill="#003366" font-size="12" font-weight="bold" letter-spacing="2">LAYER 1: SOURCE SYSTEMS</text>
+  <line x1="30" y1="92" x2="1170" y2="92" stroke="#ddd" stroke-width="1"/>
+
+  <rect x="30" y="102" width="270" height="115" rx="8" fill="white" stroke="#0070C0" stroke-width="2" filter="url(#sh)"/>
+  <rect x="30" y="102" width="270" height="30" rx="8" fill="#0070C0"/><rect x="30" y="124" width="270" height="8" fill="#0070C0"/>
+  <text x="165" y="123" text-anchor="middle" fill="white" font-size="12" font-weight="bold">SAP S/4HANA (Finance)</text>
+  <text x="44" y="151" fill="#444" font-size="10.5">Invoices &amp; Aging Buckets</text>
+  <text x="44" y="166" fill="#444" font-size="10.5">Payment History &amp; DSO</text>
+  <text x="44" y="181" fill="#444" font-size="10.5">Credit Mgmt &amp; Disputes</text>
+  <text x="44" y="196" fill="#444" font-size="10.5">Dunning Status</text>
+
+  <rect x="320" y="102" width="270" height="115" rx="8" fill="white" stroke="#0070C0" stroke-width="2" filter="url(#sh)"/>
+  <rect x="320" y="102" width="270" height="30" rx="8" fill="#0070C0"/><rect x="320" y="124" width="270" height="8" fill="#0070C0"/>
+  <text x="455" y="123" text-anchor="middle" fill="white" font-size="12" font-weight="bold">SAP Service Cloud V2</text>
+  <text x="334" y="151" fill="#444" font-size="10.5">Cases by Priority (P1–P4)</text>
+  <text x="334" y="166" fill="#444" font-size="10.5">Escalation History</text>
+  <text x="334" y="181" fill="#444" font-size="10.5">SLA Compliance &amp; CSAT</text>
+  <text x="334" y="196" fill="#444" font-size="10.5">Resolution Trends</text>
+
+  <rect x="610" y="102" width="270" height="115" rx="8" fill="white" stroke="#0070C0" stroke-width="2" filter="url(#sh)"/>
+  <rect x="610" y="102" width="270" height="30" rx="8" fill="#0070C0"/><rect x="610" y="124" width="270" height="8" fill="#0070C0"/>
+  <text x="745" y="123" text-anchor="middle" fill="white" font-size="12" font-weight="bold">SAP Sales Cloud</text>
+  <text x="624" y="151" fill="#444" font-size="10.5">Renewal &amp; Contract Dates</text>
+  <text x="624" y="166" fill="#444" font-size="10.5">Pipeline &amp; Opportunities</text>
+  <text x="624" y="181" fill="#444" font-size="10.5">Engagement Activity</text>
+  <text x="624" y="196" fill="#444" font-size="10.5">Competitive Flags</text>
+
+  <rect x="900" y="102" width="270" height="115" rx="8" fill="white" stroke="#0070C0" stroke-width="2" filter="url(#sh)"/>
+  <rect x="900" y="102" width="270" height="30" rx="8" fill="#0070C0"/><rect x="900" y="124" width="270" height="8" fill="#0070C0"/>
+  <text x="1035" y="123" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Usage Telemetry (SAC)</text>
+  <text x="914" y="151" fill="#444" font-size="10.5">Login &amp; Active Users</text>
+  <text x="914" y="166" fill="#444" font-size="10.5">Feature Adoption</text>
+  <text x="914" y="181" fill="#444" font-size="10.5">Transaction Volume</text>
+  <text x="914" y="196" fill="#444" font-size="10.5">Usage Trajectory</text>
+
+  <!-- Arrows -->
+  <line x1="165" y1="217" x2="165" y2="258" stroke="#0070C0" stroke-width="1.5"/><polygon points="165,260 160,252 170,252" fill="#0070C0"/>
+  <line x1="455" y1="217" x2="455" y2="258" stroke="#0070C0" stroke-width="1.5"/><polygon points="455,260 450,252 460,252" fill="#0070C0"/>
+  <line x1="745" y1="217" x2="745" y2="258" stroke="#0070C0" stroke-width="1.5"/><polygon points="745,260 740,252 750,252" fill="#0070C0"/>
+  <line x1="1035" y1="217" x2="1035" y2="258" stroke="#0070C0" stroke-width="1.5"/><polygon points="1035,260 1030,252 1040,252" fill="#0070C0"/>
+  <rect x="440" y="228" width="320" height="22" rx="11" fill="#0070C0"/><text x="600" y="243" text-anchor="middle" fill="white" font-size="10" font-weight="bold" letter-spacing="1">ZERO-COPY / DELTA SHARING</text>
+
+  <!-- Layer 2: BDC -->
+  <text x="30" y="282" fill="#003366" font-size="12" font-weight="bold" letter-spacing="2">LAYER 2: SAP BUSINESS DATA CLOUD</text>
+  <rect x="30" y="288" width="1140" height="200" rx="10" fill="url(#bg)" stroke="#0070C0" stroke-width="2" filter="url(#sh)"/>
+
+  <rect x="48" y="300" width="170" height="46" rx="5" fill="white" stroke="#4A90D9" stroke-width="1.5"/><text x="133" y="319" text-anchor="middle" fill="#003366" font-size="10" font-weight="bold">Receivables Health</text><text x="133" y="335" text-anchor="middle" fill="#888" font-size="9">Data Product</text>
+  <rect x="228" y="300" width="170" height="46" rx="5" fill="white" stroke="#4A90D9" stroke-width="1.5"/><text x="313" y="319" text-anchor="middle" fill="#003366" font-size="10" font-weight="bold">Case Activity</text><text x="313" y="335" text-anchor="middle" fill="#888" font-size="9">Data Product</text>
+  <rect x="408" y="300" width="170" height="46" rx="5" fill="white" stroke="#4A90D9" stroke-width="1.5"/><text x="493" y="319" text-anchor="middle" fill="#003366" font-size="10" font-weight="bold">Renewal / Pipeline</text><text x="493" y="335" text-anchor="middle" fill="#888" font-size="9">Data Product</text>
+  <rect x="588" y="300" width="170" height="46" rx="5" fill="white" stroke="#4A90D9" stroke-width="1.5"/><text x="673" y="319" text-anchor="middle" fill="#003366" font-size="10" font-weight="bold">Product Adoption</text><text x="673" y="335" text-anchor="middle" fill="#888" font-size="9">Data Product</text>
+  <rect x="768" y="300" width="170" height="46" rx="5" fill="white" stroke="#4A90D9" stroke-width="1.5"/><text x="853" y="319" text-anchor="middle" fill="#003366" font-size="10" font-weight="bold">Revenue Trajectory</text><text x="853" y="335" text-anchor="middle" fill="#888" font-size="9">Data Product</text>
+  <rect x="948" y="300" width="208" height="46" rx="5" fill="white" stroke="#4A90D9" stroke-width="1.5"/><text x="1052" y="319" text-anchor="middle" fill="#003366" font-size="10" font-weight="bold">Relationship Health</text><text x="1052" y="335" text-anchor="middle" fill="#888" font-size="9">Data Product</text>
+
+  <rect x="48" y="360" width="550" height="42" rx="5" fill="#003366"/><text x="323" y="380" text-anchor="middle" fill="white" font-size="11" font-weight="bold">SAP Knowledge Graph</text><text x="323" y="394" text-anchor="middle" fill="#B8D4F0" font-size="9">Account → Contracts → Cases → Invoices → Contacts → Usage</text>
+  <rect x="608" y="360" width="548" height="42" rx="5" fill="#003366"/><text x="882" y="380" text-anchor="middle" fill="white" font-size="11" font-weight="bold">SAP Datasphere (Harmonization)</text><text x="882" y="394" text-anchor="middle" fill="#B8D4F0" font-size="9">Unified account master · Composite scoring · Trend calculations</text>
+
+  <rect x="48" y="416" width="550" height="30" rx="5" fill="white" stroke="#4A90D9" stroke-width="1"/><text x="323" y="436" text-anchor="middle" fill="#003366" font-size="10">Service Engagement DP · Data Product Studio (Custom Curation)</text>
+  <rect x="608" y="416" width="548" height="30" rx="5" fill="white" stroke="#4A90D9" stroke-width="1"/><text x="882" y="436" text-anchor="middle" fill="#003366" font-size="10">Governed API Access Layer</text>
+
+  <!-- Connector -->
+  <rect x="440" y="460" width="320" height="22" rx="11" fill="#0070C0"/><text x="600" y="475" text-anchor="middle" fill="white" font-size="10" font-weight="bold" letter-spacing="1">GOVERNED API ACCESS</text>
+  <line x1="600" y1="482" x2="600" y2="504" stroke="#0070C0" stroke-width="1.5"/><polygon points="600,506 595,498 605,498" fill="#0070C0"/>
+
+  <!-- Layer 3: Agent -->
+  <text x="30" y="524" fill="#003366" font-size="12" font-weight="bold" letter-spacing="2">LAYER 3: ACCOUNT HEALTH ORCHESTRATION AGENT</text>
+  <rect x="30" y="530" width="1140" height="175" rx="10" fill="url(#ag)" stroke="#D4A017" stroke-width="2" filter="url(#sh)"/>
+
+  <rect x="48" y="542" width="355" height="150" rx="6" fill="white" stroke="#D4A017" stroke-width="1.5"/>
+  <rect x="48" y="542" width="355" height="26" rx="6" fill="#D4A017"/><text x="225" y="560" text-anchor="middle" fill="white" font-size="11" font-weight="bold">SCORING ENGINE</text>
+  <text x="62" y="586" fill="#444" font-size="10">Finance Signals .................... 25%</text>
+  <text x="62" y="602" fill="#444" font-size="10">Service Signals .................... 25%</text>
+  <text x="62" y="618" fill="#444" font-size="10">Sales Signals ....................... 25%</text>
+  <text x="62" y="634" fill="#444" font-size="10">Usage Signals ..................... 25%</text>
+  <rect x="62" y="648" width="90" height="18" rx="4" fill="#2E8B57"/><text x="107" y="661" text-anchor="middle" fill="white" font-size="9" font-weight="bold">75–100</text>
+  <rect x="160" y="648" width="90" height="18" rx="4" fill="#DAA520"/><text x="205" y="661" text-anchor="middle" fill="white" font-size="9" font-weight="bold">50–74</text>
+  <rect x="258" y="648" width="90" height="18" rx="4" fill="#CC3333"/><text x="303" y="661" text-anchor="middle" fill="white" font-size="9" font-weight="bold">0–49</text>
+
+  <rect x="418" y="542" width="355" height="150" rx="6" fill="white" stroke="#D4A017" stroke-width="1.5"/>
+  <rect x="418" y="542" width="355" height="26" rx="6" fill="#D4A017"/><text x="595" y="560" text-anchor="middle" fill="white" font-size="11" font-weight="bold">ORCHESTRATION ENGINE</text>
+  <text x="432" y="586" fill="#CC3333" font-size="10" font-weight="bold">BLOCK</text><text x="494" y="586" fill="#444" font-size="10">Suppress campaigns</text>
+  <text x="432" y="604" fill="#0070C0" font-size="10" font-weight="bold">ROUTE</text><text x="494" y="604" fill="#444" font-size="10">Create CS priority case</text>
+  <text x="432" y="622" fill="#D4A017" font-size="10" font-weight="bold">ALERT</text><text x="494" y="622" fill="#444" font-size="10">Notify AE + manager</text>
+  <text x="432" y="640" fill="#8B0000" font-size="10" font-weight="bold">ESCALATE</text><text x="510" y="640" fill="#444" font-size="10">Exec outreach</text>
+  <text x="432" y="658" fill="#2E8B57" font-size="10" font-weight="bold">ENRICH</text><text x="502" y="658" fill="#444" font-size="10">Update opp context</text>
+  <text x="432" y="676" fill="#666" font-size="10" font-weight="bold">LOG</text><text x="466" y="676" fill="#444" font-size="10">Audit trail + training</text>
+
+  <rect x="788" y="542" width="368" height="150" rx="6" fill="white" stroke="#D4A017" stroke-width="1.5"/>
+  <rect x="788" y="542" width="368" height="26" rx="6" fill="#D4A017"/><text x="972" y="560" text-anchor="middle" fill="white" font-size="11" font-weight="bold">HUMAN-IN-THE-LOOP</text>
+  <text x="806" y="590" fill="#444" font-size="10">Red accounts: Manager approval</text>
+  <text x="806" y="608" fill="#444" font-size="10">required before agent acts</text>
+  <text x="806" y="634" fill="#444" font-size="10">Yellow accounts: Weekly digest</text>
+  <text x="806" y="652" fill="#444" font-size="10">for team review</text>
+  <text x="806" y="676" fill="#444" font-size="10">Override for strategic accounts</text>
+
+  <text x="600" y="720" text-anchor="middle" fill="#999" font-size="10" font-style="italic">Built in Joule Studio on SAP BTP</text>
+
+  <!-- Layer 4 -->
+  <text x="30" y="748" fill="#003366" font-size="12" font-weight="bold" letter-spacing="2">LAYER 4: ACTION TARGETS (WRITE-BACK)</text>
+  <line x1="30" y1="754" x2="1170" y2="754" stroke="#ddd" stroke-width="1"/>
+
+  <rect x="30" y="764" width="270" height="55" rx="8" fill="white" stroke="#2E8B57" stroke-width="2" filter="url(#sh)"/>
+  <text x="165" y="787" text-anchor="middle" fill="#2E8B57" font-size="12" font-weight="bold">SAP Sales Cloud</text>
+  <text x="165" y="805" text-anchor="middle" fill="#666" font-size="10">Tasks · Opp Context · Exec Outreach</text>
+
+  <rect x="320" y="764" width="270" height="55" rx="8" fill="white" stroke="#2E8B57" stroke-width="2" filter="url(#sh)"/>
+  <text x="455" y="787" text-anchor="middle" fill="#2E8B57" font-size="12" font-weight="bold">SAP Service Cloud</text>
+  <text x="455" y="805" text-anchor="middle" fill="#666" font-size="10">Priority Cases · Routing · Retention</text>
+
+  <rect x="610" y="764" width="270" height="55" rx="8" fill="white" stroke="#2E8B57" stroke-width="2" filter="url(#sh)"/>
+  <text x="745" y="787" text-anchor="middle" fill="#2E8B57" font-size="12" font-weight="bold">SAP S/4HANA</text>
+  <text x="745" y="805" text-anchor="middle" fill="#666" font-size="10">Dunning Pause · AR Flags · Credit</text>
+
+  <rect x="900" y="764" width="270" height="55" rx="8" fill="white" stroke="#2E8B57" stroke-width="2" filter="url(#sh)"/>
+  <text x="1035" y="787" text-anchor="middle" fill="#2E8B57" font-size="12" font-weight="bold">Campaign Mgmt</text>
+  <text x="1035" y="805" text-anchor="middle" fill="#666" font-size="10">Suppress · Redirect · Retention</text>
+
+  <text x="600" y="858" text-anchor="middle" fill="#AAA" font-size="9">The Full Stack · Account Health Orchestration Agent Blueprint · 2026</text>
+</svg>
