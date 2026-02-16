@@ -158,6 +158,18 @@
         
         <h2>The Solution: An Account Health Agent Built on SAP Business Data Cloud</h2>
         
+        <div class="key-insight" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 2px solid #f59e0b;">
+            <p><strong>📋 Prerequisites: What Customers Need</strong></p>
+            <p style="margin-top: 12px; margin-bottom: 0;">This architecture requires SAP's cloud application stack—the data products and zero-copy sharing capabilities in BDC are designed for cloud-native deployments:</p>
+            <ul style="margin-top: 12px; margin-bottom: 0;">
+                <li><strong>SAP Cloud ERP</strong> (Private or Public Edition) — for finance data products</li>
+                <li><strong>SAP Sales Cloud</strong> and <strong>SAP Service Cloud V2</strong> — for CX data products</li>
+                <li><strong>SAP Business Data Cloud</strong> — includes Datasphere, Knowledge Graph, and curated data products</li>
+                <li><strong>SAP Business Technology Platform</strong> — for Joule Studio agent development</li>
+            </ul>
+            <p style="margin-top: 12px; margin-bottom: 0;"><em>On-premise S/4HANA customers would need to migrate to RISE with SAP or SAP Cloud ERP Private Edition to access these capabilities.</em></p>
+        </div>
+        
         <div class="solution-box">
             <p><strong>SAP Business Data Cloud (BDC) changes the game</strong> because it introduces the concept of <em>data products</em>—curated, semantically enriched, governed data packages that retain their original business context from source applications.</p>
             <p>Unlike traditional ETL-and-warehouse approaches, data products in BDC don't strip the meaning out of the data to make it "portable." They carry their business semantics with them.</p>
@@ -380,6 +392,8 @@
         </table>
         
         <p>Against an implementation investment of $300K–$500K (inclusive of BDC subscription uplift, Joule Studio agent development, integration work, and change management), the <strong>payback period is well under 6 months</strong>.</p>
+        
+        <p><em>Note: This ROI model assumes the customer is already on SAP Cloud ERP (Private or Public Edition) and SAP Cloud CX applications. Customers migrating from on-premise would need to factor in RISE with SAP transformation costs.</em></p>
         
         <h2>Implementation Roadmap</h2>
         
