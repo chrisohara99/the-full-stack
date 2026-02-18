@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Tested 3 AI Content Tools on the Same Brief | The Full Stack</title>
+    <meta name="description" content="Claude, ChatGPT, and Prezent go head-to-head on creating a presentation. The results were surprising.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 720px;
+            --wide-width: 960px;
+            --claude-green: #10a37f;
+            --chatgpt-orange: #ea580c;
+            --prezent-purple: #7c3aed;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text-primary); line-height: 1.6; }
+        
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(253, 251, 247, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { font-family: var(--mono); font-size: 15px; font-weight: 500; color: var(--text-primary); text-decoration: none; }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header { max-width: var(--max-width); margin: 0 auto; padding: 64px 24px 32px; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-tertiary); text-decoration: none; margin-bottom: 32px; }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .article-date { font-size: 13px; color: var(--text-tertiary); }
+        .article-tag { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: rgba(192, 86, 38, 0.08); padding: 2px 8px; border-radius: 3px; }
+        .article-title { font-family: var(--serif); font-size: 42px; font-weight: 400; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; }
+        .article-subtitle { font-family: var(--serif); font-size: 20px; font-weight: 300; font-style: italic; color: var(--text-secondary); line-height: 1.5; }
+        
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 80px; font-family: var(--serif); font-size: 18px; line-height: 1.8; }
+        .article-body p { margin-bottom: 24px; }
+        .article-body strong { font-weight: 600; }
+        .article-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(192, 86, 38, 0.3); }
+        .article-body a:hover { border-color: var(--accent); }
+        .article-body h2 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 48px 0 20px; }
+        .article-body h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin: 36px 0 16px; }
+        .article-body ul { margin: 0 0 24px 24px; }
+        .article-body li { margin-bottom: 12px; }
+        
+        .tool-card { border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; background: white; }
+        .tool-card.winner { border: 3px solid var(--claude-green); background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); }
+        .tool-card.meh { border-color: var(--chatgpt-orange); }
+        .tool-card.fail { border-color: #dc2626; }
+        .tool-card h3 { margin: 0 0 12px; font-family: var(--sans); font-size: 18px; }
+        .tool-card .verdict { font-family: var(--sans); font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+        .tool-card.winner .verdict { color: var(--claude-green); }
+        .tool-card.meh .verdict { color: var(--chatgpt-orange); }
+        .tool-card.fail .verdict { color: #dc2626; }
+        .tool-card p { margin-bottom: 0; font-family: var(--sans); font-size: 15px; color: var(--text-secondary); }
+        
+        .winner-box { background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border: 3px solid var(--claude-green); border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center; }
+        .winner-box h3 { color: var(--claude-green); margin: 0 0 8px; font-family: var(--sans); }
+        .winner-box p { margin: 0; font-family: var(--sans); font-size: 15px; }
+        
+        .key-insight { background: var(--tag-bg); border: 1px solid var(--border); padding: 24px; margin: 32px 0; border-radius: 12px; }
+        .key-insight p { margin-bottom: 0; }
+        
+        footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
+        .footer-inner { max-width: var(--wide-width); margin: 0 auto; }
+        .footer-brand { font-family: var(--mono); font-size: 13px; color: var(--text-tertiary); }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="../index.html">Articles</a>
+                <a href="https://linkedin.com/in/christopherohara" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="article-header">
+        <a href="../index.html" class="back-link">← Back to all articles</a>
+        <div class="article-meta">
+            <span class="article-date">February 2026</span>
+            <span class="article-tag">AI COMPARISON</span>
+        </div>
+        <h1 class="article-title">I Tested 3 AI Content Tools on the Same Brief</h1>
+        <p class="article-subtitle">Claude, ChatGPT, and Prezent go head-to-head on creating a presentation. The results were surprising.</p>
+    </header>
+
+    <article class="article-body">
+        <p>I gave three AI tools the exact same assignment: take two articles and an SAP template, create a two-chapter presentation deck. No hand-holding. No iterations. Just the brief and a "go."</p>
+        
+        <p>The goal was simple: <strong>which tool gets me closest to a finished presentation with the least manual work?</strong></p>
+
+        <h2>The Test</h2>
+        
+        <p><strong>The brief:</strong> Create a presentation combining content from two existing articles (on AI agents and enterprise data) using an SAP template. Two chapters, professional formatting, ready to present.</p>
+        
+        <p><strong>The tools:</strong></p>
+        <ul>
+            <li><strong>Claude</strong> — Anthropic's AI assistant</li>
+            <li><strong>ChatGPT</strong> — OpenAI's flagship model</li>
+            <li><strong>Prezent</strong> — An enterprise AI presentation platform</li>
+        </ul>
+
+        <h2>The Results</h2>
+        
+        <div class="tool-card winner">
+            <h3>✨ Claude</h3>
+            <p class="verdict">🏆 Winner — Zero manual work required</p>
+            <p>Claude delivered clean, polished slides with proper structure. It pulled relevant images from the source articles and wove them into a coherent narrative. The output was presentation-ready without any manual cleanup.</p>
+        </div>
+        
+        <div class="tool-card meh">
+            <h3>🤖 ChatGPT</h3>
+            <p class="verdict">😐 Meh — 30 slides of bloat</p>
+            <p>ChatGPT produced 30 slides filled with template filler and questionable design choices. The content was there, buried somewhere, but the signal-to-noise ratio was terrible. Significant cleanup required.</p>
+        </div>
+        
+        <div class="tool-card fail">
+            <h3>📊 Prezent</h3>
+            <p class="verdict">❌ Fail — Couldn't get out of its own way</p>
+            <p>Prezent's "enterprise features" were locked behind approval workflows and permission walls. The tool seemed designed for large teams with complex governance needs — not for a PMM trying to build a deck quickly.</p>
+        </div>
+
+        <h2>The Verdict</h2>
+        
+        <div class="winner-box">
+            <h3>🏆 Winner: Claude</h3>
+            <p>General-purpose LLMs are beating specialized tools on their own turf. A well-prompted Claude delivered better results than an enterprise presentation AI.</p>
+        </div>
+
+        <div class="key-insight">
+            <p><strong>💡 The Lesson:</strong> Before buying specialized AI software for content creation, test what free/cheap LLMs can do first. You might be surprised.</p>
+        </div>
+
+        <h2>Why This Matters</h2>
+        
+        <p>The AI tools landscape is shifting fast. Specialized tools that promised category-defining features are getting lapped by general-purpose models that can do everything adequately.</p>
+        
+        <p>For PMMs, this is actually good news. You don't need to master a dozen specialized tools. A well-crafted prompt to Claude or ChatGPT can handle most content creation tasks — often better than the "purpose-built" alternatives.</p>
+        
+        <p>The winners will be those who learn to prompt effectively, not those who collect the most tools.</p>
+        
+        <p><a href="https://futureofpmm.com/content-gen-tools-evaluation.html">Read the full evaluation with detailed outputs →</a></p>
+    </article>
+
+    <footer>
+        <div class="footer-inner">
+            <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+        </div>
+    </footer>
+</body>
+</html>
