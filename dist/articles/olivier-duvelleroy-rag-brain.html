@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet the SAP Designer Who Built His Own AI Brain | The Full Stack</title>
+    <meta name="description" content="Olivier Duvelleroy spent 30 years designing enterprise software. Then he spent a rainy Saturday building something just for himself: a personal context engine that changes how he works.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --accent-hover: #A84920;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --tag-text: #7A7168;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 720px;
+            --wide-width: 960px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(253, 251, 247, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { font-family: var(--mono); font-size: 15px; font-weight: 500; letter-spacing: -0.02em; color: var(--text-primary); text-decoration: none; }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { font-size: 14px; font-weight: 400; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header { max-width: var(--max-width); margin: 0 auto; padding: 64px 24px 32px; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-tertiary); text-decoration: none; margin-bottom: 32px; transition: color 0.2s; }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .article-date { font-size: 13px; color: var(--text-tertiary); }
+        .article-tag { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: rgba(192, 86, 38, 0.08); padding: 2px 8px; border-radius: 3px; }
+        .article-title { font-family: var(--serif); font-size: 42px; font-weight: 400; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; }
+        .article-subtitle { font-family: var(--serif); font-size: 20px; font-weight: 300; font-style: italic; color: var(--text-secondary); line-height: 1.5; }
+        
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 80px; font-family: var(--serif); font-size: 18px; line-height: 1.8; }
+        .article-body p { margin-bottom: 24px; }
+        .article-body strong { font-weight: 600; }
+        .article-body em { font-style: italic; }
+        .article-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(192, 86, 38, 0.3); transition: border-color 0.2s; }
+        .article-body a:hover { border-color: var(--accent); }
+        .article-body h2 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 48px 0 20px; line-height: 1.3; }
+        .article-body h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin: 36px 0 16px; line-height: 1.35; }
+        .article-body ul, .article-body ol { margin: 0 0 24px 24px; }
+        .article-body li { margin-bottom: 12px; }
+        .article-body blockquote { border-left: 3px solid var(--accent); padding: 16px 24px; margin: 32px 0; background: var(--tag-bg); border-radius: 0 8px 8px 0; }
+        .article-body blockquote p { margin-bottom: 0; font-style: italic; color: var(--text-secondary); }
+        
+        .pullquote { font-family: var(--serif); font-size: 26px; font-weight: 400; font-style: italic; color: var(--accent); line-height: 1.4; margin: 48px 0; padding: 0 24px; text-align: center; }
+        
+        .key-insight { background: var(--tag-bg); border: 1px solid var(--border); padding: 24px; margin: 32px 0; border-radius: 12px; }
+        .key-insight p { margin-bottom: 0; }
+        
+        .cta-box { background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%); color: white; padding: 32px; margin: 48px 0; border-radius: 12px; text-align: center; }
+        .cta-box h3 { font-family: var(--serif); font-size: 24px; font-weight: 400; margin-bottom: 12px; }
+        .cta-box p { color: rgba(255,255,255,0.8); margin-bottom: 20px; font-family: var(--sans); }
+        .cta-box a { display: inline-block; background: #3b82f6; color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-family: var(--sans); font-weight: 600; border: none; transition: background 0.2s; }
+        .cta-box a:hover { background: #2563eb; border: none; }
+
+        .author-box { display: flex; gap: 16px; align-items: flex-start; background: var(--bg-card); border: 1px solid var(--border-light); padding: 24px; margin: 48px 0; border-radius: 12px; }
+        .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); display: flex; align-items: center; justify-content: center; color: white; font-family: var(--serif); font-size: 24px; font-weight: 500; flex-shrink: 0; }
+        .author-info h4 { font-family: var(--sans); font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+        .author-info p { font-family: var(--sans); font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+        
+        footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
+        .footer-inner { max-width: var(--wide-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .footer-brand { font-family: var(--mono); font-size: 13px; color: var(--text-tertiary); }
+        .footer-brand .slash { color: var(--accent); }
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a { font-size: 13px; color: var(--text-tertiary); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--text-primary); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 32px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .pullquote { font-size: 22px; padding: 0; }
+            .footer-inner { flex-direction: column; gap: 12px; }
+            .author-box { flex-direction: column; text-align: center; }
+            .author-avatar { margin: 0 auto; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="../index.html">Articles</a>
+                <a href="https://linkedin.com/in/christopherohara" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="../index.html" class="back-link">← Back to all articles</a>
+        <div class="article-meta">
+            <span class="article-date">February 2026</span>
+            <span class="article-tag">AI</span>
+            <span class="article-tag">Productivity</span>
+            <span class="article-tag">SAP</span>
+        </div>
+        <h1 class="article-title">Meet the SAP Designer Who Built His Own AI Brain</h1>
+        <p class="article-subtitle">Olivier Duvelleroy spent 30 years designing enterprise software. Then he spent a rainy Saturday building something just for himself: a personal context engine that changes how he works.</p>
+    </header>
+    
+    <article class="article-body">
+        <p>In 1994, a young French designer named Olivier Duvelleroy walked into Business Objects as the company's first product designer. Over the next three decades, he would help shape enterprise software used by millions of people—from early BI dashboards to the sophisticated analytics platforms that SAP offers today.</p>
+        
+        <p>But this isn't a story about enterprise software. It's about what happens when someone who has spent their career building tools for others finally builds something entirely for themselves.</p>
+        
+        <h2>The Problem Nobody Talks About</h2>
+        
+        <p>Like most knowledge workers in 2026, Olivier uses AI tools daily. ChatGPT, Claude, Copilot—the usual suspects. They're powerful, transformative even. But they all share a frustrating limitation that's easy to overlook until it stops you cold:</p>
+        
+        <p><strong>They can only see what you show them.</strong></p>
+        
+        <p>ChatGPT Plus lets you attach 10 files per prompt, 40 per project. Sounds generous until you're a PMM sitting on 1,000+ research documents—Gartner reports, IDC analyses, McKinsey studies, competitive briefs, internal strategy decks. The kind of institutional knowledge that takes years to accumulate.</p>
+        
+        <blockquote>
+            <p>"I had an AI survey with about 40 interview transcripts. I have 20 questions like that every day. File limits mean I will always miss the document that best answers the question."</p>
+        </blockquote>
+        
+        <p>Most people just work around it. They manually select which files to upload. They split questions across sessions. They accept that AI will never have the full picture.</p>
+        
+        <p>Olivier decided to solve it.</p>
+        
+        <h2>One Rainy Saturday</h2>
+        
+        <p>The goal was simple: build a system that could search his entire knowledge base—every research document, every internal brief, every analyst note—and pull exactly the right context for any question. No more file limits. No more guessing which documents to include.</p>
+        
+        <p>The approach: <strong>Retrieval-Augmented Generation (RAG)</strong>—a technique that retrieves relevant information from a knowledge base before sending it to an AI model. Instead of hoping the AI knows something, you give it exactly the context it needs.</p>
+        
+        <p>The timeline: one Saturday.</p>
+        
+        <p class="pullquote">"Can I do it completely for free? Yes, I did."</p>
+        
+        <p>With ChatGPT as his coding assistant, Olivier installed Ollama (a local AI runtime), pulled an open-source model, created a Python environment, set up a vector database, and ran his first RAG queries—all before dinner.</p>
+        
+        <p>He called it <strong>NEXUS</strong>: a local, private Second Brain for context-aware intelligence.</p>
+        
+        <h2>What Changed</h2>
+        
+        <p>Before NEXUS, finding the right supporting quotes for a book chapter meant multiple prompts, manual file selection, and a lot of context-switching across 40 interview transcripts and a 20-chapter structure.</p>
+        
+        <p>After NEXUS: one 30-second prompt returns the three best grounded quotes for each chapter, pulled from his entire corpus.</p>
+        
+        <div class="key-insight">
+            <p><strong>The biggest win is speed:</strong> quickly identifying and prioritizing the right documents and snippets to ground an AI task. Not just faster—but the confidence that you're not missing the document that matters most.</p>
+        </div>
+        
+        <p>For his book versioning and reviews, market trend analysis, and internal document synthesis, the system acts as what Olivier calls a "personal context accelerator"—not replacing his judgment, but making sure he's always working with the best available information.</p>
+        
+        <h2>The Unexpected Lessons</h2>
+        
+        <p>Building NEXUS taught Olivier something important about the current moment in AI:</p>
+        
+        <blockquote>
+            <p>"At no time should we be afraid of diving into the details these days. AI tools can guide you through implementation; you are mostly limited by your curiosity, creativity, and intent."</p>
+        </blockquote>
+        
+        <p>Things that seemed too hard a year ago—running CLI commands, setting up GitHub, creating Python environments from scratch—are now achievable in an afternoon with AI guidance. The barrier isn't technical skill. It's having a clear intent and the willingness to try.</p>
+        
+        <p>Local inference also makes the tradeoffs tangible. Running a model on your laptop means experiencing the latency, the CPU cost, the fan spinning up. It demystifies what "AI" actually means and surfaces real engineering decisions about when local processing makes sense versus when to call an API.</p>
+        
+        <h2>What This Means for PMMs</h2>
+        
+        <p>Olivier's experiment points to something bigger than one person's productivity hack. Product marketers sit on enormous amounts of institutional knowledge—customer research, competitive intelligence, win/loss analyses, positioning documents, sales call transcripts. That knowledge currently lives in scattered drives, folders, and the memories of individuals.</p>
+        
+        <p>RAG systems offer a way to make that knowledge <em>queryable</em>. Not just searchable (we've had that for years) but actually usable by AI in the context of specific questions.</p>
+        
+        <p>Imagine asking:</p>
+        <ul>
+            <li>"What did our customers say about pricing in the last 20 interviews?"</li>
+            <li>"How does our positioning compare to Competitor X's latest messaging?"</li>
+            <li>"What patterns do we see in lost deals from Q4?"</li>
+        </ul>
+        
+        <p>And getting answers grounded in your actual documents—with citations, with context, with the ability to verify.</p>
+        
+        <p>That's the future Olivier built for himself in a weekend. The question is: why aren't more of us building it?</p>
+        
+        <div class="cta-box">
+            <h3>Want to Build Your Own?</h3>
+            <p>Olivier documented his entire process. We've turned it into a step-by-step guide.</p>
+            <a href="how-to-build-personal-rag-system.html">Read the How-To Guide →</a>
+        </div>
+        
+        <div class="author-box">
+            <div class="author-avatar">OD</div>
+            <div class="author-info">
+                <h4>Olivier Duvelleroy</h4>
+                <p>Olivier has been designing enterprise software for over 30 years. He joined Business Objects in 1994 as the company's first product designer and is currently at SAP, where he continues to work at the intersection of design, data, and intelligence.</p>
+            </div>
+        </div>
+    </article>
+    
+    <footer>
+        <div class="footer-inner">
+            <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+            <div class="footer-links">
+                <a href="../index.html">Articles</a>
+                <a href="https://linkedin.com/in/christopherohara" target="_blank">LinkedIn</a>
+                <a href="https://www.chrisohara.com" target="_blank">chrisohara.com</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
