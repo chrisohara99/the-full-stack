@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Chris O'Hara | The Full Stack</title>
+    <meta name="description" content="Chris O'Hara - VP Product Marketing at SAP, former Salesforce executive, and author of Customer Data Platforms (Wiley) and Data Driven (McGraw Hill).">
+    <meta name="keywords" content="Chris O'Hara, product marketing, VP marketing, CMO, CDP, customer data platform, SAP, Salesforce, AI marketing, martech author">
+    <meta name="author" content="Chris O'Hara">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/about.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="About Chris O'Hara | The Full Stack">
+    <meta property="og:description" content="VP Product Marketing at SAP, author of Customer Data Platforms, essays on marketing, AI, and data strategy.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/about.html">
+    <meta property="og:type" content="profile">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Chris O'Hara",
+        "givenName": "Christopher",
+        "familyName": "O'Hara",
+        "jobTitle": "VP Product Marketing",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "SAP"
+        },
+        "description": "Product marketing executive and author specializing in AI transformation, Customer Data Platforms, consumption-based pricing, and data cloud go-to-market strategy.",
+        "url": "https://chrisohara.com",
+        "image": "https://chrisohara.com/assets/images/chris-ohara.jpg",
+        "sameAs": [
+          "https://www.linkedin.com/in/christopherohara",
+          "https://futureofpmm.com",
+          "https://www.amazon.com/author/christopherohara"
+        ],
+        "knowsAbout": [
+          "Product Marketing",
+          "AI Transformation",
+          "Customer Data Platforms",
+          "Consumption-Based Pricing",
+          "Data Cloud GTM",
+          "Marketing Technology",
+          "Go-to-Market Strategy",
+          "SVP Marketing",
+          "CMO"
+        ],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Author - Customer Data Platforms (Wiley, 2020)",
+            "description": "#1 Amazon Best Seller"
+          },
+          {
+            "@type": "EducationalOccupationalCredential", 
+            "name": "Author - Data Driven (McGraw Hill, 2018)",
+            "description": "Axiom Business Book Award Silver Medal"
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --accent: #C05626;
+            --accent-hover: #A84820;
+            --border: #E8E4DE;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        nav a:hover { color: var(--accent); }
+        
+        .about-hero {
+            padding: 80px 0 40px;
+        }
+        
+        .about-hero h1 {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .about-hero .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+        
+        .about-content {
+            padding: 0 0 80px;
+        }
+        
+        .about-content p {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+        
+        .about-content h2 {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin: 3rem 0 1rem;
+        }
+        
+        .credentials {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .credentials h3 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .credentials ul {
+            list-style: none;
+        }
+        
+        .credentials li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+        
+        .credentials li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .links a {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--accent);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        
+        .links a:hover {
+            background: var(--accent-hover);
+        }
+        
+        .links a.secondary {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+        
+        .links a.secondary:hover {
+            border-color: var(--accent);
+        }
+        
+        footer {
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo">The Full Stack</a>
+            <nav>
+                <a href="index.html">Essays</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="about-hero">
+            <h1>Chris O'Hara</h1>
+            <p class="subtitle">Marketing executive, author, and recovering advertising person</p>
+        </section>
+        
+        <section class="about-content">
+            <p>I've spent 20+ years building marketing organizations, launching products, and trying to make sense of how technology reshapes how we reach people. Currently, I'm VP of Global Product Marketing at SAP, leading go-to-market for AI, analytics, and planning solutions.</p>
+            
+            <p>Before SAP, I spent five years at Salesforce where I led product marketing for Data Cloud, Tableau, and Marketing Cloud — building a team that generated $2.3B in pipeline. Before the enterprise world, I was deep in ad tech and media, holding leadership roles at Krux Digital (acquired by Salesforce), Digital Trends, and various agency-side positions.</p>
+            
+            <p><strong>The Full Stack</strong> is where I write about the things I'm thinking about — marketing, AI, data strategy, and the occasional detour into whatever's interesting. It's less polished than my LinkedIn posts, more honest than my conference talks.</p>
+            
+            <p>I also write <a href="https://futureofpmm.com" style="color: var(--accent);">The Future of PMM</a>, a newsletter specifically about how AI is transforming product marketing.</p>
+            
+            <div class="credentials">
+                <h3>Books</h3>
+                <ul>
+                    <li><strong>Customer Data Platforms</strong> (Wiley, 2020) — #1 Amazon Best Seller in Marketing</li>
+                    <li><strong>Data Driven</strong> (McGraw Hill, 2018) — Axiom Business Book Award Silver Medal</li>
+                </ul>
+            </div>
+            
+            <div class="credentials">
+                <h3>Career</h3>
+                <ul>
+                    <li>VP Product Marketing, SAP — AI, Analytics & Planning</li>
+                    <li>Sr. Director Product Marketing, Salesforce — Data Cloud & Tableau</li>
+                    <li>Head of Data & AI Solutions Marketing, Salesforce</li>
+                    <li>SVP Marketing, Krux Digital (acquired by Salesforce)</li>
+                    <li>100+ keynotes and speaking engagements worldwide</li>
+                </ul>
+            </div>
+            
+            <div class="credentials">
+                <h3>Expertise</h3>
+                <ul>
+                    <li>AI Transformation & Go-to-Market Strategy</li>
+                    <li>Customer Data Platforms (CDP) Implementation</li>
+                    <li>Consumption-Based & Usage-Based Pricing Models</li>
+                    <li>Data Cloud & Marketing Technology</li>
+                    <li>Product-Led Growth for Enterprise Software</li>
+                </ul>
+            </div>
+            
+            <h2>Connect</h2>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/christopherohara" target="_blank">LinkedIn</a>
+                <a href="https://chrisohara.com" target="_blank" class="secondary">Personal Site</a>
+                <a href="https://futureofpmm.com" target="_blank" class="secondary">Future of PMM</a>
+                <a href="https://www.amazon.com/author/christopherohara" target="_blank" class="secondary">Amazon</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2026 Chris O'Hara · <a href="https://chrisohara.com">chrisohara.com</a> · <a href="https://futureofpmm.com">Future of PMM</a></p>
+        </div>
+    </footer>
+</body>
+</html>
