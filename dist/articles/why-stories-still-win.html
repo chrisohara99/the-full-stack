@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Stories Still Win: Data, Customers, and the Art of Making the Technical Human | The Full Stack</title>
+    <meta name="description" content="On the enduring power of narrative—and why it matters more than ever in the age of AI agents. Ten stories from three books about marketing's data transformation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --accent-hover: #A84920;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --tag-text: #7A7168;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 720px;
+            --wide-width: 960px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(253, 251, 247, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { font-family: var(--mono); font-size: 15px; font-weight: 500; letter-spacing: -0.02em; color: var(--text-primary); text-decoration: none; }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { font-size: 14px; font-weight: 400; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header { max-width: var(--max-width); margin: 0 auto; padding: 64px 24px 32px; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-tertiary); text-decoration: none; margin-bottom: 32px; transition: color 0.2s; }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .article-date { font-size: 13px; color: var(--text-tertiary); }
+        .article-tag { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: rgba(192, 86, 38, 0.08); padding: 2px 8px; border-radius: 3px; }
+        .article-title { font-family: var(--serif); font-size: 42px; font-weight: 400; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; }
+        .article-subtitle { font-family: var(--serif); font-size: 20px; font-weight: 300; font-style: italic; color: var(--text-secondary); line-height: 1.5; }
+        
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 80px; font-family: var(--serif); font-size: 18px; line-height: 1.8; }
+        .article-body p { margin-bottom: 24px; }
+        .article-body strong { font-weight: 600; }
+        .article-body em { font-style: italic; }
+        .article-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(192, 86, 38, 0.3); transition: border-color 0.2s; }
+        .article-body a:hover { border-color: var(--accent); }
+        .article-body h2 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 48px 0 20px; line-height: 1.3; }
+        .article-body h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin: 36px 0 16px; line-height: 1.35; }
+        .article-body ul, .article-body ol { margin: 0 0 24px 24px; }
+        .article-body li { margin-bottom: 12px; }
+        .article-body blockquote { border-left: 3px solid var(--accent); padding: 16px 24px; margin: 32px 0; background: var(--tag-bg); border-radius: 0 8px 8px 0; }
+        .article-body blockquote p { margin-bottom: 0; font-style: italic; color: var(--text-secondary); }
+        
+        .pullquote { font-family: var(--serif); font-size: 26px; font-weight: 400; font-style: italic; color: var(--accent); line-height: 1.4; margin: 48px 0; padding: 0 24px; text-align: center; }
+        
+        .story-card { background: var(--bg-card); border: 1px solid var(--border); padding: 28px; margin: 32px 0; border-radius: 12px; }
+        .story-card h3 { margin-top: 0; font-size: 20px; }
+        .story-card p:last-child { margin-bottom: 0; }
+        
+        .key-insight { background: var(--tag-bg); border: 1px solid var(--border); padding: 24px; margin: 32px 0; border-radius: 12px; }
+        .key-insight p { margin-bottom: 0; }
+
+        hr.section-break { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+        .author-box { display: flex; gap: 16px; align-items: flex-start; background: var(--bg-card); border: 1px solid var(--border-light); padding: 24px; margin: 48px 0; border-radius: 12px; }
+        .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); display: flex; align-items: center; justify-content: center; color: white; font-family: var(--serif); font-size: 24px; font-weight: 500; flex-shrink: 0; }
+        .author-info h4 { font-family: var(--sans); font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+        .author-info p { font-family: var(--sans); font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+        
+        footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
+        .footer-inner { max-width: var(--wide-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .footer-brand { font-family: var(--mono); font-size: 13px; color: var(--text-tertiary); }
+        .footer-brand .slash { color: var(--accent); }
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a { font-size: 13px; color: var(--text-tertiary); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--text-primary); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 32px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .pullquote { font-size: 22px; padding: 0; }
+            .footer-inner { flex-direction: column; gap: 12px; }
+            .author-box { flex-direction: column; text-align: center; }
+            .author-avatar { margin: 0 auto; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="article-header">
+        <a href="/" class="back-link">← Back to essays</a>
+        <div class="article-meta">
+            <span class="article-date">February 21, 2026</span>
+            <span class="article-tag">Storytelling</span>
+            <span class="article-tag">Data</span>
+        </div>
+        <h1 class="article-title">Why Stories Still Win</h1>
+        <p class="article-subtitle">On the enduring power of narrative—and why it matters more than ever in the age of AI agents.</p>
+    </header>
+
+    <article class="article-body">
+        <h2>Part I: The Oldest Technology</h2>
+        
+        <p>For two million years, humans have gathered around fires and told stories.</p>
+        
+        <p>Long before writing, before agriculture, before cities—there were stories. They're how we passed survival knowledge to the next generation. They're how we made sense of chaos. They're how we built tribes, religions, nations.</p>
+        
+        <p>Joseph Campbell spent his life studying this. His <em>Hero's Journey</em>—the monomyth—reveals a structure so deeply embedded in human consciousness that it appears independently across every culture on earth. A hero is called to adventure. They cross a threshold into the unknown. They face trials, meet mentors, confront death. They return transformed, bearing gifts for their community.</p>
+        
+        <p>You've seen this story a thousand times. <em>Star Wars</em>. <em>The Matrix</em>. <em>The Lion King</em>. Every Pixar movie. Every Marvel film. The structure is so reliable that screenwriters treat it like a formula—because it is one. Not a formula invented by Hollywood, but one discovered in the human psyche.</p>
+        
+        <p>My co-author Martin Kihn wrote about this in <em>House of Lies</em>, exploring how consultants weaponize narrative to sell ideas that spreadsheets alone could never move. The insight wasn't cynical—it was honest. Humans don't process data the way we process stories. Data informs. Stories transform.</p>
+        
+        <p>Hallmark understands this. Their movies follow a structure so predictable it's become a meme: big-city professional returns to small town, rediscovers what matters, falls in love, stays. The structure never changes because it doesn't need to. It maps directly onto something in our brains that's been there since the Pleistocene.</p>
+        
+        <p class="pullquote">We are, quite literally, wired for narrative.</p>
+
+        <hr class="section-break">
+
+        <h2>Part II: The Problem With Boring</h2>
+        
+        <p>Here's the challenge: the most important transformations in business are deeply, profoundly boring.</p>
+        
+        <p>Data management platforms. Customer data platforms. Real-time personalization engines. Journey orchestration. Machine-readable product schemas. API response latency optimization.</p>
+        
+        <p>I've spent fifteen years in this world. I've watched rooms full of executives glaze over the moment someone mentions "identity resolution" or "cross-device matching." I've seen billion-dollar decisions stall because the people who needed to make them couldn't connect the technical capability to the business outcome.</p>
+        
+        <p>The technology matters. The architecture matters. The data strategy matters. But none of it moves without a story that makes someone <em>feel</em> why it matters.</p>
+        
+        <p>This is the secret of every great technology communicator. Steve Jobs didn't sell MP3 players. He sold "a thousand songs in your pocket." Salesforce didn't sell CRM software. They sold "no software"—a vision of a world without the pain of enterprise IT.</p>
+        
+        <p>When I started writing <em>Data Driven</em> in 2017, I had a choice: I could write a technical manual about DMPs, or I could tell stories about the people who were using data to transform their businesses. I could explain identity graphs, or I could tell you about Mike Cunningham's dream of putting a $5 chip in every Keurig coffee maker.</p>
+        
+        <p>The technical manual would have been accurate. The stories were memorable.</p>
+
+        <hr class="section-break">
+
+        <h2>Part III: The Stories</h2>
+        
+        <p>Over three books and nearly a decade, I've collected stories from the front lines of marketing's data transformation. Here are ten that stuck.</p>
+
+        <div class="story-card">
+            <h3>1. The $5 Chip</h3>
+            <p>In 2015, Mike Cunningham, Chief Digital Officer at Keurig Green Mountain, had a vision: put a data collection chip in every coffee maker. Optical scanner to identify K-Cups. Bluetooth beacon to detect mobile devices. LCD screen for targeted messages.</p>
+            <p>"Can you tell me what it's worth?" he asked.</p>
+            <p>The math worked. The insight potential was enormous. You could move from "Walmart ordered 50,000 K-Cups" to knowing that Dad drinks dark roast Sumatra at 6am, Mom prefers French Hazelnut at 7:30, and the twelve-year-old sneaks Donut Shop K-Cups on weekends.</p>
+            <p>That was 2015. Keurig decided not to build it.</p>
+            <p>But in 2026, I'd give Mike completely different advice: "You don't need the chip. The customer's agent already knows all of that."</p>
+            <p><strong>The question changed.</strong> It's no longer "how do we discover the customer?" It's "how do we become the brand the customer's agent chooses by default?"</p>
+        </div>
+
+        <div class="story-card">
+            <h3>2. The Pizza That Proved the Point</h3>
+            <p>Casey's General Stores partnered with an agency called Boom Boom Jones on something deceptively simple: personalized emails to lapsed pizza customers.</p>
+            <p>The innovation? Put a picture of <em>the customer's usual order</em> in the email. Not a stock photo. <em>Their</em> pizza—pepperoni and mushroom, the one they ordered every Friday for six months.</p>
+            <p><strong>Result: 300% lift in conversion.</strong></p>
+            <p>No AI. No billion-dollar infrastructure. Just connecting the email system to the point-of-sale data.</p>
+            <p>But here's what I didn't understand until writing <em>The Agentic Customer</em>: that personalized pizza picture was optimized for human psychology. The nostalgic pull. The visual appeal. The message: <em>we remember you</em>.</p>
+            <p>An AI agent doesn't feel nostalgia. It needs structured data: availability, price, delivery time. The 300% lift was real—for humans. The future requires winning over both.</p>
+        </div>
+
+        <div class="story-card">
+            <h3>3. The Toilet Paper Question</h3>
+            <p>Georgia-Pacific's CMO, Douwe Bergsma, walked into our meeting and posed a question that stopped me cold:</p>
+            <p><em>"You may be wondering why a company that sells toilet paper, paper towels, and napkins needs a data management platform. We thought perhaps you could tell us."</em></p>
+            <p>The perfect encapsulation of data scarcity mindset. Georgia-Pacific didn't have CRM records for the millions buying Brawny at Walmart. But they had millions in media spending generating behavioral signals.</p>
+            <p>That was the <em>Data Driven</em> era challenge: "How do we capture data about customers we never directly touch?"</p>
+            <p>The agentic era challenge is different: "How do we make our products machine-readable when the customer's agent is doing the shopping?"</p>
+            <p><strong>The first was about knowing the customer. The second is about being known by the customer's agent.</strong></p>
+        </div>
+
+        <div class="story-card">
+            <h3>4. Campbell's Seventy-Year Head Start</h3>
+            <p>Campbell's Soup Company has been using weather data to direct its marketing budgets since the 1950s. People buy more soup when a storm is coming.</p>
+            <p>Campbell's pioneered the idea of leveraging local weather data to target advertising, starting with radio spots and evolving through television, digital, and now addressable channels. Cold snap coming to Chicago? Surge the digital spend there. Warm front moving through Phoenix? Pull back.</p>
+            <p>By the time we worked with them at Krux, they had turned this into a science: combining their DMP, third-party weather data, and location-based targeting to generate demand in stores with the highest propensity to sell soup.</p>
+            <p><strong>Seventy years of data-driven marketing.</strong> But the agent doesn't care about that history. It cares about structured data, real-time availability, and competitive pricing—right now.</p>
+        </div>
+
+        <div class="story-card">
+            <h3>5. The Playlist That Knows You</h3>
+            <p>Pandora, the music streaming service, discovered something remarkable: your playlist reveals almost everything about you.</p>
+            <p>Lots of alternative music, 2000s-era hip hop, and occasional dips into "Sleepy Time" playlists? You're probably mid-30s with a six-year-old in the house.</p>
+            <p>No surveys needed. No registration forms. Just behavior revealing demographics. Pandora could guess at your age, income, gender, and household composition just by understanding the music you listened to.</p>
+            <p>This is Principle #2 from <em>Data Driven</em> in action: <strong>you have more data than you think.</strong> The signals are there. The question is whether you're capturing and connecting them.</p>
+        </div>
+
+        <div class="story-card">
+            <h3>6. The Porsche on the Tarmac</h3>
+            <p>My family was about to miss a connection between Atlanta and St. Thomas—entire vacation at risk. I tweeted @Delta. They met us at the gate, took us down to the tarmac, and whisked us between concourses in a Porsche Macan.</p>
+            <p>What was that worth? I may never book another airline again.</p>
+            <p>This is what unified customer data actually <em>feels</em> like. Not a dashboard. Not a segment. A moment where everything a company knows about you comes together to save your vacation.</p>
+            <p><strong>Data enables. Experience delivers.</strong></p>
+        </div>
+
+        <div class="story-card">
+            <h3>7. The Inverted Bullseye</h3>
+            <p>In the early days of DMPs, I met with Ronald den Elzen, CEO of Heineken USA. He drew a bullseye on the whiteboard:</p>
+            <p>Outer ring: 320 million Americans. Next: 140 million of legal drinking age. Next: 90 million who drink alcohol. Next: 60 million who drink beer. Center: 18-20 million Heineken lovers.</p>
+            <p><em>"Can you help me find these people?"</em></p>
+            <p>That question defined an era. The DMP was the engine that made that filtering possible at scale.</p>
+            <p>But the agentic era inverts the bullseye completely. Now imagine a customer's agent broadcasting from the center <em>out</em>: "My principal is a 38-year-old male, drinks premium imported lager, prefers bottles, $15/six-pack budget, values sustainability."</p>
+            <p>The agent isn't waiting to be found. It's announcing preferences and inviting brands to compete.</p>
+            <p><strong>Ronald's question becomes "Can you help me <em>be found</em> by their agents?"</strong></p>
+        </div>
+
+        <div class="story-card">
+            <h3>8. The Priest and the Mainframe</h3>
+            <p>In 1961, a Catholic charity struggled with fundraising efficiency. Father Schmitt proposed computerizing donor records on an IBM 650 mainframe. 341 characters per donor. Address, history, relationship information.</p>
+            <p>They personalized outreach: education donors got education appeals, Lenten givers got Lenten campaigns.</p>
+            <p><strong>Response rate: 80%.</strong></p>
+            <p>In 1961. With magnetic tape.</p>
+            <p>The principles are timeless. Father Schmitt's IBM 650 processed dozens of records per hour. An AI agent evaluates dozens of brands per second. Six orders of magnitude faster. <strong>The logic didn't change at all.</strong></p>
+        </div>
+
+        <div class="story-card">
+            <h3>9. The Company That Did Everything Right</h3>
+            <p>I call them Apex Home Goods. They built everything my books prescribed: DMP, CDP, journey orchestration, ML segmentation, Center of Excellence. Eight figures invested. Level 4 maturity. The CMO presented at conferences.</p>
+            <p>Then in 2025, the metrics plateaued. Email open rates stopped growing. But customers were still buying—more precisely than before. Less browsing. Fewer page views.</p>
+            <p>We finally understood: <strong>the customers had delegated.</strong> Their AI agents were doing the research, comparison, and negotiation. By the time humans clicked "buy," the decision was made.</p>
+            <p>Apex's beautiful, emotionally resonant customer experience? The agent couldn't see it. Couldn't process it. Didn't care.</p>
+            <p><strong>The lesson is expensive: doing everything right for the <em>last</em> paradigm doesn't protect you from the next one.</strong></p>
+        </div>
+
+        <div class="story-card">
+            <h3>10. Joe Then and Now</h3>
+            <p><strong>2018:</strong> Joe's car-buying journey touched dozens of systems. Cable ad, Facebook, tablet browse, desktop research, credit app, dealership beacon, second dealer, email signup, video retargeting. Hundreds of signals. Nobody saw the whole picture. For two years after buying his car, Joe got served ads for the car he already owned.</p>
+            <p><strong>2026:</strong> Joe's agent absorbed requirements through conversation. Queried twelve manufacturers in seconds. Evaluated specs, safety ratings, ownership costs. Negotiated with multiple dealers simultaneously. Joe walked into one dealership, already approved, price set. Signed and drove home.</p>
+            <p>The 2018 journey was chaos. The 2026 journey was choreographed by an AI better at car shopping than Joe ever was.</p>
+            <p><strong>The question changed from "how do we track the journey?" to "how do we win when there's no journey to track?"</strong></p>
+        </div>
+
+        <hr class="section-break">
+
+        <h2>Part IV: Why This Matters Now</h2>
+        
+        <p>Here's the paradox of the agentic era: the more automated commerce becomes, the more storytelling matters.</p>
+        
+        <p>Not for the agents. Agents don't need stories. They need structured data, API endpoints, and competitive pricing. An agent evaluating your product runs calculations, not emotions.</p>
+        
+        <p>Stories matter for three reasons that agents can't replace:</p>
+        
+        <p><strong>First, humans still set the preferences.</strong> The customer who tells their agent "I only buy from sustainable brands" got that value somewhere. Brand story influences how humans configure their agents. The story happens <em>before</em> the agent gets involved.</p>
+        
+        <p><strong>Second, transformation still requires humans.</strong> The CMO who needs to invest eight figures in a CDAP infrastructure isn't going to be moved by a technical spec sheet. They need to see what's possible. They need to feel the urgency. They need a story about Apex Home Goods doing everything right and still getting blindsided—and then a story about what to do instead.</p>
+        
+        <p><strong>Third, meaning still matters.</strong> Father Schmitt's 80% response rate wasn't just about data. It was about connecting donors to causes they cared about. Delta's Porsche on the tarmac wasn't just logistics. It was saving a family vacation. The technology enables. The story explains why we bother.</p>
+        
+        <p>The agentic revolution will be the most significant transformation of commerce in our lifetimes. The companies that win won't just have the best APIs. They'll have the clearest stories about why their transformation matters—stories that move executives to invest, employees to execute, and humans to tell their agents which brands to trust.</p>
+
+        <p class="pullquote">Data advantage is temporary. Story advantage compounds.</p>
+
+        <div class="author-box">
+            <div class="author-avatar">CO</div>
+            <div class="author-info">
+                <h4>Chris O'Hara</h4>
+                <p>VP of Product Marketing at SAP and author of <em>Data Driven</em> (McGraw Hill, 2018), <em>Customer Driven</em> (Wiley, 2021), and <em>The Agentic Customer</em> (2026). Previously at Salesforce, where he led product marketing for the company's data and identity products.</p>
+            </div>
+        </div>
+
+    </article>
+
+    <footer>
+        <div class="footer-inner">
+            <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chrisohara1/" target="_blank">LinkedIn</a>
+                <a href="https://chrisohara.com">chrisohara.com</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
