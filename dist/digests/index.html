@@ -6,247 +6,350 @@
     <title>Daily Digest | The Full Stack</title>
     <meta name="description" content="Daily AI + enterprise tech news digest. Curated stories about AI, data strategy, and marketing technology.">
     <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg: #FDFBF7;
-            --bg-card: #FFFFFF;
-            --text-primary: #1A1A1A;
-            --text-secondary: #6B6B6B;
-            --text-tertiary: #9A9A9A;
-            --accent: #C05626;
-            --accent-hover: #A84820;
-            --border: #E8E4DE;
-            --border-light: #F0ECE6;
-            --tag-bg: #F5F1EB;
-            --serif: 'Newsreader', Georgia, serif;
-            --sans: 'DM Sans', -apple-system, sans-serif;
-            --mono: 'JetBrains Mono', monospace;
-            --max-width: 800px;
-        }
-        
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body {
-            font-family: var(--sans);
-            color: var(--text-primary);
-            background: var(--bg);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(253, 251, 247, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-light);
-        }
-        .nav-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 24px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .nav-brand {
-            font-family: var(--mono);
-            font-size: 15px;
-            font-weight: 500;
-            color: var(--text-primary);
-            text-decoration: none;
-        }
-        .nav-brand .slash { color: var(--accent); }
-        .nav-links { display: flex; gap: 32px; }
-        .nav-links a {
-            font-size: 14px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover { color: var(--text-primary); }
-        
-        .header {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 64px 24px 40px;
-            text-align: center;
-        }
-        .header h1 {
-            font-family: var(--serif);
-            font-size: 42px;
-            font-weight: 400;
-            margin-bottom: 16px;
-        }
-        .header p {
-            font-family: var(--serif);
-            font-size: 18px;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 24px 80px;
-        }
-        
-        .digest-list {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-        
-        .digest-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 28px;
-            text-decoration: none;
-            color: inherit;
-            transition: box-shadow 0.2s, transform 0.2s;
-            display: block;
-        }
-        .digest-card:hover {
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            transform: translateY(-2px);
-        }
-        .digest-date {
-            font-size: 13px;
-            color: var(--accent);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 10px;
-        }
-        .digest-title {
-            font-family: var(--serif);
-            font-size: 22px;
-            font-weight: 500;
-            margin-bottom: 10px;
-            line-height: 1.35;
-        }
-        .digest-preview {
-            font-size: 15px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-        .digest-stories {
-            display: flex;
-            gap: 8px;
-            margin-top: 14px;
-            flex-wrap: wrap;
-        }
-        .story-tag {
-            font-size: 12px;
-            background: var(--tag-bg);
-            color: var(--text-tertiary);
-            padding: 4px 10px;
-            border-radius: 4px;
-        }
-        
-        .subscribe-box {
-            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
-            color: white;
-            padding: 40px;
-            border-radius: 12px;
-            text-align: center;
-            margin-top: 48px;
-        }
-        .subscribe-box h3 {
-            font-family: var(--serif);
-            font-size: 26px;
-            font-weight: 400;
-            margin-bottom: 12px;
-        }
-        .subscribe-box p {
-            opacity: 0.9;
-            margin-bottom: 20px;
-        }
-        .subscribe-box a {
-            display: inline-block;
-            background: #3b82f6;
-            color: white;
-            padding: 12px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.2s;
-        }
-        .subscribe-box a:hover { background: #2563eb; }
-        
-        footer {
-            text-align: center;
-            padding: 40px 24px;
-            border-top: 1px solid var(--border);
-        }
-        .footer-brand {
-            font-family: var(--mono);
-            font-size: 13px;
-            color: var(--text-tertiary);
-        }
-        .footer-brand .slash { color: var(--accent); }
-        
-        @media (max-width: 640px) {
-            .header h1 { font-size: 32px; }
-            .header { padding: 40px 20px 32px; }
-            .container { padding: 0 20px 60px; }
-            .digest-title { font-size: 20px; }
-        }
+        :root{--bg:#FDFBF7;--bg-card:#FFF;--text-primary:#1A1A1A;--text-secondary:#6B6B6B;--text-tertiary:#9A9A9A;--accent:#C05626;--border:#E8E4DE;--tag-bg:#F5F1EB;--serif:'Newsreader',Georgia,serif;--sans:'DM Sans',sans-serif;--mono:'JetBrains Mono',monospace;--max-width:800px}
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:var(--sans);color:var(--text-primary);background:var(--bg);line-height:1.6}
+        nav{position:sticky;top:0;z-index:100;background:rgba(253,251,247,0.92);backdrop-filter:blur(12px);border-bottom:1px solid #F0ECE6}
+        .nav-inner{max-width:var(--max-width);margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
+        .nav-brand{font-family:var(--mono);font-size:15px;font-weight:500;color:var(--text-primary);text-decoration:none}
+        .nav-brand .slash{color:var(--accent)}
+        .nav-links{display:flex;gap:32px}
+        .nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none}
+        .header{max-width:var(--max-width);margin:0 auto;padding:64px 24px 40px;text-align:center}
+        .header h1{font-family:var(--serif);font-size:42px;font-weight:400;margin-bottom:16px}
+        .header p{font-family:var(--serif);font-size:18px;color:var(--text-secondary);max-width:600px;margin:0 auto}
+        .container{max-width:var(--max-width);margin:0 auto;padding:0 24px 80px}
+        .digest-list{display:flex;flex-direction:column;gap:16px}
+        .digest-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:28px;text-decoration:none;color:inherit;transition:box-shadow 0.2s,transform 0.2s;display:block}
+        .digest-card:hover{box-shadow:0 4px 16px rgba(0,0,0,0.08);transform:translateY(-2px)}
+        .digest-date{font-size:13px;color:var(--accent);font-weight:500;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px}
+        .digest-title{font-family:var(--serif);font-size:20px;font-weight:500;margin-bottom:10px;line-height:1.35}
+        .digest-stories{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+        .story-tag{font-size:12px;background:var(--tag-bg);color:var(--text-tertiary);padding:4px 10px;border-radius:4px}
+        .subscribe-box{background:linear-gradient(135deg,#1e3a5f 0%,#0f172a 100%);color:white;padding:40px;border-radius:12px;text-align:center;margin-top:48px}
+        .subscribe-box h3{font-family:var(--serif);font-size:26px;font-weight:400;margin-bottom:12px}
+        .subscribe-box p{opacity:0.9;margin-bottom:20px}
+        .subscribe-box a{display:inline-block;background:#3b82f6;color:white;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:600}
+        footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border)}
+        .footer-brand{font-family:var(--mono);font-size:13px;color:var(--text-tertiary)}
+        .footer-brand .slash{color:var(--accent)}
     </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-inner">
-            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
-            <div class="nav-links">
-                <a href="/">Essays</a>
-                <a href="/digests/">Daily Digest</a>
-                <a href="/about.html">About</a>
-            </div>
-        </div>
-    </nav>
-    
+    <nav><div class="nav-inner"><a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a><div class="nav-links"><a href="/">Essays</a><a href="/digests/">Daily Digest</a><a href="/about.html">About</a></div></div></nav>
     <header class="header">
         <h1>📰 Daily Digest</h1>
         <p>AI, data, and enterprise tech news—curated daily. The stories shaping how businesses build, compete, and connect.</p>
     </header>
-    
     <div class="container">
         <div class="digest-list">
-            
             <a href="/digests/2026-02-22.html" class="digest-card">
-                <div class="digest-date">Saturday, February 22, 2026</div>
+                <div class="digest-date">Sunday, February 22, 2026</div>
                 <div class="digest-title">Meta Embeds Manus AI, Coca-Cola Goes All-In, CMOs Are "Agentic With a Small A"</div>
-                <div class="digest-preview">Meta integrates AI agents into Ads Manager. Coke pivots to AI-driven persuasion. Plus: new research on AI + competitive intelligence.</div>
                 <div class="digest-stories">
-                    <span class="story-tag">Meta</span>
-                    <span class="story-tag">Coca-Cola</span>
+                    <span class="story-tag">Search Engine Land</span>
+                    <span class="story-tag">AI News</span>
+                    <span class="story-tag">DMNews</span>
                     <span class="story-tag">Digiday</span>
-                    <span class="story-tag">Crayon</span>
-                    <span class="story-tag">Product Hunt</span>
                 </div>
             </a>
-            
+
+            <a href="/digests/2026-02-21.html" class="digest-card">
+                <div class="digest-date">Saturday, February 21, 2026</div>
+                <div class="digest-title">BCG AI Disruption Index, AI Commerce Risks, 4 Ways AI Breaks Marketing Tru</div>
+                <div class="digest-stories">
+                    <span class="story-tag">BCG</span>
+                    <span class="story-tag">Retail Dive</span>
+                    <span class="story-tag">CMSWire</span>
+                    <span class="story-tag">Zeta Global</span>
+                    <span class="story-tag">Elegant Disruption</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-02-20.html" class="digest-card">
+                <div class="digest-date">Friday, February 20, 2026</div>
+                <div class="digest-title">AI Trends 2026, 4 Ways AI Breaks Marketing Tru, BCG AI Disruption Index</div>
+                <div class="digest-stories">
+                    <span class="story-tag">Robotic Marketer</span>
+                    <span class="story-tag">CMSWire</span>
+                    <span class="story-tag">BCG</span>
+                    <span class="story-tag">TheCMO</span>
+                    <span class="story-tag">Adweek</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-02-19.html" class="digest-card">
+                <div class="digest-date">Thursday, February 19, 2026</div>
+                <div class="digest-title">AI Marketing Automation Stats, AI Trends 2026, 29 AI Marketing Tools Reviewed</div>
+                <div class="digest-stories">
+                    <span class="story-tag">KEO Marketing</span>
+                    <span class="story-tag">Robotic Marketer</span>
+                    <span class="story-tag">TheCMO</span>
+                    <span class="story-tag">Marketing Dive</span>
+                    <span class="story-tag">Data-Mania</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-02-18.html" class="digest-card">
+                <div class="digest-date">Wednesday, February 18, 2026</div>
+                <div class="digest-title">10 AI Marketing Trends for 202, CMO AI Adoption Survey, The 5 Marketing Predictions Th</div>
+                <div class="digest-stories">
+                    <span class="story-tag">Adweek</span>
+                    <span class="story-tag">Think with Google</span>
+                    <span class="story-tag">Elegant Disruption</span>
+                    <span class="story-tag">Enrich Labs</span>
+                    <span class="story-tag">Zeta Global</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-02-17.html" class="digest-card">
+                <div class="digest-date">Tuesday, February 17, 2026</div>
+                <div class="digest-title">SaaS Founders on AI Disruption, CMO AI Adoption Survey, 8 Marketing Automation Trends</div>
+                <div class="digest-stories">
+                    <span class="story-tag">Business of Apps</span>
+                    <span class="story-tag">Think with Google</span>
+                    <span class="story-tag">Klaviyo</span>
+                    <span class="story-tag">IBM</span>
+                    <span class="story-tag">Marketing Dive</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-02-16.html" class="digest-card">
+                <div class="digest-date">Monday, February 16, 2026</div>
+                <div class="digest-title">SaaS Founders on AI Disruption, The Complete Guide, 4 Ways AI Breaks Marketing Tru</div>
+                <div class="digest-stories">
+                    <span class="story-tag">Business of Apps</span>
+                    <span class="story-tag">Enrich Labs</span>
+                    <span class="story-tag">CMSWire</span>
+                    <span class="story-tag">KEO Marketing</span>
+                    <span class="story-tag">SlickText</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-02-14.html" class="digest-card">
+                <div class="digest-date">Saturday, February 14, 2026</div>
+                <div class="digest-title">SaaS Founders on AI Disruption, 29 AI Marketing Tools Reviewed, 4 Ways AI Breaks Marketing Tru</div>
+                <div class="digest-stories">
+                    <span class="story-tag">Business of Apps</span>
+                    <span class="story-tag">TheCMO</span>
+                    <span class="story-tag">CMSWire</span>
+                    <span class="story-tag">SlickText</span>
+                    <span class="story-tag">Jasper</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-02-13.html" class="digest-card">
+                <div class="digest-date">Friday, February 13, 2026</div>
+                <div class="digest-title">AI Commerce Risks, The 5 Marketing Predictions Th, 29 AI Marketing Tools Reviewed</div>
+                <div class="digest-stories">
+                    <span class="story-tag">Retail Dive</span>
+                    <span class="story-tag">Elegant Disruption</span>
+                    <span class="story-tag">TheCMO</span>
+                    <span class="story-tag">Adweek</span>
+                    <span class="story-tag">CMSWire</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-02-12.html" class="digest-card">
+                <div class="digest-date">Thursday, February 12, 2026</div>
+                <div class="digest-title">Top 10 AI Marketing Experts Ac, Best AI Marketing Tools 2026, The CMO Revolution Report</div>
+                <div class="digest-stories">
+                    <span class="story-tag">Data-Mania</span>
+                    <span class="story-tag">Canto</span>
+                    <span class="story-tag">IBM</span>
+                    <span class="story-tag">Marketing Dive</span>
+                    <span class="story-tag">KEO Marketing</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-02-11.html" class="digest-card">
+                <div class="digest-date">Wednesday, February 11, 2026</div>
+                <div class="digest-title">CMO AI Adoption Survey, The CMO Revolution Report, SaaS Founders on AI Disruption</div>
+                <div class="digest-stories">
+                    <span class="story-tag">Think with Google</span>
+                    <span class="story-tag">IBM</span>
+                    <span class="story-tag">Business of Apps</span>
+                    <span class="story-tag">Jasper</span>
+                    <span class="story-tag">BCG</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-02-10.html" class="digest-card">
+                <div class="digest-date">Tuesday, February 10, 2026</div>
+                <div class="digest-title">10 AI Marketing Trends for 202, The CMO Revolution Report, 26 AI Tools for Marketing Grow</div>
+                <div class="digest-stories">
+                    <span class="story-tag">Adweek</span>
+                    <span class="story-tag">IBM</span>
+                    <span class="story-tag">Marketer Milk</span>
+                    <span class="story-tag">BCG</span>
+                    <span class="story-tag">Jasper</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-02-09.html" class="digest-card">
+                <div class="digest-date">Monday, February 9, 2026</div>
+                <div class="digest-title">AI Trends 2026, BCG AI Disruption Index, 10 AI Marketing Trends for 202</div>
+                <div class="digest-stories">
+                    <span class="story-tag">Robotic Marketer</span>
+                    <span class="story-tag">BCG</span>
+                    <span class="story-tag">Adweek</span>
+                    <span class="story-tag">SlickText</span>
+                    <span class="story-tag">Retail Dive</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-02-07.html" class="digest-card">
+                <div class="digest-date">Saturday, February 7, 2026</div>
+                <div class="digest-title">How AI Redefines Marketing in , 4 Ways AI Breaks Marketing Tru, 29 AI Marketing Tools Reviewed</div>
+                <div class="digest-stories">
+                    <span class="story-tag">Zeta Global</span>
+                    <span class="story-tag">CMSWire</span>
+                    <span class="story-tag">TheCMO</span>
+                    <span class="story-tag">IBM</span>
+                    <span class="story-tag">Enrich Labs</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-02-06.html" class="digest-card">
+                <div class="digest-date">Friday, February 6, 2026</div>
+                <div class="digest-title">BCG AI Disruption Index, Top 10 AI Marketing Experts Ac, How AI Redefines Marketing in</div>
+                <div class="digest-stories">
+                    <span class="story-tag">BCG</span>
+                    <span class="story-tag">Data-Mania</span>
+                    <span class="story-tag">Zeta Global</span>
+                    <span class="story-tag">Adweek</span>
+                    <span class="story-tag">SlickText</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-02-05.html" class="digest-card">
+                <div class="digest-date">Thursday, February 5, 2026</div>
+                <div class="digest-title">BCG AI Disruption Index, AI Marketing Automation Stats, SaaS Founders on AI Disruption</div>
+                <div class="digest-stories">
+                    <span class="story-tag">BCG</span>
+                    <span class="story-tag">KEO Marketing</span>
+                    <span class="story-tag">Business of Apps</span>
+                    <span class="story-tag">Elegant Disruption</span>
+                    <span class="story-tag">SlickText</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-02-04.html" class="digest-card">
+                <div class="digest-date">Wednesday, February 4, 2026</div>
+                <div class="digest-title">Top 10 AI Marketing Experts Ac, AI Trends 2026, AI Commerce Risks</div>
+                <div class="digest-stories">
+                    <span class="story-tag">Data-Mania</span>
+                    <span class="story-tag">Robotic Marketer</span>
+                    <span class="story-tag">Retail Dive</span>
+                    <span class="story-tag">SlickText</span>
+                    <span class="story-tag">Klaviyo</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-02-03.html" class="digest-card">
+                <div class="digest-date">Tuesday, February 3, 2026</div>
+                <div class="digest-title">Jasper Launches AI Agent Platf, AI Trends 2026, 29 AI Marketing Tools Reviewed</div>
+                <div class="digest-stories">
+                    <span class="story-tag">Jasper</span>
+                    <span class="story-tag">Robotic Marketer</span>
+                    <span class="story-tag">TheCMO</span>
+                    <span class="story-tag">Adweek</span>
+                    <span class="story-tag">Enrich Labs</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-02-02.html" class="digest-card">
+                <div class="digest-date">Monday, February 2, 2026</div>
+                <div class="digest-title">8 Marketing Automation Trends, SaaS Founders on AI Disruption, 29 AI Marketing Tools Reviewed</div>
+                <div class="digest-stories">
+                    <span class="story-tag">Klaviyo</span>
+                    <span class="story-tag">Business of Apps</span>
+                    <span class="story-tag">TheCMO</span>
+                    <span class="story-tag">SlickText</span>
+                    <span class="story-tag">Data-Mania</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-01-31.html" class="digest-card">
+                <div class="digest-date">Saturday, January 31, 2026</div>
+                <div class="digest-title">The 5 Marketing Predictions Th, Jasper Launches AI Agent Platf, Marketing Automation Stack for</div>
+                <div class="digest-stories">
+                    <span class="story-tag">Elegant Disruption</span>
+                    <span class="story-tag">Jasper</span>
+                    <span class="story-tag">SlickText</span>
+                    <span class="story-tag">Zeta Global</span>
+                    <span class="story-tag">CMSWire</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-01-30.html" class="digest-card">
+                <div class="digest-date">Friday, January 30, 2026</div>
+                <div class="digest-title">The CMO Revolution Report, BCG AI Disruption Index, The Complete Guide</div>
+                <div class="digest-stories">
+                    <span class="story-tag">IBM</span>
+                    <span class="story-tag">BCG</span>
+                    <span class="story-tag">Enrich Labs</span>
+                    <span class="story-tag">Elegant Disruption</span>
+                    <span class="story-tag">Adweek</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-01-29.html" class="digest-card">
+                <div class="digest-date">Thursday, January 29, 2026</div>
+                <div class="digest-title">The 5 Marketing Predictions Th, 9 Predictions for 2026, 4 Ways AI Breaks Marketing Tru</div>
+                <div class="digest-stories">
+                    <span class="story-tag">Elegant Disruption</span>
+                    <span class="story-tag">Marketing Dive</span>
+                    <span class="story-tag">CMSWire</span>
+                    <span class="story-tag">Retail Dive</span>
+                    <span class="story-tag">IBM</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-01-28.html" class="digest-card">
+                <div class="digest-date">Wednesday, January 28, 2026</div>
+                <div class="digest-title">AI Commerce Risks, Best AI Marketing Tools 2026, Jasper Launches AI Agent Platf</div>
+                <div class="digest-stories">
+                    <span class="story-tag">Retail Dive</span>
+                    <span class="story-tag">Canto</span>
+                    <span class="story-tag">Jasper</span>
+                    <span class="story-tag">Marketer Milk</span>
+                    <span class="story-tag">Adweek</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-01-27.html" class="digest-card">
+                <div class="digest-date">Tuesday, January 27, 2026</div>
+                <div class="digest-title">The CMO Revolution Report, 9 Predictions for 2026, CMO AI Adoption Survey</div>
+                <div class="digest-stories">
+                    <span class="story-tag">IBM</span>
+                    <span class="story-tag">Marketing Dive</span>
+                    <span class="story-tag">Think with Google</span>
+                    <span class="story-tag">KEO Marketing</span>
+                    <span class="story-tag">TheCMO</span>
+                </div>
+            </a>
+
+            <a href="/digests/2026-01-26.html" class="digest-card">
+                <div class="digest-date">Monday, January 26, 2026</div>
+                <div class="digest-title">BCG AI Disruption Index, The 5 Marketing Predictions Th, 9 Predictions for 2026</div>
+                <div class="digest-stories">
+                    <span class="story-tag">BCG</span>
+                    <span class="story-tag">Elegant Disruption</span>
+                    <span class="story-tag">Marketing Dive</span>
+                    <span class="story-tag">KEO Marketing</span>
+                    <span class="story-tag">Robotic Marketer</span>
+                </div>
+            </a>
         </div>
-        
         <div class="subscribe-box">
             <h3>Subscribe to The Full Stack</h3>
             <p>Get notified when new essays are published. No spam, unsubscribe anytime.</p>
             <a href="/#subscribe">Subscribe →</a>
         </div>
     </div>
-    
-    <footer>
-        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
-    </footer>
+    <footer><span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span></footer>
 </body>
 </html>
