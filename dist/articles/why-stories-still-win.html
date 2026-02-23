@@ -24,7 +24,7 @@
         }
       },
       "datePublished": "2026-02-21",
-      "dateModified": "2026-02-21",
+      "dateModified": "2026-02-22",
       "publisher": {
         "@type": "Organization",
         "name": "The Full Stack",
@@ -99,9 +99,6 @@
         .story-card { background: var(--bg-card); border: 1px solid var(--border); padding: 28px; margin: 32px 0; border-radius: 12px; }
         .story-card h3 { margin-top: 0; font-size: 20px; }
         .story-card p:last-child { margin-bottom: 0; }
-        
-        .key-insight { background: var(--tag-bg); border: 1px solid var(--border); padding: 24px; margin: 32px 0; border-radius: 12px; }
-        .key-insight p { margin-bottom: 0; }
 
         hr.section-break { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
 
@@ -135,6 +132,7 @@
             <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
             <div class="nav-links">
                 <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
                 <a href="/about.html">About</a>
             </div>
         </div>
@@ -152,156 +150,118 @@
     </header>
 
     <article class="article-body">
-        <h2>Part I: The Oldest Technology</h2>
+
+        <p>Douwe Bergsma, CMO of Georgia-Pacific, walked into our meeting with a question that stopped me cold.</p>
         
-        <p>For two million years, humans have gathered around fires and told stories.</p>
+        <p>"You may be wondering why a company that sells toilet paper, paper towels, and napkins needs a data management platform." He paused, just long enough to let the absurdity land. "We thought perhaps you could tell us."</p>
         
-        <p>Long before writing, before agriculture, before cities—there were stories. They're how we passed survival knowledge to the next generation. They're how we made sense of chaos. They're how we built tribes, religions, nations.</p>
+        <p>I've been in a lot of conference rooms over the past twenty years—pitching DMPs, then CDPs, now agentic AI—and Douwe's question captures something I've never quite been able to shake. The most important transformations in business are, on paper, spectacularly boring. Data management platforms. Identity resolution. Journey orchestration. API response latency optimization. Try explaining any of that at a dinner party. I dare you.</p>
         
-        <p>Joseph Campbell spent his life studying this. His <em>Hero's Journey</em>—the monomyth—reveals a structure so deeply embedded in human consciousness that it appears independently across every culture on earth. A hero is called to adventure. They cross a threshold into the unknown. They face trials, meet mentors, confront death. They return transformed, bearing gifts for their community.</p>
+        <p>And yet I've watched billion-dollar decisions stall because the people who needed to make them couldn't connect the technical capability to the business outcome. The technology matters. The architecture matters. But none of it moves without a story that makes someone <em>feel</em> why it matters.</p>
         
-        <p>You've seen this story a thousand times. <em>Star Wars</em>. <em>The Matrix</em>. <em>The Lion King</em>. Every Pixar movie. Every Marvel film. The structure is so reliable that screenwriters treat it like a formula—because it is one. Not a formula invented by Hollywood, but one discovered in the human psyche.</p>
-        
-        <p>My co-author Martin Kihn wrote about this in <em>House of Lies</em>, exploring how consultants weaponize narrative to sell ideas that spreadsheets alone could never move. The insight wasn't cynical—it was honest. Humans don't process data the way we process stories. Data informs. Stories transform.</p>
-        
-        <p>Hallmark understands this. Their movies follow a structure so predictable it's become a meme: big-city professional returns to small town, rediscovers what matters, falls in love, stays. The structure never changes because it doesn't need to. It maps directly onto something in our brains that's been there since the Pleistocene.</p>
-        
-        <p class="pullquote">We are, quite literally, wired for narrative.</p>
+        <p>That's what this essay is about: ten stories from three books and nearly a decade of trying to make the technical human. Some of them worked. Some of them taught me something I didn't expect. All of them stuck.</p>
 
         <hr class="section-break">
 
-        <h2>Part II: The Problem With Boring</h2>
+        <h2>The Oldest Technology</h2>
         
-        <p>Here's the challenge: the most important transformations in business are deeply, profoundly boring.</p>
+        <p>Before I get to the stories, a confession: I think about Joseph Campbell more than any marketing executive probably should.</p>
         
-        <p>Data management platforms. Customer data platforms. Real-time personalization engines. Journey orchestration. Machine-readable product schemas. API response latency optimization.</p>
+        <p>Campbell spent his life studying the monomyth—the Hero's Journey—and what he found was that the same narrative structure appears independently across every culture on earth. A hero is called to adventure, crosses into the unknown, faces trials, meets mentors, confronts death, returns transformed. You've seen it a thousand times. <em>Star Wars</em>. <em>The Matrix</em>. Every Pixar movie. Every Hallmark Christmas film—though in those the "death" is usually just moving back to the small town where your high school sweetheart still runs the tree farm.</p>
         
-        <p>I've spent fifteen years in this world. I've watched rooms full of executives glaze over the moment someone mentions "identity resolution" or "cross-device matching." I've seen billion-dollar decisions stall because the people who needed to make them couldn't connect the technical capability to the business outcome.</p>
+        <p>My co-author Martin Kihn wrote about narrative weaponization in <em>House of Lies</em>, exploring how consultants use story to sell ideas that spreadsheets alone could never move. The insight wasn't cynical—it was honest. Humans don't process data the way we process stories. Data informs. Stories transform.</p>
         
-        <p>The technology matters. The architecture matters. The data strategy matters. But none of it moves without a story that makes someone <em>feel</em> why it matters.</p>
+        <p>We're wired for it. Two million years of sitting around fires, passing survival knowledge through narrative, will do that to a species.</p>
         
-        <p>This is the secret of every great technology communicator. Steve Jobs didn't sell MP3 players. He sold "a thousand songs in your pocket." Salesforce didn't sell CRM software. They sold "no software"—a vision of a world without the pain of enterprise IT.</p>
-        
-        <p>When I started writing <em>Data Driven</em> in 2017, I had a choice: I could write a technical manual about data platforms, or I could tell stories about the people who were using data to transform their businesses. I could explain identity graphs, or I could tell you about Mike Cunningham's dream of putting a $5 chip in every Keurig coffee maker.</p>
+        <p>Steve Jobs understood this. He didn't sell MP3 players. He sold "a thousand songs in your pocket." Salesforce didn't sell CRM software. They sold "no software"—a vision of a world without the pain of enterprise IT. When I started writing <em>Data Driven</em> in 2017, I had a choice: write a technical manual about data platforms, or tell stories about the people using data to transform their businesses. I could explain identity graphs, or I could tell you about Mike Cunningham's dream of putting a $5 chip in every Keurig coffee maker.</p>
         
         <p>The technical manual would have been accurate. The stories were memorable.</p>
 
         <hr class="section-break">
 
-        <h2>Part III: The Stories</h2>
-        
-        <p>Over three books and nearly a decade, I've collected stories from the front lines of marketing's data transformation. Here are ten that stuck.</p>
+        <h2>The Stories</h2>
 
         <div class="story-card">
             <h3>1. The $5 Chip</h3>
-            <p>In 2015, Mike Cunningham, Chief Digital Officer at Keurig Green Mountain, had a vision: put a data collection chip in every coffee maker. Optical scanner to identify K-Cups. Bluetooth beacon to detect mobile devices. LCD screen for targeted messages.</p>
-            <p>"Can you tell me what it's worth?" he asked.</p>
-            <p>The math worked. The insight potential was enormous. You could move from "Walmart ordered 50,000 K-Cups" to knowing that Dad drinks dark roast Sumatra at 6am, Mom prefers French Hazelnut at 7:30, and the twelve-year-old sneaks Donut Shop K-Cups on weekends.</p>
-            <p>That was 2015. Keurig decided not to build it.</p>
-            <p>But in 2026, I'd give Mike completely different advice: "You don't need the chip. The customer's agent already knows all of that."</p>
-            <p><strong>The question changed.</strong> It's no longer "how do we discover the customer?" It's "how do we become the brand the customer's agent chooses by default?"</p>
+            <p>In 2015, Mike Cunningham—Chief Digital Officer at Keurig Green Mountain—had a vision that I still think about. Put a data collection chip in every coffee maker. Optical scanner to identify K-Cups. Bluetooth beacon to detect mobile devices. LCD screen for targeted messages. "Can you tell me what it's worth?" he asked.</p>
+            <p>The math worked. You could move from "Walmart ordered 50,000 K-Cups" to knowing that Dad drinks dark roast Sumatra at 6am, Mom prefers French Hazelnut at 7:30, and the twelve-year-old sneaks Donut Shop K-Cups on weekends when nobody's watching.</p>
+            <p>Keurig decided not to build it.</p>
+            <p>But here's the thing: if Mike asked me today, I'd give him completely different advice. "You don't need the chip. The customer's agent already knows all of that." The question isn't "how do we discover the customer?" anymore. It's "how do we become the brand the customer's agent chooses by default?"</p>
         </div>
 
         <div class="story-card">
-            <h3>2. The Pizza That Proved the Point</h3>
-            <p>Casey's General Stores partnered with an agency called Boom Boom Jones on something deceptively simple: personalized emails to lapsed pizza customers.</p>
-            <p>The innovation? Put a picture of <em>the customer's usual order</em> in the email. Not a stock photo. <em>Their</em> pizza—pepperoni and mushroom, the one they ordered every Friday for six months.</p>
-            <p><strong>Result: 300% lift in conversion.</strong></p>
-            <p>No AI. No billion-dollar infrastructure. Just connecting the email system to the point-of-sale data.</p>
-            <p>But here's what I didn't understand until writing <em>The Agentic Customer</em>: that personalized pizza picture was optimized for human psychology. The nostalgic pull. The visual appeal. The message: <em>we remember you</em>.</p>
-            <p>An AI agent doesn't feel nostalgia. It needs structured data: availability, price, delivery time. The 300% lift was real—for humans. The future requires winning over both.</p>
+            <h3>2. Casey's Pizza</h3>
+            <p>Casey's General Stores partnered with an agency called Boom Boom Jones—yes, that's real—on something deceptively simple: personalized emails to lapsed pizza customers. The innovation? Put a picture of <em>the customer's usual order</em> in the email. Not a stock photo. <em>Their</em> pizza. The pepperoni and mushroom they ordered every Friday for six months.</p>
+            <p>300% lift in conversion. No AI. No billion-dollar infrastructure. Just connecting the email system to the point-of-sale data.</p>
+            <p>I used to tell this story as a pure win. But writing <em>The Agentic Customer</em> made me realize something: that personalized pizza picture was optimized for human psychology. The nostalgic pull. The visual appeal. The implicit message: <em>we remember you</em>. An AI agent doesn't feel nostalgia. It needs structured data—availability, price, delivery time. The 300% lift was real, but it was real for humans. The future requires winning over both.</p>
         </div>
 
         <div class="story-card">
             <h3>3. The Toilet Paper Question</h3>
-            <p>Georgia-Pacific's CMO, Douwe Bergsma, walked into our meeting and posed a question that stopped me cold:</p>
-            <p><em>"You may be wondering why a company that sells toilet paper, paper towels, and napkins needs a data management platform. We thought perhaps you could tell us."</em></p>
-            <p>The perfect encapsulation of data scarcity mindset. Georgia-Pacific didn't have CRM records for the millions buying Brawny at Walmart. But they had millions in media spending generating behavioral signals.</p>
-            <p>That was the <em>Data Driven</em> era challenge: "How do we capture data about customers we never directly touch?"</p>
-            <p>The agentic era challenge is different: "How do we make our products machine-readable when the customer's agent is doing the shopping?"</p>
-            <p><strong>The first was about knowing the customer. The second is about being known by the customer's agent.</strong></p>
+            <p>Back to Douwe Bergsma. Georgia-Pacific didn't have CRM records for the millions of people buying Brawny at Walmart. They had no direct relationship with their customers at all. But they had millions in media spending generating behavioral signals—people who clicked on ads, visited content, engaged with campaigns. The challenge in 2017 was figuring out how to capture data about customers you never directly touch.</p>
+            <p>The challenge in 2026 is different: how do you make your products machine-readable when the customer's agent is doing the shopping? The first was about knowing the customer. The second is about being known by the customer's agent. Same company, same products, completely different question.</p>
         </div>
 
         <div class="story-card">
-            <h3>4. Campbell's Seventy-Year Head Start</h3>
-            <p>Campbell's Soup Company has been using weather data to direct its marketing budgets since the 1950s. People buy more soup when a storm is coming.</p>
-            <p>Campbell's pioneered the idea of leveraging local weather data to target advertising, starting with radio spots and evolving through television, digital, and now addressable channels. Cold snap coming to Chicago? Surge the digital spend there. Warm front moving through Phoenix? Pull back.</p>
-            <p>Over the decades, they turned this into a science: combining behavioral data, third-party weather feeds, and location-based targeting to generate demand in stores with the highest propensity to sell soup.</p>
-            <p><strong>Seventy years of data-driven marketing.</strong> But the agent doesn't care about that history. It cares about structured data, real-time availability, and competitive pricing—right now.</p>
+            <h3>4. Campbell's Weather</h3>
+            <p>Campbell's Soup Company has been using weather data to direct marketing budgets since the 1950s. I love this one because it's so obvious in hindsight—people buy more soup when it's cold—and yet they've been refining the approach for seventy years. Radio spots in the '50s, television in the '60s, digital targeting in the 2000s. Cold snap coming to Chicago? Surge the spend. Warm front in Phoenix? Pull back. They turned it into a science.</p>
+            <p>Seventy years of institutional knowledge. But the agent doesn't care about your institutional knowledge. It cares about structured data, real-time availability, and competitive pricing—right now. Campbell's knows more about weather-driven demand than anyone on earth, and that might not matter at all.</p>
         </div>
 
         <div class="story-card">
-            <h3>5. The Playlist That Knows You</h3>
-            <p>Pandora, the music streaming service, discovered something remarkable: your playlist reveals almost everything about you.</p>
-            <p>Lots of alternative music, 2000s-era hip hop, and occasional dips into "Sleepy Time" playlists? You're probably mid-30s with a six-year-old in the house.</p>
-            <p>No surveys needed. No registration forms. Just behavior revealing demographics. Pandora could guess at your age, income, gender, and household composition just by understanding the music you listened to.</p>
-            <p>This is Principle #2 from <em>Data Driven</em> in action: <strong>you have more data than you think.</strong> The signals are there. The question is whether you're capturing and connecting them.</p>
+            <h3>5. Pandora's Playlist</h3>
+            <p>Pandora discovered that your playlist reveals almost everything about you. Lots of alternative music, 2000s-era hip hop, and occasional dips into "Sleepy Time" playlists? You're probably mid-30s with a six-year-old in the house. No surveys needed. No registration forms. Just behavior revealing demographics.</p>
+            <p>This is Principle #2 from <em>Data Driven</em> in action: you have more data than you think. The signals are there. The question is whether you're capturing and connecting them. It's also one of the only principles that translates cleanly into the agentic era—because an agent can do the same inference, just faster and at scale.</p>
         </div>
 
         <div class="story-card">
             <h3>6. The Porsche on the Tarmac</h3>
-            <p>My family was about to miss a connection between Atlanta and St. Thomas—entire vacation at risk. I tweeted @Delta. They met us at the gate, took us down to the tarmac, and whisked us between concourses in a Porsche Macan.</p>
+            <p>My family was about to miss a connection in Atlanta—entire vacation to St. Thomas at risk—so I did what any reasonable person would do: I tweeted @Delta.</p>
+            <p>They met us at the gate, took us down to the tarmac, and whisked us between concourses in a Porsche Macan.</p>
             <p>What was that worth? I may never book another airline again.</p>
-            <p>This is what unified customer data actually <em>feels</em> like. Not a dashboard. Not a segment. A moment where everything a company knows about you comes together to save your vacation.</p>
-            <p><strong>Data enables. Experience delivers.</strong></p>
+            <p>This is what unified customer data actually <em>feels</em> like. Not a dashboard. Not a segment. A moment where everything a company knows about you comes together to save your vacation. Data enables. Experience delivers. (I'm allowed one bumper sticker per essay. That's mine.)</p>
         </div>
+
+        <p>Let me skip ahead to the three stories that keep me up at night—the ones that suggest the rules might be changing faster than most companies realize.</p>
 
         <div class="story-card">
             <h3>7. The Inverted Bullseye</h3>
-            <p>Years ago, I met with Ronald den Elzen, CEO of Heineken USA. He drew a bullseye on the whiteboard:</p>
-            <p>Outer ring: 320 million Americans. Next: 140 million of legal drinking age. Next: 90 million who drink alcohol. Next: 60 million who drink beer. Center: 18-20 million Heineken lovers.</p>
+            <p>Years ago, Ronald den Elzen—CEO of Heineken USA—drew a bullseye on the whiteboard. Outer ring: 320 million Americans. Next: 140 million legal drinking age. Then 90 million who drink alcohol. Then 60 million who drink beer. Center: 18-20 million Heineken lovers.</p>
             <p><em>"Can you help me find these people?"</em></p>
             <p>That question defined an era. Data-driven audience targeting made that filtering possible at scale.</p>
-            <p>But the agentic era inverts the bullseye completely. Now imagine a customer's agent broadcasting from the center <em>out</em>: "My principal is a 38-year-old male, drinks premium imported lager, prefers bottles, $15/six-pack budget, values sustainability."</p>
-            <p>The agent isn't waiting to be found. It's announcing preferences and inviting brands to compete.</p>
-            <p><strong>Ronald's question becomes "Can you help me <em>be found</em> by their agents?"</strong></p>
+            <p>Now imagine the bullseye inverted. A customer's agent broadcasting <em>out</em> from the center: "My principal is a 38-year-old male, drinks premium imported lager, prefers bottles, $15/six-pack budget, values sustainability." The agent isn't waiting to be found. It's announcing preferences and inviting brands to compete. Ronald's question becomes: "Can you help me <em>be found</em>?"</p>
         </div>
 
         <div class="story-card">
-            <h3>8. The Priest and the Mainframe</h3>
-            <p>In 1961, a Catholic charity struggled with fundraising efficiency. Father Schmitt proposed computerizing donor records on an IBM 650 mainframe. 341 characters per donor. Address, history, relationship information.</p>
-            <p>They personalized outreach: education donors got education appeals, Lenten givers got Lenten campaigns.</p>
-            <p><strong>Response rate: 80%.</strong></p>
-            <p>In 1961. With magnetic tape.</p>
-            <p>The principles are timeless. Father Schmitt's IBM 650 processed dozens of records per hour. An AI agent evaluates dozens of brands per second. Six orders of magnitude faster. <strong>The logic didn't change at all.</strong></p>
+            <h3>8. Apex Home Goods</h3>
+            <p>I call them Apex Home Goods because I promised I wouldn't use their real name. They built everything my books prescribed: unified customer data, journey orchestration, ML-powered segmentation, a Center of Excellence. Eight figures invested. Level 4 maturity. The CMO presented at conferences. They were the case study.</p>
+            <p>Then in 2025, the metrics plateaued. Email open rates stopped growing. But customers were still buying—more precisely than before. Less browsing. Fewer page views. Shorter sessions.</p>
+            <p>It took us three months to figure out what was happening. The customers had delegated. Their AI agents were doing the research, comparison, and negotiation. By the time humans clicked "buy," the decision was already made. Apex's beautiful, emotionally resonant customer experience? The agent couldn't see it. Couldn't process it. Didn't care.</p>
+            <p>Doing everything right for the last paradigm doesn't protect you from the next one. That lesson cost them eight figures to learn.</p>
         </div>
 
         <div class="story-card">
-            <h3>9. The Company That Did Everything Right</h3>
-            <p>I call them Apex Home Goods. They built everything my books prescribed: unified customer data, journey orchestration, ML-powered segmentation, a Center of Excellence. Eight figures invested. Level 4 maturity. The CMO presented at conferences.</p>
-            <p>Then in 2025, the metrics plateaued. Email open rates stopped growing. But customers were still buying—more precisely than before. Less browsing. Fewer page views.</p>
-            <p>We finally understood: <strong>the customers had delegated.</strong> Their AI agents were doing the research, comparison, and negotiation. By the time humans clicked "buy," the decision was made.</p>
-            <p>Apex's beautiful, emotionally resonant customer experience? The agent couldn't see it. Couldn't process it. Didn't care.</p>
-            <p><strong>The lesson is expensive: doing everything right for the <em>last</em> paradigm doesn't protect you from the next one.</strong></p>
-        </div>
-
-        <div class="story-card">
-            <h3>10. Joe Then and Now</h3>
-            <p><strong>2018:</strong> Joe's car-buying journey touched dozens of systems. Cable ad, Facebook, tablet browse, desktop research, credit app, dealership beacon, second dealer, email signup, video retargeting. Hundreds of signals. Nobody saw the whole picture. For two years after buying his car, Joe got served ads for the car he already owned.</p>
-            <p><strong>2026:</strong> Joe's agent absorbed requirements through conversation. Queried twelve manufacturers in seconds. Evaluated specs, safety ratings, ownership costs. Negotiated with multiple dealers simultaneously. Joe walked into one dealership, already approved, price set. Signed and drove home.</p>
-            <p>The 2018 journey was chaos. The 2026 journey was choreographed by an AI better at car shopping than Joe ever was.</p>
-            <p><strong>The question changed from "how do we track the journey?" to "how do we win when there's no journey to track?"</strong></p>
+            <h3>9. Joe Then and Now</h3>
+            <p>In 2018, Joe's car-buying journey touched dozens of systems. Cable ad, Facebook, tablet browse, desktop research, credit app, dealership beacon, second dealer, email signup, video retargeting. Hundreds of signals. Nobody saw the whole picture. For two years after buying his car, Joe got served ads for the car he already owned.</p>
+            <p>In 2026, Joe's agent absorbed requirements through conversation. Queried twelve manufacturers in seconds. Evaluated specs, safety ratings, ownership costs. Negotiated with multiple dealers simultaneously. Joe walked into one dealership, already approved, price set. Signed and drove home.</p>
+            <p>The 2018 journey was chaos. The 2026 journey was choreographed by an AI better at car shopping than Joe ever was. The question isn't "how do we track the journey?" anymore. There's no journey to track.</p>
         </div>
 
         <hr class="section-break">
 
-        <h2>Part IV: Why This Matters Now</h2>
+        <p>I mentioned Father Schmitt at a conference last year—the Catholic priest who computerized donor records on an IBM 650 mainframe in 1961. That story came from my co-author Martin Kihn, who dug it up while researching <em>Data Driven</em>. Someone in the audience asked why I keep reaching back to ancient history.</p>
         
-        <p>Here's the paradox of the agentic era: the more automated commerce becomes, the more storytelling matters.</p>
+        <p>Fair question. Here's my answer: Father Schmitt's mainframe processed dozens of records per hour. An AI agent evaluates dozens of brands per second. Six orders of magnitude faster. But the logic didn't change at all. Personalize the outreach. Match the message to the recipient. Remember what worked. The technology changes; the principles compound.</p>
         
-        <p>Not for the agents. Agents don't need stories. They need structured data, API endpoints, and competitive pricing. An agent evaluating your product runs calculations, not emotions.</p>
+        <p>The same is true for storytelling. The agentic revolution will transform commerce—I believe it's the most significant shift in our lifetimes—but agents don't set preferences. Humans do. The customer who tells their agent "I only buy from sustainable brands" got that value somewhere. Brand story influences how humans configure their agents. The story happens <em>before</em> the agent gets involved.</p>
         
-        <p>Stories matter for three reasons that agents can't replace:</p>
+        <p>And the transformation itself requires stories. The CMO who needs to invest eight figures in agent-ready infrastructure isn't going to be moved by a technical spec sheet. They need to see what's possible. They need to feel the urgency. They need a story about Apex Home Goods doing everything right and still getting blindsided—and then they need a story about what to do instead.</p>
         
-        <p><strong>First, humans still set the preferences.</strong> The customer who tells their agent "I only buy from sustainable brands" got that value somewhere. Brand story influences how humans configure their agents. The story happens <em>before</em> the agent gets involved.</p>
+        <p>The companies that win won't just have the best APIs. They'll have the clearest stories about why their transformation matters—stories that move executives to invest, employees to execute, and humans to tell their agents which brands to trust.</p>
         
-        <p><strong>Second, transformation still requires humans.</strong> The CMO who needs to invest eight figures in agent-ready infrastructure isn't going to be moved by a technical spec sheet. They need to see what's possible. They need to feel the urgency. They need a story about Apex Home Goods doing everything right and still getting blindsided—and then a story about what to do instead.</p>
+        <p>Data advantage is temporary. Someone will always have more data, fresher data, better data. But story advantage compounds. Father Schmitt understood that in 1961. Douwe Bergsma understood it when he walked into that conference room with his impossible question about toilet paper. The agents don't care about stories—but the people programming the agents still do.</p>
         
-        <p><strong>Third, meaning still matters.</strong> Father Schmitt's 80% response rate wasn't just about data. It was about connecting donors to causes they cared about. Delta's Porsche on the tarmac wasn't just logistics. It was saving a family vacation. The technology enables. The story explains why we bother.</p>
-        
-        <p>The agentic revolution will be the most significant transformation of commerce in our lifetimes. The companies that win won't just have the best APIs. They'll have the clearest stories about why their transformation matters—stories that move executives to invest, employees to execute, and humans to tell their agents which brands to trust.</p>
-
-        <p class="pullquote">Data advantage is temporary. Story advantage compounds.</p>
+        <p>That's why stories still win.</p>
 
         <div class="author-box">
             <div class="author-avatar">CO</div>
