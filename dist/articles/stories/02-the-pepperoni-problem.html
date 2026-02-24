@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pepperoni Problem | The Full Stack</title>
+    <meta name="description" content="Casey's got a 300% lift by putting a picture of your pizza in the email. But an AI agent doesn't feel nostalgia. What happens when personalization meets algorithmic decision-making?">
+    <meta property="og:title" content="The Pepperoni Problem">
+    <meta property="og:description" content="Casey's got a 300% lift by putting a picture of your pizza in the email. But an AI agent doesn't feel nostalgia. What happens when personalization meets algorithmic decision-making?">
+    <meta property="og:type" content="article">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 720px;
+            --wide-width: 960px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(253, 251, 247, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { font-family: var(--mono); font-size: 15px; font-weight: 500; letter-spacing: -0.02em; color: var(--text-primary); text-decoration: none; }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header { max-width: var(--max-width); margin: 0 auto; padding: 64px 24px 32px; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-tertiary); text-decoration: none; margin-bottom: 32px; }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .article-date { font-size: 13px; color: var(--text-tertiary); }
+        .article-tag { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: rgba(192, 86, 38, 0.08); padding: 2px 8px; border-radius: 3px; }
+        .article-title { font-family: var(--serif); font-size: 42px; font-weight: 400; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; }
+        .article-subtitle { font-family: var(--serif); font-size: 20px; font-weight: 300; font-style: italic; color: var(--text-secondary); line-height: 1.5; }
+        
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 48px; font-family: var(--serif); font-size: 18px; line-height: 1.8; }
+        .article-body p { margin-bottom: 24px; }
+        .article-body h2 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 48px 0 20px; line-height: 1.3; }
+        .article-body h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin: 36px 0 16px; }
+        .article-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(192, 86, 38, 0.3); }
+        .article-body a:hover { border-color: var(--accent); }
+        .article-body ul, .article-body ol { margin: 0 0 24px 24px; }
+        .article-body li { margin-bottom: 12px; }
+        
+        .pullquote { font-family: var(--serif); font-size: 26px; font-weight: 400; font-style: italic; color: var(--accent); line-height: 1.4; margin: 48px 0; padding: 0 24px; text-align: center; }
+        
+        .series-nav { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 80px; }
+        .series-box { background: var(--tag-bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+        .series-box h3 { font-family: var(--serif); font-size: 18px; font-weight: 500; margin-bottom: 8px; }
+        .series-box p { font-family: var(--sans); font-size: 15px; color: var(--text-secondary); margin: 0; line-height: 1.6; }
+        .series-box a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        
+        footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
+        .footer-inner { max-width: var(--wide-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .footer-brand { font-family: var(--mono); font-size: 13px; color: var(--text-tertiary); }
+        .footer-brand .slash { color: var(--accent); }
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a { font-size: 13px; color: var(--text-tertiary); text-decoration: none; }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 32px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 48px; }
+            .pullquote { font-size: 22px; padding: 0; }
+            .footer-inner { flex-direction: column; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/articles/why-stories-still-win.html" class="back-link">← Back to Why Stories Still Win</a>
+        <div class="article-meta">
+            <span class="article-date">February 2026</span>
+            <span class="article-tag">Story 2 of 10</span>
+        </div>
+        <h1 class="article-title">The Pepperoni Problem</h1>
+        <p class="article-subtitle">Casey's got a 300% lift by putting a picture of your pizza in the email. But an AI agent doesn't feel nostalgia. What happens when personalization meets algorithmic decision-making?</p>
+    </header>
+
+    <article class="article-body">
+
+
+  <p>There's an agency called Boom Boom Jones. Yes, that's real. And they did something for Casey's General Stores that I've been dining out on in conference keynotes for the better part of a decade.</p>
+
+  <p>The brief was simple: win back lapsed pizza customers. Casey's — if you're not from the Midwest, think gas station convenience store chain that also happens to make legitimately good pizza — had the data. They knew who used to order every Friday and stopped. They knew what those people used to order. The question was how to bring them back.</p>
+
+  <p>Boom Boom Jones's answer was almost embarrassingly simple. Put a picture of the customer's actual order in the winback email. Not a stock photo of a generic pepperoni pizza. <em>Their</em> pizza. The pepperoni and mushroom they ordered every Friday for six months before they disappeared.</p>
+
+  <p>300% lift in conversion.</p>
+
+  <p>No machine learning. No billion-dollar data infrastructure. No eighteen-month implementation timeline. Just connecting the email system to the point-of-sale data and understanding a fundamental truth about human psychology: we respond to recognition. Seeing <em>your</em> pizza — the one you ordered dozens of times, the one associated with Friday nights and cold beer and the end of a long week — triggers something that a generic "We miss you! 20% off your next order" never could.</p>
+
+  <p>I used to tell this story as a pure win. The perfect case study. Proof that you don't need sophisticated AI to do effective personalization — you just need to connect the data you already have to the moment that matters.</p>
+
+  <p>I still believe that. But I've also come to understand that the 300% lift was built on an assumption that's eroding fast.</p>
+
+  <h2>The Assumption: Your Customer Is Human</h2>
+
+  <p>Every element of the Casey's campaign was optimized for the human brain. The visual recognition of a familiar food. The nostalgic pull of a repeated ritual. The implicit social message — <em>we remember you, you matter to us</em>. The friction reduction of showing exactly what to reorder rather than making the customer rebuild from scratch.</p>
+
+  <p>These are powerful levers. They work because humans are pattern-recognition machines with emotional wiring that responds to familiarity, belonging, and the reduction of cognitive load. Two million years of evolution shaped us to feel a little jolt of warmth when someone remembers what we like.</p>
+
+  <p>An AI agent feels none of that.</p>
+
+  <p>When a customer delegates their dinner planning to an agent, the agent doesn't see a picture of a pepperoni and mushroom pizza and think <em>oh, that's our Friday night pizza, I miss that</em>. The agent evaluates structured data: available options within the household's dietary preferences, price per calorie, delivery time, the principal's recent health goals, what's already been ordered this week to avoid repetition.</p>
+
+  <p>The nostalgic pizza picture is invisible to it. Literally invisible — most agents don't process marketing emails at all. They interact with ordering APIs, structured menus, and product databases. The entire channel that made Casey's campaign work is bypassed.</p>
+
+  <p class="pullquote">The 300% lift was real. But it was real for humans. The future requires winning over both.</p>
+
+  <h2>Two Layers of Personalization</h2>
+
+  <p>This is where it gets interesting for product marketers. We're not entering a world where human psychology stops mattering. We're entering a world where you need to personalize on two layers simultaneously — and the layers operate on completely different logic.</p>
+
+  <p>Layer one is the human layer. This is the Casey's play. It's emotional, visual, narrative-driven. It works through recognition, nostalgia, aspiration, social proof, and all the other levers that behavioral science has cataloged over the past fifty years. This layer matters because humans still set their agents' parameters. The person who tells their agent "order pizza on Fridays" has a reason for that preference, and that reason was shaped by experiences — including marketing experiences. Brand affinity doesn't disappear in the agentic era. It migrates upstream, into the preference-setting conversation between human and agent.</p>
+
+  <p>Layer two is the agent layer. This is structured, data-driven, algorithmically evaluated. It works through capability matching, price optimization, availability verification, and preference alignment measured in precise, queryable terms. This layer matters because it's where the actual transaction decision happens. The human set the preference. The agent executes the choice. And the agent's choice is based on data your marketing team probably isn't even generating.</p>
+
+  <p>Casey's mastered layer one. In 2026, they need both.</p>
+
+  <h2>What Agent-Ready Pizza Looks Like</h2>
+
+  <p>Imagine Casey's rebuilding the lapsed customer campaign for a world where half the Friday night pizza orders are being placed by agents.</p>
+
+  <p>The human-facing campaign still matters. You still want that emotional connection — the reminder, the recognition, the visual trigger. But now you're also building for the agent that's managing the household's meal planning.</p>
+
+  <p>That means Casey's needs to expose their menu as structured data that an agent can query: every topping, every size, every price point, every nutritional breakdown, every allergen flag, every estimated delivery window by location. When a customer's agent is evaluating Friday dinner options, Casey's needs to be in the consideration set — not because of an email the human saw, but because the agent can programmatically determine that Casey's pepperoni and mushroom pizza matches the household's preferences, falls within the weekly food budget, and can be delivered in under 30 minutes.</p>
+
+  <p>The reorder trigger shifts too. Instead of a winback email sent six weeks after the customer lapses, the agent-facing approach is proactive and continuous. Casey's system should be able to signal to the customer's agent: "This household ordered pepperoni and mushroom every Friday for six months. We haven't seen an order in three weeks. If the principal's preferences haven't changed, we can have their usual order ready for pickup at 6:15pm this Friday." The agent evaluates that signal against the customer's current context and either acts on it or doesn't.</p>
+
+  <p>No picture of a pizza needed. Just structured data, delivered to the right interface, at the right moment.</p>
+
+  <h2>The Personalization Paradox</h2>
+
+  <p>Here's the uncomfortable truth at the center of this story: the thing that made Casey's campaign so effective — the emotional resonance of personal recognition — is precisely the thing that doesn't translate to the agentic layer. And the thing that works for agents — structured data, API accessibility, machine-readable preference matching — is precisely the thing that most marketing organizations have never been asked to build.</p>
+
+  <p>Product marketers have spent the last two decades getting really good at human persuasion. We know how to craft a message that makes someone feel seen. We know how to design a campaign that triggers nostalgia. We know how to personalize at scale using behavioral data. These are genuine skills, and they're not going away.</p>
+
+  <p>But they're no longer sufficient.</p>
+
+  <p>The PMMs who thrive in the next five years will be the ones who can think on both layers simultaneously. Who can design the emotional campaign that shapes human preferences <em>and</em> build the data infrastructure that makes their products discoverable by agents. Who understand that the picture of the pizza and the API that describes the pizza are both expressions of the same thing — a brand that knows its customer — delivered through fundamentally different channels to fundamentally different audiences.</p>
+
+  <p>Boom Boom Jones nailed it in 2016. The question is whether anyone is building Boom Boom Jones for agents.</p>
+
+  <h2>What Casey's Teaches Us</h2>
+
+  <p>I keep coming back to the simplicity of the original campaign. Connect the email system to the POS data. Show the customer what they ordered. 300% lift.</p>
+
+  <p>The agentic equivalent is just as simple in concept: connect your product catalog to the agent's query interface. Show the agent what the customer prefers. Win the order.</p>
+
+  <p>The gap between those two sentences is the same gap that exists at almost every consumer brand in the world right now. The first connection — email to POS — took Casey's a few months and a clever agency. The second connection — product catalog to agent interface — requires rethinking how the brand represents itself at a fundamental level.</p>
+
+  <p>Not rethinking the story. Rethinking the data layer underneath the story.</p>
+
+  <p>That $300 pepperoni and mushroom pizza email is still brilliant. But the next 300% lift won't come from a picture. It'll come from structured data that an agent can act on before the human even opens their inbox.</p>
+
+
+    </article>
+    
+    <div class="series-nav">
+        <div class="series-box">
+            <h3>From "Why Stories Still Win" — Story 2 of 10</h3>
+            <p>This series revisits the defining stories of the data-driven era through the lens of the agentic future. Next: <a href="03-the-toilet-paper-question.html"><em>The Toilet Paper Question</em></a>.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+            <div class="footer-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
