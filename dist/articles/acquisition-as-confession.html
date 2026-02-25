@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acquisition as Confession: What the AI Shopping Spree Tells Us About the Real Bottleneck | The Full Stack</title>
+    <meta name="description" content="The biggest application cloud vendors are on acquisition sprees. Not for AI models—those are commoditized. They're buying plumbing. And every deal is a confession.">
+    <meta property="og:title" content="Acquisition as Confession">
+    <meta property="og:description" content="What the AI Shopping Spree Tells Us About the Real Bottleneck">
+    <meta property="og:type" content="article">
+    
+    <!-- Schema.org Article markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Acquisition as Confession: What the AI Shopping Spree Tells Us About the Real Bottleneck",
+      "description": "The biggest application cloud vendors are on acquisition sprees. Not for AI models—those are commoditized. They're buying plumbing. And every deal is a confession.",
+      "author": {
+        "@type": "Person",
+        "name": "Chris O'Hara",
+        "url": "https://chrisohara.com",
+        "jobTitle": "VP of Product Marketing",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "SAP"
+        }
+      },
+      "datePublished": "2026-02-25",
+      "dateModified": "2026-02-25",
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Full Stack",
+        "url": "https://thefullstack.chrisohara.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://thefullstack.chrisohara.com/articles/acquisition-as-confession.html"
+      },
+      "keywords": ["AI", "enterprise software", "acquisitions", "data", "Salesforce", "Workday", "SAP", "agentic AI"]
+    }
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQD2XVJW67"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NQD2XVJW67');</script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #FAFAF8; --text: #1a1a1a; --text-secondary: #666; --accent: #E85D3A; --border: #E8E6E1; --card-bg: #FFFFFF; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        
+        header { padding: 20px 24px; border-bottom: 1px solid var(--border); background: var(--card-bg); position: sticky; top: 0; z-index: 100; }
+        .header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'DM Serif Display', serif; font-size: 24px; text-decoration: none; color: var(--text); }
+        nav a { margin-left: 32px; text-decoration: none; color: var(--text-secondary); font-size: 15px; }
+        nav a:hover { color: var(--accent); }
+        @media (max-width: 600px) { nav { display: none; } }
+        
+        .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: white; padding: 80px 24px; }
+        .hero-inner { max-width: 720px; margin: 0 auto; }
+        .tag { display: inline-block; background: var(--accent); color: white; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 24px; }
+        .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(32px, 5vw, 48px); line-height: 1.15; margin-bottom: 20px; font-weight: 400; letter-spacing: -1px; }
+        .hero .subtitle { font-size: 20px; opacity: 0.85; line-height: 1.5; margin-bottom: 24px; }
+        .hero .meta { font-size: 14px; opacity: 0.6; }
+        
+        .content { max-width: 720px; margin: 0 auto; padding: 64px 24px 80px; }
+        .content p { font-size: 18px; margin-bottom: 28px; color: #444; }
+        .content h2 { font-family: 'DM Serif Display', serif; font-size: 32px; margin: 56px 0 24px; color: var(--text); font-weight: 400; letter-spacing: -0.5px; }
+        .content ul, .content ol { margin: 0 0 28px 24px; color: #444; }
+        .content li { margin-bottom: 12px; font-size: 18px; }
+        .content strong { color: var(--text); font-weight: 600; }
+        .content em { font-style: italic; }
+        .content a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(232,93,58,0.3); }
+        .content a:hover { border-color: var(--accent); }
+        
+        .pull-quote { margin: 48px 0; padding: 32px 40px; border-left: 4px solid var(--accent); background: linear-gradient(135deg, rgba(232,93,58,0.06), transparent); border-radius: 0 12px 12px 0; }
+        .pull-quote p { font-family: 'DM Serif Display', serif; font-size: 24px; line-height: 1.4; color: var(--text); margin: 0; font-style: italic; }
+        
+        .highlight-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin: 32px 0; }
+        .highlight-box p { margin: 0; font-size: 17px; }
+        
+        hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+        
+        .author-box { display: flex; gap: 20px; align-items: flex-start; padding: 32px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; margin-top: 64px; }
+        .author-avatar { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #c44a2d); display: flex; align-items: center; justify-content: center; color: white; font-family: 'DM Serif Display', serif; font-size: 28px; flex-shrink: 0; }
+        .author-info h4 { font-size: 18px; margin-bottom: 6px; font-weight: 600; }
+        .author-info p { font-size: 15px; color: var(--text-secondary); margin: 0; line-height: 1.6; }
+        
+        footer { background: #1a1a1a; color: white; padding: 48px 24px; text-align: center; margin-top: 80px; }
+        footer p { opacity: 0.6; font-size: 14px; }
+        footer a { color: white; }
+        
+        @media (max-width: 600px) {
+            .hero { padding: 48px 20px; }
+            .content { padding: 40px 20px 60px; }
+            .pull-quote { padding: 24px; margin: 32px 0; }
+            .author-box { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="/" class="logo">The Full Stack</a>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/digests/">Digest</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="hero">
+        <div class="hero-inner">
+            <span class="tag">Enterprise AI</span>
+            <h1>Acquisition as Confession</h1>
+            <p class="subtitle">What the AI Shopping Spree Tells Us About the Real Bottleneck</p>
+            <p class="meta">By Chris O'Hara · February 25, 2026</p>
+        </div>
+    </div>
+    
+    <article class="content">
+        <p>There's a pattern emerging in enterprise software right now that product marketers should be paying very close attention to — not because of what it says about AI, but because of what it says about <em>data</em>.</p>
+        
+        <p>The biggest application cloud vendors are on acquisition sprees. Not for AI models — those are increasingly commoditized. Not for flashy consumer features. They're buying <em>plumbing</em>. Data integration. Metadata management. Workflow connectors. Document intelligence. The unsexy stuff that actually makes agentic AI work.</p>
+        
+        <p>And if you read between the lines of these deals, every single one of them is a confession.</p>
+
+        <h2>The Shopping Spree</h2>
+        
+        <p>Let's start with the receipts.</p>
+        
+        <p>Salesforce has made ten acquisitions in roughly six months — Informatica ($8B), Momentum, Cimulate, Qualified, Spindle AI, Doti AI, Convergence, Regrello, and more. The pattern is impossible to miss.</p>
+        
+        <p>Agentforce launched in late 2024 with considerable fanfare, promising AI agents that could actually <em>do work</em> rather than just assist with it. The reality was messier. Early adopters hit data quality problems, inconsistent agent behavior, and a pricing model that confused more customers than it converted.</p>
+        
+        <p>So Salesforce went shopping — and the shopping list reads like a checklist of Agentforce's known weaknesses: patchy enterprise data, limited process visibility, narrow search, gaps at the top of the funnel, and agents with no access to what customers actually said on calls.</p>
+        
+        <p>Now look at Workday. A company that made just 22 acquisitions in its entire 20-year history suddenly completed five in 19 months — Sana ($1.1B, its largest ever), Paradox, Flowise, Pipedream, HiredScore. The thesis? Workday wants to become the "agent system of record" — but first it needs to connect its HR and finance data to the 3,000+ business applications where work actually happens.</p>
+        
+        <p>Then in February 2026, the company fired its CEO without cause, with the stock down 40% over 12 months. The co-founder returned, signaling a pivot from acquisition-fueled growth back to organic R&D.</p>
+        
+        <p>Both stories share the same subtext: <strong>the AI model layer is not the bottleneck. The data layer is.</strong></p>
+
+        <h2>The Confession</h2>
+        
+        <p>Here's what these acquisition sprees are really saying:</p>
+        
+        <div class="pull-quote">
+            <p>"We built the agent. We trained the model. We designed the UX. And then we discovered that none of it matters if the data underneath is fragmented, ungoverned, and stitched together from six different acquisitions."</p>
+        </div>
+        
+        <p>This is the part the keynote demos skip. An AI agent is only as intelligent as the data it reasons over. And when that data is assembled from bolt-on acquisitions — Informatica for governance here, Momentum for call transcription there, Pipedream for API connectors over there — the agent isn't reasoning. It's <em>guessing</em>. Probabilistically inferring context across systems that were never designed to talk to each other.</p>
+        
+        <p>Marc Benioff said it himself when the Informatica deal closed: "Without clean, connected, trusted data there is no intelligence — only hallucination." He's right. But it raises a question: if you have to spend $8 billion to get the data layer right <em>after</em> you've already launched your agent platform, what does that tell you about the architecture you started with?</p>
+
+        <h2>The Deterministic Advantage</h2>
+        
+        <p>This is where the story gets interesting for anyone watching the enterprise AI landscape.</p>
+        
+        <p>There's a category of vendor that doesn't need to go on an acquisition spree to build a data foundation — because they've been sitting on one for decades. Systems of record that hold the actual transactional truth of the enterprise: the real inventory levels, the real margin data, the real workforce capacity, the real financial close.</p>
+        
+        <p>SAP is the clearest example. The SAP data fabric — spanning S/4HANA, BW/4HANA, SAP Datasphere, and the Business Data Cloud — isn't an assembled Frankenstein of acquired parts. It's a native data layer that connects the financial ledger, supply chain, HR, CX, and planning data across the enterprise.</p>
+        
+        <p>When an AI agent built on this foundation asks "what's the status of this account?" — it's not inferring from sentiment signals and metadata stitched across six acquisitions. It's reading deterministic, system-of-record data. The actual state of the business.</p>
+        
+        <p>That's the difference between an agent that says <em>"this account looks like it might churn based on engagement signals"</em> and one that says <em>"this account's consumption dropped 40% last quarter, their contract renewal is in 90 days, their primary champion just left the company, and here's the play."</em></p>
+        
+        <p><strong>Probabilistic vs. deterministic. One guesses. The other <em>knows</em>.</strong></p>
+
+        <h2>The Hype Cycle Implication</h2>
+        
+        <p>This brings us to the hype cycle — and specifically, to the question of where AI in enterprise marketing actually sits right now.</p>
+        
+        <p>A February 2026 NBER study found that 90% of firms reported no impact from AI on workplace productivity. Meanwhile, Gartner estimates global AI spend will hit $2.5 trillion this year. That's a staggering gap between investment and impact — and it's the textbook definition of the Trough of Disillusionment.</p>
+        
+        <p>But here's the nuance that matters for product marketers: <strong>the trough isn't about the technology failing. It's about the data foundation being absent.</strong></p>
+        
+        <p>Companies that deployed AI copilots on top of fragmented, multi-vendor data stacks are the ones reporting no impact. They bought the agent, skipped the plumbing, and got hallucinations instead of intelligence.</p>
+        
+        <p>The application cloud vendors scrambling to acquire data management companies right now are essentially admitting this in real time.</p>
+        
+        <p>The Slope of Enlightenment — when it comes — won't be driven by better models. It'll be driven by better data architecture. Specifically:</p>
+        
+        <ul>
+            <li><strong>Unified data fabrics</strong> that connect operational, financial, and experiential data natively — not through bolt-on acquisitions.</li>
+            <li><strong>Deterministic grounding</strong> that gives AI agents access to system-of-record truth, not probabilistic inference across metadata layers.</li>
+            <li><strong>Composable planning and analytics</strong> (the xP&A thesis) where the same trusted data powers both the AI agent <em>and</em> the human decision-maker.</li>
+        </ul>
+
+        <h2>What This Means for Enterprise Leaders</h2>
+        
+        <p>If you're evaluating AI platforms — or building a GTM strategy around one — the takeaway is both strategic and tactical:</p>
+        
+        <p><strong>Strategically</strong>, stop evaluating vendors on the AI model. Everyone has access to frontier models now. The differentiation is in the data. The winning enterprise AI story for the next 18 months isn't "our AI is smarter" — it's "our AI is grounded in the actual truth of your business." That's the moat. That's the story.</p>
+        
+        <p><strong>Tactically</strong>, watch the acquisition patterns. Every tuck-in deal is a confession about a gap in the platform. When a vendor buys a data governance company, they're telling you their agents were hallucinating. When they buy a workflow connector company, they're telling you their data was siloed. These are competitive intelligence signals hiding in plain sight — and they should inform every enterprise software evaluation happening right now.</p>
+        
+        <hr>
+        
+        <p>The AI hype cycle is compressing faster than any prior technology wave — social, mobile, cloud all took years to move through the trough. This one is happening in months.</p>
+        
+        <p>The vendors who started with the data layer intact — who didn't need a $10 billion acquisition spree to teach their agents where the truth lives — are the ones who'll come out the other side first.</p>
+        
+        <p>Everyone else is still shopping.</p>
+
+        <div class="author-box">
+            <div class="author-avatar">CO</div>
+            <div class="author-info">
+                <h4>Chris O'Hara</h4>
+                <p>Chris O'Hara writes The Full Stack, covering the intersection of AI, data, and enterprise strategy. He leads next-generation product marketing for SAP's BTP Data & Analytics organization.</p>
+            </div>
+        </div>
+    </article>
+    
+    <footer>
+        <p>&copy; 2026 The Full Stack · <a href="https://thefullstack.chrisohara.com">thefullstack.chrisohara.com</a></p>
+    </footer>
+</body>
+</html>
