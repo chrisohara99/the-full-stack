@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
     <title>Competitive Intelligence Dashboard | The Full Stack</title>
+    <meta name="description" content="Tracking Enterprise Application Data Clouds and Customer Data Platforms - AI strategy, market positioning, and competitive signals.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -437,8 +437,89 @@
             }
         }
     </style>
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid #E8E4DE;
+        }
+        
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .nav-brand {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+        
+        .nav-brand .slash {
+            color: #C05626;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 400;
+            color: #6B6B6B;
+            text-decoration: none;
+            transition: color 0.2s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: #1a1a1a;
+        }
+        
+        .nav-links a.active {
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+        
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 1.5px;
+            background: #C05626;
+            border-radius: 1px;
+        }
+    </style>
 </head>
 <body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/competitive-intel.html" class="active">Competitive Intel</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="header">
         <h1>Competitive <span>Intelligence</span> Dashboard</h1>
         <p>Tracking Enterprise Application Data Clouds & Customer Data Platforms</p>
@@ -712,7 +793,6 @@
             </a>
         </div>
 
-        <a href="/" class="nav-link">← Back to The Full Stack</a>
     </div>
 
     <script>
