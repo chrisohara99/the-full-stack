@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducing the AMP: The Agentic Marketing Platform | The Full Stack</title>
+    <meta name="description" content="The DMP gave you data. The CDP gave you knowledge. The AMP gives you action. Introducing the three-layer architecture for the agent era.">
+    <meta property="og:title" content="Introducing the AMP: The Agentic Marketing Platform">
+    <meta property="og:description" content="The DMP gave you data. The CDP gave you knowledge. The AMP gives you action.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://thefullstack.blog/images/amp-stack.png">
+    <link rel="canonical" href="https://thefullstack.blog/articles/introducing-the-amp.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --accent-hover: #A84920;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --tag-text: #7A7168;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 720px;
+            --wide-width: 960px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(253, 251, 247, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { font-family: var(--mono); font-size: 15px; font-weight: 500; color: var(--text-primary); text-decoration: none; }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+
+        .article-header { max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 32px; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-tertiary); text-decoration: none; margin-bottom: 32px; }
+        .back-link:hover { color: var(--text-primary); }
+        .article-header h1 { font-family: var(--serif); font-size: 42px; font-weight: 400; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; }
+        .article-header .subtitle { font-family: var(--serif); font-size: 22px; font-weight: 300; font-style: italic; color: var(--text-secondary); line-height: 1.4; margin-bottom: 24px; }
+        .article-meta { font-size: 14px; color: var(--text-tertiary); display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+        .article-meta .author { color: var(--text-primary); font-weight: 500; }
+
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 80px; font-family: var(--serif); font-size: 19px; line-height: 1.8; }
+        .article-body p { margin-bottom: 24px; }
+        .article-body strong { font-weight: 600; color: var(--text-primary); }
+        .article-body em { font-style: italic; }
+        .article-body h2 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 56px 0 20px; line-height: 1.3; }
+        .article-body h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin: 40px 0 16px; }
+        .article-body blockquote { border-left: 3px solid var(--accent); padding-left: 24px; margin: 32px 0; font-style: italic; color: var(--text-secondary); }
+        .article-body ul, .article-body ol { margin: 0 0 24px 24px; }
+        .article-body li { margin-bottom: 8px; }
+        .article-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+        .article-body hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+        /* Lead quote */
+        .lead-quote { font-family: var(--serif); font-size: 24px; font-weight: 400; line-height: 1.5; color: var(--accent); text-align: center; padding: 32px 20px; margin: 0 0 40px; font-style: italic; }
+
+        /* Trilogy visualization */
+        .trilogy-arc { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin: 40px 0; }
+        .trilogy-arc h3 { font-family: var(--sans); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary); margin-bottom: 24px; text-align: center; }
+        .trilogy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .trilogy-item { text-align: center; padding: 20px; background: var(--tag-bg); border-radius: 8px; position: relative; }
+        .trilogy-item:not(:last-child)::after { content: '→'; position: absolute; right: -14px; top: 50%; transform: translateY(-50%); color: var(--text-tertiary); font-size: 18px; z-index: 1; }
+        .trilogy-year { font-family: var(--sans); font-size: 12px; color: var(--text-tertiary); margin-bottom: 4px; }
+        .trilogy-title { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--text-primary); margin-bottom: 8px; }
+        .trilogy-hero { font-size: 13px; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .trilogy-item.current { background: linear-gradient(135deg, rgba(192,86,38,0.1), rgba(192,86,38,0.05)); border: 2px solid var(--accent); }
+
+        /* AMP Stack Diagram */
+        .amp-stack-wrapper { margin: 48px -60px; }
+        @media (max-width: 840px) { .amp-stack-wrapper { margin: 48px -24px; } }
+        .amp-stack { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 16px; padding: 48px 32px; text-align: center; }
+        .amp-stack-title { font-family: 'Inter', var(--sans); font-size: 36px; font-weight: 700; color: #ffffff; margin-bottom: 8px; letter-spacing: -0.5px; }
+        .amp-stack-subtitle { font-family: 'Inter', var(--sans); font-size: 16px; color: #94a3b8; margin-bottom: 40px; }
+        .stack-layers { display: flex; flex-direction: column; gap: 12px; max-width: 700px; margin: 0 auto; }
+        .stack-layer { border-radius: 12px; padding: 24px; text-align: center; }
+        .layer-action { background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%); }
+        .layer-knowledge { background: #1e3a5f; }
+        .layer-compute { background: rgba(30, 41, 59, 0.9); border: 1px solid rgba(255,255,255,0.1); }
+        .layer-tag { display: inline-block; font-family: 'Inter', var(--sans); font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 12px; border-radius: 16px; margin-bottom: 12px; }
+        .layer-action .layer-tag { background: rgba(255,255,255,0.15); color: #5eead4; }
+        .layer-knowledge .layer-tag { background: rgba(251,191,36,0.15); color: #fbbf24; }
+        .layer-compute .layer-tag { background: rgba(148,163,184,0.15); color: #94a3b8; }
+        .layer-title { font-family: 'Inter', var(--sans); font-size: 20px; font-weight: 600; color: #ffffff; margin-bottom: 6px; }
+        .layer-desc { font-family: 'Inter', var(--sans); font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 16px; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.5; }
+        .layer-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+        .layer-pill { font-family: 'Inter', var(--sans); font-size: 12px; font-weight: 500; padding: 8px 16px; border-radius: 6px; white-space: nowrap; }
+        .layer-action .layer-pill { background: rgba(255,255,255,0.12); color: #ffffff; border: 1px solid rgba(255,255,255,0.2); }
+        .layer-knowledge .layer-pill { background: rgba(255,255,255,0.08); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.12); }
+        .layer-compute .layer-pill { background: rgba(255,255,255,0.05); color: #cbd5e1; border: 1px solid rgba(255,255,255,0.08); }
+        .stack-divider { width: 2px; height: 12px; background: rgba(255,255,255,0.2); margin: 0 auto; }
+        .amp-tagline { font-family: 'Inter', var(--sans); font-size: 16px; margin-top: 40px; line-height: 1.6; }
+        .amp-tagline .dmp { color: #94a3b8; font-style: italic; }
+        .amp-tagline .cdp { color: #38bdf8; font-style: italic; }
+        .amp-tagline .amp { color: #5eead4; font-weight: 600; font-style: italic; }
+
+        /* Comparison table */
+        .comparison-table { width: 100%; margin: 32px 0; border-collapse: collapse; font-family: var(--sans); font-size: 15px; }
+        .comparison-table th { background: var(--text-primary); color: white; padding: 14px 16px; text-align: left; font-weight: 500; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .comparison-table td { padding: 14px 16px; border-bottom: 1px solid var(--border-light); vertical-align: top; }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .col-built { background: #fafafa; }
+        .comparison-table .col-needs { background: rgba(192,86,38,0.04); }
+
+        /* Five shifts */
+        .shifts-grid { display: grid; gap: 16px; margin: 32px 0; }
+        .shift-item { display: grid; grid-template-columns: 160px 1fr; gap: 16px; padding: 20px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; }
+        .shift-label { font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--accent); }
+        .shift-desc { font-family: var(--serif); font-size: 16px; color: var(--text-secondary); line-height: 1.5; }
+
+        /* Pull quote */
+        .pull-quote { font-family: var(--serif); font-size: 26px; font-weight: 400; line-height: 1.4; color: var(--accent); text-align: center; padding: 40px 20px; margin: 48px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); font-style: italic; }
+
+        /* Final CTA */
+        .final-tagline { font-family: var(--serif); font-size: 22px; font-weight: 500; text-align: center; color: var(--text-primary); margin: 48px 0 24px; line-height: 1.4; }
+        .final-tagline em { color: var(--accent); font-style: normal; }
+
+        @media (max-width: 640px) {
+            .article-header h1 { font-size: 32px; }
+            .trilogy-grid { grid-template-columns: 1fr; }
+            .trilogy-item:not(:last-child)::after { display: none; }
+            .shift-item { grid-template-columns: 1fr; }
+            .comparison-table { font-size: 13px; }
+            .comparison-table th, .comparison-table td { padding: 10px 12px; }
+            .amp-stack { padding: 32px 20px; }
+            .amp-stack-title { font-size: 28px; }
+            .layer-title { font-size: 18px; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Introducing the AMP: The Agentic Marketing Platform",
+        "description": "The DMP gave you data. The CDP gave you knowledge. The AMP gives you action. Introducing the three-layer architecture for the agent era.",
+        "author": {
+            "@type": "Person",
+            "name": "Christopher O'Hara",
+            "url": "https://chrisohara.com"
+        },
+        "datePublished": "2026-03-05",
+        "dateModified": "2026-03-05",
+        "publisher": {
+            "@type": "Organization",
+            "name": "The Full Stack",
+            "url": "https://thefullstack.blog"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://thefullstack.blog/articles/introducing-the-amp.html"
+        }
+    }
+    </script>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+        <div class="nav-links">
+            <a href="/">Writing</a>
+            <a href="/about.html">About</a>
+        </div>
+    </div>
+</nav>
+
+<article>
+    <header class="article-header">
+        <a href="/" class="back-link">← Back to all posts</a>
+        <h1>Introducing the AMP</h1>
+        <p class="subtitle">The Agentic Marketing Platform — a three-layer architecture for the agent era</p>
+        <div class="article-meta">
+            <span class="author">Christopher O'Hara</span>
+            <span>March 2026</span>
+            <span>8 min read</span>
+        </div>
+    </header>
+
+    <div class="article-body">
+
+        <p class="lead-quote">"The DMP gave you data. The CDP gave you knowledge. The AMP gives you action."</p>
+
+        <h2>The Third Act</h2>
+
+        <p>The story of marketing technology has unfolded in three acts.</p>
+
+        <p><strong>Act One: Data Driven (2015–2020).</strong> The DMP era. We built infrastructure to capture behavioral data across every digital touchpoint. Cookies, device graphs, third-party segments. The goal was simple: <em>know the customer</em>. Build anonymous profiles. Target efficiently. The DMP was the hero.</p>
+
+        <p><strong>Act Two: Customer Driven (2020–2025).</strong> The CDP era. We realized that knowing anonymous segments wasn't enough—we needed to know <em>individuals</em>. First-party data. Identity resolution. Golden records. Journey orchestration. The goal evolved: unify data into actionable profiles that could power personalization across every channel. The CDP was the hero.</p>
+
+        <p><strong>Act Three: Agent Driven (2025+).</strong> Something shifted. The customer didn't leave—they <em>delegated</em>. Their AI agent now triages their inbox, researches purchases, compares options, and increasingly makes decisions on their behalf. The beautiful websites and personalized emails we built? The agent can't see them. Doesn't care about them.</p>
+
+        <p>The question is no longer "how do we reach the customer?"</p>
+
+        <p>It's <strong>"how do we serve the customer's agent?"</strong></p>
+
+        <!-- Trilogy Arc -->
+        <div class="trilogy-arc">
+            <h3>The Trilogy Arc</h3>
+            <div class="trilogy-grid">
+                <div class="trilogy-item">
+                    <div class="trilogy-year">2015–2020</div>
+                    <div class="trilogy-title">Data Driven</div>
+                    <div class="trilogy-hero">DMP</div>
+                </div>
+                <div class="trilogy-item">
+                    <div class="trilogy-year">2020–2025</div>
+                    <div class="trilogy-title">Customer Driven</div>
+                    <div class="trilogy-hero">CDP</div>
+                </div>
+                <div class="trilogy-item current">
+                    <div class="trilogy-year">2025+</div>
+                    <div class="trilogy-title">Agent Driven</div>
+                    <div class="trilogy-hero">AMP</div>
+                </div>
+            </div>
+        </div>
+
+        <h2>The Infrastructure Gap</h2>
+
+        <p>Here's the uncomfortable truth: everything you built for the human experience is largely invisible to agents.</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th class="col-built">What You Built (Human-Facing)</th>
+                    <th class="col-needs">What the Agent Needs</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-built">Beautiful product pages</td>
+                    <td class="col-needs">Structured product data (machine-readable)</td>
+                </tr>
+                <tr>
+                    <td class="col-built">Personalized email campaigns</td>
+                    <td class="col-needs">Real-time pricing and availability APIs</td>
+                </tr>
+                <tr>
+                    <td class="col-built">Journey orchestration across channels</td>
+                    <td class="col-needs">Sub-second query response latency</td>
+                </tr>
+                <tr>
+                    <td class="col-built">Creative campaigns and brand storytelling</td>
+                    <td class="col-needs">Trust signals (verified ratings, certifications)</td>
+                </tr>
+                <tr>
+                    <td class="col-built">Loyalty programs and retention nudges</td>
+                    <td class="col-needs">Competitive comparison schemas</td>
+                </tr>
+                <tr>
+                    <td class="col-built">A/B tested checkout flows</td>
+                    <td class="col-needs">Agent-compatible transaction protocols</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="text-align: center; font-size: 15px; color: var(--text-secondary);"><em>You need both. The human storefront AND the agent storefront.</em></p>
+
+        <p>The infrastructure from the DMP and CDP eras isn't wrong—it's <em>incomplete</em>. It's a foundation, not a finished building.</p>
+
+        <h2>The AMP Stack</h2>
+
+        <p>The Agentic Marketing Platform is a three-layer architecture that extends your existing data infrastructure to serve intelligent agents:</p>
+
+        <!-- AMP Stack Diagram -->
+        <div class="amp-stack-wrapper">
+            <div class="amp-stack">
+                <h3 class="amp-stack-title">The AMP Stack</h3>
+                <p class="amp-stack-subtitle">Agentic Marketing Platform — Three-Layer Architecture</p>
+                
+                <div class="stack-layers">
+                    <!-- Layer 3: Action -->
+                    <div class="stack-layer layer-action">
+                        <span class="layer-tag">Layer 3 — Action</span>
+                        <h4 class="layer-title">AI Agents & Intelligent Applications</h4>
+                        <div class="layer-pills">
+                            <span class="layer-pill">Adaptive Experiences</span>
+                            <span class="layer-pill">Autonomous Execution</span>
+                            <span class="layer-pill">Continuous Learning</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stack-divider"></div>
+                    
+                    <!-- Layer 2: Knowledge -->
+                    <div class="stack-layer layer-knowledge">
+                        <span class="layer-tag">Layer 2 — Knowledge</span>
+                        <h4 class="layer-title">Data Fabric</h4>
+                        <p class="layer-desc">The semantic and contextual infrastructure that makes agents intelligent — where DMPs and CDPs dissolve into the fabric.</p>
+                        <div class="layer-pills">
+                            <span class="layer-pill">Business Semantics</span>
+                            <span class="layer-pill">Knowledge Graph</span>
+                            <span class="layer-pill">Analytics & Simulations</span>
+                            <span class="layer-pill">Data Products</span>
+                            <span class="layer-pill">Identity & Governance</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stack-divider"></div>
+                    
+                    <!-- Layer 1: Compute & Storage -->
+                    <div class="stack-layer layer-compute">
+                        <span class="layer-tag">Layer 1 — Compute & Storage</span>
+                        <div class="layer-pills" style="margin-top: 8px;">
+                            <span class="layer-pill">Data Lakes</span>
+                            <span class="layer-pill">Data Warehouse</span>
+                            <span class="layer-pill">Data Lakehouse</span>
+                            <span class="layer-pill">Operational Databases</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="amp-tagline">
+                    <span class="dmp">A DMP gave you data.</span>&nbsp;&nbsp;
+                    <span class="cdp">A CDP gave you knowledge.</span>&nbsp;&nbsp;
+                    <span class="amp">An AMP gives you action.</span>
+                </p>
+            </div>
+        </div>
+
+        <h3>Layer 1: Compute & Storage</h3>
+        <p>The foundation. Data lakes, warehouses, lakehouses, and operational databases. This is where your raw data lives. You've already built this.</p>
+
+        <h3>Layer 2: Knowledge (Data Fabric)</h3>
+        <p>The semantic and contextual infrastructure that makes agents intelligent. This is where DMPs and CDPs <em>dissolve into the fabric</em>—not disappear, but become components of something larger. Business semantics. Knowledge graphs. Analytics engines. Data products. And critically: <strong>identity and governance</strong>.</p>
+        <p>This layer transforms raw data into structured knowledge that agents can query, reason about, and act on.</p>
+
+        <h3>Layer 3: Action (AI Agents & Intelligent Applications)</h3>
+        <p>The execution layer. Adaptive experiences that adjust in real-time. Autonomous execution that operates without human intervention. Continuous learning that improves with every interaction.</p>
+        <p>This is where your brand's agents serve the customer's agents. Where the handshake happens.</p>
+
+        <h2>The Five Shifts</h2>
+
+        <p>The agentic disruption manifests as five concurrent shifts:</p>
+
+        <div class="shifts-grid">
+            <div class="shift-item">
+                <div class="shift-label">Identity Shifts</div>
+                <div class="shift-desc">Your golden record becomes one layer of a triple identity: the human, their agent, and the authority scope governing what the agent can do.</div>
+            </div>
+            <div class="shift-item">
+                <div class="shift-label">Personalization Inverts</div>
+                <div class="shift-desc">Instead of painting personalized pages for humans, you structure responses for agent queries. The agent needs data, not creative.</div>
+            </div>
+            <div class="shift-item">
+                <div class="shift-label">Journeys Collapse</div>
+                <div class="shift-desc">Multi-week, multi-touchpoint journeys become parallel evaluations completed in seconds. The agent evaluates twelve options simultaneously.</div>
+            </div>
+            <div class="shift-item">
+                <div class="shift-label">Trust Transfers</div>
+                <div class="shift-desc">The consumer trusts their agent. The agent evaluates <em>your</em> trustworthiness through data accuracy, fulfillment reliability, pricing consistency. You can't advertise your way to agent trust—you have to perform your way there.</div>
+            </div>
+            <div class="shift-item">
+                <div class="shift-label">The Funnel Flattens</div>
+                <div class="shift-desc">Awareness → Consideration → Evaluation → Purchase becomes a single evaluation event when an agent handles them simultaneously.</div>
+            </div>
+        </div>
+
+        <h2>The Job Hasn't Changed</h2>
+
+        <p>In 1961, Father Harvey Schmitt at the Catholic Diocese of Rockford used an IBM 650 to personalize fundraising letters and achieved an 80% response rate. His operations—data input, storage, processing, activation, engagement, measurement—map perfectly to today's marketing stack.</p>
+
+        <p>Father Schmitt would understand the AMP. Different speed. Different scale. Same logic: know who you're talking to, and tailor what you say based on what you know.</p>
+
+        <p>The technology changes every decade. The job doesn't.</p>
+
+        <p>And the job, today, is to build the infrastructure that serves the customer's agent as brilliantly as we learned to serve the customer directly.</p>
+
+        <hr>
+
+        <p>The brands that build AMP infrastructure will thrive. The brands that keep painting beautiful pages for an audience increasingly sending agents instead of eyeballs will find themselves invisible to a growing share of commerce.</p>
+
+        <p>Not because they did anything wrong. Because they stopped one layer short of where the world was heading.</p>
+
+        <p class="final-tagline"><em>A DMP gave you data.</em><br><em>A CDP gave you knowledge.</em><br><em>An AMP gives you action.</em></p>
+
+    </div>
+</article>
+
+</body>
+</html>
