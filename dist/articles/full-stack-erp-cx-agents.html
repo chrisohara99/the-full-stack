@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Full Stack: Why Agents Will Finally Force ERP and CX to Talk to Each Other | The Full Stack</title>
+    <meta name="description" content="There's a conversation that nobody in enterprise software is having. The conversation is about the full stack — from ERP to CX — and agents are about to force it into the open.">
+    <meta property="og:title" content="The Full Stack: Why Agents Will Finally Force ERP and CX to Talk to Each Other">
+    <meta property="og:description" content="There's a conversation that nobody in enterprise software is having. The conversation is about the full stack — from ERP to CX — and agents are about to force it into the open.">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/articles/full-stack-erp-cx-agents.html">
+    
+    <!-- Schema.org Article markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The Full Stack: Why Agents Will Finally Force ERP and CX to Talk to Each Other",
+      "description": "There's a conversation that nobody in enterprise software is having. The conversation is about the full stack — from ERP to CX — and agents are about to force it into the open.",
+      "author": {
+        "@type": "Person",
+        "name": "Chris O'Hara",
+        "url": "https://chrisohara.com",
+        "jobTitle": "VP of Product Marketing",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "SAP"
+        }
+      },
+      "datePublished": "2026-03-06",
+      "dateModified": "2026-03-06",
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Full Stack",
+        "url": "https://thefullstack.chrisohara.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://thefullstack.chrisohara.com/articles/full-stack-erp-cx-agents.html"
+      },
+      "keywords": ["enterprise software", "ERP", "CX", "AI agents", "data architecture", "digital transformation", "AMP"]
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --accent-hover: #A84920;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --tag-text: #7A7168;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 720px;
+            --wide-width: 960px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(253, 251, 247, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { font-family: var(--mono); font-size: 15px; font-weight: 500; letter-spacing: -0.02em; color: var(--text-primary); text-decoration: none; }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { font-size: 14px; font-weight: 400; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header { max-width: var(--max-width); margin: 0 auto; padding: 64px 24px 32px; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-tertiary); text-decoration: none; margin-bottom: 32px; transition: color 0.2s; }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .article-date { font-size: 13px; color: var(--text-tertiary); }
+        .article-tag { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: rgba(192, 86, 38, 0.08); padding: 2px 8px; border-radius: 3px; }
+        .article-title { font-family: var(--serif); font-size: 42px; font-weight: 400; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; }
+        .article-subtitle { font-family: var(--serif); font-size: 20px; font-weight: 300; font-style: italic; color: var(--text-secondary); line-height: 1.5; }
+        
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 80px; font-family: var(--serif); font-size: 18px; line-height: 1.8; }
+        .article-body p { margin-bottom: 24px; color: var(--text-primary); }
+        .article-body strong { font-weight: 600; }
+        .article-body em { font-style: italic; }
+        .article-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(192, 86, 38, 0.3); transition: border-color 0.2s; }
+        .article-body a:hover { border-color: var(--accent); }
+        .article-body h2 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 48px 0 20px; line-height: 1.3; }
+        .article-body h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin: 36px 0 16px; line-height: 1.35; }
+        .article-body ul, .article-body ol { margin-bottom: 24px; padding-left: 24px; }
+        .article-body li { margin-bottom: 8px; }
+        
+        .pull-quote { margin: 48px -20px; padding: 28px 36px; border-left: 3px solid var(--accent); background: linear-gradient(135deg, rgba(192,86,38,0.04), transparent); border-radius: 0 6px 6px 0; }
+        .pull-quote p { font-family: var(--serif); font-size: 22px; line-height: 1.5; color: var(--text-primary); margin-bottom: 0; font-style: italic; }
+        
+        .scenario-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 28px 32px; margin: 32px 0; }
+        .scenario-box .scenario-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; font-weight: 600; }
+        .scenario-box p { font-size: 16px; line-height: 1.7; margin-bottom: 16px; }
+        .scenario-box p:last-child { margin-bottom: 0; }
+        
+        .layer-stack { margin: 32px 0; font-family: var(--sans); }
+        .layer { padding: 20px 24px; margin-bottom: 4px; border-radius: 6px; color: white; }
+        .layer-num { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.7; margin-bottom: 4px; }
+        .layer-name { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+        .layer-desc { font-size: 14px; opacity: 0.85; line-height: 1.5; }
+        .layer-3 { background: #0A3D6B; }
+        .layer-2 { background: #0070F2; }
+        .layer-1 { background: var(--text-primary); }
+        
+        .closing-tagline { font-family: var(--serif); font-size: 20px; font-style: italic; color: var(--text-secondary); text-align: center; line-height: 1.8; margin: 48px 0; padding: 32px 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
+        
+        .divider { text-align: center; margin: 48px 0; color: var(--border); letter-spacing: 0.5em; font-size: 14px; }
+        
+        footer { border-top: 1px solid var(--border-light); padding: 40px 24px; text-align: center; }
+        footer p { font-size: 13px; color: var(--text-tertiary); }
+        footer a { color: var(--text-secondary); text-decoration: none; }
+        footer a:hover { color: var(--accent); }
+        
+        @media (max-width: 768px) {
+            .article-header { padding: 48px 20px 24px; }
+            .article-title { font-size: 32px; }
+            .pull-quote { margin: 36px 0; padding: 24px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Writing</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/" class="back-link">← Back to all posts</a>
+        <div class="article-meta">
+            <span class="article-tag">Enterprise Architecture</span>
+            <span class="article-date">March 2026</span>
+        </div>
+        <h1 class="article-title">The Full Stack: Why Agents Will Finally Force ERP and CX to Talk to Each Other</h1>
+        <p class="article-subtitle">There's a conversation that nobody in enterprise software is having, and it's not because the topic is obscure — it's because nobody has the standing to raise it.</p>
+    </header>
+    
+    <article class="article-body">
+        <p>The conversation is about the full stack. Not the technology stack, not the "modern data stack" that dominated conference keynotes for a few years, but the actual end-to-end architecture of a business: from the backend systems that run operations — finance, human capital management, supply chain, procurement — to the frontend systems that face the customer — sales, service, commerce, marketing, loyalty.</p>
+        
+        <p>Every CIO knows what this picture looks like inside their own organization. They see it when they map their vendor landscape onto a whiteboard and realize they've assembled nine or twelve or fifteen platforms across both sides, connected by a spaghetti of custom integrations and middleware that took years to build and that nobody fully understands.</p>
+        
+        <p>But here's why the conversation never happens at an industry level: no vendor can credibly have it.</p>
+        
+        <p>Snowflake can talk about the data layer but has no applications. Salesforce can talk about CX but has no ERP. The hyperscalers can talk about infrastructure but don't touch business semantics. Every vendor in the market can solve a portion of one side — and so every vendor has a powerful incentive to define "the stack" as whatever fragment they happen to sell.</p>
+        
+        <p>The full picture is visible only from the CIO's chair, usually during a painful architecture review or a failed digital transformation, and by then it's a problem to be managed rather than a conversation to be had.</p>
+        
+        <p>Agents are about to force that conversation into the open, whether the vendors are ready for it or not.</p>
+        
+        <h2>The Frankenstack in the Mirror</h2>
+        
+        <p>Every CIO has their own version of this diagram, and none of them are proud of it. The marketecture slide they show the board has clean lines and integrated layers; the reality underneath is a Frankenstack assembled over decades through a combination of best-of-breed purchasing decisions, strategic vendor bets that didn't pan out, and acquisitions that brought their own systems along for the ride.</p>
+        
+        <p>For three decades, enterprise technology has been organized around functional domains, each with its own data model, its own governance structure, its own vendor relationships, and — critically — its own definition of what constitutes a "customer." The finance team's understanding of a customer is a billing entity with payment terms and credit limits. Marketing's understanding of a customer is a behavioral profile with propensity scores and channel preferences. These aren't just different views of the same entity — they are, in many organizations, literally different records in different systems maintained by different teams who report to different executives and measure success against different KPIs.</p>
+        
+        <div class="pull-quote">
+            <p>This is not a bug. It's the logical outcome of how enterprise software was sold and bought for an entire generation.</p>
+        </div>
+        
+        <p>ERP vendors built deep, transactional systems optimized for accuracy and compliance. CX vendors built broad, engagement-oriented systems optimized for reach and personalization. The data architectures reflected the priorities: ERP data is structured, validated, and authoritative; CX data is high-volume, probabilistic, and designed for speed. Anyone who has tried to reconcile a CDP profile with an ERP master data record understands the fundamental impedance mismatch — it's not just a plumbing problem, it's a philosophical one.</p>
+        
+        <p>And for most of the last thirty years, this two-stack reality was tolerable. Not great, but tolerable. The backend and the frontend operated on different time horizons, served different stakeholders, and rarely needed to exchange information in real time. When they did — say, when a customer service agent needed to check on an order's shipping status — some middleware or a manual lookup bridged the gap well enough.</p>
+        
+        <p>Agents are about to blow that up.</p>
+        
+        <h2>The Spring Campaign Problem</h2>
+        
+        <p>Here's a scenario that will be common within eighteen months, and that most enterprises are completely unprepared for.</p>
+        
+        <div class="scenario-box">
+            <div class="scenario-label">Scenario</div>
+            <p>A large consumer brand — call it TerraVerde, a fictional outdoor goods company — is running a spring campaign. The marketing team has identified a hero product, a new line of ultralight tents, and the campaign agent is optimizing media spend across paid social, programmatic display, and connected TV. The agent is doing its job beautifully: it's identified high-intent audiences, it's A/B testing creative variants, it's shifting budget toward the channels delivering the best cost-per-acquisition. Every dashboard is green.</p>
+            <p>Meanwhile, on the other side of the enterprise, TerraVerde's supply chain agent has flagged a problem. A key fabric supplier in Vietnam has been hit by a production delay, and the ultralight tent line is going to be backordered for six to eight weeks. The procurement team knows. The supply chain team knows. The finance team is already modeling the revenue impact.</p>
+            <p><strong>But the marketing agent doesn't know.</strong> It can't know, because it operates entirely within the CX stack — it sees campaign performance data, audience segments, creative assets, and channel costs. It has no line of sight into inventory levels, supplier lead times, or procurement status.</p>
+        </div>
+        
+        <p>So it keeps optimizing, keeps spending, keeps driving demand for a product that cannot be fulfilled.</p>
+        
+        <p>By the time a human catches the disconnect — maybe at a Monday morning cross-functional standup, maybe in a Slack thread, maybe not until the customer complaints start rolling in — the brand has spent a quarter-million dollars generating demand it can't satisfy and created a customer experience disaster in the process.</p>
+        
+        <p>This is not a hypothetical edge case. This is the inevitable consequence of deploying intelligent agents on top of a fragmented data foundation.</p>
+        
+        <h2>Why No Vendor Can Fix This (Yet)</h2>
+        
+        <p>The reflexive response to this scenario is "just integrate the systems" — throw some APIs at it, build a data pipeline between the supply chain platform and the marketing platform, add an alert. And sure, point-to-point integrations can patch individual gaps. But the agentic future doesn't create one gap — it creates a combinatorial explosion of gaps, and the vendor landscape is structurally incapable of addressing it.</p>
+        
+        <p>Think about what a truly autonomous agent needs to orchestrate even a moderately complex business process. A pricing agent needs margin data (finance), competitive positioning (marketing), inventory levels (supply chain), and customer segmentation (CRM) — simultaneously, in real time, with consistent semantics. A customer service agent handling a complaint about a late delivery needs order data (commerce), shipping status (supply chain), customer lifetime value (marketing), and credit policy (finance). Every cross-domain workflow that agents might automate represents another integration that doesn't exist yet, another semantic reconciliation that nobody has mapped, another governance question that nobody has answered.</p>
+        
+        <p>And no single vendor in the market today can solve more than a sliver of this.</p>
+        
+        <p>The data cloud vendors — Snowflake, Databricks — can unify the storage layer but have no opinion about business process. The CRM vendors can orchestrate customer-facing workflows but are blind to operations. The ERP vendors understand the backend deeply but have historically treated the frontend as someone else's problem.</p>
+        
+        <div class="pull-quote">
+            <p>The result is that every vendor's "platform" story is really a fragment story — a pitch to solve the piece they happen to own while hand-waving about partnerships and ecosystems for everything else.</p>
+        </div>
+        
+        <p>The companies that try to stitch these fragments together on their own are going to end up with what I've been calling the "assembled" architecture — a Frankenstein of acquired and integrated systems bolted together with custom middleware, each component bringing its own data model and its own definition of truth. The integration tax alone — the cost of maintaining all those connectors, reconciling all those semantics, governing all those data flows — will consume a meaningful percentage of IT budgets before a single agent is deployed.</p>
+        
+        <h2>The Three-Layer Answer</h2>
+        
+        <p>What the agentic era actually demands is a fundamentally different architecture — not integration between stacks, but a single stack with three layers.</p>
+        
+        <div class="layer-stack">
+            <div class="layer layer-3">
+                <div class="layer-num">Layer 3 — Orchestration</div>
+                <div class="layer-name">Agent Orchestration Layer</div>
+                <div class="layer-desc">Cross-domain intelligence · Autonomous workflows · Continuous learning — sits above domain applications, not within them</div>
+            </div>
+            <div class="layer layer-2">
+                <div class="layer-num">Layer 2 — Intelligence</div>
+                <div class="layer-name">Unified Data Fabric</div>
+                <div class="layer-desc">Business semantics · Knowledge graphs · Analytics · Activation — where DMPs and CDPs dissolve into something bigger</div>
+            </div>
+            <div class="layer layer-1">
+                <div class="layer-num">Layer 1 — Foundation</div>
+                <div class="layer-name">Identity and Governance</div>
+                <div class="layer-desc">Unified identity · Access control · Data governance · Authority scoping for humans and agents</div>
+            </div>
+        </div>
+        
+        <p>At the foundation, you need an <strong>Identity and Governance Layer</strong> that provides unified identity, access control, data governance, and compliance across the entire enterprise. This is where authority scoping lives — not just for human users, but for agents. Which agents can access which data? Who authorizes an agent to make a procurement decision versus a marketing decision? These questions become existential when agents operate autonomously across domain boundaries.</p>
+        
+        <p>Above that sits the <strong>Intelligence Layer</strong>: a unified data fabric that spans the entire enterprise, with business semantics, knowledge graphs, analytics, and activation capabilities that work the same way whether you're looking at supply chain data or marketing data. This is where DMPs and CDPs ultimately dissolve — not because the use cases go away, but because the idea of a standalone "customer data platform" that only sees half the enterprise becomes an architectural anachronism. The data products that matter in an agentic world are the ones that span the full business context.</p>
+        
+        <p>At the top sits the <strong>Agent Orchestration Layer</strong> — the tier where cross-domain intelligence, autonomous workflows, and continuous learning actually happen. This is what we've been calling the Agentic Management Platform, and its defining characteristic is that it sits <em>above</em> the domain applications, not within them. It can see across finance and marketing, across supply chain and commerce, across procurement and service — because it's operating on a unified data foundation, not trying to query through a maze of point-to-point integrations.</p>
+        
+        <h2>From Domain Logic to Lightweight Applications</h2>
+        
+        <p>Here's the part that should make every enterprise software executive uncomfortable: in this architecture, the domain applications themselves — the finance module, the marketing suite, the supply chain system — become <em>thinner</em>. Not less important, but less architecturally central. They become the interfaces through which specific business functions interact with the underlying intelligence layer, rather than the thick, monolithic systems that own their own data and defend their own boundaries.</p>
+        
+        <p>This is a profound shift. For decades, the value of enterprise software has been in the depth and specificity of domain logic — the thousands of business rules embedded in an ERP system, the sophisticated audience modeling in a marketing platform. That domain expertise doesn't go away, but it moves. It migrates from being embedded in application logic to being expressed as data semantics and agent instructions that the orchestration layer can reason about and act on.</p>
+        
+        <p>The enterprise that figures this out — that builds or adopts a truly unified data foundation spanning both sides of the house, with an orchestration layer that can deploy agents across domain boundaries — will have an almost unfair advantage. Their agents won't hit walls between the backend and the frontend. Their marketing agent will know what's in the warehouse. Their supply chain agent will know what's in the campaign. And when the spring campaign needs to pivot because of a supplier delay in Vietnam, the pivot will happen in minutes, not weeks.</p>
+        
+        <h2>The Full Stack Imperative</h2>
+        
+        <p>A DMP knew your audience. A CDP knew your customer. An AMP — an Agentic Management Platform — knows your business. The whole business, not just the half of it that faces the customer or the half that runs the operations.</p>
+        
+        <p>That's the full stack. Not a technology stack — a <em>business</em> stack.</p>
+        
+        <p>And the uncomfortable truth is that no vendor on the market today is going to hand it to you. The CIO who waits for a single vendor to credibly solve both sides of the house will be waiting a long time; the CIO who starts architecting toward a unified data foundation now — even imperfectly, even incrementally — will be the one whose agents actually work when they need them to.</p>
+        
+        <p>This is the conversation the industry isn't having. It's time to start.</p>
+        
+        <div class="closing-tagline">
+            A DMP knew your audience.<br>
+            A CDP knew your customer.<br>
+            An AMP knows your business.
+        </div>
+        
+    </article>
+    
+    <footer>
+        <p>© 2026 Chris O'Hara · <a href="/">the/full/stack</a></p>
+    </footer>
+</body>
+</html>
