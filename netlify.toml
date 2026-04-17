@@ -7,7 +7,25 @@
   to = "/success.html"
   status = 200
 
-# SPA fallback for client-side routing
+# Let articles folder serve static HTML files directly
+[[redirects]]
+  from = "/articles/*"
+  to = "/articles/:splat"
+  status = 200
+
+# Let digests folder serve static HTML files directly
+[[redirects]]
+  from = "/digests/*"
+  to = "/digests/:splat"
+  status = 200
+
+# Let newsletters folder serve static HTML files directly
+[[redirects]]
+  from = "/newsletters/*"
+  to = "/newsletters/:splat"
+  status = 200
+
+# SPA fallback for client-side routing (must be last)
 [[redirects]]
   from = "/*"
   to = "/index.html"

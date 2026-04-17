@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introducing the AMP: The Agentic Management Platform | The Full Stack</title>
+  <meta name="description" content="The Agentic Management Platform — a unified architecture for the agent era. From the authors of Customer Data Platforms and the forthcoming Agent Driven.">
+  <meta name="author" content="Christopher O'Hara">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YMNWEHT562');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text-primary: #1a1a1a;
+      --text-secondary: #4a4a4a;
+      --text-muted: #888;
+      --accent: #0070F2;
+      --accent-dark: #0A3D6B;
+      --bg: #fff;
+      --bg-aside: #f7f8fa;
+      --border: #e2e2e2;
+      --max-width: 720px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.72;
+      color: var(--text-primary);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Navigation */
+    nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem 1.5rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+    }
+    nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+    nav a:hover { color: var(--text-primary); }
+    .nav-logo {
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+    .nav-links { display: flex; gap: 1.5rem; }
+
+    /* Article */
+    article {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    /* Header */
+    .article-header {
+      padding: 2rem 0 2.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .back-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+    .back-link:hover { color: var(--accent); }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      font-style: italic;
+      margin-bottom: 1.25rem;
+    }
+    .byline {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Body */
+    h2 {
+      font-size: 1.65rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 3rem 0 1rem;
+      color: var(--text-primary);
+    }
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 2rem 0 0.75rem;
+      color: var(--text-primary);
+    }
+    h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin: 2rem 0 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+    p + p { margin-top: 0; }
+
+    strong { font-weight: 600; }
+    em { font-style: italic; }
+
+    a { color: var(--accent); text-decoration: underline; }
+    a:hover { color: var(--accent-dark); }
+
+    /* Blockquote — the tagline */
+    blockquote {
+      margin: 2rem 0;
+      padding: 1.5rem 2rem;
+      background: var(--accent-dark);
+      color: #fff;
+      border-radius: 4px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+    }
+    blockquote.light {
+      background: var(--bg-aside);
+      color: var(--text-primary);
+      border-left: 4px solid var(--accent);
+    }
+
+    /* Images */
+    figure {
+      margin: 2.5rem -2rem;
+      text-align: center;
+    }
+    figure img {
+      width: 100%;
+      max-width: 820px;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    }
+    figcaption {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 0.75rem;
+      font-style: italic;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0 2rem;
+      font-size: 0.92rem;
+    }
+    th, td {
+      padding: 0.6rem 0.85rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      background: var(--bg-aside);
+    }
+    td { vertical-align: top; }
+
+    /* Framework callout boxes */
+    .framework-box {
+      background: var(--bg-aside);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0;
+    }
+    .framework-box h4 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+    .framework-box p { margin-bottom: 0.75rem; }
+    .framework-box p:last-child { margin-bottom: 0; }
+
+    /* The AMP stack diagram (CSS-based) */
+    .amp-stack {
+      margin: 2.5rem 0;
+      font-family: 'Inter', sans-serif;
+    }
+    .amp-stack-title {
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .amp-layer {
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 4px;
+      border-radius: 4px;
+      color: #fff;
+    }
+    .amp-layer-num {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.7;
+      margin-bottom: 0.25rem;
+    }
+    .amp-layer-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    .amp-layer-desc {
+      font-size: 0.82rem;
+      opacity: 0.85;
+      line-height: 1.4;
+    }
+    .amp-l3 { background: var(--accent-dark); }
+    .amp-l2 { background: var(--accent); }
+    .amp-l1 { background: var(--text-primary); }
+
+    .amp-tagline {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Five Shifts cards */
+    .shift-card {
+      border-left: 3px solid var(--accent);
+      padding: 0.75rem 0 0.75rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .shift-card h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.1rem;
+    }
+    .shift-card p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    /* Horizon Model */
+    .horizon-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .horizon-card {
+      background: var(--bg-aside);
+      border-radius: 6px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .horizon-card .h-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+    .horizon-card .h-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+    .horizon-card .h-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Separator */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3rem 0;
+    }
+
+    /* Closing */
+    .closing-tagline {
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--text-secondary);
+      text-align: center;
+      line-height: 1.8;
+      margin: 2.5rem 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      figure { margin: 2rem -0.5rem; }
+      .horizon-grid { grid-template-columns: 1fr; }
+      body { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">the/full/stack</a>
+  <div class="nav-links">
+    <a href="/">Writing</a>
+    <a href="/about">About</a>
+  </div>
+</nav>
+
+<article>
+
+  <!-- HEADER -->
+  <header class="article-header">
+    <a href="/" class="back-link">← Back to all posts</a>
+    <h1>Introducing the AMP</h1>
+    <p class="subtitle">The Agentic Management Platform — a unified architecture for the agent era</p>
+    <div class="byline">
+      Christopher O'Hara<br>
+      March 2026 · 12 min read
+    </div>
+  </header>
+
+  <!-- TAGLINE -->
+  <blockquote>
+    "A DMP knew your audience. A CDP knew your customer. An AMP knows your business."
+  </blockquote>
+
+  <p>From the author of <a href="https://www.amazon.com/Customer-Data-Platforms-customer-platforms/dp/1119790115"><em>Customer Data Platforms</em></a> (Wiley, 2020) and the forthcoming <em>Agent Driven: The Enterprise Playbook for the Agentic Era</em></p>
+
+  <!-- ============================================ -->
+  <!-- THE THIRD ACT -->
+  <!-- ============================================ -->
+  <h2>The Third Act</h2>
+
+  <p>The story of enterprise technology has unfolded in three acts — though only now, looking back, can you see the trajectory.</p>
+
+  <p><strong>Act One: Data Driven (2015–2020).</strong> The DMP era. We built infrastructure to capture behavioral data across every digital touchpoint. Cookies, device graphs, third-party segments. The goal was simple: <em>know the customer.</em> Build anonymous profiles. Target efficiently. The DMP was the hero, and the scope was narrowly digital, narrowly marketing, narrowly about matching an impression to an eyeball.</p>
+
+  <p><strong>Act Two: Customer Driven (2020–2025).</strong> The CDP era. We realized that knowing anonymous segments wasn't enough — we needed to know <em>individuals</em>. First-party data. Identity resolution. Golden records. Journey orchestration. The goal evolved: unify data into actionable profiles that could power personalization across every channel. The CDP was the hero. But even as CDPs matured, a nagging question emerged: why did every enterprise application — finance, supply chain, HR, commerce — still hoard its own data in its own stack, connected to the rest of the business by brittle integrations and overnight batch jobs?</p>
+
+  <p><strong>Act Three: Agent Driven (2025+).</strong> Something shifted. And it wasn't just the customer who changed — it was the entire operating model. AI agents don't just triage inboxes and compare sneaker prices. They reconcile invoices, optimize procurement contracts, reforecast demand, and route service tickets — all while reasoning across datasets that used to live in completely separate worlds. The beautiful applications we built? The agents don't see them the way humans do. They see data. They see APIs. They see structured knowledge, or they see nothing at all.</p>
+
+  <p>The question is no longer "how do we reach the customer?"</p>
+
+  <p>It's <strong>"how do we build an enterprise that agents can actually operate?"</strong></p>
+
+  <h4>The Trilogy Arc</h4>
+  <table>
+    <thead>
+      <tr><th>Era</th><th>Philosophy</th><th>Platform</th><th>Scope</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>2015–2020</td><td>Data Driven</td><td>DMP</td><td>Marketing</td></tr>
+      <tr><td>2020–2025</td><td>Customer Driven</td><td>CDP</td><td>Marketing + CX</td></tr>
+      <tr><td>2025+</td><td>Agent Driven</td><td>AMP</td><td>The Enterprise</td></tr>
+    </tbody>
+  </table>
+
+  <p>Notice the scope column. The DMP served marketing. The CDP served marketing and customer experience. The AMP serves the enterprise — because agents don't respect functional boundaries, and the platform that supports them can't either. That's why we chose <em>Management</em> for the M, not Marketing. A DMP managed audience data. A CDP managed customer data. An AMP manages the business intelligence and orchestration layer that lets agents operate across every function — from ERP to CX, from finance to field service.</p>
+
+  <!-- ============================================ -->
+  <!-- WHERE WE ARE TODAY -->
+  <!-- ============================================ -->
+  <h2>Where We Are Today: The Silo Problem</h2>
+
+  <p>Before we can talk about what's next, we need to be honest about what we've built.</p>
+
+  <p>Look at any large enterprise's technology stack today — SAP, Oracle, Salesforce, Workday, it doesn't matter — and you'll find the same architecture repeated vertically across every functional domain. Finance has its own application layer, its own analytics, its own data store, its own activation model, its own identity system. So does Human Capital Management. So does Supply Chain. So does Procurement. So does Sales. So does Service.</p>
+
+  <figure>
+    <img src="architecture-today.jpg" alt="Going into the Agentic Future: Today — Ten siloed application pillars, each running its own full stack from Login/Identity through Applications">
+    <figcaption>Figure 1. Today's enterprise architecture: every domain runs its own complete vertical stack. The "Backend of ERP" and "Frontend of CX" share an org chart and a general ledger, but precious little else.</figcaption>
+  </figure>
+
+  <p>Each pillar is a self-contained vertical stack, running from Login and Identity at the base up through Data Store, Data Fabric, Analytics, Activation, and finally the Application layer at the top. The "Backend of ERP" — Finance, HCM, Supply Chain, Procurement, Travel — sits in one world. The "Frontend of CX" — Sales, Service, Commerce, Marketing, Loyalty — sits in another. They share an org chart and a general ledger, but precious little else.</p>
+
+  <p>This architecture made sense when applications were built for human operators who lived inside a single domain. The Finance team used the Finance stack. The Marketing team used the Marketing stack. Nobody expected these systems to talk to each other in real time, because the humans operating them didn't need to. Coordination happened in meetings, in email chains, in quarterly business reviews where someone pulled data from six different systems into a PowerPoint deck and called it a "360-degree view."</p>
+
+  <p>But agents don't operate in one domain at a time. An intelligent planning agent doesn't just look at financial data — it reasons across supply chain signals, procurement costs, demand forecasts, and sales pipeline simultaneously. A customer service agent doesn't just resolve a ticket — it checks inventory availability, assesses return logistics, evaluates customer lifetime value, and adjusts next-best-action in the same breath. Agents are natively cross-functional, and they are crashing into an architecture that is structurally siloed.</p>
+
+  <p>The result is predictable: agents that can only see what lives in one stack become narrow, brittle, and unreliable. They hallucinate not because their models are bad, but because they're reasoning on incomplete data. The silo problem isn't just a data integration problem anymore. It's an intelligence problem.</p>
+
+  <!-- ============================================ -->
+  <!-- WHERE WE'RE HEADED -->
+  <!-- ============================================ -->
+  <h2>Where We're Headed: The Unified Architecture</h2>
+
+  <p>The future architecture inverts the stack.</p>
+
+  <p>Instead of ten vertical pillars — each running its own full infrastructure from identity to application — you build from a shared horizontal foundation outward. The bottom four layers of the old stack (Login/Identity, Data Store, Data Fabric, Analytics) collapse into two unified horizontal layers. Domain-specific logic doesn't disappear; it becomes lightweight, sitting on top of shared infrastructure rather than duplicating it. And above everything, a new layer emerges that never existed before: the Agent Orchestration Layer, spanning every domain simultaneously.</p>
+
+  <figure>
+    <img src="architecture-tomorrow.jpg" alt="Going into the Agentic Future: Tomorrow — Unified architecture with Identity and Governance Layer, Intelligence Layer, lightweight domain blocks, and Agent Orchestration Layer">
+    <figcaption>Figure 2. Tomorrow's enterprise architecture: shared horizontal layers replace duplicated vertical stacks. Domain logic becomes lightweight. Agents orchestrate across boundaries.</figcaption>
+  </figure>
+
+  <p>Here's how it works, from the bottom up:</p>
+
+  <p><strong>Identity and Governance Layer.</strong> The shared foundation. Not just login credentials — this is the unified identity, access control, data governance, and trust model that every application, every agent, and every user shares. In the old architecture, each pillar managed its own identity. In the new one, identity is a platform service. You don't authenticate to Finance separately from Sales. You authenticate once, and your authority scope — what you can see, what you can do, what an agent can do on your behalf — propagates everywhere.</p>
+
+  <p><strong>Intelligence Layer.</strong> This is where the old Data Store, Data Fabric, and Analytics layers merge into a unified platform. One data fabric. Shared analytics. Cross-domain activation. In the old world, the Finance data fabric and the Sales data fabric were different systems with different schemas and different refresh cadences. In the new world, there is <em>one</em> semantic layer, <em>one</em> set of business definitions, <em>one</em> knowledge graph that spans the enterprise. This is the layer where DMPs and CDPs dissolve into something larger — not disappearing, but becoming components of a unified intelligence infrastructure that serves every domain, not just marketing.</p>
+
+  <p><strong>Domain Logic.</strong> Finance, HCM, Supply Chain, Procurement, Travel, Sales, Service, Commerce, Marketing, Loyalty — all ten domains still exist. But they're thinner now. They're the business rules, workflows, and application logic specific to each function, sitting atop the shared intelligence layer rather than running their own complete stacks. Think of them as apps on a platform, not empires unto themselves.</p>
+
+  <p><strong>Agent Orchestration Layer.</strong> The new top of the stack. Cross-domain intelligence. Autonomous workflows. The Agentic Management Platform. This is where agents operate — not inside one domain, but across all of them simultaneously, connected by the dashed lines in our diagram to every domain below. An agent in this layer can reason across Finance <em>and</em> Supply Chain <em>and</em> Sales in a single operation, because the underlying intelligence layer gives it a unified view of the enterprise.</p>
+
+  <p>This is the layer that didn't exist before — because it <em>couldn't</em> exist before. You can't build cross-domain orchestration on top of ten disconnected vertical stacks. You need the unified foundation first.</p>
+
+  <!-- ============================================ -->
+  <!-- NATIVE VS. ASSEMBLED -->
+  <!-- ============================================ -->
+  <div class="framework-box">
+    <h4>Framework: Native vs. Assembled</h4>
+    <p>There's a reason this architecture matters competitively. Most enterprise vendors got to "unified" by acquiring their way there — buying a data warehouse company, bolting on an analytics startup, adding a governance tool through partnership. The result is an <em>assembled</em> architecture: technically connected but semantically fragmented, where the data fabric from the acquired company speaks a different language than the planning engine from the original platform.</p>
+    <p>The alternative is a <em>native</em> architecture — one where the intelligence layer, the governance layer, and the orchestration layer were designed from the ground up to share semantics, share metadata, and share a single definition of truth. Native architectures are deterministic: when the agent queries the intelligence layer, it gets one answer, derived from one semantic model. Assembled architectures are probabilistic: the agent gets an answer that depends on which system it happened to query first, which integration pipeline ran most recently, and whether the ETL job completed before the planning cycle kicked off.</p>
+    <p><strong>Agents need deterministic infrastructure.</strong> They can't reconcile conflicting answers from three different systems the way a human analyst can. They need one source of truth, natively constructed — not assembled from acquisitions and held together with middleware.</p>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- THE AMP STACK -->
+  <!-- ============================================ -->
+  <h2>The AMP Stack</h2>
+
+  <p>The Agentic Management Platform isn't just for marketing anymore. The "M" used to stand for Marketing — back when we first sketched this framework, the scope was customer data, activation channels, and attribution models. But agents don't stop at the marketing boundary. They operate across the enterprise. So the M now stands for <em>Management</em>, because the same architectural logic that unified customer data in the CDP era now needs to unify enterprise intelligence in the agent era.</p>
+
+  <div class="amp-stack">
+    <div class="amp-stack-title">Agentic Management Platform — Three-Layer Architecture</div>
+
+    <div class="amp-layer amp-l3">
+      <div class="amp-layer-num">Layer 3 — Orchestration</div>
+      <div class="amp-layer-name">Agent Orchestration Layer</div>
+      <div class="amp-layer-desc">Cross-domain intelligence · Autonomous workflows · Continuous learning · Adaptive experiences</div>
+    </div>
+
+    <div class="amp-layer amp-l2">
+      <div class="amp-layer-num">Layer 2 — Intelligence</div>
+      <div class="amp-layer-name">Unified Data Fabric · Analytics · Activation</div>
+      <div class="amp-layer-desc">Business semantics · Knowledge graph · Analytics &amp; simulations · Data products — where DMPs and CDPs dissolve into the fabric</div>
+    </div>
+
+    <div class="amp-layer amp-l1">
+      <div class="amp-layer-num">Layer 1 — Foundation</div>
+      <div class="amp-layer-name">Identity and Governance</div>
+      <div class="amp-layer-desc">Unified identity · Access control · Data governance · Compliance · Authority scoping for humans and agents</div>
+    </div>
+
+    <div class="amp-tagline">
+      A DMP knew your audience.<br>
+      A CDP knew your customer.<br>
+      An AMP knows your business.
+    </div>
+  </div>
+
+  <h3>Layer 1: Identity and Governance</h3>
+
+  <p>The trust layer. Unified identity, access control, data governance, compliance, and authority scoping — for humans <em>and</em> their agents. In the DMP era, identity meant cookies. In the CDP era, identity meant golden records. In the AMP era, identity means a triple construct: the human, their agent, and the authority scope governing what the agent can do. And this applies not just to customers but to employees, partners, suppliers, and every entity — human or machine — that interacts with the enterprise. Without this layer, agents are just clever scripts running loose. With it, they're governed, auditable, and enterprise-grade.</p>
+
+  <h3>Layer 2: Intelligence</h3>
+
+  <p>The knowledge layer. Unified data fabric, business semantics, knowledge graphs, analytics, simulations, and data products. This is where the enterprise's collective knowledge lives — structured, queryable, and available to any agent that needs it. This is also where the DMP and CDP heritage lives on, absorbed into something bigger. The DMP's audience segments? They're a data product in the intelligence layer. The CDP's golden record? It's a node in the knowledge graph. They didn't disappear. They became components of a much richer semantic infrastructure.</p>
+
+  <h3>Layer 3: Agent Orchestration</h3>
+
+  <p>The action layer. Cross-domain intelligence. Autonomous workflows. Continuous learning. This is where agents — your enterprise agents, your customers' agents, your partners' agents — actually do work. Adaptive experiences that adjust in real-time. Decisions that would have taken weeks of cross-functional meetings compressed into seconds. This is the layer where the handshake happens: where your agents meet the world's agents, and where the quality of your underlying intelligence layer determines whether you win or lose.</p>
+
+  <!-- ============================================ -->
+  <!-- THE TIE FIGHTER -->
+  <!-- ============================================ -->
+  <h2>The TIE Fighter: Data Activation Reimagined</h2>
+
+  <p>If you've spent time in the data-driven marketing world, you know the TIE Fighter diagram — the canonical visualization of how data flows into an identity core, gets resolved and enriched, and then flows back out through activation channels. It was born in the DMP era, evolved through the CDP era, and now it needs to evolve again.</p>
+
+  <figure>
+    <img src="tie-fighter-agentic.jpg" alt="The TIE Fighter Reimagined for the Agentic Era — showing data inputs, identity stack with agents, and activation outputs including agent channels">
+    <figcaption>Figure 3. The TIE Fighter, reimagined for the agentic era. Agents appear three times: as data sources (bottom left), as a new layer in the identity stack (center), and as activation channels (bottom right). © Chris O'Hara, 2016–2026.</figcaption>
+  </figure>
+
+  <p>In the agentic version, three things change:</p>
+
+  <p><strong>Agents as data sources.</strong> On the left wing — the "DATA IN" side — agents now generate interaction data alongside CRM records, DMP segments, ERP data, and data lakes. Every agent interaction, every agent-initiated transaction, every agent preference signal becomes a data input. The volume and velocity of this data will dwarf what humans generate, because agents don't sleep, don't take lunch breaks, and don't forget to log their activities.</p>
+
+  <p><strong>Agents inside the identity stack.</strong> At the center of the TIE Fighter — the identity core — there's a new layer at the top: AGENTS, "Acting on Behalf of the Person." The identity stack now resolves not just <em>who</em> someone is (Universal Persistent ID, Child IDs, Attributes, Preferences) but <em>who is acting on their behalf</em> and with what authority. This is the triple identity: human + agent + authority scope. The identity graph gets a new dimension.</p>
+
+  <p><strong>Agents as activation channels.</strong> On the right wing — the "DATA OUT" side — agents join the traditional activation channels. Alongside Advertising, Social/Walled Gardens, Analytics, Business Process, and CX, there's now an AGENTS section: Sales Agent, Marketing Agent, Commerce Agent, HR Agent, and more. These aren't just chatbots. They're autonomous activation endpoints that receive data products, make decisions, and take actions. The activation model shifts from "push a message to a human" to "deliver structured intelligence to an agent that acts on it."</p>
+
+  <p>The TIE Fighter still works. The architecture is sound. But the data flows have changed — agents are simultaneously <em>producing</em> data, <em>resolving</em> identity, and <em>consuming</em> activation. They're everywhere in the diagram, and the enterprise that doesn't account for them in its data architecture will find its identity graph incomplete, its activation model obsolete, and its agents operating blind.</p>
+
+  <!-- ============================================ -->
+  <!-- THE INFRASTRUCTURE GAP -->
+  <!-- ============================================ -->
+  <h2>The Infrastructure Gap</h2>
+
+  <p>Here's the uncomfortable truth: everything you built for the human experience is largely invisible to agents.</p>
+
+  <table>
+    <thead>
+      <tr><th>What You Built (Human-Facing)</th><th>What the Agent Needs</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Beautiful application UIs</td><td>Structured data APIs (machine-readable)</td></tr>
+      <tr><td>Personalized dashboards and reports</td><td>Real-time queryable knowledge graphs</td></tr>
+      <tr><td>Journey orchestration across channels</td><td>Sub-second cross-domain query latency</td></tr>
+      <tr><td>Brand storytelling and creative campaigns</td><td>Trust signals (verified data, certifications, SLAs)</td></tr>
+      <tr><td>Multi-step approval workflows</td><td>Agent-compatible decision protocols</td></tr>
+      <tr><td>Quarterly business reviews</td><td>Continuous, real-time enterprise intelligence</td></tr>
+    </tbody>
+  </table>
+
+  <p><em>You need both. The human interface AND the agent interface.</em></p>
+
+  <p>The infrastructure from the DMP and CDP eras isn't wrong — it's <em>incomplete</em>. It's a foundation, not a finished building. And the gap isn't just in marketing anymore. It's in every function: Finance systems that can't expose their planning models as queryable APIs. Supply chain platforms that can't share demand signals with procurement agents in real time. HR systems that can't surface workforce analytics to planning agents that need to model labor costs against revenue forecasts.</p>
+
+  <!-- ============================================ -->
+  <!-- THE FIVE SHIFTS -->
+  <!-- ============================================ -->
+  <h2>The Five Shifts</h2>
+
+  <p>The agentic disruption manifests as five concurrent shifts — and they hit every enterprise function, not just marketing:</p>
+
+  <div class="shift-card">
+    <h3>1. Identity Expands</h3>
+    <p>Your golden record of the customer becomes one layer of a much richer identity model: the human, their agent, and the authority scope governing what the agent can do. But identity now extends beyond customers to employees, partners, suppliers, and their agents too. Every entity that interacts with the enterprise — human or machine — needs a unified identity. The TIE Fighter's identity stack gets a new top layer.</p>
+  </div>
+
+  <div class="shift-card">
+    <h3>2. Personalization Inverts</h3>
+    <p>Instead of painting personalized pages for human eyes, you structure responses for agent queries. This applies to product catalogs and marketing creative, yes, but also to procurement portals, supplier interfaces, employee self-service, and partner ecosystems. Agents need data, not design. They need schemas, not stories. The enterprise that structures its knowledge for agent consumption wins — across every function, not just the storefront.</p>
+  </div>
+
+  <div class="shift-card">
+    <h3>3. Journeys Collapse</h3>
+    <p>Multi-week, multi-touchpoint journeys become parallel evaluations completed in seconds — and not just customer journeys. Procurement cycles, planning cycles, hiring workflows, compliance reviews. Any process that involves sequential human evaluation across multiple systems is a candidate for agent-driven compression. The agent evaluates twelve options simultaneously because it can query the intelligence layer across all domains at once.</p>
+  </div>
+
+  <div class="shift-card">
+    <h3>4. Trust Transfers</h3>
+    <p>Consumers trust their agents. Employees trust their copilots. Partners trust their automated systems. The agent evaluates <em>your</em> trustworthiness through data accuracy, fulfillment reliability, response latency, and API consistency. You can't advertise your way to agent trust. You can't PowerPoint your way there either. You have to perform your way there — with clean data, reliable APIs, and consistent execution across every domain.</p>
+  </div>
+
+  <div class="shift-card">
+    <h3>5. The Funnel Flattens</h3>
+    <p>And not just the marketing funnel. Every sequential evaluation process — Awareness → Consideration → Decision → Action — becomes a parallel evaluation event when agents handle it. RFPs, vendor selection, budget allocation, workforce planning. The enterprises that structure their data for agent consumption win the parallel evaluation. The ones that don't become invisible to automated decision-making.</p>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- THREE HORIZONS -->
+  <!-- ============================================ -->
+  <h2>The Three Horizons: An Investment Model</h2>
+
+  <p>Knowing where the architecture is headed doesn't tell you how to get there. Most enterprises can't rip out ten vertical stacks and rebuild from scratch — nor should they. The transition happens in three investment horizons:</p>
+
+  <div class="horizon-grid">
+    <div class="horizon-card">
+      <div class="h-num">Horizon 1</div>
+      <div class="h-title">Optimize the Core</div>
+      <div class="h-desc">Unify identity and governance across existing stacks. Build the foundational layer first. Implement authority scoping for agents. You can't orchestrate what you can't govern.</div>
+    </div>
+    <div class="horizon-card">
+      <div class="h-num">Horizon 2</div>
+      <div class="h-title">Build the Intelligence Layer</div>
+      <div class="h-desc">Consolidate data fabrics. Create the unified semantic model. Stand up cross-domain analytics and data products. This is where DMPs and CDPs get absorbed into the bigger platform.</div>
+    </div>
+    <div class="horizon-card">
+      <div class="h-num">Horizon 3</div>
+      <div class="h-title">Activate Orchestration</div>
+      <div class="h-desc">Deploy the agent orchestration layer. Enable cross-domain autonomous workflows. This is where the AMP becomes real — agents operating across the full enterprise, governed and intelligent.</div>
+    </div>
+  </div>
+
+  <p>The horizons aren't sequential stages that happen one after another. They're concurrent investment streams with different time horizons and different risk profiles. Horizon 1 work should be happening now. Horizon 2 is where the heavy architectural investment goes over the next 12–24 months. Horizon 3 is the prize — the payoff that justifies the investment in the first two.</p>
+
+  <!-- ============================================ -->
+  <!-- THREE MOVES -->
+  <!-- ============================================ -->
+  <h2>The Three Moves</h2>
+
+  <p>The Three Horizons describe the <em>investment</em> sequence. The Three Moves describe what the enterprise actually <em>does</em> at each stage — the organizational transformations required alongside the technical ones:</p>
+
+  <p><strong>Move 1: Build Your Stack.</strong> This is the technical foundation — the identity layer, the intelligence layer, the governance model. It's the move from assembled to native, from siloed to unified, from human-only to human-and-agent. For most enterprises, this means choosing a platform partner and committing to an architectural direction, not just buying another point solution.</p>
+
+  <p><strong>Move 2: Rebuild Your Story.</strong> The way you talk about your enterprise — to customers, to partners, to agents — has to change. Your value proposition needs to be machine-readable, not just human-persuasive. Your data needs to tell a story that agents can parse: structured, semantic, queryable. This move rewires how the enterprise communicates its value, from narrative to structured intelligence.</p>
+
+  <p><strong>Move 3: Rebuild Your Skills.</strong> The people who built the DMP era aren't the same people who'll build the AMP era — or rather, they are, but they need new skills. Data architects need to think in knowledge graphs, not just schemas. Marketers need to understand agent protocols, not just campaign management. IT leaders need to govern agent access, not just human access. The skills transformation is the hardest move, and the one most enterprises underinvest in.</p>
+
+  <!-- ============================================ -->
+  <!-- THE JOB HASN'T CHANGED -->
+  <!-- ============================================ -->
+  <h2>The Job Hasn't Changed</h2>
+
+  <p>In 1961, Father Harvey Schmitt at the Catholic Diocese of Rockford used an IBM 650 to personalize fundraising letters and achieved an 80% response rate. His operations — data input, storage, processing, activation, engagement, measurement — map perfectly to today's enterprise stack. Not just the marketing stack. The whole thing.</p>
+
+  <p>Father Schmitt would understand the AMP. Different speed. Different scale. Different scope. Same logic: know what you're working with, and structure what you do based on what you know.</p>
+
+  <p>The technology changes every decade. The job doesn't.</p>
+
+  <p>And the job, today, is to build the enterprise infrastructure — from identity to intelligence to orchestration — that serves agents as brilliantly as we learned to serve humans. Not just the customer's agent. Every agent. Everywhere they touch the business.</p>
+
+  <hr>
+
+  <p>The enterprises that build AMP infrastructure will thrive. The enterprises that keep running ten vertical stacks for an operating environment increasingly populated by cross-functional agents will find themselves slow, brittle, and invisible to a growing share of automated decision-making.</p>
+
+  <p>Not because they did anything wrong. Because they stopped one layer short of where the world was heading.</p>
+
+  <p class="closing-tagline">
+    A DMP knew your audience.<br>
+    A CDP knew your customer.<br>
+    An AMP knows your business.
+  </p>
+
+  <hr>
+
+  <p style="font-size: 0.85rem; color: var(--text-muted); font-family: 'Inter', sans-serif; line-height: 1.6;">
+    <em>The frameworks in this article — the AMP (Agentic Management Platform), the DMP → CDP → AMP trilogy, the TIE Fighter data activation model, the Native vs. Assembled architectural distinction, the Three Horizons investment model, and the Three Moves transformation framework — are developed in full in</em> Agent Driven: The Enterprise Playbook for the Agentic Era <em>by Christopher O'Hara (forthcoming, 2026). The AMP architecture diagrams are © Christopher O'Hara, 2026. The TIE Fighter is © Christopher O'Hara, 2016–2026.</em>
+  </p>
+
+</article>
+
+</body>
+</html>
