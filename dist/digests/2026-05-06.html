@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — May 6, 2026 | The Full Stack</title>
+    <meta name="description" content="The SaaSpocalypse Arrives: AI-Native Spending Up 94%, SaaS Stuck at 8%. Microsoft's 'Frontier Firms' Report. ServiceNow Targets $30B. Today's AI + enterprise tech news.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-05-06.html">
+    
+    <meta property="og:title" content="Daily Digest — May 6, 2026 | The Full Stack">
+    <meta property="og:description" content="The SaaSpocalypse arrives. Microsoft defines 'Frontier Firms.' ServiceNow bets on AI monetization. Enterprise billing goes outcome-based.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-05-06.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Wednesday, May 6, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">The SaaSpocalypse Arrives: AI-Native Up 94%, SaaS Stuck at 8%. Microsoft Defines "Frontier Firms."</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>The SaaSpocalypse: AI-Native Spending Surges 94% While Traditional SaaS Stagnates at 8%</h2>
+            <p>The numbers are stark: AI-native enterprise spending surged 94% year-on-year in Q1 2026, while traditional SaaS grew at just 8%. The "SaaSpocalypse" of February 3rd erased $285 billion in SaaS market cap in 48 hours. The trigger? Anthropic's open-source agent plugins, agentic launches from Salesforce/ServiceNow/Google, and growing evidence that AI agents compress headcount — meaning fewer seats to sell. Per-seat pricing's share of enterprise contracts has already fallen from 21% to 15%.</p>
+            <a href="https://thenextweb.com/news/saas-stagnation-ai-native-agentic-enterprise-spend" class="source-link" target="_blank">Read on The Next Web →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>Microsoft's 2026 Work Trend Index: "Frontier Firms" Are Rebuilding Work Around AI</h2>
+            <p>Microsoft surveyed 20,000 AI users and found 66% say AI lets them spend more time on high-value work, while 58% are producing work they couldn't have created a year ago. But the real insight: only 16% of AI users qualify as "frontier professionals." Microsoft defines "Frontier Firms" as organizations that have moved beyond experimentation into system-wide AI deployment with AI agents at the center of workflows. The competitive advantage isn't AI access — it's how work is designed around it.</p>
+            <a href="https://www.technologyrecord.com/article/microsofts-2026-work-trend-index-annual-report-highlights-rise-of-ai-powered-frontier-firms" class="source-link" target="_blank">Read on Technology Record →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>ServiceNow Targets $30B Revenue by 2030 as AI Bets Pay Off</h2>
+            <p>ServiceNow's CFO outlined a path to doubling subscription revenue to $30B by 2030 (20% CAGR). The key: AI monetization is working. Now Assist hit $750M ACV in Q1 2026 and is expected to exceed $1.5B by year-end. AI reasoning accounts for less than 10% of cost to serve, keeping gross margins above 80%. The company also uses its own AI internally, generating $500M in annualized value in 2025 including $100M in opex savings.</p>
+            <a href="https://www.businessinsider.com/servicenow-targets-over-30-billion-subscription-revenue-2030-2026-5" class="source-link" target="_blank">Read on Business Insider →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>B2B SaaS Trends May 2026: Infrastructure Wins, Apps Struggle</h2>
+            <p>New analysis shows median SaaS growth is slowing while margins are improving — but there's a bifurcation happening. AI demand is pouring into infrastructure and cloud capacity, not equally into the app layer. The companies winning are those positioned in AI infrastructure (compute, orchestration, data pipelines), while traditional horizontal SaaS faces existential pressure to prove they aren't commoditized by AI.</p>
+            <a href="https://blog.mean.ceo/b2b-saas-trends-may-2026/" class="source-link" target="_blank">Read on Mean CEO →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>Hexaware Goes Agentic: From "Effort-Based" to "Outcome-Based" Billing</h2>
+            <p>Hexaware's CTO explains how the $6B IT services firm is dismantling the billable-hour model. Their Agentverse platform has 600+ AI agents live with clients, delivering 40-60% productivity gains in knowledge workflows. The commercial shift: from time-and-materials to outcome-based pricing. In one engagement, clients pay per case resolved rather than per hour billed. By 2026, they expect AI agents to handle the bulk of operational tasks, with tokens becoming the primary unit of work.</p>
+            <a href="https://cxotoday.com/corner-office/scaling-autonomous-workflows-insights-from-the-front-lines-of-agentic-ai/" class="source-link" target="_blank">Read on CXOToday →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>Read this one:</strong> The Next Web piece on the SaaSpocalypse. The per-seat pricing model that built Salesforce, Workday, and ServiceNow is no longer the default — and that's the single biggest structural shift in enterprise software in a decade. The companies that survive will be those that can monetize outcomes, not headcount. This is the real AI disruption story.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-05-05.html">← May 5, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
