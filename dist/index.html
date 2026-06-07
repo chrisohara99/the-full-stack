@@ -469,9 +469,11 @@
         
         function showArticle(id) { 
             const a = articles[id];
-            // If article has external link, navigate to it
+            // If article has external link, navigate to it (use absolute path)
             if (a.link) {
-                window.location.href = a.link;
+                // Ensure absolute path to prevent relative URL stacking
+                const href = a.link.startsWith('/') ? a.link : '/' + a.link;
+                window.location.href = href;
                 return;
             }
             document.getElementById('fullDate').textContent = a.date; 
