@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Human Premium | The Full Stack</title>
+    <meta name="description" content="We spent a year building an AI curriculum for product marketers. The results reveal something most companies are measuring entirely wrong.">
+    <meta property="og:title" content="The Human Premium">
+    <meta property="og:description" content="Why capability-building beats cost-optimization in the age of AI.">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/articles/human-premium-ai.html">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The Human Premium",
+      "description": "We spent a year building an AI curriculum for product marketers. The results reveal something most companies are measuring entirely wrong.",
+      "author": {
+        "@type": "Person",
+        "name": "Chris O'Hara",
+        "url": "https://chrisohara.com"
+      },
+      "datePublished": "2026-06-07",
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Full Stack",
+        "url": "https://thefullstack.chrisohara.com"
+      }
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --accent-hover: #A84920;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 720px;
+            --wide-width: 960px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(253, 251, 247, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { font-family: var(--mono); font-size: 15px; font-weight: 500; letter-spacing: -0.02em; color: var(--text-primary); text-decoration: none; }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { font-size: 14px; font-weight: 400; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header { max-width: var(--max-width); margin: 0 auto; padding: 64px 24px 32px; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-tertiary); text-decoration: none; margin-bottom: 32px; transition: color 0.2s; }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .article-date { font-size: 13px; color: var(--text-tertiary); }
+        .article-tag { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: rgba(192, 86, 38, 0.08); padding: 2px 8px; border-radius: 3px; }
+        .article-title { font-family: var(--serif); font-size: 42px; font-weight: 400; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; }
+        .article-subtitle { font-family: var(--serif); font-size: 20px; font-weight: 300; font-style: italic; color: var(--text-secondary); line-height: 1.5; }
+        
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 80px; font-family: var(--serif); font-size: 18px; line-height: 1.8; }
+        .article-body p { margin-bottom: 24px; color: var(--text-primary); }
+        .article-body strong { font-weight: 600; }
+        .article-body em { font-style: italic; }
+        .article-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(192, 86, 38, 0.3); transition: border-color 0.2s; }
+        .article-body a:hover { border-color: var(--accent); }
+        .article-body h2 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 56px 0 20px; line-height: 1.3; }
+        .article-body h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin: 40px 0 16px; line-height: 1.35; }
+        
+        .section-break {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 18px;
+            letter-spacing: 0.5em;
+            color: var(--text-tertiary);
+        }
+        
+        .pull-quote {
+            margin: 48px -20px;
+            padding: 32px 40px;
+            border-left: 3px solid var(--accent);
+            background: linear-gradient(135deg, rgba(192,86,38,0.04), transparent);
+        }
+        .pull-quote p {
+            font-family: var(--serif);
+            font-size: 22px;
+            line-height: 1.45;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+        .pull-quote cite {
+            font-family: var(--sans);
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-style: normal;
+        }
+
+        .source-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin: 48px 0;
+        }
+        .source-box h3 {
+            font-family: var(--sans);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .source-box p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-family: var(--sans);
+        }
+        .source-box .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+        }
+        .source-box .btn:hover {
+            background: var(--accent-hover);
+        }
+        
+        footer { border-top: 1px solid var(--border-light); padding: 40px 24px; text-align: center; }
+        footer p { font-size: 13px; color: var(--text-tertiary); }
+        footer a { color: var(--text-secondary); text-decoration: none; margin: 0 12px; }
+        footer a:hover { color: var(--accent); }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .article-header { padding: 48px 20px 24px; }
+            .article-title { font-size: 32px; }
+            .pull-quote { margin: 32px 0; padding: 24px; }
+            .pull-quote p { font-size: 19px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Writing</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/" class="back-link">← Back to essays</a>
+        <div class="article-meta">
+            <span class="article-date">June 7, 2026</span>
+            <span class="article-tag">AI + PMM</span>
+        </div>
+        <h1 class="article-title">The Human Premium</h1>
+        <p class="article-subtitle">We spent a year building an AI curriculum for product marketers. The results reveal something most companies are measuring entirely wrong.</p>
+    </header>
+    
+    <article class="article-body">
+        <p>A product marketer we work with—let's call her Natalie—was brought in to evaluate a problem her company thought they understood. The marketing team at her mid-market SaaS firm had rolled out Claude to forty-two people over the summer of 2025. Six months in, usage data told a familiar story: token consumption had spiked in months one and two, stabilized by month three, and by month five had settled into a pattern where about a dozen heavy users generated eighty percent of the API calls. The CFO wanted a utilization report. The CTO wanted to know if they should consolidate licenses. Nobody was asking the question that actually mattered.</p>
+
+        <p>What Natalie discovered, when she actually reviewed the outputs instead of the dashboards, followed a clear pattern. The heaviest users weren't the best users. The marketers producing the highest-quality work—the positioning documents that survived contact with sales, the competitive briefs that account executives actually referenced, the messaging that tested well with customers—were a different cohort entirely. They used AI differently. They prompted differently. They had a relationship with the tools that the power users, for all their activity, simply didn't possess.</p>
+        
+        <p>When Natalie mapped capability to output, she found something that reshaped how she thought about the whole AI enablement project. The high-quality cohort shared three characteristics: deep expertise in marketing fundamentals (most had Pragmatic or similar certifications), a habit of using AI for iteration rather than generation, and what she called "productive skepticism"—a tendency to reject the first three drafts and push back on the model's assumptions. The high-volume cohort, by contrast, accepted outputs faster, prompted more generically, and relied on the AI to do the thinking rather than to sharpen their own thinking. They were consuming tokens. They weren't building capability.</p>
+
+        <div class="section-break">• • •</div>
+
+        <p>That observation—that AI consumption and AI capability are not the same thing, and may in fact be inversely correlated—became the founding insight of a training program we've spent the past year building. The program is an eight-unit curriculum designed for product marketers, with over forty assessments, seven hands-on AI labs, and a progression structure borrowed more from graduate seminars than corporate L&D. We've enrolled thirty-eight people so far, all from a single enterprise product marketing organization. The early results are instructive.</p>
+
+        <p>Our first cohort completed Units 1 and 2 in the initial four weeks. The assessments weren't about AI—they tested foundational marketing competencies: positioning frameworks, competitive analysis, value proposition construction, buyer psychology. Participants received an AI companion for every exercise, but the assessments measured whether they could deploy the fundamentals <em>through</em> AI, not whether they knew which buttons to push.</p>
+
+        <p>What emerged tracked Natalie's earlier finding almost exactly. Participants who scored in the top quartile on the foundational assessments used AI in characteristically different ways. They prompted with more specificity. They generated multiple alternatives and ranked them against explicit criteria. They caught logical errors in the AI's output that lower performers accepted at face value. Most tellingly, their final deliverables—positioning statements, competitive briefs, messaging hierarchies—were distinguishable from each other. They had voice. The lower performers, by contrast, produced work that converged toward a kind of AI-inflected median: competent, tonally consistent, and interchangeable.</p>
+
+        <div class="pull-quote">
+            <p>"AI doesn't make you better at positioning. It makes you faster at whatever you already are."</p>
+            <cite>— Observation from curriculum pilot, March 2026</cite>
+        </div>
+
+        <p>That line, captured during a post-assessment debrief, became something of a thesis for the whole program. The implication is uncomfortable for organizations that have been treating AI as a capability-building shortcut. If AI amplifies what you already know, then the ROI on AI tools is gated by the ROI on the human capital those tools are given to. Training your people <em>on AI</em> delivers marginal returns. Training your people <em>in the underlying craft</em> delivers exponential returns, because it compounds through every AI interaction that follows.</p>
+
+        <div class="section-break">• • •</div>
+
+        <h2>What the Data Shows</h2>
+
+        <p>After four weeks, our curriculum data revealed a segmentation that we now think is generalizable. Roughly eighteen percent of participants demonstrated what we'd call "collaborative fluency"—the ability to use AI as a genuine thought partner, pushing back, iterating, and producing work that reflects both human judgment and machine capability. Another thirty-four percent showed "assisted competence"—they could use AI to produce acceptable work faster, but the ceiling of that work was determined by their own capabilities, not expanded by the AI. The remaining forty-eight percent were in various stages of "tool dependence"—using AI to compensate for gaps rather than amplify strengths.</p>
+        
+        <p>The predictor of which category a participant fell into was not age, tenure, or prior AI experience. It was depth of foundational knowledge. Participants with strong frameworks—those who could articulate a positioning rationale without referencing a template, who understood why competitive intelligence matters before launch rather than after, who could construct a messaging hierarchy from first principles—showed up in the collaborative fluency cohort at three times the rate of participants who learned marketing primarily through tribal knowledge and templates.</p>
+
+        <p>This finding aligns with emerging research on AI-assisted work. A 2024 study from MIT and Stanford examining AI-augmented writing found that lower-skilled workers saw the largest productivity gains from AI assistance, but higher-skilled workers saw the largest <em>quality</em> gains—and importantly, the work produced by higher-skilled workers using AI was judged as more original and more valuable by expert evaluators. Similar patterns have emerged in studies of AI-assisted coding, financial analysis, and medical diagnosis. The capability of the human determines the ceiling of the output. AI raises the floor; it doesn't raise the ceiling unless the human brings something worth elevating.</p>
+
+        <h2>The Co-Author Model</h2>
+
+        <p>A framework we've found useful distinguishes between three relationships a knowledge worker can have with AI tools. The first is <em>delegation</em>: assigning tasks to AI and accepting outputs with minimal intervention. This is how most people start, and how many people stay. The second is <em>assistance</em>: using AI to accelerate existing workflows, but maintaining human control over structure and judgment. This is where the "assisted competence" cohort operates. The third is <em>co-authorship</em>: a genuinely collaborative relationship where the human and the AI together produce something neither could produce alone—where the AI challenges the human's assumptions as often as the human challenges the AI's.</p>
+        
+        <p>Co-authorship requires the human to hold up their end of the conversation. You cannot co-author with someone who has nothing to say. A product marketer who doesn't understand why narrative positioning outperforms feature-based positioning in considered purchases cannot prompt their way to that understanding—the AI will generate plausible-sounding positioning, and the marketer will have no frame for judging whether it's actually good. They're accepting slot machine output. Sometimes they win. Mostly they don't know if they've won or lost.</p>
+        
+        <p>The curriculum we built is designed to move participants from delegation through assistance to co-authorship. But the critical insight is that the progression requires capability-building at every step—not AI capability, but <em>professional</em> capability. The AI labs in Unit 3, for instance, have participants use Claude to generate competitive positioning for a fictional product. The assessment doesn't grade the prompt quality. It grades whether the participant can identify the three strongest and three weakest elements of the AI's output, and articulate why. That's not a skill you can automate. It's judgment, and judgment comes from depth.</p>
+
+        <div class="section-break">• • •</div>
+
+        <h2>What Companies Are Getting Wrong</h2>
+
+        <p>We recently sat through a finance review that crystallized everything wrong with how most organizations are thinking about AI. A member of the operations team—we'll call him Marcus—had built an elaborate dashboard tracking AI token consumption across the marketing organization. Cost per query, queries per user, department-level spend, projected burn rate at scale. The spreadsheet had conditional formatting. Red zones and green zones. Threshold alerts. It must have taken him a week.</p>
+
+        <p>The conversation that followed consumed forty minutes. Executives debated whether to implement usage quotas. Someone suggested that low-utilization departments should "justify" their allocations. Someone else proposed a "power user certification" to gate access to higher token limits. At no point did anyone ask whether the work being produced was any good. Whether the organization was getting smarter. Whether the AI investment was building capability or just generating activity.</p>
+
+        <p>Marcus's dashboard was measuring inputs. The only thing that matters is outputs—and more specifically, whether outputs are improving over time in ways that translate to business results. Token consumption is a proxy for nothing. It's an accounting convenience masquerading as a performance metric.</p>
+
+        <p>The organizations that will win the AI transition are the ones that invert Marcus's dashboard. Instead of asking "how much AI are we consuming?" they'll ask "how much better is our work getting?" Instead of tracking token expenditure, they'll track capability development. Instead of optimizing for cost-per-query, they'll optimize for output quality and strategic impact. That inversion requires investment—in training, in assessment infrastructure, in a willingness to treat AI as a capability multiplier rather than a cost center.</p>
+        
+        <p>It also requires patience. Capability compounds, but slowly. The return on a foundational training program shows up six months later, when a marketer who finally understands competitive positioning produces an AI-assisted brief that changes how the sales team approaches an enterprise deal. That return is invisible to Marcus's dashboard. It's also worth more than a year's worth of token savings.</p>
+
+        <h2>The Investment Thesis</h2>
+
+        <p>The argument we're advancing is simple but counterintuitive: the highest-ROI AI investment most organizations can make right now is not in tools. It's in people.</p>
+
+        <p>Tools are table stakes. Tokens are cheap and getting cheaper—according to Andreessen Horowitz's analysis, the cost of inference has dropped roughly 10x per year for the last three years, and that trend shows no sign of slowing. Within two years, the marginal cost of an AI query will approach zero for most enterprise use cases. The constraint is not access to intelligence. The constraint is human capability—specifically, the capability to know what to ask, how to evaluate the response, and what to do with it.</p>
+        
+        <p>Every dollar spent building that capability delivers multiples in AI ROI. Every dollar saved by skipping capability-building gets wasted on tools that people don't know how to use well. The math is straightforward once you accept the premise that AI amplifies rather than replaces human judgment.</p>
+        
+        <p>We've seen this pattern in other technology transitions. The companies that got the most out of the web in the late 1990s weren't the ones that spent the most on Netscape licenses. They were the ones that hired people who understood what the web could do and built organizations capable of learning. The same was true for social media in the 2010s, for mobile, for cloud. The tool is the commodity. The capability to use the tool well is the scarce resource.</p>
+
+        <p>In the AI era, that capability has a specific shape. It requires deep professional foundations—not just procedural knowledge of how to do the work, but theoretical understanding of why the work matters and what distinguishes excellent execution from mediocre execution. It requires "productive skepticism"—the habit of treating AI outputs as starting points rather than finished products, and the expertise to know the difference. And it requires what we've been calling collaborative fluency: the ability to engage AI as a thought partner rather than a task executor, to be a co-author rather than a commissioning editor.</p>
+
+        <p>Building that capability takes time. It takes assessment infrastructure that measures competence, not just completion. It takes curriculum design that privileges depth over coverage. It takes organizational commitment to treating AI enablement as a multi-quarter investment rather than a one-time rollout.</p>
+        
+        <p>The human premium is real, and right now, almost nobody is investing in it.</p>
+
+        <div class="source-box">
+            <h3>Explore the Curriculum</h3>
+            <p>The AI + Product Marketing curriculum referenced in this essay is open for enrollment.</p>
+            <a href="https://futureofpmm.com/curriculum/" class="btn">View at futureofpmm.com →</a>
+        </div>
+    </article>
+
+    <footer>
+        <p>The Full Stack</p>
+        <p>
+            <a href="/">Essays</a>
+            <a href="/about.html">About</a>
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Human Premium | The Full Stack</title>
+    <meta name="description" content="Companies are counting tokens while ignoring the only thing that actually matters.">
+    <meta property="og:title" content="The Human Premium">
+    <meta property="og:description" content="Companies are counting tokens while ignoring the only thing that actually matters.">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/articles/human-premium-ai.html">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The Human Premium",
+      "description": "Companies are counting tokens while ignoring the only thing that actually matters.",
+      "author": {
+        "@type": "Person",
+        "name": "Chris O'Hara",
+        "url": "https://chrisohara.com"
+      },
+      "datePublished": "2026-06-07",
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Full Stack",
+        "url": "https://thefullstack.chrisohara.com"
+      }
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --accent-hover: #A84920;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 720px;
+            --wide-width: 960px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(253, 251, 247, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { font-family: var(--mono); font-size: 15px; font-weight: 500; letter-spacing: -0.02em; color: var(--text-primary); text-decoration: none; }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { font-size: 14px; font-weight: 400; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header { max-width: var(--max-width); margin: 0 auto; padding: 64px 24px 32px; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-tertiary); text-decoration: none; margin-bottom: 32px; transition: color 0.2s; }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .article-date { font-size: 13px; color: var(--text-tertiary); }
+        .article-tag { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: rgba(192, 86, 38, 0.08); padding: 2px 8px; border-radius: 3px; }
+        .article-title { font-family: var(--serif); font-size: 42px; font-weight: 400; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; }
+        .article-subtitle { font-family: var(--serif); font-size: 20px; font-weight: 300; font-style: italic; color: var(--text-secondary); line-height: 1.5; }
+        
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 80px; font-family: var(--serif); font-size: 18px; line-height: 1.8; }
+        .article-body p { margin-bottom: 24px; color: var(--text-primary); }
+        .article-body strong { font-weight: 600; }
+        .article-body em { font-style: italic; }
+        .article-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(192, 86, 38, 0.3); transition: border-color 0.2s; }
+        .article-body a:hover { border-color: var(--accent); }
+        .article-body h2 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 56px 0 20px; line-height: 1.3; }
+        .article-body h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin: 40px 0 16px; line-height: 1.35; }
+        
+        .pull-quote {
+            margin: 48px -20px;
+            padding: 32px 40px;
+            border-left: 3px solid var(--accent);
+            background: linear-gradient(135deg, rgba(192,86,38,0.04), transparent);
+        }
+        .pull-quote p {
+            font-family: var(--serif);
+            font-size: 22px;
+            line-height: 1.45;
+            color: var(--text-primary);
+            margin-bottom: 0;
+            font-style: italic;
+        }
+        
+        footer { border-top: 1px solid var(--border-light); padding: 40px 24px; text-align: center; }
+        footer p { font-size: 13px; color: var(--text-tertiary); }
+        footer a { color: var(--text-secondary); text-decoration: none; margin: 0 12px; }
+        footer a:hover { color: var(--accent); }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .article-header { padding: 48px 20px 24px; }
+            .article-title { font-size: 32px; }
+            .pull-quote { margin: 32px 0; padding: 24px; }
+            .pull-quote p { font-size: 19px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Writing</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/" class="back-link">← Back to essays</a>
+        <div class="article-meta">
+            <span class="article-date">June 2026</span>
+            <span class="article-tag">AI + PMM</span>
+        </div>
+        <h1 class="article-title">The Human Premium</h1>
+        <p class="article-subtitle">Companies are counting tokens while ignoring the only thing that actually matters.</p>
+    </header>
+    
+    <article class="article-body">
+        <p>Every company I talk to is measuring the wrong thing about AI.</p>
+
+        <p>They're tracking token consumption. They're building dashboards with cost-per-query breakdowns and utilization rates by department. Someone in finance has built a spreadsheet that turns red when usage exceeds some arbitrary threshold. The entire conversation has become about <em>consumption</em>.</p>
+        
+        <p>Meanwhile, nobody is asking whether the work is getting better.</p>
+
+        <p>I've been spending a lot of time lately on AI enablement—building training programs for product marketers, watching how people actually use these tools in the field—and a pattern keeps emerging that I think explains a lot of the disconnect. The people producing the best AI-assisted work are almost never the heaviest users. They prompt less often, but they prompt differently. They have a relationship with the tools that the power users, for all their activity, simply don't have.</p>
+        
+        <p>What separates them isn't AI fluency. It's <em>professional</em> fluency. They understand positioning frameworks—not just the templates, but why the templates work the way they do. They can identify weak messaging when they see it. They have a mental model for what "good" looks like that doesn't come from a blog post. When they use AI, they push back on the first draft. They catch the logical gaps. They use the tool to stress-test their thinking rather than to replace it.</p>
+
+        <p>The heavy users are doing something different. They're accepting outputs faster, prompting more generically, using AI to fill gaps in their knowledge rather than to sharpen knowledge they already have. They're consuming tokens. They're not building capability.</p>
+
+        <div class="pull-quote">
+            <p>"AI doesn't make you better at positioning. It makes you faster at whatever you already are."</p>
+        </div>
+
+        <p>That line has become a kind of thesis for me, and the implications are uncomfortable. AI amplifies whatever you bring to it. Strong foundations plus AI equals sharper, faster work. Weak foundations plus AI equals mediocrity at higher velocity—and the scary part is that you won't even know it's mediocre, because you don't have the frame of reference to judge.</p>
+
+        <h2>The Problem with Skipping Steps</h2>
+
+        <p>Here's what this looks like in practice. A product marketer who doesn't really understand competitive positioning can't prompt their way to good competitive positioning. The AI will generate something plausible. It might even sound right. But without the expertise to evaluate it, you're just pulling a lever and hoping. You have no way to tell the difference between a positioning statement that will survive contact with a customer and one that will collapse the moment a salesperson tries to use it.</p>
+
+        <p>The people who break through—who actually get multiplicative value from AI instead of just incremental speed—are the ones who can hold up their end of the conversation. They're not asking the AI to do the thinking; they're using it to think <em>with</em>. That's a fundamentally different relationship. It's co-authorship, not delegation.</p>
+
+        <p>And co-authorship requires having something to say.</p>
+
+        <h2>What Assessment Actually Reveals</h2>
+        
+        <p>I've been building an <a href="https://futureofpmm.com/curriculum/">AI curriculum for product marketers</a> over the past year, and the most valuable thing we've learned has nothing to do with prompts. It's what happens when you test the underlying competencies.</p>
+        
+        <p>We built assessments into every unit—not assessments about AI, but assessments about the craft itself. Can you identify weak positioning when you see it? Do you understand the gap between a feature description and a value proposition? Can you construct a competitive narrative that does more than inventory capabilities like a parts list?</p>
+
+        <p>These questions reveal something that utilization dashboards never will. They tell you what someone actually knows—not what they think they know, not what they picked up from a webinar three years ago, but what they can deploy under pressure. That's uncomfortable for a lot of people. It's also the only way to build real capability. You have to see the gap before you can close it.</p>
+
+        <p>The participants who score well on these foundational assessments use AI in characteristically different ways. They prompt with more specificity. They generate multiple alternatives and can articulate why some are better than others. They catch logical errors that lower performers accept at face value. Most tellingly, their final deliverables are distinguishable from each other. They have voice. The lower performers produce work that converges toward a kind of AI-inflected median—competent, tonally consistent, and interchangeable.</p>
+
+        <h2>Why AI Labs Work</h2>
+
+        <p>The other piece that's been surprisingly effective is what we call AI Labs—hands-on exercises where you work through real marketing problems using AI as a collaborator. But the design is specific: the labs create a safe environment to practice the back-and-forth, the iteration, the productive skepticism that separates great AI-assisted work from mediocre AI-assisted work.</p>
+
+        <p>The labs don't burn through tokens or rack up API costs. They simulate the co-author relationship so you can make mistakes where mistakes are cheap. You learn the rhythm of pushing back, of generating alternatives, of rejecting the first draft before you ever apply it to real deliverables. By the time you're working on something that matters, the patterns are already in your muscle memory.</p>
+
+        <p>This turns out to be important for reasons beyond just skill-building. One of the barriers to AI fluency is that people are afraid to experiment when every prompt costs money and gets logged somewhere. The labs remove that friction. You can try things, fail, iterate, and build intuition without anyone watching the meter.</p>
+
+        <h2>The Real ROI</h2>
+
+        <p>The companies that figure this out will build an advantage that compounds. Better people using AI get more productive, which frees them up to learn more, which makes them better at using AI. Flywheel. But you have to kick-start it with genuine capability building—not license procurement, not prompt-engineering cheat sheets, not lunch-and-learns where someone demos the art of the possible.</p>
+
+        <p>Every dollar spent building real skills delivers multiples in AI ROI, because those skills compound through every AI interaction that follows. Every dollar saved by skipping that investment gets wasted on tools that people don't know how to use well. The math isn't complicated once you accept the premise that AI amplifies rather than replaces human judgment.</p>
+
+        <p>Tokens are cheap and getting cheaper. Within a couple of years, the marginal cost of a query will approach zero for most enterprise use cases. The constraint isn't access to intelligence. The constraint is human capability—specifically, the capability to know what to ask, how to evaluate the response, and what to do with it.</p>
+
+        <p>The companies that keep watching the utilization dashboards will optimize their API costs and lose the race entirely. They'll have great data on how many tokens they consumed. They just won't have anything worth showing for it.</p>
+
+        <p>The human premium is real. And right now, almost nobody is investing in it.</p>
+    </article>
+
+    <footer>
+        <p>The Full Stack</p>
+        <p>
+            <a href="/">Essays</a>
+            <a href="/about.html">About</a>
+        </p>
+    </footer>
+</body>
+</html>

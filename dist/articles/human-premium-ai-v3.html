@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Human Premium | The Full Stack</title>
+    <meta name="description" content="Companies are counting tokens while ignoring the only thing that actually matters.">
+    <meta property="og:title" content="The Human Premium">
+    <meta property="og:description" content="Companies are counting tokens while ignoring the only thing that actually matters.">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/articles/human-premium-ai.html">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The Human Premium",
+      "description": "Companies are counting tokens while ignoring the only thing that actually matters.",
+      "author": {
+        "@type": "Person",
+        "name": "Chris O'Hara",
+        "url": "https://chrisohara.com"
+      },
+      "datePublished": "2026-06-07",
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Full Stack",
+        "url": "https://thefullstack.chrisohara.com"
+      }
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --accent-hover: #A84920;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 720px;
+            --wide-width: 960px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(253, 251, 247, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { font-family: var(--mono); font-size: 15px; font-weight: 500; letter-spacing: -0.02em; color: var(--text-primary); text-decoration: none; }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { font-size: 14px; font-weight: 400; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header { max-width: var(--max-width); margin: 0 auto; padding: 64px 24px 32px; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-tertiary); text-decoration: none; margin-bottom: 32px; transition: color 0.2s; }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .article-date { font-size: 13px; color: var(--text-tertiary); }
+        .article-tag { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: rgba(192, 86, 38, 0.08); padding: 2px 8px; border-radius: 3px; }
+        .article-title { font-family: var(--serif); font-size: 42px; font-weight: 400; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; }
+        .article-subtitle { font-family: var(--serif); font-size: 20px; font-weight: 300; font-style: italic; color: var(--text-secondary); line-height: 1.5; }
+        
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 80px; font-family: var(--serif); font-size: 18px; line-height: 1.8; }
+        .article-body p { margin-bottom: 24px; color: var(--text-primary); }
+        .article-body strong { font-weight: 600; }
+        .article-body em { font-style: italic; }
+        .article-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(192, 86, 38, 0.3); transition: border-color 0.2s; }
+        .article-body a:hover { border-color: var(--accent); }
+        .article-body h2 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 56px 0 20px; line-height: 1.3; }
+        .article-body h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin: 40px 0 16px; line-height: 1.35; }
+        
+        .section-break {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 18px;
+            letter-spacing: 0.5em;
+            color: var(--text-tertiary);
+        }
+        
+        .pull-quote {
+            margin: 48px -20px;
+            padding: 32px 40px;
+            border-left: 3px solid var(--accent);
+            background: linear-gradient(135deg, rgba(192,86,38,0.04), transparent);
+        }
+        .pull-quote p {
+            font-family: var(--serif);
+            font-size: 22px;
+            line-height: 1.45;
+            color: var(--text-primary);
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        .source-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin: 48px 0;
+        }
+        .source-box h3 {
+            font-family: var(--sans);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .source-box p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-family: var(--sans);
+        }
+        .source-box .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+        }
+        .source-box .btn:hover {
+            background: var(--accent-hover);
+        }
+        
+        footer { border-top: 1px solid var(--border-light); padding: 40px 24px; text-align: center; }
+        footer p { font-size: 13px; color: var(--text-tertiary); }
+        footer a { color: var(--text-secondary); text-decoration: none; margin: 0 12px; }
+        footer a:hover { color: var(--accent); }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .article-header { padding: 48px 20px 24px; }
+            .article-title { font-size: 32px; }
+            .pull-quote { margin: 32px 0; padding: 24px; }
+            .pull-quote p { font-size: 19px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Writing</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/" class="back-link">← Back to essays</a>
+        <div class="article-meta">
+            <span class="article-date">June 7, 2026</span>
+            <span class="article-tag">AI + PMM</span>
+        </div>
+        <h1 class="article-title">The Human Premium</h1>
+        <p class="article-subtitle">Companies are counting tokens while ignoring the only thing that actually matters.</p>
+    </header>
+    
+    <article class="article-body">
+        <p>A friend of mine runs enablement at a Series C martech company—the kind of firm that sells to enterprise marketing teams and competes against two or three well-funded players for every deal. She called me a few weeks ago with a question that had been bugging her since January. Her company had rolled out Claude to the entire go-to-market org the previous summer, about forty people in all, and six months in she was trying to figure out whether it was working.</p>
+
+        <p>The usage data told a clear story. A handful of people—maybe eight or ten—were generating most of the API calls. Token consumption had spiked early, stabilized, and then settled into a pattern where those heavy users accounted for something like eighty percent of the activity. The CFO wanted a utilization report. Someone in ops had built a dashboard with cost-per-query breakdowns and red-zone alerts for overspending. The whole conversation had become about consumption.</p>
+        
+        <p>But when my friend actually looked at the <em>outputs</em>—not the dashboards, the work itself—she noticed something strange. The heavy users weren't producing the best work. The positioning docs that survived contact with customers, the competitive briefs that sales actually referenced, the messaging that tested well in the field: those were coming from a different group entirely. A smaller group. People who used AI less often, but used it differently.</p>
+
+        <p>She spent a few weeks trying to figure out what separated them. It wasn't age or tenure. It wasn't how much prompt-engineering they'd done. The pattern, once she saw it, was almost embarrassingly simple: the people producing great AI-assisted work were the people who already knew what great work looked like. They had the fundamentals. They understood positioning frameworks cold—not just the templates, but why the templates worked the way they did. They could construct a competitive narrative from first principles. They had taste.</p>
+        
+        <p>When those people used AI, something different happened. They didn't accept the first draft. They pushed back. They used the tool to stress-test their own thinking rather than to replace it. The output sounded like them, not like everyone else. The heavy users, by contrast, were accepting outputs faster, prompting more generically, using AI to fill gaps in their knowledge rather than to sharpen knowledge they already had. They were consuming tokens. They weren't building capability.</p>
+
+        <div class="section-break">• • •</div>
+
+        <p>That conversation has stayed with me because I think it captures something important about how most organizations are getting AI wrong. They're treating it like a utility to meter—watching the dials, counting the kilowatt-hours—instead of a capability to build. The distance between those two framings is where all the value is hiding.</p>
+        
+        <p>Here's the uncomfortable truth: AI amplifies whatever you bring to it. Strong foundations plus AI equals sharper, faster work. Weak foundations plus AI equals mediocrity at higher velocity—and you won't even know it's mediocre, because you don't have the frame of reference to judge. A product marketer who doesn't really understand competitive positioning can't prompt their way to good competitive positioning. The AI will generate something plausible. It might even sound right. But without the expertise to evaluate it, you're just pulling a lever and hoping.</p>
+
+        <p>The people who break through—who actually get multiplicative value from AI instead of just incremental speed—are the ones who can hold up their end of the conversation. They're co-authors, not commissioners. They're not asking the AI to do the thinking; they're using it to think <em>with</em>. And that requires having something to think about in the first place.</p>
+
+        <div class="pull-quote">
+            <p>"AI doesn't make you better at positioning. It makes you faster at whatever you already are."</p>
+        </div>
+
+        <p>I've been watching this pattern play out across a dozen companies over the past year, and it keeps repeating with almost eerie consistency. Tool access is basically universal at this point—everyone has Copilot, most have ChatGPT or Claude, some have both. But actual capability follows a power law. A small percentage of people are using AI to genuinely elevate their strategic work. Everyone else is using it as a slightly faster search engine with better prose.</p>
+
+        <p>The gap isn't about AI fluency. It's about <em>professional</em> fluency. The people who can't construct a good positioning statement by hand also can't prompt their way to one. The people who understand the frameworks can use AI to explore ten variations in the time it used to take to write one—and they can tell you which three are worth keeping and why.</p>
+
+        <div class="section-break">• • •</div>
+
+        <p>So back to my friend's question: was the AI rollout working?</p>
+
+        <p>By the metrics her company was tracking, the answer was yes. High utilization. Reasonable cost per user. The dashboard was all green. But by any measure that actually mattered—output quality, strategic impact, competitive wins—the picture was murkier. The AI had made her best people better. It had made her average people faster at being average. And it had given her no way to tell the difference from the data she was collecting.</p>
+
+        <p>This is the trap most organizations have walked into. They're measuring consumption when they should be measuring capability. They're optimizing for cost-per-query when the only thing that matters is output quality. They're building dashboards that track the wrong thing, and then making decisions based on those dashboards, and then wondering why the AI investment isn't translating to results.</p>
+
+        <p>The fix is uncomfortable because it requires investment in something that doesn't show up on a dashboard: human capability. Training. Foundations. The kind of deep professional development that takes quarters to pay off instead of weeks. Every dollar you spend building real skills delivers multiples in AI ROI—because those skills compound through every AI interaction that follows. Every dollar you save by skipping that investment gets wasted on tools that people don't know how to use well.</p>
+
+        <p>The companies that figure this out will build an advantage that compounds. Better people using AI get more productive, which frees them up to learn more, which makes them better at using AI. Flywheel. But you have to kick-start it with genuine capability building, not just license procurement.</p>
+
+        <p>The companies that keep watching the utilization dashboards will optimize their API costs and lose the race entirely. They'll have great data on how many tokens they consumed. They just won't have anything worth showing for it.</p>
+
+        <div class="section-break">• • •</div>
+
+        <p>I've been working on an <a href="https://futureofpmm.com/curriculum/">AI curriculum for product marketers</a> over the past year, and the central design question was exactly this: how do you build capability, not just fluency?</p>
+        
+        <p>The answer, it turns out, starts with assessment—but not the kind of assessment most corporate training uses. We don't test whether someone can write a good prompt. We test whether they can identify weak positioning when they see it. Whether they understand the gap between a feature description and a value proposition. Whether they can construct a competitive narrative that does more than inventory capabilities like a parts list. These are the foundational competencies that determine whether AI becomes a thought partner or a crutch. If you can't evaluate the output, you can't improve the output. And if you can't improve the output, you're just generating.</p>
+
+        <p>The assessments tell you what you actually know—not what you think you know, not what you learned in a webinar three years ago, but what you can actually deploy under pressure. That's uncomfortable for a lot of people. It's also the only way to build real capability. You have to see the gap before you can close it.</p>
+
+        <p>The other piece that's worked surprisingly well is what we call AI Labs—hands-on exercises where you work through real marketing problems using AI as a collaborator. But here's the key: the labs are designed environments. They simulate the co-author relationship without burning tokens or racking up API costs. You get to practice the back-and-forth, the iteration, the productive skepticism that separates great AI-assisted work from mediocre AI-assisted work—and you get to make mistakes in a context where mistakes are cheap. By the time you're working on real deliverables, the patterns are already in your muscle memory.</p>
+
+        <p>The participants who engage seriously come out different, but not because they learned AI tricks. They come out different because they rebuilt their foundations and then discovered what AI can actually do when you know what you're asking for. The curriculum doesn't teach you to use AI. It teaches you the craft—and then shows you how the craft scales.</p>
+
+        <p>The human premium is real. It's the difference between using AI as a slot machine and using it as a thought partner. It's the gap between delegation and co-authorship. And right now, almost nobody is investing in it.</p>
+
+        <p>They're too busy watching the dashboards.</p>
+    </article>
+
+    <footer>
+        <p>The Full Stack</p>
+        <p>
+            <a href="/">Essays</a>
+            <a href="/about.html">About</a>
+        </p>
+    </footer>
+</body>
+</html>
