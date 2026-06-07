@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Human Premium: Why AI ROI Depends on Training, Not Tokens | The Full Stack</title>
+    <meta name="description" content="Companies are obsessing over token costs while ignoring the real problem: the gap between outsourcing to AI and co-authoring with it. Here's what we learned building an AI curriculum for product marketers.">
+    <meta name="author" content="Christopher O'Hara">
+    <meta property="og:title" content="The Human Premium: Why AI ROI Depends on Training, Not Tokens">
+    <meta property="og:description" content="The difference between companies that win with AI and those that waste money on it comes down to one thing: human capability.">
+    <meta property="og:type" content="article">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FAFAFA;
+            --text: #1a1a1a;
+            --text-secondary: #666;
+            --accent: #2563eb;
+            --border: #e5e5e5;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Newsreader', Georgia, serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 19px;
+        }
+        
+        .header {
+            padding: 20px 40px;
+            border-bottom: 1px solid var(--border);
+            background: white;
+        }
+        
+        .header a {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            color: var(--text);
+            letter-spacing: 0.02em;
+        }
+        
+        .article-header {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 80px 20px 40px;
+        }
+        
+        .article-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        h1 {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 44px;
+            font-weight: 500;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+        
+        .subtitle {
+            font-size: 22px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            font-style: italic;
+        }
+        
+        .article-content {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+        
+        .article-content p {
+            margin-bottom: 24px;
+        }
+        
+        .article-content h2 {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 28px;
+            font-weight: 500;
+            margin: 48px 0 24px;
+            letter-spacing: -0.01em;
+        }
+        
+        .article-content h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-secondary);
+            margin: 40px 0 16px;
+        }
+        
+        .article-content blockquote {
+            border-left: 3px solid var(--accent);
+            padding-left: 24px;
+            margin: 32px 0;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 24px 0;
+            padding-left: 28px;
+        }
+        
+        .article-content li {
+            margin-bottom: 12px;
+        }
+        
+        .article-content strong {
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--accent);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        
+        .pullquote {
+            font-size: 28px;
+            line-height: 1.4;
+            text-align: center;
+            padding: 40px 20px;
+            margin: 48px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            font-style: italic;
+            color: var(--text);
+        }
+        
+        .author-box {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            padding: 32px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-top: 60px;
+        }
+        
+        .author-box img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .author-info p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        .author-info a {
+            color: var(--accent);
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 48px;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: white;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+        
+        .cta-box p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .cta-box a {
+            display: inline-block;
+            background: white;
+            color: #1e3a5f;
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 32px; }
+            .subtitle { font-size: 18px; }
+            .pullquote { font-size: 22px; }
+            .author-box { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html">THE FULL STACK</a>
+    </header>
+    
+    <article>
+        <div class="article-header">
+            <div class="article-meta">June 7, 2026 · 8 min read</div>
+            <h1>The Human Premium: Why AI ROI Depends on Training, Not Tokens</h1>
+            <p class="subtitle">Companies are obsessing over token costs while ignoring the real problem: the gap between outsourcing to AI and co-authoring with it.</p>
+        </div>
+        
+        <div class="article-content">
+            <p>Last month, I sat in a meeting where a finance leader spent 45 minutes drilling into our AI token consumption. Cost per query. Queries per user. Projected spend at scale. The spreadsheet was immaculate.</p>
+            
+            <p>What nobody asked: <em>Are we actually getting better at using these tools?</em></p>
+            
+            <p>This is the conversation happening in boardrooms everywhere. Companies are treating AI like a utility—something to meter and minimize—while completely missing the point. The difference between organizations that will win with AI and those that will waste millions on it comes down to one thing: <strong>human capability</strong>.</p>
+            
+            <p>I've spent the last year building and deploying an AI curriculum for product marketers at SAP. What we learned changed how I think about AI adoption entirely. And it has almost nothing to do with the technology.</p>
+            
+            <h2>The Co-Author Gap</h2>
+            
+            <p>Here's the uncomfortable truth: most companies are using AI wrong.</p>
+            
+            <p>They've deployed tools. They've written policies. They've even run a few lunch-and-learns. But they're still treating AI as something you <em>outsource to</em> rather than something you <em>work with</em>.</p>
+            
+            <p>There's a fundamental difference between asking ChatGPT to "write me a product positioning statement" and using AI as a thought partner to stress-test your positioning against competitive alternatives, identify gaps in your messaging hierarchy, and pressure-test assumptions about buyer psychology.</p>
+            
+            <p>The first is delegation. The second is collaboration.</p>
+            
+            <p>The first produces generic output that sounds like everyone else. The second produces differentiated thinking that happens to be faster.</p>
+            
+            <div class="pullquote">
+                "The gap isn't between companies with AI and companies without it. It's between companies that outsource to AI and companies that co-author with it."
+            </div>
+            
+            <p>When we assessed over 100 product marketers on their AI fluency, the results were striking. Tool access was nearly universal—everyone had Copilot, most had ChatGPT. But actual capability? That followed a power law. A small percentage were using AI to genuinely accelerate strategic work. The majority were using it as a slightly faster Google.</p>
+            
+            <h2>The Four Failures</h2>
+            
+            <p>As we built our curriculum, we identified four systemic failures that prevent organizations from closing the co-author gap:</p>
+            
+            <h3>1. Tool Chaos</h3>
+            
+            <p>The average enterprise marketer now has access to 6-8 AI tools: Copilot for docs, a writing assistant, an image generator, maybe a specialized competitive intel tool, plus whatever shadow AI they're using on their phone. There's no coherent workflow. No integration. Just a grab bag of capabilities that don't talk to each other.</p>
+            
+            <p>The result? Marketers spend more time context-switching between tools than actually thinking.</p>
+            
+            <h3>2. PMM Without a Seat</h3>
+            
+            <p>Product marketing should be at the center of AI-assisted go-to-market. We're the ones who translate product capabilities into market positioning, who understand buyer psychology, who craft the narratives that sales uses in the field.</p>
+            
+            <p>Instead, PMM is often an afterthought in AI strategy. The tools get deployed by IT. The policies get written by legal. The training gets designed by HR. And product marketers are left figuring it out on their own, one prompt at a time.</p>
+            
+            <h3>3. Governance Theater</h3>
+            
+            <p>Every company I talk to has an AI policy. Most of them are useless.</p>
+            
+            <p>They're written to manage risk, not enable capability. They tell you what you <em>can't</em> do (don't put customer data in prompts, don't publish AI output without review) without telling you what you <em>should</em> do. They're defensive documents, not offensive playbooks.</p>
+            
+            <p>Good governance should accelerate adoption, not slow it down. It should give people confidence to experiment, not fear of punishment.</p>
+            
+            <h3>4. Training as Afterthought</h3>
+            
+            <p>This is the big one. Most AI "training" consists of a 30-minute webinar on prompt engineering and a link to some documentation. It's the equivalent of handing someone a piano and a YouTube video and expecting them to play Chopin.</p>
+            
+            <p>Real capability building requires structured learning, progressive skill development, and—critically—assessment. You can't improve what you don't measure.</p>
+            
+            <h2>A Curriculum-Based Approach</h2>
+            
+            <p>Here's what we did differently at SAP.</p>
+            
+            <p>Instead of treating AI as a tool to deploy, we treated it as a <strong>skill to develop</strong>. We built an eight-unit curriculum that takes product marketers from foundational concepts through advanced applications:</p>
+            
+            <ul>
+                <li><strong>Unit 1:</strong> The AI-Augmented PMM — understanding the landscape and your role in it</li>
+                <li><strong>Unit 2:</strong> Core Positioning Frameworks — the strategic foundation that AI amplifies</li>
+                <li><strong>Unit 3:</strong> Competitive Intelligence — using AI for market analysis and battlecards</li>
+                <li><strong>Unit 4:</strong> Content Strategy — the full-stack buyer and content architecture</li>
+                <li><strong>Unit 5:</strong> Sales Enablement — arming the field with AI-assisted tools</li>
+                <li><strong>Unit 6:</strong> Launch Excellence — orchestrating go-to-market with AI support</li>
+                <li><strong>Unit 7:</strong> Measurement & Optimization — proving impact and iterating</li>
+                <li><strong>Unit 8:</strong> Future of PMM — preparing for what's next</li>
+            </ul>
+            
+            <p>Each unit includes reading, interactive exercises, and hands-on AI labs where marketers apply concepts using real tools. And critically, each unit ends with an assessment. Not a checkbox. An actual evaluation of whether someone can apply what they learned.</p>
+            
+            <p>The results have been remarkable. Marketers who complete the curriculum don't just use AI more—they use it <em>differently</em>. They approach it as a strategic collaborator rather than a content vending machine. They ask better questions. They iterate more thoughtfully. They produce work that sounds like them, not like everyone else.</p>
+            
+            <h2>The Human Premium</h2>
+            
+            <p>Here's the counterintuitive insight: <strong>AI makes human judgment more valuable, not less</strong>.</p>
+            
+            <p>When everyone has access to the same tools, differentiation comes from how you use them. The marketer who understands positioning theory can prompt for positioning. The one who doesn't will get generic output and not know why it's wrong.</p>
+            
+            <p>AI amplifies capability. If you have strong strategic foundations, AI makes you faster and better. If you don't, AI just helps you produce mediocrity at scale.</p>
+            
+            <p>This is why the token-counting approach misses the point entirely. The cost of AI isn't the constraint. The cost of <em>human capability</em> is the constraint. Every dollar you spend on training delivers multiples in AI ROI. Every dollar you save by skipping training gets wasted on tools that people don't know how to use.</p>
+            
+            <div class="pullquote">
+                "AI amplifies capability. Strong foundations + AI = faster excellence. Weak foundations + AI = mediocrity at scale."
+            </div>
+            
+            <h2>What To Do About It</h2>
+            
+            <p>If you're a marketing leader, here's my advice:</p>
+            
+            <ol>
+                <li><strong>Stop counting tokens.</strong> Start measuring capability. Survey your team on AI fluency. You'll be surprised how wide the gap is between your most capable people and everyone else.</li>
+                
+                <li><strong>Build curriculum, not one-off training.</strong> AI is a skill that develops over time. Treat it like you'd treat any professional development: progressive, structured, assessed.</li>
+                
+                <li><strong>Put PMM at the center.</strong> Product marketing is where strategy meets execution. If your PMM team isn't leading AI adoption for go-to-market, you're doing it wrong.</li>
+                
+                <li><strong>Rewrite your governance.</strong> Shift from "what you can't do" to "how to do it well." Give people playbooks, not just policies.</li>
+                
+                <li><strong>Measure outcomes, not activity.</strong> The goal isn't AI usage. The goal is better positioning, faster launches, more effective sales enablement. Keep your eyes on what matters.</li>
+            </ol>
+            
+            <h2>The Opportunity</h2>
+            
+            <p>We're at an inflection point. Most companies are still in the "deploy tools and hope for the best" phase of AI adoption. The ones that invest in human capability now will build an advantage that compounds over time.</p>
+            
+            <p>The future doesn't belong to companies with the best AI. It belongs to companies with the best-trained humans using AI as a force multiplier.</p>
+            
+            <p>That's the human premium. And it's worth investing in.</p>
+            
+            <div class="author-box">
+                <img src="../images/chris-headshot.jpg" alt="Christopher O'Hara" onerror="this.style.display='none'">
+                <div class="author-info">
+                    <h4>Christopher O'Hara</h4>
+                    <p>VP Product Marketing at SAP. Author of <em>Customer Data Platforms</em> and <em>Data-Driven</em>. Building the future of AI-augmented marketing.</p>
+                    <a href="https://www.linkedin.com/in/christopherohara/">Connect on LinkedIn →</a>
+                </div>
+            </div>
+            
+            <div class="cta-box">
+                <h3>Explore the Curriculum</h3>
+                <p>The AI + Product Marketing curriculum referenced in this article is available at futureofpmm.com</p>
+                <a href="https://futureofpmm.com/curriculum/">View the Curriculum</a>
+            </div>
+        </div>
+    </article>
+</body>
+</html>
