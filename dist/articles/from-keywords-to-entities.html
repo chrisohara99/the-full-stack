@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Keywords to Entities | The Full Stack</title>
+    <meta name="description" content="For twenty years, we played the keyword game. That playbook built careers and companies. It's not that SEO is dead. It's that a new layer has emerged.">
+    <meta property="og:title" content="From Keywords to Entities">
+    <meta property="og:description" content="The shift from SEO to GEO, and why it matters for every marketer.">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/articles/from-keywords-to-entities.html">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "From Keywords to Entities",
+      "description": "For twenty years, we played the keyword game. That playbook built careers and companies. It's not that SEO is dead. It's that a new layer has emerged.",
+      "author": {
+        "@type": "Person",
+        "name": "Chris O'Hara",
+        "url": "https://chrisohara.com"
+      },
+      "datePublished": "2026-05-27",
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Full Stack",
+        "url": "https://thefullstack.chrisohara.com"
+      }
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --accent-hover: #A84920;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 720px;
+            --wide-width: 960px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(253, 251, 247, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { font-family: var(--mono); font-size: 15px; font-weight: 500; letter-spacing: -0.02em; color: var(--text-primary); text-decoration: none; }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { font-size: 14px; font-weight: 400; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header { max-width: var(--max-width); margin: 0 auto; padding: 64px 24px 32px; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-tertiary); text-decoration: none; margin-bottom: 32px; transition: color 0.2s; }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .article-date { font-size: 13px; color: var(--text-tertiary); }
+        .article-tag { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: rgba(192, 86, 38, 0.08); padding: 2px 8px; border-radius: 3px; }
+        .article-title { font-family: var(--serif); font-size: 42px; font-weight: 400; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; }
+        .article-subtitle { font-family: var(--serif); font-size: 20px; font-weight: 300; font-style: italic; color: var(--text-secondary); line-height: 1.5; }
+        
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 80px; font-family: var(--serif); font-size: 18px; line-height: 1.8; }
+        .article-body p { margin-bottom: 24px; color: var(--text-primary); }
+        .article-body strong { font-weight: 600; }
+        .article-body em { font-style: italic; }
+        .article-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(192, 86, 38, 0.3); transition: border-color 0.2s; }
+        .article-body a:hover { border-color: var(--accent); }
+        .article-body h2 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 56px 0 20px; line-height: 1.3; }
+        .article-body h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin: 40px 0 16px; line-height: 1.35; }
+        .article-body ul { margin: 0 0 24px 24px; }
+        .article-body li { margin-bottom: 8px; }
+        
+        .pull-quote {
+            margin: 48px -20px;
+            padding: 32px 40px;
+            border-left: 3px solid var(--accent);
+            background: linear-gradient(135deg, rgba(192,86,38,0.04), transparent);
+        }
+        .pull-quote p {
+            font-family: var(--serif);
+            font-size: 22px;
+            line-height: 1.45;
+            color: var(--text-primary);
+            margin-bottom: 0;
+            font-style: italic;
+        }
+        
+        footer { border-top: 1px solid var(--border-light); padding: 40px 24px; text-align: center; }
+        footer p { font-size: 13px; color: var(--text-tertiary); }
+        footer a { color: var(--text-secondary); text-decoration: none; margin: 0 12px; }
+        footer a:hover { color: var(--accent); }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .article-header { padding: 48px 20px 24px; }
+            .article-title { font-size: 32px; }
+            .pull-quote { margin: 32px 0; padding: 24px; }
+            .pull-quote p { font-size: 19px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Writing</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/" class="back-link">← Back to essays</a>
+        <div class="article-meta">
+            <span class="article-date">May 2026</span>
+            <span class="article-tag">GEO</span>
+        </div>
+        <h1 class="article-title">From Keywords to Entities</h1>
+        <p class="article-subtitle">For twenty years, we played the keyword game. That playbook built careers and companies. It's not dead—but a new layer has emerged.</p>
+    </header>
+    
+    <article class="article-body">
+        <p>For twenty years, we played the keyword game. Find the right terms, optimize the page, build the backlinks, win the ranking. That playbook built careers and companies. It created an entire industry of agencies, tools, and consultants dedicated to one thing: getting pages to rank for specific strings of text.</p>
+
+        <p>It's not that SEO is dead. It's that SEO alone is no longer sufficient. A new layer has emerged—and it operates on fundamentally different principles.</p>
+
+        <p>Welcome to the entity era.</p>
+
+        <h2>The Shift in How Discovery Works</h2>
+
+        <p>Traditional search worked like a librarian: you asked for books about "enterprise data management," and it returned a ranked list of pages containing those words. The librarian didn't need to understand your question deeply—it just needed to match your words to its catalog.</p>
+
+        <p>AI-powered search works like a consultant: you ask "What should I use for enterprise data management?", and it synthesizes an answer from its understanding of the landscape—companies, products, relationships, reputations. The consultant doesn't match keywords. It reasons about a question using everything it knows.</p>
+
+        <p>The difference is profound. Keywords are strings of text. Entities are things the AI <em>knows about</em>.</p>
+
+        <p>In the keyword era, you competed for ten blue links. Pages were ranked by relevance to query terms, with backlinks serving as a proxy for authority. Success meant ranking position. Traffic flowed to your website, where you controlled the rest of the journey.</p>
+
+        <p>In the entity era, brands are recognized as distinct things. Knowledge graphs serve as the source of truth. Success means citation quality—not just being mentioned, but being accurately described and recommended. And increasingly, the answer is delivered right there in the AI response. The user may never visit your site at all.</p>
+
+        <div class="pull-quote">
+            <p>"Keywords are strings of text. Entities are things the AI knows about. When you're an established entity, AI can reason about you. When you're not, you're just text on a page."</p>
+        </div>
+
+        <h2>What Is an Entity?</h2>
+
+        <p>In AI terms, an entity is a distinct, recognizable thing—a company, product, person, concept, or place—that exists in the model's knowledge representation. Entities have attributes (founding date, headquarters, employee count) and relationships (competitors, partners, customers, categories).</p>
+
+        <p>When you're an established entity, AI can reason about you. It can recognize mentions of your brand even with variations in naming. It can associate you with your category automatically. It can connect you to related entities—customers, partners, competitors—and surface you in response to relevant queries.</p>
+
+        <p>When you're not an established entity, you're dependent on keyword matching. And that's increasingly unreliable as queries become conversational and AI systems synthesize answers rather than returning lists of links.</p>
+
+        <p>Google's Knowledge Graph, Wikidata, and the training data of large language models all maintain entity databases. If you exist in these systems, you're part of the AI's working knowledge. If you don't, you're invisible to the very systems that are increasingly mediating how buyers discover solutions.</p>
+
+        <h2>The Evolution We're Living Through</h2>
+
+        <p>It helps to see the trajectory. From 1998 to about 2010, Google dominated with PageRank and the keyword era was in full swing. SEO meant keywords plus backlinks, and success was measured in SERP position.</p>
+
+        <p>In 2012, Google launched the Knowledge Graph, introducing entity understanding. Search results started showing structured data—not just links, but information panels about recognized things. This was the first signal that keyword matching wasn't enough.</p>
+
+        <p>By 2019, BERT and semantic search changed the game again. Google started understanding natural language queries, not just matching words. Long-tail keywords mattered less; intent mattered more. The question wasn't "what words did they use?" but "what are they trying to accomplish?"</p>
+
+        <p>Then came 2023 and the ChatGPT moment. Conversational AI went mainstream. Users started getting answers, not links. A new discipline emerged—some call it GEO, for Generative Engine Optimization—focused on visibility in AI-generated responses rather than traditional search rankings.</p>
+
+        <p>Now, in 2025 and 2026, we're in the AI-first discovery era. AI Overviews, Perplexity, and conversational search have become primary research tools. Entity presence isn't a nice-to-have. It's mandatory for anyone who wants to be part of the buyer's consideration set.</p>
+
+        <p>The numbers tell the story: AI search traffic has grown 527% year-over-year according to Semrush. That's not a trend. That's a platform shift.</p>
+
+        <h2>Why Keywords Still Matter (But Differently)</h2>
+
+        <p>This isn't about abandoning SEO. Keywords still matter for traditional search—Google processes billions of keyword-based queries daily. They matter for content discovery, because keywords help AI find and index your content initially. And they matter for category association, because using consistent category terms helps establish entity relationships.</p>
+
+        <p>But keywords alone don't create entity recognition. You can rank #1 for "enterprise data management software" and still be invisible in AI responses if you haven't established yourself as a known entity in the systems that power those responses.</p>
+
+        <p>As Google's own 2026 GEO documentation puts it: "Optimizing for generative AI search is optimizing for the search experience, and thus still SEO. But the tactics have evolved. Entity clarity, structured data, and authoritative sources now matter more than keyword density."</p>
+
+        <h2>Building Entity Presence</h2>
+
+        <p>Becoming a recognized entity requires deliberate effort. It starts with establishing entry points: creating entries in Wikidata for your company and products (which feeds Knowledge Graphs), pursuing Wikipedia pages if you meet notability criteria, and adding Organization and Product schema markup to tell AI what you are in machine-readable terms.</p>
+
+        <p>Entity consistency matters enormously. Use the exact same name everywhere—not "Datasphere" sometimes and "SAP Datasphere" others. Maintain consistent descriptions across web properties. Ensure your About page clearly states what you are in ways that machines can parse and understand.</p>
+
+        <p>And you need to build relationship signals. Get mentioned on authoritative sites—analyst reports, press coverage, partner pages. Create customer evidence with named brands. Participate in industry content that defines category relationships. These signals help AI systems understand not just what you are, but where you fit in the landscape.</p>
+
+        <h2>The Marketing Imperative</h2>
+
+        <p>For marketers, this shift has concrete implications. Messaging must be quotable—write statements that work as standalone excerpts, because that's how AI will use them. Positioning must be explicit—don't assume AI will infer your differentiation from context. Evidence must be specific—named customers, real numbers, verifiable claims that establish credibility. And category must be claimed—state what you are, not just what you do.</p>
+
+        <p>The marketers who master this transition will build brands that dominate the new discovery landscape. Those who don't will watch their visibility erode as traditional search gives way to AI-first research—not because their SEO failed, but because they never established themselves as entities that AI knows how to reason about.</p>
+
+        <p>The keyword game isn't over. But the entity game has started, and it's where the next decade of competitive advantage will be won or lost.</p>
+    </article>
+
+    <footer>
+        <p>The Full Stack</p>
+        <p>
+            <a href="/">Essays</a>
+            <a href="/about.html">About</a>
+        </p>
+    </footer>
+</body>
+</html>
