@@ -13,9 +13,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Human Layer | The Full Stack</title>
-    <meta name="description" content="Before agents can act, someone has to architect. What's missing from most enterprise AI stacks isn't technology—it's a function.">
+    <meta name="description" content="On the function that's missing from most agentic AI deployments.">
     <meta property="og:title" content="The Human Layer">
-    <meta property="og:description" content="Before agents can act, someone has to architect. What's missing from most enterprise AI stacks isn't technology—it's a function.">
+    <meta property="og:description" content="On the function that's missing from most agentic AI deployments.">
     <meta property="og:type" content="article">
     <link rel="canonical" href="https://thefullstack.chrisohara.com/articles/human-layer-agentic-ai.html">
     
@@ -24,7 +24,7 @@
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": "The Human Layer",
-      "description": "Before agents can act, someone has to architect. What's missing from most enterprise AI stacks isn't technology—it's a function.",
+      "description": "On the function that's missing from most agentic AI deployments.",
       "author": {
         "@type": "Person",
         "name": "Chris O'Hara",
@@ -153,94 +153,76 @@
             <span class="article-tag">Agentic AI</span>
         </div>
         <h1 class="article-title">The Human Layer</h1>
-        <p class="article-subtitle">Before agents can act, someone has to architect.</p>
+        <p class="article-subtitle">On the function that's missing from most agentic deployments.</p>
     </header>
     
     <article class="article-body">
     
         <div class="series-box">
-            <p>This is a companion piece to <a href="human-premium-ai.html">The Human Premium</a>, which explored what happens when AI amplifies human capability versus dependency. This essay extends that argument into the agentic era.</p>
+            <p>This continues some thoughts from <a href="human-premium-ai.html">The Human Premium</a>, where I wrote about what happens when AI amplifies capability versus dependency.</p>
         </div>
         
-        <p>A survey of 300 enterprise executives landed on my desk last week with a finding that stopped me cold: 88% of leaders said they wish they had invested more in data and content infrastructure <em>before</em> deploying AI agents. Not during. Not alongside. Before.</p>
+        <p>I've been thinking about a number that showed up in a survey last month: 88% of enterprise leaders said they wish they'd invested more in their data and content foundations <em>before</em> deploying AI agents. Not during. Not after. Before.</p>
         
-        <p>That number tells you everything about where we are in the agentic transition. Companies are deploying agents into environments that can't support them. The agents are capable—remarkably so—but they're being asked to operate on foundations of sand. They hallucinate not because the models are bad, but because they have nothing solid to be grounded in. The infrastructure wasn't ready, and now everyone is paying the tax.</p>
+        <p>That's a remarkably specific regret. And I think it points to something that's going to become increasingly obvious over the next year or two—that the limiting factor on agentic AI isn't the models or the orchestration frameworks or any of the things that get discussed at conferences. It's whether the information those agents depend on actually reflects reality.</p>
         
-        <p>What's interesting is that this isn't a technology problem. The platforms exist. The data lakes are built. The APIs are connected. What's missing is something more fundamental: a function that ensures the infrastructure actually serves the agents that depend on it. Someone who owns the question of whether your AI systems are grounded in customer truth or organizational fiction.</p>
+        <p>I keep running into versions of the same problem. A company deploys an agent to help with something—sales prep, customer support, content generation, whatever—and the agent works exactly as designed. It retrieves information from the systems it's connected to. It synthesizes. It produces outputs that look reasonable. And those outputs are wrong in ways that nobody catches until they've already caused damage, because the agent was grounded in data that was stale, incomplete, or just never accurate in the first place.</p>
         
-        <h2>The Architecture Gap</h2>
+        <p>The technology worked. The information didn't.</p>
         
-        <p>I've been developing a framework I call the Agentic Management Platform—a way of thinking about what enterprises actually need to deploy AI agents successfully. The framework has three layers: orchestration (how agents coordinate), grounding (what agents know), and oversight (how humans stay in control). Most companies have invested heavily in the first two. Almost none have invested in the third.</p>
+        <h2>The framework I keep coming back to</h2>
         
-        <p>Orchestration is the layer that gets the most attention. It's the workflow automation, the multi-agent coordination, the handoffs between specialized systems. Vendors love talking about orchestration because it's where the product differentiation happens. And it matters—agents that can't coordinate are agents that create chaos.</p>
+        <p>I've started thinking about agentic deployments in terms of three layers that all have to work together. The first is orchestration—how agents coordinate, hand off tasks, manage workflows. This is where most of the vendor energy goes, and it's genuinely hard engineering. The second is grounding—what agents actually know, how they retrieve information, how they stay connected to sources of truth. This has gotten a lot of attention recently as RAG and knowledge graphs have become standard architecture.</p>
         
-        <p>Grounding is the layer that's finally getting serious investment. This is where retrieval-augmented generation lives, where knowledge graphs connect to large language models, where the question of "what does this agent actually know?" gets answered. The 88% regret statistic is really a grounding problem—companies deployed agents before the grounding layer was ready, and now those agents are confidently wrong about things that matter.</p>
+        <p>The third layer is what I'd call strategic oversight, and it's the one almost nobody has. It's the ongoing function of making sure that what agents know actually reflects what's true about your customers and your business. Not as a one-time data quality project, but as a continuous responsibility that someone owns.</p>
         
-        <p>But oversight is the layer that remains almost entirely unaddressed. And I'm not talking about governance committees or AI ethics boards—those are important, but they're not what I mean. I'm talking about something more operational: the ongoing strategic function that ensures agents remain aligned with customer reality as that reality evolves.</p>
+        <p>When I talk to companies about their agentic deployments, the first two layers are usually in decent shape. They've got the platforms, the integrations, the retrieval pipelines. What's missing is anyone who owns the question of whether the information flowing through those pipelines is actually trustworthy.</p>
+        
+        <h2>Why this falls between chairs</h2>
+        
+        <p>The reason this function doesn't exist is that it doesn't fit cleanly into any existing role.</p>
+        
+        <p>The data team owns data infrastructure, but their focus is typically inward—governance, compliance, pipeline reliability. They're not spending time in customer conversations validating whether the CRM data reflects reality. That's not their job.</p>
+        
+        <p>Sales owns the customer relationship, but they're focused on closing deals. They're not thinking about whether the systems that feed AI agents are capturing the nuances of what's happening in their accounts. They update the CRM when they have to, with whatever level of detail gets them to the next stage.</p>
+        
+        <p>Marketing owns messaging and positioning, but they're thinking about campaigns. They're not considering how their content gets consumed by AI systems that will represent the company in contexts they never anticipated.</p>
+        
+        <p>Product owns the roadmap, but they're thinking about features, not about how product information propagates through AI systems and gets synthesized into customer-facing recommendations that may or may not reflect what the product actually does.</p>
+        
+        <p>Everyone owns a piece of the information that agents depend on. Nobody owns the question of whether it's true.</p>
         
         <div class="pull-quote">
-            <p>"The infrastructure you build today becomes the intelligence your AI agents have tomorrow. The question is whether anyone is accountable for making sure that intelligence reflects truth."</p>
+            <p>"The technology worked. The information didn't."</p>
         </div>
         
-        <h2>What Oversight Actually Means</h2>
+        <h2>What the work actually looks like</h2>
         
-        <p>Let me make this concrete. Imagine you've deployed an agent that helps sales teams prepare for customer conversations. The agent pulls from your CRM, your product documentation, your competitive intelligence repository, and your customer success notes. In theory, it should be able to synthesize everything your company knows about a given account and surface the insights that matter.</p>
+        <p>If this function existed—and I think it will have to exist, eventually—what would the person doing it actually spend their time on?</p>
         
-        <p>In practice, here's what happens. The CRM data is six months stale because the rep who owns the account hasn't updated it since the last QBR. The product documentation describes capabilities that shipped in a version the customer hasn't upgraded to. The competitive intelligence is based on the competitor's positioning from last year, before they pivoted. And the customer success notes are optimistic summaries written for internal consumption, not honest assessments of where the relationship actually stands.</p>
+        <p>Some of it would be what you might call translation work. Spending time with customers and with customer-facing teams, understanding what's actually happening in those relationships, and making sure that understanding gets encoded in ways that AI systems can use. There's an enormous amount of tacit knowledge in any organization—things salespeople know about accounts, things support teams know about common problems, things product people know about how customers actually use features versus how they're supposed to use them. Most of that knowledge never makes it into systems. It lives in people's heads, gets shared in conversations, and never becomes available to AI agents that could use it.</p>
         
-        <p>The agent doesn't know any of this. It synthesizes confidently. It produces a briefing that sounds authoritative. And the sales rep walks into a meeting with a mental model that's divorced from reality—not because the agent failed, but because the grounding layer was full of organizational fiction rather than customer truth.</p>
+        <p>Some of it would be what I'd call auditing. Taking what agents produce, comparing it to what's actually true, and when there's a gap—which there usually is—tracing that gap back to its source. When an agent gives a sales rep a bad briefing, the problem isn't usually the model. It's somewhere in the information supply chain, and someone needs to find it and fix it.</p>
         
-        <p>This is what I mean by oversight. Someone needs to own the question of whether the information agents consume actually reflects reality. Not as a one-time data quality project, but as an ongoing strategic function. Someone who understands the customer well enough to know when the data is lying. Someone who can translate between what the systems say and what's actually true.</p>
+        <p>Some of it would be architecture work. As the business changes—new products, new customer segments, new competitive dynamics—the information structures that ground AI agents have to evolve alongside. This isn't a one-time setup. It's an ongoing responsibility.</p>
         
-        <h2>Why This Falls Between Chairs</h2>
+        <p>And some of it would be governance work. As agents take on more responsibility, someone needs to think carefully about where the boundaries should be. Which decisions should agents make on their own? Which need human review? How do you keep humans in the loop for the moments that actually matter? These are design questions, and they require someone who understands both the customer relationship and the agent capabilities well enough to draw reasonable lines.</p>
         
-        <p>The reason this function doesn't exist in most organizations is that it falls between every existing role.</p>
+        <h2>The CDP connection</h2>
         
-        <p>The Chief Data Officer owns data infrastructure, but their focus is typically inward—data governance, compliance, platform architecture. They're not spending their days thinking about whether the customer intelligence that flows into AI agents reflects the reality of customer relationships. That's not their mandate.</p>
+        <p>I wrote a book about customer data platforms a few years ago, and the central argument was that enterprises needed a unified view of customer data to deliver coherent experiences. That argument hasn't gone away, but the shape of the problem has changed.</p>
         
-        <p>Sales leadership owns the customer relationship, but they're focused on quota attainment and pipeline management. They don't have time to worry about whether the systems that inform AI agents are capturing the nuances of what's actually happening in their accounts. That's someone else's problem.</p>
+        <p>It's not enough to unify the data anymore. The data has to be true. It has to be current. It has to reflect what's actually happening with customers, not the version of events that made it through the filters of CRM update compliance and quarterly business review preparation. And crucially, someone has to be accountable for keeping it true over time.</p>
         
-        <p>Marketing owns messaging and positioning, but they're focused on campaigns and content. They're not thinking about how their messaging documents get consumed by AI systems that will then represent the company to customers in contexts marketing never anticipated.</p>
+        <p>When I wrote <a href="human-premium-ai.html">The Human Premium</a>, the argument was that AI amplifies whatever you bring to it—strong foundations get stronger, weak foundations get exposed. That same logic applies at the organizational level. An AI agent is only as good as the information it's grounded in, and the quality of that information is a function of whether anyone is actually responsible for maintaining it.</p>
         
-        <p>Product owns the roadmap, but they're thinking about features, not about how product information flows through AI systems and gets synthesized into customer-facing recommendations.</p>
+        <h2>Where this is heading</h2>
         
-        <p>Everyone owns a piece. No one owns the whole. And the whole is precisely what agents need to function well.</p>
+        <p>I don't know exactly what this function will be called when companies start creating it. It touches data architecture, customer strategy, AI governance, and organizational design all at once. It requires someone who can move between technical systems and customer relationships, who understands both what the data says and what's actually true.</p>
         
-        <h2>The Customer Data Architecture Problem</h2>
+        <p>What I do know is that the 88% regret number is going to get worse before it gets better. Companies are deploying agents faster than they're fixing the information foundations those agents depend on. The agents will keep working as designed, producing outputs that look authoritative, and the gap between what they say and what's true will keep growing until someone is accountable for closing it.</p>
         
-        <p>When I wrote about customer data platforms several years ago, the central argument was that enterprises needed a unified view of customer data to deliver coherent experiences across channels. That argument has taken on new urgency in the agentic era, but the shape of the problem has changed.</p>
-        
-        <p>It's no longer enough to unify the data. The data has to be true. It has to be current. It has to reflect the actual state of customer relationships, not the sanitized version that makes its way into systems of record. And most importantly, someone has to be accountable for maintaining that truth over time—not as a data quality exercise, but as a strategic function that understands what customers actually need and ensures the AI systems serving them have access to that understanding.</p>
-        
-        <p>This is where the human premium I wrote about previously intersects with the agentic architecture challenge. The humans who will be most valuable in an agentic enterprise aren't the ones who can prompt agents effectively—that skill will commoditize quickly. The valuable humans are the ones who can ensure agents are grounded in truth. Who can look at what an agent produces and know whether it reflects reality. Who can maintain the integrity of the information layer that agents depend on.</p>
-        
-        <div class="pull-quote">
-            <p>"Every AI touchpoint in your customer journey is now a brand risk—and an opportunity. The question is whether anyone owns the quality of intelligence flowing through those touchpoints."</p>
-        </div>
-        
-        <h2>What the Function Looks Like</h2>
-        
-        <p>If I had to describe what this function actually does day-to-day, it would look something like this:</p>
-        
-        <p><strong>Translating customer reality into system truth.</strong> This means spending time with customers and with the teams who serve them, understanding what's actually happening in those relationships, and ensuring that understanding makes its way into the systems that AI agents consume. It's a bridging function—taking tacit knowledge that lives in people's heads and making it explicit in ways that machines can use.</p>
-        
-        <p><strong>Auditing agent outputs against ground truth.</strong> This means regularly testing what agents produce against what's actually true, identifying the gaps, and tracing those gaps back to their source in the information architecture. When an agent gets something wrong, it's usually not a model problem—it's a grounding problem. Someone has to own the diagnosis.</p>
-        
-        <p><strong>Evolving the information architecture as the business evolves.</strong> Customer needs change. Product capabilities change. Competitive dynamics change. The information architecture that grounds AI agents has to evolve alongside these changes, or the agents become increasingly disconnected from reality. This isn't a set-it-and-forget-it infrastructure project. It's an ongoing strategic function.</p>
-        
-        <p><strong>Governing the boundary between human and machine.</strong> As agents take on more customer-facing responsibilities, someone needs to own the question of where the boundaries should be. Which decisions should agents make autonomously? Which should they escalate? How do we ensure that human judgment remains in the loop for the moments that matter? This is a design problem, not a technology problem, and it requires someone who understands both the customer relationship and the agent capabilities deeply enough to draw the lines in the right places.</p>
-        
-        <h2>Why This Matters Now</h2>
-        
-        <p>The reason I'm writing about this now is that the window for getting it right is closing. Companies are deploying agents at scale. Those agents are being grounded—well or poorly—in whatever information architecture exists today. And once agents start making decisions, those decisions compound. Bad grounding leads to bad decisions leads to damaged relationships leads to lost customers—and the feedback loop that would allow the organization to learn and correct is often broken because no one is watching the quality of the information layer.</p>
-        
-        <p>The companies that figure out how to staff this function will have an advantage that compounds over time. Their agents will be grounded in truth. Their customer interactions will be coherent. Their ability to learn and adapt will be intact. And they'll avoid the 88% regret that comes from deploying sophisticated AI systems on foundations that can't support them.</p>
-        
-        <p>The companies that don't will find themselves with agents that are confidently wrong, customers who don't trust AI-mediated interactions, and an ever-widening gap between what their systems say and what's actually true.</p>
-        
-        <p>This is the human layer that the agentic enterprise requires. Not humans who do what agents could do, but humans who ensure agents can do what they need to do. The architecture before the intelligence. The oversight that makes autonomy possible. The function that most organizations haven't created yet, but will need to create soon.</p>
-        
-        <p>The question for every enterprise deploying AI agents is simple: who owns the truth that those agents depend on? If the answer is "no one," that's a problem you can still fix. But the window for fixing it is smaller than most people think.</p>
+        <p>The companies that figure this out will have agents that actually know their customers. The companies that don't will have agents that confidently make things up. The difference won't be in the models they use or the platforms they deploy. It'll be in whether anyone owns the truth.</p>
         
     </article>
 
