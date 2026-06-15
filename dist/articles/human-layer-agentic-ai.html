@@ -162,77 +162,57 @@
             <p>This continues a thread from <a href="human-premium-ai.html">The Human Premium</a>—on what happens when AI amplifies capability versus dependency.</p>
         </div>
         
-        <p>Consider what can happen when an agentic sales assistant does exactly what it's designed to do. It pulls data from the CRM, synthesizes competitive intelligence, generates a briefing document tailored to the account. The rep walks into the meeting prepared. That's the promise.</p>
+        <p>Consider what can happen when an enterprise deploys an agentic sales assistant that does exactly what it's supposed to do. The agent pulls data from the CRM, synthesizes it with competitive intelligence from the knowledge base, generates a briefing document tailored to the account, and delivers it to the rep in time for the meeting. The orchestration is flawless, the retrieval is fast, the output is polished. And yet the briefing might be grounded in CRM data that hasn't been updated since the last QBR six months ago, competitive positioning that describes the market as it existed before a major competitor pivot, and sentiment scores derived from a billing dispute that was resolved in January. The agent performed correctly; the information it was working with didn't reflect what's actually true about the customer.</p>
         
-        <p>But the CRM data might be six months stale—not updated since the last QBR. The competitive intel might describe a positioning the competitor abandoned after their pivot last fall. The sentiment analysis from support tickets might be anchored to a billing dispute that was resolved months ago. The agent performed correctly. The information it was working with didn't reflect reality.</p>
+        <p>This is the failure mode that's emerging as companies scale their agentic deployments, and it points to something that the technology conversation has largely missed. The orchestration layer—how agents coordinate, hand off tasks, manage workflows—is getting enormous investment, and for good reason: it's genuinely hard engineering, and it's where product differentiation happens. The grounding layer—what agents actually know, how they retrieve information, how they connect to sources of truth—is finally getting serious attention now that RAG architectures and knowledge graphs have become standard components of the enterprise AI stack. But there's a third layer that almost nobody has built, and it's the one that determines whether any of this actually works: the ongoing strategic function of ensuring that what agents know reflects what's true.</p>
         
-        <p>This is the failure mode that's emerging as companies scale their agentic deployments. The technology works. The information doesn't.</p>
+        <h2>The Grounding Problem</h2>
         
-        <h2>The 88% number</h2>
+        <p>A recent Contentstack survey of enterprise leaders found that 88% wish they had invested more in data and content foundations before deploying AI agents—not during, not after, but before. That's a remarkably specific regret, and you don't get 88% agreement on anything in enterprise software unless people are describing something they've actually experienced. What they're describing is what might be called the grounding problem: agents deployed into environments where the information architecture can't support them, producing confident outputs that bear no particular relationship to customer reality.</p>
         
-        <p>A recent Contentstack survey of enterprise leaders found that 88% wish they had invested more in data and content foundations <em>before</em> deploying AI agents. Not during. Not after. Before.</p>
-        
-        <p>That's a remarkably specific regret. You don't get 88% agreement on anything in enterprise software unless people are describing something they've actually experienced.</p>
-        
-        <p>The finding points to what might be called the grounding problem. Agents are being deployed into environments that can't support them—not because the orchestration is bad or the models aren't capable, but because the information those agents depend on doesn't reflect customer reality. They produce confident outputs grounded in organizational fiction rather than ground truth.</p>
-        
-        <h2>Three layers</h2>
-        
-        <p>It's useful to think about agentic deployments in terms of three layers that all need to work together.</p>
-        
-        <p>The first is orchestration—how agents coordinate, hand off tasks, manage workflows. This is where vendor energy concentrates, because this is where product differentiation happens. The second is grounding—what agents actually know, how they retrieve information, how they connect to sources of truth. RAG architectures, knowledge graphs, the retrieval stack. Companies are investing here now.</p>
-        
-        <p>The third layer is strategic oversight, and it's the one almost nobody has. It's the ongoing function of making sure that what agents know actually reflects what's true about customers and the business. Not as a one-time data cleanup project—as a continuous responsibility that someone owns.</p>
-        
-        <p>We know the first two layers. They're the ones that appear in the architecture diagrams. The third layer is the one that falls between chairs.</p>
-        
-        <h2>Why the gap exists</h2>
-        
-        <p>The reason this function doesn't exist in most organizations is that it doesn't map to any established role.</p>
-        
-        <p>The data organization owns infrastructure, but their focus tends to be inward—governance, compliance, pipeline reliability. They're not typically spending time in customer conversations validating whether CRM data reflects what's actually happening. That's not their mandate.</p>
-        
-        <p>Sales owns the customer relationship, but they're focused on quota attainment. They update the CRM to the degree that's required, with whatever level of detail gets them to the next stage. The downstream implications for agent grounding aren't visible to them.</p>
-        
-        <p>Marketing owns messaging and positioning, but they're oriented toward campaigns and content production. They're not typically considering how their materials will be consumed by AI systems that synthesize and represent the company in contexts they never anticipated.</p>
-        
-        <p>Product owns the roadmap, but they're thinking about features and releases, not about how product information propagates through agent architectures and gets synthesized into customer-facing recommendations.</p>
-        
-        <p>Everyone owns a piece of the information that agents depend on. Nobody owns the question of whether it's true.</p>
+        <p>The grounding problem is distinct from hallucination in the usual sense. When people talk about LLMs hallucinating, they typically mean the model generating plausible-sounding content that isn't grounded in any source—making things up out of whole cloth. The grounding problem is subtler and in some ways more dangerous: the agent is retrieving real information from real systems, synthesizing it correctly, and producing outputs that are internally consistent—but the underlying information doesn't reflect what's actually happening with customers. The agent isn't hallucinating; it's working with organizational fiction and presenting it as fact.</p>
         
         <div class="pull-quote">
-            <p>"The agent performed correctly. The information it was working with didn't reflect reality."</p>
+            <p>"The agent isn't hallucinating; it's working with organizational fiction and presenting it as fact."</p>
         </div>
         
-        <h2>What the function involves</h2>
+        <h2>Why No One Owns This</h2>
         
-        <p>If this function existed—and there's reason to think it will have to—what would the work actually look like?</p>
+        <p>The reason this function doesn't exist in most organizations is that it doesn't map to any established role, and the work required to do it well falls awkwardly between existing teams.</p>
         
-        <p>Part of it would be translation. Spending time with customers and customer-facing teams, understanding what's actually happening in those relationships, and encoding that understanding in ways that AI systems can use. There's an enormous amount of tacit knowledge in any organization—things salespeople know about accounts, things support teams know about recurring problems, things product people know about how customers actually use features versus how they're supposed to use them. Most of this knowledge never makes it into systems. It lives in people's heads and gets shared in conversations, but never becomes available to agents that could use it.</p>
+        <p>The data organization typically owns infrastructure—governance, compliance, pipeline reliability, the technical plumbing that moves information from system to system—but their focus is generally inward. They're not spending time in customer conversations validating whether what's recorded in the CRM reflects the actual state of the relationship, and they're not usually in a position to know whether the competitive intelligence in the knowledge base still represents how the market actually works. That's not their mandate, and it's not where their expertise lies.</p>
         
-        <p>Part of it would be auditing. Taking what agents produce, comparing it to ground truth, and when there's a gap—which there usually is—tracing that gap back to its source in the information supply chain.</p>
+        <p>Sales owns the customer relationship itself, but they're focused on quota attainment and pipeline progression. They update the CRM to the degree required to move deals through stages, and the downstream implications for how that data might be synthesized by an agent six months later aren't visible to them—nor should they be. Asking salespeople to think about agent grounding while they're trying to close business is asking them to optimize for the wrong thing.</p>
         
-        <p>Part of it would be architecture maintenance. As the business evolves—new products, new customer segments, new competitive dynamics—the information structures that ground agents have to evolve alongside. This isn't a one-time configuration. It's an ongoing requirement.</p>
+        <p>Marketing owns messaging and positioning, but their orientation is toward campaigns, content production, and market communication. The question of how their materials get consumed by AI systems that will synthesize and represent the company in contexts they never anticipated—a customer-facing agent answering questions about capabilities, an internal briefing tool summarizing product strategy—isn't something the typical marketing organization is structured to think about. And product teams own the roadmap, but they're thinking about features and releases, not about how information about those features propagates through agent architectures and gets presented to customers in contexts far removed from the documentation they wrote.</p>
         
-        <p>And part of it would be boundary-setting. As agents take on more customer-facing responsibility, someone needs to determine where the lines should be. Which decisions should agents make autonomously? Which require human review? How do you keep human judgment in the loop for the moments where it matters? These are design questions, and they require someone who understands both the customer relationship and the agent capabilities well enough to make reasonable calls.</p>
+        <p>Everyone owns a piece of the information that agents depend on. Nobody owns the question of whether it's true, whether it's current, or whether it reflects what's actually happening in the market and with customers. The function falls between chairs, and what falls between chairs doesn't get done.</p>
         
-        <h2>The CDP parallel</h2>
+        <h2>What the Work Involves</h2>
         
-        <p>Several years ago I wrote about customer data platforms, and the central argument was that enterprises needed a unified view of customer data to deliver coherent experiences across channels. That argument hasn't gone away—but the shape of the problem has evolved.</p>
+        <p>If this function existed—and there are good reasons to think it will have to—what would the person doing it actually spend their time on?</p>
         
-        <p>Unifying the data is no longer sufficient. The data has to be true. It has to be current. It has to reflect what's actually happening with customers, not the version that made it through the filters of CRM update requirements and quarterly review preparation.</p>
+        <p>Part of the work would be what you might call translation: spending time with customers and with customer-facing teams, understanding what's actually happening in those relationships, and encoding that understanding in ways that AI systems can use. There's an enormous amount of tacit knowledge in any organization—what salespeople know about accounts that never makes it into the CRM, what support teams know about recurring problems that never gets systematized, what product managers know about how customers actually use features versus how they're supposed to use them. Most of this knowledge lives in people's heads, gets shared in hallway conversations and Slack threads, and never becomes available to the agents that could use it. Someone has to bridge that gap, translating human understanding into machine-readable structure.</p>
         
-        <p>In <a href="human-premium-ai.html">The Human Premium</a>, the argument was that AI amplifies whatever you bring to it—strong foundations get stronger, weak foundations get exposed. The same logic applies at the organizational level. An agent is only as good as the information it's grounded in, and the quality of that information depends on whether anyone is accountable for maintaining it.</p>
+        <p>Part of the work would be auditing: taking what agents produce, comparing it systematically to ground truth, and when there's a gap—which there usually is—tracing that gap back to its source in the information supply chain. When an agent gives a rep a misleading briefing, the problem is almost never the model itself. It's somewhere upstream: a field that didn't get updated, a document that wasn't retired when it should have been, a competitive assessment that aged out of accuracy. Someone has to own the diagnosis, figure out where the information went wrong, and fix the root cause rather than just correcting the individual output.</p>
         
-        <h2>Where this points</h2>
+        <p>Part of the work would be architecture maintenance, the unglamorous kind that never appears in conference keynotes. As the business evolves—new products, new customer segments, new competitive dynamics, new ways of talking about what the company does—the information structures that ground agents have to evolve alongside. This isn't a one-time configuration project that can be handed off to IT after the initial deployment. It's an ongoing responsibility, because the gap between what agents know and what's true will widen continuously unless someone is actively managing it.</p>
         
-        <p>It's not yet clear what this function will be called when organizations begin creating it. It touches data architecture, customer strategy, and AI governance simultaneously. It requires someone who can move between technical systems and customer relationships, who understands both what the data says and what's actually true.</p>
+        <p>And part of the work would be boundary-setting: as agents take on more customer-facing responsibility, determining where the lines should be. Which decisions should agents make autonomously? Which require human review? Which questions should agents answer directly, and which should they escalate or defer? These are design questions that require someone who understands both the customer relationship and the agent capabilities well enough to make reasonable calls—and who can revisit those calls as both the technology and the customer context evolve.</p>
         
-        <p>That combination of skills is uncommon. Most people are strong on one side or the other—the technical infrastructure or the customer intuition—but not both.</p>
+        <h2>The CDP Parallel</h2>
         
-        <p>The 88% regret finding suggests that the gap is already being felt. Companies are deploying agents faster than they're addressing the information foundations those agents depend on. The agents will continue to work as designed, producing outputs that appear authoritative, while the gap between what they say and what's true continues to widen.</p>
+        <p>Several years ago I wrote about customer data platforms, and the central argument was that enterprises needed a unified view of customer data to deliver coherent experiences across channels. The problem wasn't that companies lacked data—they had plenty, often too much—but that the data was fragmented across disconnected systems that couldn't talk to each other. Every department had its own version of the customer, and none of them matched.</p>
         
-        <p>The companies that figure out how to staff this function will have agents that actually know their customers. The companies that don't will have agents that produce plausible-sounding outputs with no particular relationship to reality. The difference won't be in the models they deploy or the orchestration frameworks they use. It will be in whether anyone owns the truth.</p>
+        <p>That argument hasn't gone away, but the shape of the problem has evolved. Unifying the data was the challenge of the CDP era; ensuring the data is true is the challenge of the agentic era. It's no longer sufficient to have a single customer profile if that profile is assembled from stale inputs, incomplete records, and organizational assumptions that haven't been validated against reality. Agents will synthesize whatever you give them with perfect confidence, and if what you give them is garbage—no matter how well-unified—what they produce will be garbage too.</p>
+        
+        <p>In <a href="human-premium-ai.html">The Human Premium</a>, I argued that AI amplifies whatever capability you bring to it: if you have strong foundations, AI becomes a genuine thought partner; if your foundations are weak, AI becomes a way to produce plausible-sounding work that you can't actually evaluate. The same logic applies at the organizational level. An agent is only as good as the information it's grounded in, and the quality of that information is a function of whether anyone is actually accountable for maintaining it over time. The companies that figure out how to staff this function will have agents that genuinely understand their customers; the companies that don't will have agents that produce confident outputs with no particular connection to reality.</p>
+        
+        <h2>Where This Points</h2>
+        
+        <p>I don't know yet what this function will be called when organizations start creating it. It sits at the intersection of data architecture, customer strategy, AI governance, and organizational design, and it requires someone who can move fluidly between technical systems and customer relationships—who understands both what the data says and what's actually true, and who can tell the difference. That combination of capabilities is uncommon; most people are strong on one side or the other, the technical plumbing or the customer intuition, but not both.</p>
+        
+        <p>What I do know is that the 88% regret statistic is pointing toward something real. Companies are deploying agents faster than they're addressing the information foundations those agents depend on. The orchestration will keep getting better, the retrieval will keep getting faster, the outputs will keep looking more polished—and the gap between what agents say and what's actually true will keep widening until someone is accountable for closing it. The companies that recognize this early and invest in the human layer their agentic architecture requires will build a compounding advantage. The rest will discover, eventually, that the most sophisticated AI systems in the world can't overcome the fundamental problem of garbage in, garbage out.</p>
         
     </article>
 
