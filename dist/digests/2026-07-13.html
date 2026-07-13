@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — July 13, 2026 | The Full Stack</title>
+    <meta name="description" content="AI Chatbots Own Discovery. Microsoft's Teams AI U-Turn. Google's Spam Update Hammers Thin Content. TikTok Bans AI Voices. Today's AI + enterprise tech news.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-07-13.html">
+    
+    <meta property="og:title" content="Daily Digest — July 13, 2026 | The Full Stack">
+    <meta property="og:description" content="AI chatbots become the front door for discovery. Microsoft gives humans back control. Google hammers automated content.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-07-13.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Monday, July 13, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">AI Chatbots Own Discovery, Microsoft's Teams AI U-Turn, Google Hammers Thin Content</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>AI Chatbots Become the Front Door for Discovery</h2>
+            <p>Similarweb data across thousands of shopping journeys reveals a clean split: people now lean on AI chatbots at the start of their research — when they're figuring out what they want — then shift to traditional search for price comparison. The kicker: visitors who arrive from chatbot recommendations view nearly 2x more pages and stay twice as long. If you're not showing up in those early AI conversations, you're not making the shortlist.</p>
+            <a href="https://www.socialmediatoday.com/news/consumers-trust-ai-for-discovery-but-not-for-finding-deals/824161/" class="source-link" target="_blank">Read on Social Media Today →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>Microsoft Makes Major AI U-Turn on Teams</h2>
+            <p>Following user backlash over aggressive AI feature rollouts — particularly the "Facilitator" meeting monitor — Microsoft is letting Teams organizers turn AI features on or off during live meetings. The typical pattern: tech company floods users with AI features, users revolt, company walks it back. The lesson for enterprise AI: humans should decide where and when to use AI, not have it forced on them.</p>
+            <a href="https://www.techradar.com/pro/microsoft-makes-major-ai-u-turn-following-user-revolt-will-let-teams-users-turn-off-copilot-facilitator-and-recap" class="source-link" target="_blank">Read on TechRadar →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Google's June Spam Update Hit Fast and Hard</h2>
+            <p>Google's June 2026 spam update rolled out in about two days and didn't feel gentle. Thin, spun, or heavily automated content is now a liability, not a shortcut. The silver lining: Google Search Console now shows AI performance data, so you can finally see how your site appears in AI-generated answers. LLMs.txt files won't help or hurt rankings — quality content is what wins.</p>
+            <a href="https://www.seroundtable.com/july-2026-google-webmaster-report-41591.html" class="source-link" target="_blank">Read on Search Engine Roundtable →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>TikTok Bans AI Voices in Shopping Livestreams</h2>
+            <p>TikTok now requires real humans for live commerce — banning AI-generated voices, recorded audio, and radio-style narration from shopping livestreams. Sellers were looping robotic AI narration all day, and viewers checked out. With TikTok Shop projected at $23.4B in US sales this year, the trust stakes are real: consumers are roughly 4x more likely to trust a brand <em>less</em> when they spot AI-generated content.</p>
+            <a href="https://www.socialmediatoday.com/news/tiktok-bans-ai-generated-voices-in-shopping-livestreams/822977/" class="source-link" target="_blank">Read on Social Media Today →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>SMBs "Vibe-Code" Their Way Off Salesforce</h2>
+            <p>A growing trend: small businesses are using AI coding tools to build custom CRMs instead of paying for Salesforce. According to The Information, companies are cutting software costs by 40-80% after replacing Salesforce with vibe-coded applications built on Claude Code. Nearly 59% of Salesforce admins say the CRM is "becoming increasingly complex to work with." For enterprise SaaS, the disruption isn't just coming from AI-native startups — it's coming from customers who can now build their own.</p>
+            <a href="https://www.salesforceben.com/salesforce-smb-customers-switch-to-vibe-coded-crms/" class="source-link" target="_blank">Read on Salesforce Ben →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>The discovery shift is the story.</strong> The Similarweb data on AI chatbots owning the consideration stage is the biggest news today. If buyers are building their shortlists in conversations with ChatGPT and Perplexity before they ever hit Google, traditional SEO becomes table stakes while GEO (Generative Engine Optimization) becomes the differentiator. The question isn't whether to optimize for AI discovery — it's how fast you can get there.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-07-12.html">← July 12, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
