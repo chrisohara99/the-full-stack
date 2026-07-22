@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Intelligence Layer Wars | The Full Stack</title>
+    <meta name="description" content="Why the AMP thesis is playing out faster than expected—and what it means for the book.">
+    <meta property="og:title" content="The Intelligence Layer Wars">
+    <meta property="og:description" content="Why the AMP thesis is playing out faster than expected—and what it means for the book.">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/articles/intelligence-layer-wars.html">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The Intelligence Layer Wars",
+      "description": "Why the AMP thesis is playing out faster than expected—and what it means for the book.",
+      "author": {
+        "@type": "Person",
+        "name": "Chris O'Hara",
+        "url": "https://chrisohara.com"
+      },
+      "datePublished": "2026-07-22",
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Full Stack",
+        "url": "https://thefullstack.chrisohara.com"
+      }
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --accent-hover: #A84920;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 720px;
+            --wide-width: 960px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(253, 251, 247, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { font-family: var(--mono); font-size: 15px; font-weight: 500; letter-spacing: -0.02em; color: var(--text-primary); text-decoration: none; }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { font-size: 14px; font-weight: 400; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header { max-width: var(--max-width); margin: 0 auto; padding: 64px 24px 32px; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-tertiary); text-decoration: none; margin-bottom: 32px; transition: color 0.2s; }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .article-date { font-size: 13px; color: var(--text-tertiary); }
+        .article-tag { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: rgba(192, 86, 38, 0.08); padding: 2px 8px; border-radius: 3px; }
+        .article-title { font-family: var(--serif); font-size: 42px; font-weight: 400; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; }
+        .article-subtitle { font-family: var(--serif); font-size: 20px; font-weight: 300; font-style: italic; color: var(--text-secondary); line-height: 1.5; }
+        
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 80px; font-family: var(--serif); font-size: 18px; line-height: 1.8; }
+        .article-body p { margin-bottom: 24px; color: var(--text-primary); }
+        .article-body strong { font-weight: 600; }
+        .article-body em { font-style: italic; }
+        .article-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(192, 86, 38, 0.3); transition: border-color 0.2s; }
+        .article-body a:hover { border-color: var(--accent); }
+        .article-body h2 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 56px 0 20px; line-height: 1.3; }
+        .article-body h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin: 40px 0 16px; line-height: 1.35; }
+        .article-body ul, .article-body ol { margin: 0 0 24px 24px; }
+        .article-body li { margin-bottom: 8px; }
+        
+        .pull-quote {
+            margin: 48px -20px;
+            padding: 32px 40px;
+            border-left: 3px solid var(--accent);
+            background: linear-gradient(135deg, rgba(192,86,38,0.04), transparent);
+        }
+        .pull-quote p {
+            font-family: var(--serif);
+            font-size: 22px;
+            line-height: 1.45;
+            color: var(--text-primary);
+            margin-bottom: 0;
+            font-style: italic;
+        }
+        
+        .series-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 32px 0;
+        }
+        .series-box p {
+            font-family: var(--sans);
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        .series-box a { color: var(--accent); }
+        
+        .draft-banner {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 16px 24px;
+            margin: 0 0 32px 0;
+        }
+        .draft-banner p {
+            font-family: var(--sans);
+            font-size: 14px;
+            color: #92400e;
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        footer { border-top: 1px solid var(--border-light); padding: 40px 24px; text-align: center; }
+        footer p { font-size: 13px; color: var(--text-tertiary); }
+        footer a { color: var(--text-secondary); text-decoration: none; margin: 0 12px; }
+        footer a:hover { color: var(--accent); }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .article-header { padding: 48px 20px 24px; }
+            .article-title { font-size: 32px; }
+            .pull-quote { margin: 32px 0; padding: 24px; }
+            .pull-quote p { font-size: 19px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Writing</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/" class="back-link">← Back to essays</a>
+        <div class="article-meta">
+            <span class="article-date">July 2026</span>
+            <span class="article-tag">Agentic AI</span>
+            <span class="article-tag">AMP</span>
+        </div>
+        <h1 class="article-title">The Intelligence Layer Wars</h1>
+        <p class="article-subtitle">Why the AMP thesis is playing out faster than expected.</p>
+    </header>
+    
+    <article class="article-body">
+    
+        <div class="draft-banner">
+            <p>📝 DRAFT — For review. Not yet published to the main index.</p>
+        </div>
+        
+        <div class="series-box">
+            <p>This connects to the AMP framework introduced in <a href="/private/introducing-the-amp-solo.html">Introducing the AMP</a>—on the architecture emerging for the agent era.</p>
+        </div>
+        
+        <p>Scott Brinker's Martech for 2026 research landed a few weeks ago with a number that would have seemed impossible three years back: ninety percent of marketing organizations now use AI agents somewhere in their stack. Not experimenting with. Using. And every vendor in the space has converged on the same pitch: describe your campaign in plain language, watch the system build it, launch in minutes instead of days.</p>
+        
+        <p>The pitch is real. The compression is real. And—as <a href="https://dmnews.com/n-marketing-automation-platforms-spent-the-first-half-of-2026-compressing-the-time-from-insight-to-campaign-launch-from-days-to-minutes-and-the-fight-nobody-is-naming-yet-is-over-who-owns-that-layer/">DMNews pointed out</a> in a piece that's been making the rounds—it's already not enough.</p>
+        
+        <p>Here's the line that caught my attention: "Whoever owns the proprietary context—the data, the decision logic, the memory of what actually worked—owns the value. The software wrapper around it is becoming a commodity."</p>
+        
+        <p>I've been saying some version of this for months now, in the context of what Martin Kihn and I have been calling the Agentic Management Platform. But seeing it validated by market observation—not just architectural theory—hits different.</p>
+        
+        <h2>The Speed Race Nobody Wins</h2>
+        
+        <p>Let's be specific about what's happened. Salesforce has Agentforce 360. Adobe has agentic capabilities across Experience Cloud. HubSpot, Braze, Tofu, and a dozen AI-native challengers all sell variations of the same promise: set the goal, and the system assembles the campaign. Gartner says 40% of enterprise applications will embed AI agents by the end of 2026, up from under 5% the year before.</p>
+        
+        <p>And that's when the pitch stops being a differentiator. "Our AI agent launches campaigns fast" became table stakes sometime around Q1. It's the new "free shipping"—necessary, expected, and utterly insufficient as a reason for anyone to choose you over the competitor down the street.</p>
+        
+        <p>The DMNews piece nails the reason: most of these competing platforms are drawing on the same small set of underlying models. OpenAI or Anthropic underneath, different logo on top. The interface varies. The workflow branding varies. The reasoning engine is frequently identical to what your competitor is renting from the same provider.</p>
+        
+        <p>So what's left to compete on?</p>
+        
+        <h2>Layer 2 Is the Battleground</h2>
+        
+        <p>In the AMP framework we've been developing, the architecture stacks up in three layers: Identity and Governance at the foundation, Intelligence in the middle, and Agent Orchestration at the top. The orchestration layer is where agents live—where they reason, decide, and act. It's also, increasingly, where the commodity action happens.</p>
+        
+        <p>The Intelligence Layer is different. That's the unified data fabric, the business semantics, the knowledge graph, the memory of what actually worked. It's where the DMP and the CDP get absorbed into something larger—not disappearing, but becoming components of a richer semantic infrastructure that spans the enterprise.</p>
+        
+        <p>And here's what the DMNews observation confirms: the orchestration layer is converging. Same models, same speeds, same capabilities. The intelligence layer is diverging. The enterprises building proprietary context—first-party data, structured business knowledge, decision logic that's actually theirs—are creating durable advantage. The ones wrapping commodity AI in a branded interface are running a race they've already lost.</p>
+        
+        <div class="pull-quote">
+            <p>The market is validating the architecture faster than I expected.</p>
+        </div>
+        
+        <h2>The Buyer-Side Problem Nobody Priced In</h2>
+        
+        <p>There's a second shift happening that the vendor-side speed race tends to obscure: buyer-side agents.</p>
+        
+        <p>ChatGPT, Perplexity, Claude, Gemini—these are increasingly where prospects research and evaluate brands before any marketing campaign ever reaches them. McKinsey estimates 20-50% of traffic from traditional search channels is at risk. Sixty-three percent of B2B marketing leaders say they recognize this change in buyer behavior. Only 14% say they've actually adapted their strategy to account for it.</p>
+        
+        <p>That gap—between recognizing a structural shift and doing anything about it—is wider than any campaign-launch speed metric captures.</p>
+        
+        <p>A brand can compress its insight-to-launch cycle to nine minutes and still be functionally invisible to the AI agent a buyer consulted before ever encountering that campaign. Because the buyer's agent isn't evaluating your campaign. It's evaluating your data, your structured knowledge, your trustworthiness as a source. And if that infrastructure isn't there—if you've invested everything in orchestration and nothing in intelligence—you're optimizing the wrong layer.</p>
+        
+        <h2>The Three-Layer Validation</h2>
+        
+        <p>What DMNews is describing, in market terms, is exactly what the AMP architecture predicts in structural terms:</p>
+        
+        <p><strong>Layer 1 (Identity & Governance)</strong> is becoming a platform service. You don't compete on authentication anymore. You compete on how well your authority scoping—what agents can do on behalf of which humans—integrates into the broader enterprise.</p>
+        
+        <p><strong>Layer 2 (Intelligence)</strong> is the battleground. First-party data. Business semantics. The knowledge graph that captures not just who your customers are, but what your business actually knows about itself. This is the layer that creates defensible differentiation—because it can't be rented from OpenAI or assembled from acquisitions. It has to be built.</p>
+        
+        <p><strong>Layer 3 (Orchestration)</strong> is becoming infrastructure. Necessary. Table stakes. And increasingly interchangeable. The agents that operate here are only as good as the intelligence layer feeding them. Speed without context is just fast hallucination.</p>
+        
+        <p>The enterprises measuring vendors on launch speed are measuring the part of the stack that's commoditizing. The part that determines whether their brand shows up at all—the intelligence layer—sits mostly unmeasured, one level down, and up for grabs.</p>
+        
+        <h2>What This Means for the Book</h2>
+        
+        <p>When we pitched <em>Agent Driven</em> to Wiley, one of the questions that kept coming up was timing. Are we ahead of the market? Is this architecture theoretical, or is it already playing out?</p>
+        
+        <p>The DMNews piece—and a dozen others like it circulating through my LinkedIn feed this month—suggests we're not ahead. We're exactly on time. The market is discovering the AMP thesis empirically, the same way practitioners discovered the CDP thesis empirically back in 2018-2019: not because someone published a framework, but because the alternative stopped working.</p>
+        
+        <p>The enterprises that built robust intelligence layers are winning agent evaluations. The ones that wrapped commodity AI in branded interfaces are discovering that speed without context doesn't compound. The gap between the two groups is widening, and it's going to widen faster as agentic adoption moves from 90% penetration to 100%.</p>
+        
+        <p>The frameworks in <em>Agent Driven</em>—the AMP architecture, the TIE Fighter evolution, the Three Horizons investment model—aren't predictions anymore. They're descriptions of what's happening right now, written in a language that makes the patterns visible.</p>
+        
+        <p>That's the pitch. That's the timing. And that's why the book matters more this quarter than it did last quarter.</p>
+        
+    </article>
+    
+    <footer>
+        <p>
+            <a href="/">Essays</a>
+            <a href="/about.html">About</a>
+            <a href="https://linkedin.com/in/christopherohara" target="_blank">LinkedIn</a>
+        </p>
+        <p style="margin-top: 12px;">© 2026 Chris O'Hara</p>
+    </footer>
+</body>
+</html>
