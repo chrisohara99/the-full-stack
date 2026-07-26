@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Friday Note #13: The Agent Stack — Chris O'Hara</title>
+    <meta name="description" content="Salesforce put a buying agent on WhatsApp. Google's monetizing AI Mode. The infrastructure for agent-mediated commerce is here—faster than anyone expected.">
+    <meta name="author" content="Chris O'Hara">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/newsletters/issue-013.html">
+    
+    <meta property="og:title" content="The Friday Note #13: The Agent Stack">
+    <meta property="og:description" content="The infrastructure for agent-mediated commerce is here—faster than anyone expected.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/newsletters/issue-013.html">
+    <meta property="og:type" content="article">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "The Agent Stack: Infrastructure for Agent-Mediated Commerce",
+      "description": "Salesforce put a buying agent on WhatsApp. Google's monetizing AI Mode. The infrastructure for agent-mediated commerce is here.",
+      "author": {"@type": "Person", "name": "Chris O'Hara", "url": "https://chrisohara.com"},
+      "datePublished": "2026-08-02",
+      "mainEntityOfPage": "https://thefullstack.chrisohara.com/newsletters/issue-013.html"
+    }
+    </script>
+    
+    <style>
+        :root {
+            --ink: #1a1a2e;
+            --paper: #faf9f7;
+            --accent: #c84b31;
+            --muted: #6b7280;
+            --border: #e5e2dd;
+            --section-bg: #f3f1ed;
+            --link: #2563eb;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Source Sans 3', Georgia, serif;
+            background: linear-gradient(180deg, #e8e6e1 0%, #d5d2cc 100%);
+            color: var(--ink);
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+        .newsletter {
+            max-width: 680px;
+            margin: 0 auto;
+            background: var(--paper);
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 8px 30px rgba(0,0,0,0.12);
+            overflow: hidden;
+        }
+        .header {
+            background: var(--ink);
+            color: #fff;
+            padding: 3rem 2.5rem 2.5rem;
+        }
+        .header-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.4rem;
+            font-weight: 900;
+            line-height: 1.15;
+        }
+        .header h1 span { color: var(--accent); }
+        .header-meta {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 0.5rem;
+        }
+        .section {
+            padding: 2rem 2.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .section:last-of-type { border-bottom: none; }
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        p { margin-bottom: 1rem; font-size: 1.05rem; }
+        a { color: var(--link); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        
+        .intro-note {
+            background: var(--section-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+        }
+        .intro-note p:last-child { margin-bottom: 0; }
+        
+        .stack-layer {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 0.75rem 0;
+        }
+        .stack-layer h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        .stack-layer p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4f8 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border: 1px solid #d1e3f0;
+        }
+        
+        .stat-inline {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--accent);
+        }
+        
+        .news-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .news-item:last-child { border-bottom: none; }
+        .news-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .news-item p {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 0;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--ink) 0%, #2d2d4a 100%);
+            color: white;
+            padding: 2.5rem;
+            text-align: center;
+        }
+        .cta-section h2 { color: white; margin-bottom: 0.75rem; }
+        .cta-section p { color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; }
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: white !important;
+            padding: 0.875rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .footer {
+            background: var(--section-bg);
+            padding: 2rem 2.5rem;
+            text-align: center;
+        }
+        .footer p { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+        
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            .header, .section { padding: 1.5rem; }
+            .header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <article class="newsletter">
+        <header class="header">
+            <div class="header-label">The Friday Note · Issue #13</div>
+            <h1>The Agent <span>Stack</span></h1>
+            <p class="header-meta">August 2, 2026 · Chris O'Hara</p>
+        </header>
+        
+        <section class="section">
+            <div class="intro-note">
+                <p><strong>This week:</strong> Salesforce put a buying agent on WhatsApp. Google's monetizing AI Mode at 29% of commercial queries. The infrastructure for agent-mediated commerce is assembling faster than anyone expected—and it's reshaping what "go-to-market" means.</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-label">📖 The Shift</div>
+            <h2>Commerce Is Moving to Chat</h2>
+            
+            <p>Salesforce dropped their new B2B Commerce suite this week, and the headline feature is an AI buying agent that operates through WhatsApp and SMS. Not a chatbot that answers questions—an agent that actually handles purchasing conversations, from product discovery to order completion.</p>
+            
+            <p>This isn't a concept anymore. It's shipping.</p>
+            
+            <p>The implications are significant. For years, B2B commerce has been stuck in a weird place—too complex for simple e-commerce, too transactional to justify high-touch sales for every order. The AI agent sits in the middle: sophisticated enough to handle nuance, scalable enough to handle volume.</p>
+            
+            <p>And it's happening on messaging apps, not websites. That's the part that should get your attention. The buyer journey is migrating to WhatsApp, SMS, Slack—places where people already spend their time, where the agent can meet them instead of asking them to navigate a portal.</p>
+        </section>
+        
+        <section class="section">
+            <div class="section-label">🏗️ The Stack</div>
+            <h2>What Agent-Mediated Commerce Looks Like</h2>
+            
+            <p>The infrastructure is coming together in layers. Understanding the stack helps you see where the opportunities—and the disruption—are concentrated:</p>
+            
+            <div class="stack-layer">
+                <h4>Layer 1: Conversation Channels</h4>
+                <p>WhatsApp, SMS, Slack, Teams. The surfaces where agents engage buyers. Salesforce, Meta, and Microsoft are all racing to own this layer.</p>
+            </div>
+            
+            <div class="stack-layer">
+                <h4>Layer 2: Agent Intelligence</h4>
+                <p>The models and reasoning engines that power agent decisions. GPT-4, Claude, Gemini—plus the specialized fine-tuning for commerce contexts.</p>
+            </div>
+            
+            <div class="stack-layer">
+                <h4>Layer 3: Commerce Orchestration</h4>
+                <p>Catalog, pricing, inventory, fulfillment. The Salesforce Commerce Cloud, SAP Commerce, Shopify Plus layer that agents need to execute transactions.</p>
+            </div>
+            
+            <div class="stack-layer">
+                <h4>Layer 4: Enterprise Data</h4>
+                <p>Customer history, contract terms, account preferences. The CRM and ERP systems that give agents context about who they're talking to and what they can offer.</p>
+            </div>
+            
+            <p>The companies that win will be the ones who connect all four layers seamlessly. A WhatsApp agent that can check inventory, apply contract pricing, and reference past orders—that's powerful. A WhatsApp agent that can only answer product questions? That's a chatbot.</p>
+        </section>
+        
+        <section class="section">
+            <div class="section-label">💰 The Monetization</div>
+            <h2>Google's Already Selling Ads</h2>
+            
+            <p>While everyone's debating whether AI search will kill advertising, Google's been quietly building the ad infrastructure. The latest data: ads now appear in <span class="stat-inline">29%</span> of commercial AI Mode queries.</p>
+            
+            <p>Think about what that means. Nearly a third of the time someone asks Google's AI about a product or service, they're seeing ads. Not organic results filtered through an AI summary—actual paid placements inside the AI experience.</p>
+            
+            <p>The SEO playbook isn't dead; it's evolving. But the paid search playbook? That's very much alive. The question isn't whether AI search will have ads—it's whether your ads are showing up in the AI context.</p>
+            
+            <div class="highlight-box">
+                <p style="margin-bottom: 0;">The bet that AI would create an "ad-free" discovery experience is looking increasingly naive. The platforms need revenue. The ad infrastructure will follow the attention, wherever that attention moves.</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-label">💡 What This Means for PMM</div>
+            <h2>Three Implications</h2>
+            
+            <h3>1. Channel Strategy Gets Harder</h3>
+            <p>When buying happens on WhatsApp, your website analytics don't capture the journey. When AI agents mediate discovery, your content might influence the outcome without ever showing up in a click stream. Attribution is about to get messier.</p>
+            
+            <h3>2. Content Needs Agent-Readable Structure</h3>
+            <p>AI buying agents don't read the way humans do. They need structured product data, clear pricing logic, explicit feature comparisons. The SEO discipline of the last decade—structured data, schema markup, clean information architecture—becomes even more important.</p>
+            
+            <h3>3. The "Human Touch" Becomes a Positioning Choice</h3>
+            <p>If most competitors go agent-first, the ability to offer human interaction becomes a differentiator, not a liability. For complex, high-value sales, "talk to a person" might be the premium positioning.</p>
+        </section>
+        
+        <section class="section">
+            <div class="section-label">📰 Quick Hits</div>
+            <h2>This Week in AI + Marketing</h2>
+            
+            <div class="news-item">
+                <h4>EU AI Act Article 50 Takes Effect Today</h4>
+                <p>Transparency requirements for AI-generated content are now law in Europe. Disclosure obligations for marketing content start getting enforced.</p>
+            </div>
+            
+            <div class="news-item">
+                <h4>Open-Source Marketing Agent Stack Hits GitHub</h4>
+                <p>Digital Marketing Pro: 158 skills, 25 specialist agents, EU AI Act compliance built in. The agentic marketing toolkit is going open source.</p>
+            </div>
+            
+            <div class="news-item">
+                <h4>Deloitte: Agentic AI in B2B Ecommerce "Still a Long Ways Away"</h4>
+                <p>Despite the hype, Deloitte's assessment is that fully autonomous buying agents are further out than the vendor pitches suggest. Infrastructure is coming; full autonomy is not.</p>
+            </div>
+            
+            <div class="news-item">
+                <h4>Frictionless B2B Buying Closes Deals 31% Faster</h4>
+                <p>Dentsu research: 10-point improvement in buyer experience correlates with 14% uplift in opportunity value. The business case for agent-assisted commerce is becoming quantifiable.</p>
+            </div>
+        </section>
+        
+        <section class="cta-section">
+            <h2>Subscribe to The Friday Note</h2>
+            <p>Weekly insights on AI, marketing technology, and the future of product marketing.</p>
+            <a href="/newsletters/" class="cta-button">View All Issues →</a>
+        </section>
+        
+        <footer class="footer">
+            <p><strong>The Full Stack</strong></p>
+            <p>By <a href="/about.html">Chris O'Hara</a></p>
+            <p style="margin-top: 1rem;"><a href="/">thefullstack.chrisohara.com</a></p>
+        </footer>
+    </article>
+</body>
+</html>

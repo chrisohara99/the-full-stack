@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Friday Note #11: The Demo Stack — Chris O'Hara</title>
+    <meta name="description" content="The demo that won a $12M deal against Snowflake and Databricks—and what it teaches us about product storytelling.">
+    <meta name="author" content="Chris O'Hara">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/newsletters/issue-011.html">
+    
+    <meta property="og:title" content="The Friday Note #11: The Demo Stack">
+    <meta property="og:description" content="The demo that won a $12M deal—and what it teaches us about product storytelling.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/newsletters/issue-011.html">
+    <meta property="og:type" content="article">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "The Demo Stack: Product Storytelling Reimagined",
+      "description": "The demo that won a $12M deal against Snowflake and Databricks—and what it teaches us about product storytelling.",
+      "author": {"@type": "Person", "name": "Chris O'Hara"},
+      "datePublished": "2026-07-13"
+    }
+    </script>
+    
+    <style>
+        :root {
+            --ink: #1a1a2e;
+            --paper: #faf9f7;
+            --accent: #c84b31;
+            --muted: #6b7280;
+            --border: #e5e2dd;
+            --section-bg: #f3f1ed;
+            --link: #2563eb;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Source Sans 3', Georgia, serif;
+            background: linear-gradient(180deg, #e8e6e1 0%, #d5d2cc 100%);
+            color: var(--ink);
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+        .newsletter {
+            max-width: 680px;
+            margin: 0 auto;
+            background: var(--paper);
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 8px 30px rgba(0,0,0,0.12);
+            overflow: hidden;
+        }
+        .header {
+            background: var(--ink);
+            color: #fff;
+            padding: 3rem 2.5rem 2.5rem;
+        }
+        .header-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.4rem;
+            font-weight: 900;
+            line-height: 1.15;
+        }
+        .header h1 span { color: var(--accent); }
+        .header-meta {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 0.5rem;
+        }
+        .section {
+            padding: 2rem 2.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .section:last-of-type { border-bottom: none; }
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        p { margin-bottom: 1rem; font-size: 1.05rem; }
+        a { color: var(--link); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        
+        .quote-box {
+            background: #f8e8e3;
+            padding: 1.25rem;
+            border-left: 3px solid var(--accent);
+            margin: 1.5rem 0;
+        }
+        .quote-box em { font-size: 1rem; line-height: 1.6; }
+        .quote-box .attribution {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-top: 0.5rem;
+        }
+        
+        .maturity-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+        .maturity-table th {
+            background: var(--section-bg);
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .maturity-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .maturity-table tr.highlight {
+            background: #ecfdf5;
+        }
+        .maturity-table .level {
+            font-weight: 600;
+            color: var(--muted);
+        }
+        .maturity-table tr.highlight .level {
+            color: #22c55e;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4f8 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border: 1px solid #d1e3f0;
+        }
+        
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .stat-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .stat-card .number {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .stat-card .label {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--ink) 0%, #2d2d4a 100%);
+            color: white;
+            padding: 2.5rem;
+            text-align: center;
+        }
+        .cta-section h2 { color: white; margin-bottom: 0.75rem; }
+        .cta-section p { color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; }
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: white !important;
+            padding: 0.875rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .footer {
+            background: var(--section-bg);
+            padding: 2rem 2.5rem;
+            text-align: center;
+        }
+        .footer p { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+        
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            .header, .section { padding: 1.5rem; }
+            .header h1 { font-size: 1.8rem; }
+            .stat-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <article class="newsletter">
+        <header class="header">
+            <div class="header-label">The Friday Note · Issue #11</div>
+            <h1>The Demo <span>Stack</span></h1>
+            <p class="header-meta">July 13, 2026 · Chris O'Hara</p>
+        </header>
+        
+        <section class="section">
+            <div class="section-label">📖 The Story</div>
+            <h2>The Demo That Won a $12M Deal</h2>
+            
+            <p>Last year, a team I worked with competed for a $12M deal against Snowflake and Databricks. Scorecards were tied. The decision came down to the executive presentation.</p>
+            
+            <p>Snowflake showed 60 minutes of features. Standard fare.</p>
+            
+            <p>Our team started with the customer's problem. They made the pain vivid. Then they showed how it would work. The actual product demo? Maybe 15 minutes. The rest was story.</p>
+            
+            <div class="quote-box">
+                <em>"It was the only presentation that felt like it was about us. Everyone else was showing their product. You showed our problem."</em>
+                <div class="attribution">— The CIO, afterward</div>
+            </div>
+            
+            <p>We won.</p>
+            
+            <p>That's what the demo stack is about: <strong>not product demonstration, but problem storytelling with product proof.</strong></p>
+        </section>
+        
+        <section class="section">
+            <div class="section-label">📊 Framework</div>
+            <h2>The Demo Maturity Model</h2>
+            
+            <p>Most demos operate at Level 1 or 2. The deals you win operate at Level 3 or 4.</p>
+            
+            <table class="maturity-table">
+                <tr>
+                    <th>Level</th>
+                    <th>Name</th>
+                    <th>The Approach</th>
+                </tr>
+                <tr>
+                    <td class="level">1</td>
+                    <td>Feature Tour</td>
+                    <td><em>"Let me show you what our product does"</em></td>
+                </tr>
+                <tr>
+                    <td class="level">2</td>
+                    <td>Use Case Demo</td>
+                    <td><em>"Let me show you how you'd solve X"</em></td>
+                </tr>
+                <tr class="highlight">
+                    <td class="level">3</td>
+                    <td>Customer Story</td>
+                    <td><em>"Let me show you how [customer] solved Y"</em></td>
+                </tr>
+                <tr class="highlight">
+                    <td class="level">4</td>
+                    <td>Co-Created Discovery</td>
+                    <td><em>"Let's explore your problem together"</em></td>
+                </tr>
+            </table>
+            
+            <div class="highlight-box">
+                <p style="margin-bottom: 0;"><strong>The target:</strong> Most demos should be Level 3-4. Level 1 should be rare. If you're doing more feature tours than customer stories, you're leaving deals on the table.</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-label">🎯 The Shift</div>
+            <h2>What Changes at Each Level</h2>
+            
+            <p><strong>Level 1 → 2:</strong> You stop leading with your product and start leading with their workflow. Still feature-focused, but mapped to use cases.</p>
+            
+            <p><strong>Level 2 → 3:</strong> You introduce social proof. A named customer, a specific outcome, a story arc. The prospect sees themselves in someone else's success.</p>
+            
+            <p><strong>Level 3 → 4:</strong> You give up control. The demo becomes a conversation. You're exploring their problem live, with the product as a thinking tool rather than a presentation prop.</p>
+            
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="number">42%</div>
+                    <div class="label">of B2B buyers now start research in AI tools</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">70%</div>
+                    <div class="label">of the buying journey is complete before first contact</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">$12M</div>
+                    <div class="label">deal won with Level 4 demo approach</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-label">💡 Implications</div>
+            <h2>Why This Matters Now</h2>
+            
+            <p><strong>AI is making Level 1-2 demos obsolete.</strong> Buyers can get feature overviews from ChatGPT. They can watch product tours on YouTube. The informational value of a standard demo is approaching zero.</p>
+            
+            <p><strong>What they can't get from AI:</strong> The story of how a company like theirs solved a problem like theirs. The experience of exploring their specific situation with someone who understands it.</p>
+            
+            <p>The demo stack is shifting from "show and tell" to "strategic conversation." PMMs who help their sales teams make that shift will win more deals.</p>
+        </section>
+        
+        <section class="cta-section">
+            <h2>Subscribe to The Friday Note</h2>
+            <p>Weekly insights on AI, marketing technology, and the future of product marketing.</p>
+            <a href="/newsletters/" class="cta-button">View All Issues →</a>
+        </section>
+        
+        <footer class="footer">
+            <p><strong>The Full Stack</strong></p>
+            <p>By <a href="/about.html">Chris O'Hara</a></p>
+            <p style="margin-top: 1rem;"><a href="/">thefullstack.chrisohara.com</a></p>
+        </footer>
+    </article>
+</body>
+</html>
