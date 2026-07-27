@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — July 27, 2026 | The Full Stack</title>
+    <meta name="description" content="OpenAI Launches Presence for Enterprise Agents, HubSpot Unifies Agent Hub, Microsoft Adds Deep Reasoning, Wall Street Downgrades Adobe/Salesforce. Today's AI + enterprise tech news.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-07-27.html">
+    
+    <meta property="og:title" content="Daily Digest — July 27, 2026 | The Full Stack">
+    <meta property="og:description" content="OpenAI's Presence platform deploys trusted AI agents at enterprise scale. HubSpot unifies AI agents. Microsoft adds deep reasoning to Copilot Studio. Wall Street downgrades Adobe and Salesforce on AI fears.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-07-27.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Monday, July 27, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">OpenAI Launches Presence, HubSpot Unifies Agent Hub, Wall Street Downgrades Adobe and Salesforce</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>OpenAI Launches "Presence" — Enterprise AI Agents Go Production-Ready</h2>
+            <p>OpenAI announced Presence on July 22 — a battle-tested platform for deploying AI agents that handle customer support, sales, billing disputes, insurance claims, and internal IT requests across voice and chat. The key differentiator: agents receive only the knowledge and system access required for specific jobs, with company-defined policies governing what they can do, when they need approval, and when humans take over. Codex proposes behavior updates that teams can test and approve, so agents adapt without rewriting themselves unchecked. OpenAI says Presence already powers its own English-language phone support at 1-888-GPT-0090. This is OpenAI signaling that reliable enterprise deployment — not just model capability — is now the competitive frontier.</p>
+            <a href="https://openai.com/index/introducing-openai-presence/" class="source-link" target="_blank">Read on OpenAI →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>HubSpot Debuts Agent Hub — Single Console for All AI Agents</h2>
+            <p>HubSpot launched Agent Hub and Agent Builder in public beta on July 23, giving go-to-market teams one place to build, monitor, and manage AI agents that share customer context. The release targets a real pain point: fragmented agents operating without coordination — like a sales prospecting agent contacting a customer the same week a service agent handles their open complaint. Agent Hub provides centralized dashboards, natural language building via Breeze Assistant, multi-source triggers from schedules or webhooks, and a unified canvas connecting workflows. Ignite Reading, an early adopter, automated school district calendar parsing — reducing a 15-20 minute task to seconds and saving 350+ hours annually. HubSpot has repositioned itself as an "Agentic Customer Platform" since the Google acquisition collapsed in 2024, with acquisitions of Dashworks, XFunnel, and Warmly reinforcing the strategy.</p>
+            <a href="https://www.cmswire.com/customer-experience/hubspot-debuts-agent-hub-to-unify-ai-agents/" class="source-link" target="_blank">Read on CMSWire →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Microsoft Copilot Studio Adds "Deep Reasoning" for Enterprise Agent Orchestration</h2>
+            <p>In a July fireside chat, Microsoft Principal Copilot Architect Dewain Robinson made it clear: Copilot Studio is becoming an orchestration platform for enterprise AI agents, powered by a new class of reasoning models that evaluate evidence, plan multi-step tasks, and decide which tools to use. Instead of scripting every conversation path, teams define capabilities, guardrails, and knowledge sources — and let the agent coordinate the rest. The update includes a new authoring experience prioritizing natural-language definitions over dialog trees, an orchestration runtime that dynamically sequences topics and tools, and selective use of deep reasoning only for complex tasks. Robinson's key quote: "The real value of Copilot Studio is not its low-code capabilities, but its orchestration engine." For enterprise IT teams, governance and testing become more critical than ever.</p>
+            <a href="https://windowsnews.ai/article/microsoft-copilot-studio-adds-deep-reasoning-to-orchestrate-enterprise-ai-agents.440016" class="source-link" target="_blank">Read on Windows News →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Wall Street Downgrades Adobe and Salesforce on AI Disruption Fears</h2>
+            <p>More Wall Street analysts are recommending selling Adobe and Salesforce stock than at any point in years, according to Bloomberg. The concern: AI is fundamentally reshaping the software landscape, and incumbent players face displacement risk from AI-native competitors. This comes as AI-native CRM platforms show signs of threatening HubSpot and Salesforce's dominance. The downgrades reflect a broader market anxiety about whether traditional enterprise software vendors can adapt fast enough — or whether their moats are being commoditized by AI capabilities that startups can now build faster and cheaper.</p>
+            <a href="https://www.bloomberg.com/news/articles/2026-07-21/adobe-salesforce-downgrades-are-latest-show-of-ai-fears" class="source-link" target="_blank">Read on Bloomberg →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>Forbes AI 50: Anthropic Hits $380B, Claude Beats ChatGPT on App Store</h2>
+            <p>Forbes released its 2026 AI 50 list, and Anthropic leads at a $380 billion valuation after a busy February: Claude Cowork spooked markets (sending SaaS stocks down $285 billion), Claude Opus upended software engineering, and Anthropic publicly feuded with the Pentagon over autonomous weapons safeguards — making CEO Dario Amodei a hero in AI circles. Revenue hit $4.5 billion, and Claude surpassed ChatGPT as the most downloaded App Store app. Other highlights: Gamma (AI presentations) recovered from being called "the worst idea" by investors in 2020 to reach a $2.1 billion valuation with 100 million users. EliseAI handles admin work for 80% of the largest property management firms. The list signals a maturing market where vertical AI applications — not just foundation models — are capturing massive value.</p>
+            <a href="https://www.forbes.com/lists/ai50/" class="source-link" target="_blank">Read on Forbes →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>Read this one:</strong> The OpenAI Presence announcement. This is OpenAI acknowledging that the hard problem isn't building capable agents — it's making them reliable enough for high-value production work where mistakes cost money and trust. The architecture they describe (job-specific access, company-defined policies, human escalation rules, Codex-powered updates with approval gates) is a template for how enterprise AI deployment actually needs to work. When OpenAI uses Presence to run its own customer support line, they're eating their own cooking in a way that matters.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-07-26.html">← July 26, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
