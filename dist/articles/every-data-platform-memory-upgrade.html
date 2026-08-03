@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Every Data Platform Was a Memory Upgrade | The Full Stack</title>
+    <meta name="description" content="The enterprise software industry is in the middle of an agentic land grab. Everyone is arguing about models. I think the model conversation is the wrong conversation.">
+    <meta property="og:title" content="Every Data Platform Was a Memory Upgrade">
+    <meta property="og:description" content="The enterprise software industry is in the middle of an agentic land grab. Everyone is arguing about models. I think the model conversation is the wrong conversation.">
+    <meta property="og:image" content="https://thefullstack.chrisohara.com/images/ibm-650-mainframe.jpg">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/articles/every-data-platform-memory-upgrade.html">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Every Data Platform Was a Memory Upgrade",
+      "description": "The enterprise software industry is in the middle of an agentic land grab. Everyone is arguing about models. I think the model conversation is the wrong conversation.",
+      "author": {
+        "@type": "Person",
+        "name": "Chris O'Hara",
+        "url": "https://chrisohara.com"
+      },
+      "datePublished": "2026-08-03",
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Full Stack",
+        "url": "https://thefullstack.chrisohara.com"
+      }
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --accent-hover: #A84920;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 720px;
+            --wide-width: 960px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); background: var(--bg); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(253, 251, 247, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { font-family: var(--mono); font-size: 15px; font-weight: 500; letter-spacing: -0.02em; color: var(--text-primary); text-decoration: none; }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { font-size: 14px; font-weight: 400; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .hero-image {
+            max-width: var(--wide-width);
+            margin: 0 auto;
+            padding: 32px 24px 0;
+        }
+        .hero-image img {
+            width: 100%;
+            max-height: 480px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .hero-image figcaption {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            margin-top: 12px;
+            font-style: italic;
+        }
+        
+        .article-header { max-width: var(--max-width); margin: 0 auto; padding: 40px 24px 32px; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-tertiary); text-decoration: none; margin-bottom: 32px; transition: color 0.2s; }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .article-date { font-size: 13px; color: var(--text-tertiary); }
+        .article-tag { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: rgba(192, 86, 38, 0.08); padding: 2px 8px; border-radius: 3px; }
+        .article-title { font-family: var(--serif); font-size: 42px; font-weight: 400; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; }
+        .article-subtitle { font-family: var(--serif); font-size: 20px; font-weight: 300; font-style: italic; color: var(--text-secondary); line-height: 1.5; }
+        
+        .article-body { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 80px; font-family: var(--serif); font-size: 18px; line-height: 1.8; }
+        .article-body p { margin-bottom: 24px; color: var(--text-primary); }
+        .article-body strong { font-weight: 600; }
+        .article-body em { font-style: italic; }
+        .article-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(192, 86, 38, 0.3); transition: border-color 0.2s; }
+        .article-body a:hover { border-color: var(--accent); }
+        .article-body h2 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 56px 0 20px; line-height: 1.3; }
+        .article-body h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin: 40px 0 16px; line-height: 1.35; }
+        .article-body ul, .article-body ol { margin: 0 0 24px 24px; }
+        .article-body li { margin-bottom: 8px; }
+        
+        .pull-quote {
+            margin: 48px -20px;
+            padding: 32px 40px;
+            border-left: 3px solid var(--accent);
+            background: linear-gradient(135deg, rgba(192,86,38,0.04), transparent);
+        }
+        .pull-quote p {
+            font-family: var(--serif);
+            font-size: 22px;
+            line-height: 1.45;
+            color: var(--text-primary);
+            margin-bottom: 0;
+            font-style: italic;
+        }
+        
+        .series-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 32px 0;
+        }
+        .series-box p {
+            font-family: var(--sans);
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        .series-box a { color: var(--accent); }
+        
+        footer { border-top: 1px solid var(--border-light); padding: 40px 24px; text-align: center; }
+        footer p { font-size: 13px; color: var(--text-tertiary); }
+        footer a { color: var(--text-secondary); text-decoration: none; margin: 0 12px; }
+        footer a:hover { color: var(--accent); }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .article-header { padding: 32px 20px 24px; }
+            .article-title { font-size: 32px; }
+            .pull-quote { margin: 32px 0; padding: 24px; }
+            .pull-quote p { font-size: 19px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Writing</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <figure class="hero-image">
+        <img src="/images/ibm-650-mainframe.jpg" alt="IBM 650 mainframe computer, circa 1960s">
+        <figcaption>An IBM 650 mainframe, circa 1960s. Father Schmitt ran his 80% response-rate direct mail operation on hardware like this.</figcaption>
+    </figure>
+    
+    <header class="article-header">
+        <div class="article-meta">
+            <span class="article-date">August 2026</span>
+            <span class="article-tag">Enterprise Data</span>
+        </div>
+        <h1 class="article-title">Every Data Platform Was a Memory Upgrade</h1>
+        <p class="article-subtitle">The enterprise software industry is arguing about models. I think the model conversation is the wrong conversation.</p>
+    </header>
+    
+    <article class="article-body">
+    
+        <div class="series-box">
+            <p>This essay draws from <em>Agent Driven</em>, the third book in a trilogy tracking a decade of enterprise data—following <em>Data Driven</em> (2018) and <em>Customer Data Platforms</em> (2020, with Martin Kihn).</p>
+        </div>
+        
+        <p>In 1961, a Catholic priest named Father Aloysius Schmitt ran what may have been the most effective marketing operation in America off an IBM 650 mainframe and a rack of magnetic tape. The Society of the Divine Savior kept 341 characters of data on every donor—name, address, giving history, family connections—and used it to personalize fundraising letters. Their direct mail response rate was 80 percent, and no, that's not a typo.</p>
+        
+        <p>Martin Kihn found Father Schmitt—he dug the story out of the archives while we were writing <em>Customer Data Platforms</em>, with the glee of a man who'd discovered the world's first CDP was running on a vow of poverty—and I've been retelling it ever since, because of what the good Father was actually doing. He wasn't really doing "direct mail" at all—he was building memory, because the Society remembered its donors, who they were and what they'd given and what they cared about, and the remembering was the entire advantage. Every letter that opened with the right name and referenced the right gift was the machine saying, "We know you."</p>
+        
+        <p>Sixty-five years later, the enterprise software industry is in the middle of an agentic land grab, and everyone is arguing about models—which frontier lab is ahead, which benchmark matters, whether the next release will finally deliver agents that work in production—as if the whole thing comes down to who rents the biggest brain.</p>
+        
+        <p>I think the model conversation is the wrong conversation, because what we're actually watching is the third act of a story that's been running since Father Schmitt threaded his first tape, and that story has never been about intelligence—it's been about memory.</p>
+        
+        <h2>The Trilogy Nobody Planned</h2>
+        
+        <p>I wish I could claim I saw any of this coming. Mostly, I've just been writing things down as they happened.</p>
+        
+        <p>I've spent twenty years building and marketing enterprise data products, and along the way I've ended up with a book about each era—less prophecy than stenography. <em>Data Driven</em> (2018) was about the DMP—the data management platform, the machine that captured behavioral signals from the open web and turned anonymous cookies into targetable audiences. <em>Customer Data Platforms</em> (2020, with Martin Kihn) was about the CDP—the system that unified known and unknown data into the golden record, the single, resolved profile of a real human being. The third book, <em>Agent Driven</em>, is in manuscript now, and it's about what comes next.</p>
+        
+        <p>It took me an embarrassingly long time to notice the thread running through all three. But line them up and it's hard to miss: every one of these platforms was a memory upgrade.</p>
+        
+        <p>The DMP let a brand remember an anonymous visitor. In <em>Data Driven</em>, we told the story of a car shopper we called K123—his Krux identifier in the platform. Through K123 we knew a middle-aged Connecticut dad was in-market for a minivan, even though we never knew his name. That was the miracle of the era: the machine could remember someone it had never met. The memory was shallow—cookies decay, devices fragment, a person looked like "four hundred different people" across their browsers and screens—but it was memory, and it was worth billions.</p>
+        
+        <p>The CDP deepened the memory. Its "golden record" stitched K123 to his email address, his purchase history, his loyalty number, his four-point-six devices. Now the brand didn't just remember an audience but a customer—Joe, with a name and a garage and a two-year-old minivan he kept getting retargeted for after he bought it. That was why Salesforce was willing to pay so much for Krux. (The retargeting-after-purchase problem, incidentally, was a memory failure too. The system remembered Joe wanted a minivan and forgot he got one.)</p>
+        
+        <p>I lived that second era from the inside. After Salesforce acquired Krux, I ran product marketing for the data and identity portfolio, and over the course of the CDP rollout, I sat in something like 500 enterprise CMO meetings. Different industries, different logos, same conversation once you get past the slide deck: what can we remember about our customer, and why do we keep forgetting it? Along the way, we acquired other tools: Evergage, to work like a CDO in the absence of memory (real-time interaction) and Datorama (to remember what marketing tactics worked). The CDP was the ultimate acknowledgment that institutional memory was the sustainable advantage in the CX game.</p>
+        
+        <div class="pull-quote">
+            <p>"Each generation of infrastructure did one job: it remembered more, more accurately, for longer, across more systems."</p>
+        </div>
+        
+        <p>Each generation of infrastructure did one job: it remembered more, more accurately, for longer, across more systems. The vocabulary changed—segments, profiles, identity graphs, golden records—but strip the branding away, and you're looking at the same machine Father Schmitt was running, six orders of magnitude faster. Data in, enrichment, data out.</p>
+        
+        <p>Then the agents arrived, carrying no memory at all.</p>
+        
+        <h2>The Amnesiac Genius</h2>
+        
+        <p>Large language models are the strangest hires the enterprise has ever made. They can reason through a supply chain problem, draft the board memo, and negotiate a contract—and then you close the session and they forget you exist. Every conversation starts from zero. The most capable intelligence we've ever put into software has the episodic memory of a mayfly.</p>
+        
+        <p>This is not a bug that a bigger model fixes—statelessness is structural, which means the binding constraint on agents in production isn't reasoning—it's remembering. An agent that can't recall what it decided yesterday, what the customer prefers, or what the last three attempts looked like is a very articulate goldfish.</p>
+        
+        <p>The platform vendors have figured this out, even if the discourse hasn't. Ali Ghodsi stood on the Databricks keynote stage this year and told the room that AI doesn't have an intelligence problem—it has a context problem. Sridhar Ramaswamy is repositioning all of Snowflake around the same idea, arguing that the center of gravity in enterprise data is shifting from storage to context. CJ Desai at MongoDB says the hard part of running agents in production is the data layer underneath them, not the model. And Martin watched the same conviction take hold from inside Salesforce, where Data Cloud started life as a marketing CDP and became the memory that Agentforce runs on.</p>
+        
+        <p>Four companies, four vocabularies—context, grounding, the data layer, the customer 360—and one thesis. None of them says "memory," exactly, which tells you the category hasn't finished naming itself. But they're all describing the same wall we spent two decades hitting from the martech side: whoever holds the memory holds the agent.</p>
+        
+        <p>In <em>Agent Driven</em>, I put it this way: a DMP knew your audience. A CDP knew your customer. An AMP—the Agentic Management Platform—knows your enterprise.</p>
+        
+        <p>That progression sounds like marketing until you sit with what "knows your enterprise" requires. The customer's agent that queries your product catalog doesn't respect your org chart. It needs inventory truth from operations, pricing from finance, availability from supply chain, and history from commerce—all resolved against a single identity, all served in milliseconds. Your own agents need the same thing pointed inward. In the book we describe a fictional outdoor-goods company whose campaign agent keeps brilliantly optimizing media spend for a hero tent—while, three systems away, the supply chain agent already knows the tent is backordered for eight weeks. Every dashboard is green while every dollar is wasted, and nobody would call the marketing agent dumb—it just has no memory of anything outside its silo.</p>
+        
+        <div class="pull-quote">
+            <p>"The silo problem didn't go away in the agentic era. It got a much faster victim."</p>
+        </div>
+        
+        <p>That failure mode should feel familiar. It's Joe getting minivan ads for the car he already bought—except now it happens at machine speed, with machine budgets, across every function of the business. The silo problem didn't go away in the agentic era. It got a much faster victim.</p>
+        
+        <h2>Where the Moat Actually Is</h2>
+        
+        <p>So if memory is the game, winning doesn't look like model access—everyone has the same frontier models, more or less, at prices that keep falling, and renting intelligence turns out to be the easy part. What's hard, what's always been hard since the magnetic tape days, is the unglamorous substrate underneath: resolved identity, governed access, real-time freshness, and the accumulated interaction history that no competitor can copy.</p>
+        
+        <p>Look at what an agent actually has to remember to be useful: short-term working memory within a task, long-term memory across sessions—the preferences declared, the decisions made, the options rejected—plus retrieval that can surface the right context at the right moment, because memory you can't find is memory you don't have, and all of it under governance, because an agent with perfect recall and no consent boundaries is a lawsuit with an API.</p>
+        
+        <p>That list isn't a model specification—it's a database spec. The document model turns out to fit agent memory unusually well—agent context is messy, nested, and constantly evolving, which is precisely what rigid schemas hate—and vector retrieval bolted into the same platform means the agent's recall and the agent's records live in one place instead of five stitched-together systems hoping to stay in sync. The vendors who saw this early are now selling "persistent memory for agents" as a product category. Give it two years, and it'll have its own Gartner Magic Quadrant. (It's also one of the only categories where the analysts and the engineers agree on what it is, but let's not quibble.)</p>
+        
+        <p>If you're allocating budget right now, one asymmetry matters more than the rest: memory compounds and models don't. Whatever model you're using will be obsolete in eighteen months, and switching costs approach zero. But the interaction history your agents accumulate—every query, every selection, every rejection, every negotiated term—is proprietary, cumulative, and impossible to buy. In <em>Agent Driven</em>, we call this the agent-era flywheel: better memory produces better responses, better responses win more interactions, more interactions generate more memory. The brands that spin it earliest compound an advantage the late movers can't close with a bigger model, because the bigger model is available to everyone.</p>
+        
+        <p>The DMP era taught the same lesson, painfully. Companies that treated the platform as a media tool got media results, while the companies that treated it as a memory asset—Kellogg's finding $25 million (thanks to an amazing man called "JSD") in wasted frequency because it could finally remember who'd already seen the ad—built advantages that survived the platform itself. The DMPs died, but the memory discipline didn't—it dissolved into the CDP, which is now dissolving into the data fabric, which is where the agents live.</p>
+        
+        <h2>What I'd Tell the CFO</h2>
+        
+        <p>Back in 2015, when I was at Krux, Mike Cunningham, Keurig's chief digital officer, sat across the table and asked us whether a five-dollar data chip in every coffee maker was worth it—a chip that would let Keurig remember that Dad drinks dark roast Sumatra at 6am and Mom takes French Hazelnut at 7:30. In 2015 that was a bold question about data collection.</p>
+        
+        <p>Ask it again in 2026, and it answers itself, inverted. The household's agent already remembers all of it—because the family told it, directly, in a way they'd never tell Keurig. The scarce resource is no longer the brand's memory of the customer, but whether the brand's own systems can remember enough, fast enough, and coherently enough to justify the agent's four-second evaluation.</p>
+        
+        <p>So when the CFO asks why the memory layer deserves investment while everyone else is buying model access, the answer isn't a technology argument. It's Father Schmitt's argument. The six operations he ran in 1961—data in, storage, processing, activation, engagement, measurement—are the same five capabilities we map for the AMP: ingest, understand, decide, serve, learn. The throughput changed by six orders of magnitude. The logic didn't change at all.</p>
+        
+        <div class="pull-quote">
+            <p>"Technology changes, and the job doesn't: remember the customer, remember the enterprise, serve them both from what you remember, and learn from every interaction. The models will come and go. The memory is the business."</p>
+        </div>
+        
+        <p>Technology changes, and the job doesn't: remember the customer, remember the enterprise, serve them both from what you remember, and learn from every interaction. The models will come and go. The memory is the business.</p>
+        
+    </article>
+
+    <footer>
+        <p>The Full Stack</p>
+        <p>
+            <a href="/">Essays</a>
+            <a href="/about.html">About</a>
+        </p>
+    </footer>
+</body>
+</html>
