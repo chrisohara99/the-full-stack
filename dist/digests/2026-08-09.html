@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — August 9, 2026 | The Full Stack</title>
+    <meta name="description" content="Google DeepMind Restructures for AGI. CTM Closes ChatGPT Attribution Gap. HubSpot's Prospecting Agent Goes End-to-End. Today's AI + enterprise tech news.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-08-09.html">
+    
+    <meta property="og:title" content="Daily Digest — August 9, 2026 | The Full Stack">
+    <meta property="og:description" content="Demis Hassabis steps up to Chief Scientist. CTM brings attribution to ChatGPT ads. HubSpot agents source contacts automatically.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-08-09.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Sunday, August 9, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">Google DeepMind Restructures for AGI, CTM Closes ChatGPT Attribution Gap, HubSpot Agents Go Autonomous</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Google DeepMind Restructures for AGI Push</h2>
+            <p>Sundar Pichai announced major leadership changes at Google DeepMind. Demis Hassabis becomes Chair of GDM and Chief Scientist of Alphabet — a strategic role focused on shaping the future of AGI. Koray Kavukcuoglu steps up as SVP of Google DeepMind, overseeing Gemini development and the 950M+ user Gemini app. Perhaps most surprising: Jeff Dean and Sanjay Ghemawat are leaving after 27 years to launch an independent public benefit corporation for ML research. When Google's legendary infrastructure architects depart to start something new, it signals how fundamentally the AI landscape is shifting.</p>
+            <a href="https://blog.google/company-news/inside-google/message-ceo/next-chapter-ai-momentum/" class="source-link" target="_blank">Read on Google Blog →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>CTM Closes the ChatGPT Attribution Gap</h2>
+            <p>CTM announced the first native integration with OpenAI Ads, giving marketers call attribution parity for ChatGPT campaigns. Leads originating from ChatGPT are now captured and attributed alongside Google, Meta, and Microsoft data — with conversion events automatically syncing back to OpenAI for optimization. As AI-powered ad channels scale, the attribution infrastructure has to follow. CTM just folded ChatGPT into the same closed-loop framework as every other major channel.</p>
+            <a href="https://www.marketscale.com/industries/marketing-tech/ctms-native-openai-ads-integration-gives-call-attribution-parity-to-chatgpt-campaigns-for-the-first-time" class="source-link" target="_blank">Read on MarketScale →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>HubSpot's Prospecting Agent Goes End-to-End</h2>
+            <p>HubSpot's reimagined Prospecting Agent now identifies in-market companies based on buying signals — growth, hiring, funding, intent — then automatically sources contacts via integrations with ZoomInfo, Apollo, and Surfe. It drafts personalized multichannel outreach and enrolls contacts without manual research. The shift: sales development is becoming something AI does continuously in the background, not something reps do between meetings. HubSpot also shipped multi-team support and a Data Model Health check for admins catching messy properties before they become bigger problems.</p>
+            <a href="https://blog.orangemarketing.com/hubspot-updates-monday-recap-august-3-2026" class="source-link" target="_blank">Read on Orange Marketing →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Google Cloud Gains Ground, AWS Slips</h2>
+            <p>Q2 2026 cloud market data shows momentum shifting. AWS retained 28% global market share — down 2 percentage points from last year. Microsoft held steady at 24%. Google Cloud climbed to 15%, reflecting strong demand for AI workloads and Gemini integration. The infrastructure wars are increasingly AI capability wars, and the hyperscalers with the best model-to-platform story are winning.</p>
+            <a href="https://itvarnews.techplusmedia.com/2026/08/08/google-cloud-gains-momentum-in-q2-2026-as-aws-cedes-market-share/" class="source-link" target="_blank">Read on IT VAR News →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>AI Search Now Appears in 43% of Google Queries</h2>
+            <p>Research from TechCrunch shows Google's AI Overviews now appear in approximately 43% of searches — up dramatically from mid-2025. The gateway to online discovery is expanding beyond traditional search results. Brands are no longer just competing for clicks; they're competing for inclusion in AI-generated answers. The practical implication: visibility depends less on rankings and more on being the information AI decides to surface. The customer journey is getting shorter, and the stakes are getting higher.</p>
+            <a href="https://dgmnews.com/how-ai-is-changing-digital-marketing-and-social-media-strategy-for-us-businesses-in-2026/" class="source-link" target="_blank">Read on DGM News →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>The DeepMind restructure is the big story.</strong> When Demis Hassabis says "we've arrived at a pivotal moment in human history" and steps into a strategic AGI-shaping role, pay attention. When Jeff Dean — one of the most important engineers in Google's history — leaves to start something new, that's a signal about where the real action is moving. Meanwhile, HubSpot's autonomous prospecting agent and CTM's ChatGPT attribution show how quickly the infrastructure is catching up to AI capabilities. The 43% AI Overviews stat is the sleeper: discovery is being rewritten in real-time.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-08-08.html">← August 8, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
