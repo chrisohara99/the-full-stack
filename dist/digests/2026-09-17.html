@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — September 17, 2026 | The Full Stack</title>
+    <meta name="description" content="Profound raises $180M for AI search marketing. Bazaarvoice: 65% of shoppers click known brands over AI picks. Salesforce unveils AIforce at Dreamforce. Data governance lags AI adoption by 30 points.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-09-17.html">
+    
+    <meta property="og:title" content="Daily Digest — September 17, 2026 | The Full Stack">
+    <meta property="og:description" content="Profound raises $180M for AI search marketing. Bazaarvoice: brand trust beats AI recommendations. Dreamforce ships AIforce. Governance gap widens.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-09-17.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Thursday, September 17, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">Profound Raises $180M at $1.8B, Bazaarvoice: Brand Trust Beats AI Picks, Salesforce Ships AIforce at Dreamforce</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Profound Raises $180M Series D at $1.8B Valuation — GEO Meets Execution</h2>
+            <p>Profound, the AI search and marketing platform, closed a $180 million Series D at a $1.8 billion valuation, co-led by Sequoia Capital and Kleiner Perkins. The round closed less than seven months after a $96 million Series C. Profound now serves more than 1,000 enterprise brands, including over one-third of the Fortune 100. The product has evolved from measurement into execution: AI Marketer deploys sub-agents that refresh stale content, find earned media openings, and launch ads autonomously. Ads Studio builds AI search campaigns across OpenAI, Google, and Meta ad managers. The business model crystallizes: the vendor that reports where your GEO program comes up short now also sells the media that fills the hole. Read its dashboards with that conflict in mind.</p>
+            <a href="https://agilebrandguide.com/yesterdays-martech-ai-cx-news-september-16-2026/" class="source-link" target="_blank">Read on Agile Brand Guide →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>Bazaarvoice: 65% of Shoppers Click Known Brands Over AI Recommendations</h2>
+            <p>Bazaarvoice published research that deflates some GEO hype. When an AI tool presented several options to more than 3,600 US and EMEA shoppers, 65% clicked the brand they already knew, 24% clicked the product the AI labeled its top match, and just 11% clicked the cheapest option. Even more striking: 94% of respondents do outside research after receiving an AI recommendation, with one-third spending more than an hour verifying. And 76% require customer photos or videos and 75% require written reviews before buying an unfamiliar AI-recommended product. The implications for challenger brands: AI visibility buys you a shortlist spot, but if your product page has 12 reviews and no photos, you bought a bounce, not a conversion.</p>
+            <a href="https://agilebrandguide.com/yesterdays-martech-ai-cx-news-september-16-2026/" class="source-link" target="_blank">Read on Agile Brand Guide →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Dreamforce 2026: Salesforce Ships AIforce, Partners with Google Cloud and Nvidia</h2>
+            <p>Salesforce unveiled AIforce at Dreamforce, describing it as "a live interface layer that brings the data, workflows, and business logic inside Salesforce to agents anywhere." The pitch: workers who have never opened Salesforce's UI can now interact with CRM context through agents. Separately, Salesforce and Google Cloud announced an expanded partnership to "eliminate the friction of fragmented enterprise systems" by unifying data, agents, and applications across both platforms. Nvidia and Salesforce also revealed a new reasoning model for Agentforce built on Nvidia's open-weight Nemotron models. Marc Benioff's framing: "We built the Agentic Enterprise, and now we're scaling it." The Slack keynote today positions Slackbot as the front door to that agentic layer.</p>
+            <a href="https://www.salesforceben.com/salesforce-launches-aiforce-at-dreamforce-26-ai-replaces-the-ui/" class="source-link" target="_blank">Read on Salesforce Ben →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>The Governance Gap: AI Adoption at 75-83%, But Compliance Stuck at 50%</h2>
+            <p>The 2026 State of Martech report from Scott Brinker and Frans Riemersma contains a stat that should alarm every marketing leader: AI tool adoption for execution now sits between 75 and 83 percent, but the governance capabilities feeding those tools lag far behind — data compliance at 50 percent, lineage and cataloging at 49 percent, and consent management at 47 percent. As The Experimental Marketer puts it: "Marketing organizations bolted intelligence onto data they never took responsibility for." AI made that gap expensive because it removes the human who used to catch the error. A campaign manager looking at a bad list would notice. A model will act on it, at scale, with confidence.</p>
+            <a href="https://theexperimentalmarketer.substack.com/p/marketer-customer-data-governance" class="source-link" target="_blank">Read on The Experimental Marketer →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>Agentic Media Buying Ships — And Nobody's Checking the Outputs</h2>
+            <p>MarTech Series published a sharp piece on agentic media buying: autonomous systems are already executing real-time bidding decisions, shifting budget allocations mid-flight, and adjusting campaign parameters with little to no human sign-off at each step. The failure mode rarely shows up in the demo — it shows up weeks later, once a system has been running unattended long enough that nobody is checking its outputs against original intent. Agentic planners come with configurable controls (sentiment thresholds, topic priorities, market refinements), but teams treat these as one-time setup instead of ongoing checkpoints. The system keeps operating exactly as configured, even after the conditions it was configured for have changed. The advice: build recurring review cadences, not launch checklists.</p>
+            <a href="https://martechseries.com/mts-insights/guest-authors/agentic-ai-is-no-longer-the-future-its-now-navigating-the-shift-toward-agentic-media-buying/" class="source-link" target="_blank">Read on MarTech Series →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>The Bazaarvoice data is the story.</strong> All the GEO/AEO investment, all the frantic positioning to appear in AI answers, and 65% of shoppers still click the brand they already know. Brand building isn't dead — it's the moat that makes AI recommendations actually convert. The Profound funding and AIforce launch both assume AI visibility drives revenue, but Bazaarvoice suggests the funnel breaks at conversion without trust signals (reviews, photos, recognition). Meanwhile, the governance gap is becoming structural: we're running AI on data infrastructure we never owned. That 30-point delta between adoption and compliance isn't a metrics problem — it's a liability waiting to compound. The agentic media buying piece lands the real concern: speed only holds value if the underlying decisions remain sound, and nobody's checking.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-09-16.html">← September 16, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
