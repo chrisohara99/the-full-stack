@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — September 23, 2026 | The Full Stack</title>
+    <meta name="description" content="Claude Opus 5.5 matches Fable at 40% lower cost. 78% of B2B websites fail AI search readiness. Apple ships $20K Macs for enterprise AI. Optimizely launches Virtual Teammates.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-09-23.html">
+    
+    <meta property="og:title" content="Daily Digest — September 23, 2026 | The Full Stack">
+    <meta property="og:description" content="Claude Opus 5.5 matches Fable at 40% lower cost. 78% of B2B websites fail AI search readiness. Apple ships $20K Macs for local enterprise AI.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-09-23.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Wednesday, September 23, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">Claude Opus 5.5 Matches Fable at 40% Lower Cost, 78% of B2B Websites Fail AI Search Readiness</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Claude Opus 5.5 Launches — Fable Performance at 40% Lower Cost</h2>
+            <p>Anthropic released Claude Opus 5.5 yesterday, the first model in a new Claude 5.5 family that delivers Fable 5.1-level performance at dramatically reduced costs. The model runs 30% faster and costs 40% less per task than Opus 5 — priced at $4 per million input tokens and $20 per million output tokens, 20% below its predecessor. But the strategic story runs deeper: Opus 5.5 launches with "preserved thinking," the anti-distillation safeguard Anthropic introduced with Fable 5.1 to prevent competitors from extracting its capabilities. Anthropic also disclosed that Claude now leads 26% of the research work that builds its own successor, a remarkable milestone in AI systems contributing to their own development. The release comes days after CEO Dario Amodei called for industry restraint, and as the Big Three (OpenAI, Anthropic, Google DeepMind) work on a FINRA-style self-regulatory safety body. For enterprise buyers, the equation is clear: flagship-tier reasoning is now commodity-priced. The question is whether your workflows are ready to absorb that capacity.</p>
+            <a href="https://www.anthropic.com/claude-opus-5-5" class="source-link" target="_blank">Read on Anthropic →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>78% of B2B Websites Fail AI Search Readiness — Most Brands Are Invisible to Agents</h2>
+            <p>DigiPuush published its AI Search Readiness Benchmark 2026, scoring 50 Google-visible B2B websites across 15 dimensions. The results should alarm every product marketer: 39 of 50 sites (78%) scored "Weak" or "Very Weak," with an average score of 37.9 out of 100 and a median of 40.9. The benchmark measures how well content is structured for AI discovery, extraction, authority signals, and citation readiness — the factors that determine whether ChatGPT, Gemini, Perplexity, or Claude can accurately describe your company in response to buyer prompts. The key insight: traditional search visibility and AI-search readiness require separate evaluation and separate optimization. Your site may rank well in blue links while remaining effectively invisible to conversational answer engines. With 41% of B2B buyers now opening an AI tool first and then confirming what it told them using traditional search, the brands that fail AI readiness aren't just missing a channel — they're missing the first impression.</p>
+            <a href="https://martechseries.com/predictive-ai/ai-platforms-machine-learning/digipuush-study-finds-78-of-b2b-websites-show-weak-ai-search-readiness/" class="source-link" target="_blank">Read on MarTech Series →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Apple Ships $20K Macs for Enterprise AI — Local Hardware Challenges Cloud Economics</h2>
+            <p>Apple's upgraded Mac Mini and Mac Studio desktops began shipping yesterday, with the company pitching corporate buyers on local AI hardware that avoids costly data center fees and per-token cloud charges. The high-end configurations can cost nearly $20,000 and handle local AI processing, putting Apple in direct competition with Nvidia and Microsoft's upcoming AI hardware offerings. Some organizations have already assembled custom racks containing multiple Mac Studio systems for local inference — effectively user-built clusters from professional desktop hardware. Apple is also reportedly preparing a dedicated AI server line built around its future M8 Ultra silicon, signaling a rare return to the data center market by 2029. The strategic play is clear: as enterprises run more AI workloads, the per-token economics of cloud processing become increasingly painful. Apple is betting that many enterprises will prefer predictable capital expenditure over variable operational costs — especially for workloads involving sensitive data that shouldn't leave the premises.</p>
+            <a href="https://finance.yahoo.com/technology/ai/articles/apple-gains-20-000-macs-155304936.html" class="source-link" target="_blank">Read on Yahoo Finance →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Optimizely Launches Virtual Teammates — AI Coworkers That Occupy Marketing Roles</h2>
+            <p>Optimizely announced Virtual Teammates at its 2026 Opticon conference, introducing AI personas that occupy defined marketing roles inside its Opal platform. These aren't chatbots or copilots — they're specialist AI roles like "SEO & AI Search Analyst" and "Personalization Strategist" that operate on recurring schedules without repeated prompting, while humans stay in control of approval workflows. The shift represents the next evolution beyond AI assistants: from tools you prompt to teammates you assign. MarTech framed the announcement as a template for "building a marketing team with AI coworkers" — and the paradigm shift it represents matters for every marketing leader planning 2027 headcount. When AI can occupy defined roles with ongoing responsibilities rather than just responding to discrete requests, the question stops being "which tasks should we automate?" and becomes "which roles require human judgment, and which can be delegated to AI teammates?" The pricing also shifted: AI moved from a seat to a meter.</p>
+            <a href="https://martech.org/how-to-build-a-marketing-team-with-ai-coworkers/" class="source-link" target="_blank">Read on MarTech →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>Meta Ad Prices Up 12% YoY — Flat Budgets Now Buy 10.7% Fewer Impressions</h2>
+            <p>True North Social reported that Meta's average price per ad rose 12% year over year in both Q1 and Q2 2026, which means a flat Meta budget buys roughly 10.7% fewer impressions than it did a year earlier. The arithmetic is simple but the implication is stark: if your Meta budget held steady while prices rose 12%, you're serving 1.3 million fewer impressions per $150,000 monthly spend. A retailer paying $12 CPM in mid-2025 now pays $13.44 CPM for the same placement. If your reported ROAS held steady across that year, your team raised conversions per impression by about 12% to absorb the price increase — and that efficiency gain deserves recognition. If reported ROAS fell by about 11%, your team held efficiency flat and simply paid the auction's tax. Meanwhile, IPinfo launched Places, a dataset of about 2.7 million venue IP addresses where a single address (think airports, stadiums, conference centers) can represent thousands of devices — a reminder that the "one IP = one household" assumption that underlies much of adtech's frequency capping, reach counting, and attribution is fundamentally broken at scale.</p>
+            <a href="https://agilebrandguide.com/yesterdays-martech-ai-cx-news-september-22-2026/" class="source-link" target="_blank">Read on Agile Brand Guide →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>Today's stories converge on a single theme: the old playbook is being rewritten, and most teams haven't noticed.</strong> Claude Opus 5.5 commoditizes flagship reasoning — the same capability that commanded premium prices six months ago is now 40% cheaper. Apple is betting enterprises will pay $20K upfront to escape per-token cloud economics. And DigiPuush's benchmark reveals that 78% of B2B websites are optimized for a discovery channel (traditional search) while remaining invisible to the channel where 41% of buyers now start (AI search). The Optimizely Virtual Teammates announcement deserves special attention for product marketers: when AI moves from "tool you prompt" to "role you assign," every 2027 headcount conversation changes. The question stops being "how many people do we need?" and becomes "which roles require human judgment, and which require human oversight of AI teammates?" Meanwhile, Meta's 12% price increase is the kind of silent tax that shows up nowhere in your dashboard — your ROAS may look stable while you're actually just running harder to stand still. The brands that thrive in 2027 will be the ones that recognized 2026 as the year the rules changed.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-09-22.html">← September 22, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
