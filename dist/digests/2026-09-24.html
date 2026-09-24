@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — September 24, 2026 | The Full Stack</title>
+    <meta name="description" content="Only 13% of PMM teams can measure AI impact. Amazon Seller Assistant becomes an operating system. Ema raises $77M as AI agents eat enterprise SaaS. Augmeta assigns an AI agent to every KPI.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-09-24.html">
+    
+    <meta property="og:title" content="Daily Digest — September 24, 2026 | The Full Stack">
+    <meta property="og:description" content="Only 13% of PMM teams can measure AI impact. Amazon Seller Assistant becomes operating layer. Ema raises $77M as AI agents eat SaaS.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-09-24.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Thursday, September 24, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">Only 13% of PMM Teams Can Measure AI Impact, Amazon Seller Assistant Becomes Operating System</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Fluvio Report: Product Marketing Got AI Governance But Not Measurement — Only 13% Track Any Impact</h2>
+            <p>Fluvio released its 2026 Product Marketing AI Trends Report with a devastating finding: 89% of PMM teams now use AI daily, governance and training improved dramatically (companies with no AI governance fell from 30% to 4%), but only 13% can measure any AI impact — the exact same number as 2025. Not one company in the study tracks revenue or pipeline impact from AI. The report reveals a troubling double standard: teams reject "AI slop" in internal communications and colleagues' drafts, but ship AI-generated copy, graphics, landing pages, messaging, and decks to market anyway. Perhaps most alarming for PMM leaders: marketing lost influence over AI decisions, with ownership falling from 48% to 20% in a single year while IT and central functions rose from 30% to 56%. The researchers found a self-assessment problem too — 41% of respondents call their company "deeply embedded" in AI, yet only 9% have documented, repeatable team workflows. As the report puts it: "AI made teams faster, not smarter."</p>
+            <a href="https://www.fluviomarketing.com/blog-summary/2026-product-marketing-ai-trends-report-faster-if-not-better" class="source-link" target="_blank">Read on Fluvio →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>Amazon Seller Assistant Graduates to Operating System — From Chatbot to Continuous Intelligence Layer</h2>
+            <p>Amazon VP Mary Beth Westmoreland told PYMNTS that the company is transforming Seller Assistant from a conversational tool into something closer to an operating layer for third-party merchants. "We've gone from a smaller set of capabilities to onboarding just hundreds of them," Westmoreland said. The upgraded system doesn't just answer questions — it reasons across inventory, pricing, advertising, demand, and compliance; remembers how individual merchants operate; continuously monitors the business; and, with permission, takes action. Amazon is adding long-term memory to develop what Westmoreland called "a more personalized understanding of the individual seller business." The strategic asset isn't the chatbot — it's the plumbing underneath. Roughly 90% of Amazon's selling partners already use third-party AI, so Amazon is introducing a selling partner plugin that makes its intelligence available through Amazon Quick and Claude. The company appears willing to surrender part of the interface to preserve its position as the intelligence and execution layer underneath it.</p>
+            <a href="https://www.pymnts.com/news/artificial-intelligence/2026/amazon-seller-ai-graduates-from-chatbot-operating-system/" class="source-link" target="_blank">Read on PYMNTS →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Ema Raises $77M as AI Agents Start Eating Enterprise SaaS — Multi-Agent Coordination Across HR, IT, Finance</h2>
+            <p>Mountain View-based Ema raised $77 million in Series B funding led by Creaegis, bringing total funding to $140 million. The startup develops AI agents that coordinate to automate corporate processes across HR, IT, and finance — and the pitch is pointed directly at traditional enterprise software. Founded in 2023 by former Google and Coinbase executive Surojit Chatterjee and ex-Okta executive Souvik Sen, Ema provides a platform where multiple AI agents work together to execute complex business processes. The technology integrates with existing enterprise applications to perform tasks and outcomes, "aiming to reduce dependence on traditional SaaS and IT services." That last phrase is the story: Ema isn't positioning as a complement to your software stack — it's positioning as a replacement for parts of it. The company plans to expand into Asia-Pacific, South America, and the Middle East. As agents become capable of coordinating across systems rather than just operating within them, the value proposition of single-function SaaS tools faces its most direct challenge yet.</p>
+            <a href="https://techcrunch.com/2026/09/23/ema-raises-77m-as-ai-starts-eating-into-enterprise-software-and-services/" class="source-link" target="_blank">Read on TechCrunch →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Augmeta Raises $3M for "Agentic KPI Ops" — An AI Agent for Every Business Metric</h2>
+            <p>Augmeta raised $3 million in seed funding to accelerate its work on what it calls "Agentic KPI Ops" — software that assigns an AI agent to each key performance indicator and lets that agent monitor, investigate, and act on problems as they happen. The Redmond-based startup, founded by former Amazon, Opendoor, and Home Depot leaders, targets a specific pain point: by the time teams connect dots across six or seven different tools during weekly reviews, a week of revenue has already slipped away. Augmeta's agents are built to read the whole story continuously. When an agent spots a problem, it first estimates the dollar value of the change, then gathers evidence across logs, dashboards, and third-party tools, takes that evidence to the right team, follows up to check whether the fix worked, and if not, digs deeper. The round was led by Depth Ventures, whose partners include a former Index Ventures partner and an early OpenAI employee. The pitch: don't tell me you're working on it — tell me it's done.</p>
+            <a href="https://commstrader.com/technology/former-amazon-and-opendoor-leaders-raise-3m-to-give-every-key-business-metric-its-own-ai-agent/" class="source-link" target="_blank">Read on CommsTrader →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>B2B Demand Signals Are Moving to Partner Ecosystems — Digital Engagement No Longer First</h2>
+            <p>MarTech Cube published an analysis arguing that B2B buying intent now forms long before prospects leave measurable digital trails — and the earliest signals are emerging inside partner ecosystems. The piece highlights a growing disconnect: campaign dashboards show rising engagement, web traffic trends upward, and MQLs continue to flow, yet deals stall, pipelines lose velocity, and revenue forecasts become harder to trust. The reason: activity does not equal intent. Traditional intent platforms detect research only after it has begun, showing who is looking but rarely revealing when momentum is forming. By the time prospects are comparing vendors, internal alignment is often underway and the window to influence narrows. Where does intent actually start? During routine partner check-ins when a customer mentions an upcoming initiative. As a challenge uncovered by a reseller during an account review. As increased training requests within a distributor network. The strategic implication: "revenue orchestration" — connecting marketing, sales, and partner data to intervene earlier while buyers are still defining their needs — may matter more than optimizing the funnel they've already entered.</p>
+            <a href="https://www.martechcube.com/how-ai-and-ecosystem-data-are-rewriting-b2b-demand-signals/" class="source-link" target="_blank">Read on MarTech Cube →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>Today's stories paint a consistent picture: AI has arrived, but accountability hasn't.</strong> The Fluvio report is the most damning — 89% of PMM teams use AI daily, governance improved dramatically, yet measurement stayed flat at 13%. Teams ship AI slop to customers while refusing to accept it from colleagues. The gap between "we use AI" and "we can prove AI worked" has become a chasm. Meanwhile, Amazon's Seller Assistant evolution and Ema's $77M raise point toward the same future: AI systems that don't just respond to prompts but continuously operate across your business. When Augmeta assigns an agent to every KPI and tells it to follow up until the problem is actually fixed, that's not automation — that's delegation. The question for every marketing leader planning 2027: if you can't measure AI's impact today, how will you justify expanding AI investment tomorrow? And if agents can now coordinate across systems while monitoring your business 24/7, what exactly is the value proposition of your fragmented SaaS stack? The teams that thrive will be the ones that recognized 2026 as the year the rules changed — and built measurement infrastructure before the CFO started asking uncomfortable questions.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-09-23.html">← September 23, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
