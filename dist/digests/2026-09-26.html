@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — September 26, 2026 | The Full Stack</title>
+    <meta name="description" content="Microsoft Autopilot works without prompts. OpenAI and Anthropic ignite AI price war. Adobe brings creative tools to Gemini and Claude. AI agents fail 69% on inaccessible sites.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-09-26.html">
+    
+    <meta property="og:title" content="Daily Digest — September 26, 2026 | The Full Stack">
+    <meta property="og:description" content="Microsoft Autopilot works autonomously. OpenAI & Anthropic price war. Adobe tools in Gemini. AI agents fail 69% on inaccessible sites.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-09-26.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Saturday, September 26, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">Microsoft Autopilot Works Without Prompts, OpenAI and Anthropic Ignite AI Price War, AI Agents Fail 69% on Inaccessible Sites</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Microsoft Launches Autopilot — A Copilot Agent That Continues Working Without User Prompts</h2>
+            <p>Microsoft unveiled a rebuilt version of Copilot on September 25, 2026, organized around three tabs: Home, Code, and Autopilot. The third tab is the headline. Autopilot is a persistent agent with a name, a role, and a goal assigned by its owner — and unlike traditional assistants, it continues working when you're not watching. The cloud-hosted agent can follow up on work without waiting for another prompt, expanding Copilot from an on-demand assistant into infrastructure for ongoing workplace processes. Microsoft positioned Autopilot for multi-step projects like supplier reviews or research tasks that span hours or days. Businesses can delegate work while reducing the need for employees to manually check back. Permissions and governance run through Agent365. The private preview expands at the end of September 2026, with broader rollout continuing through October. For enterprise buyers, Autopilot marks the moment Microsoft stopped thinking of AI as a feature inside Office apps and started thinking of it as a persistent worker that lives alongside your team.</p>
+            <a href="https://tbreak.com/microsoft-autopilot-private-preview/" class="source-link" target="_blank">Read on TBreak →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>OpenAI and Anthropic Launch New Models 90 Minutes Apart — AI Price War Officially Begins</h2>
+            <p>On September 22, OpenAI released GPT-6 Sol and GPT-6 Luna, two lower-priced members of its GPT-6 family, at 50% below GPT-5.6's promotional price. The launch landed 90 minutes after Anthropic shipped Claude Opus 5.5. GPT-6 Sol now costs $2 input and $10 output per million tokens (down from $4 and $20), while Luna targets high-volume tasks at $0.10 and $0.50. OpenAI also raised its cached-input discount to 90%. Anthropic matched with Opus 5.5 at $4 input and $20 output — 20% below Opus 5, with typical workloads costing about 40% less due to reduced token usage. Anthropic says Opus 5.5 performs at the level of its pricier Fable 5.1 model on most tasks, beating OpenAI's GPT-6 Astra on FrontierCode at roughly 20% of the per-task cost. As Stratechery's Ben Thompson noted, the old prices were never about cost — they were about scarcity. The new cheaper tiers are already driving usage higher. For enterprise buyers, the message is clear: shorter contract terms and routing layers that let you shift work between vendors as prices fall.</p>
+            <a href="https://ai2roi.substack.com/p/ai-to-roi-news-and-analysis-september-780" class="source-link" target="_blank">Read on AI to ROI →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Adobe Brings Photoshop, Firefly, and 80+ Tools Inside Gemini and Claude — Marketing Asset Creation Moves to Chat</h2>
+            <p>Adobe announced on September 24 that tools from Photoshop, Lightroom, Adobe Express, and Firefly are now available inside Google Gemini across all Gemini plans. The same day, Adobe added Acrobat to its Claude plugin, bringing its total to more than 80 creative and productivity tools inside Anthropic's assistant, along with interactive editors for PDFs and Adobe Express designs. The integration is designed to keep routine image and campaign work inside the chat — no tab-switching required for basic photo enhancement, marketing asset generation, or design customization. For marketing teams, this is the moment creative production formally enters the conversational AI stack. The tools that build the assets and the assistants that coordinate the work now live in the same interface. Adobe positioned the launch as meeting users where they already are, but the strategic implication runs deeper: as AI assistants become the primary workspace, tooling that lives outside them risks irrelevance.</p>
+            <a href="https://ppc.land/gemini-gains-adobes-photoshop-and-firefly-tools-on-all-plans/" class="source-link" target="_blank">Read on PPC.land →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>AudioEye Study: AI Shopping Agents Complete 96% of Tasks on Accessible Sites, 31% on Inaccessible Ones</h2>
+            <p>AudioEye sent 1,560 AI agents built on six commercial models to complete 13 real-world tasks on six websites, repeating each test ten times. The findings are striking: on accessible sites, agents completed 96% of assigned tasks. On the least accessible site in the test, that number dropped to 31%. The gap wasn't about AI capability — it was about website structure. Agents read pages through the accessibility tree, the same structured map that screen readers use. When needed information appeared only inside an image with no text description, all 60 test attempts across six models failed. AudioEye also found that agents used 43% more tokens when accessibility fixes were absent (128,000 vs. 90,000), rising to six times as many on the worst sites. The business math is simple: if you expect 20,000 shopping agent sessions monthly and completion drops from 96% to 31%, you lose roughly 1,000 orders per month at an $90 AOV. Your accessibility backlog just became your conversion backlog.</p>
+            <a href="https://agilebrandguide.com/yesterdays-martech-ai-cx-news-september-25-2026/" class="source-link" target="_blank">Read on Agile Brand Guide →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>NielsenIQ: 51% of US Consumers Now Use AI for Shopping — Agentic Commerce Passes the Tipping Point</h2>
+            <p>NielsenIQ's Agentic Commerce Tracker, released September 24, reports that 51% of US consumers used at least one AI-powered tool to support their shopping in the past month. AI-powered product recommendations sit at 20% adoption, with AI-powered personal shopping assistants at 16%. The tracker draws on a monthly sample of roughly 500 US consumers — at that sample size, the 51% figure carries a margin of error around ±4.4 points, so "first time above half" sits inside statistical noise. But the trend line holds up. NIQ's May 2026 release reported 42% using the same methodology. A nine-point rise in four months tells a clearer story than the headline threshold. For marketing teams, the AudioEye and NIQ numbers create a two-part challenge: demand for AI-assisted shopping is here, but your ability to serve that demand depends on whether an agent can actually navigate your site. NIQ measures the market. AudioEye measures whether you can win it.</p>
+            <a href="https://agilebrandguide.com/yesterdays-martech-ai-cx-news-september-25-2026/" class="source-link" target="_blank">Read on Agile Brand Guide →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>Today's stories converge on a single theme: AI is moving from assistant to infrastructure.</strong> Microsoft's Autopilot isn't just a better Copilot — it's a persistent worker that continues running when you close your laptop. Adobe's Gemini integration isn't just a convenience — it's the moment creative production formally merged with conversational AI. And the OpenAI/Anthropic price war isn't just about margins — it's the signal that frontier intelligence is becoming a commodity, faster than anyone's 2027 roadmap assumed. But infrastructure only works if the systems it connects to are ready. AudioEye's 96% vs. 31% completion gap shows exactly where that readiness fails: the alt text, form labels, and button names that screen readers depend on are the same elements shopping agents depend on. Half of consumers now use AI for shopping. Whether they can shop on your site depends on work you probably filed under "compliance." The organizations that win the next phase won't be the ones who deployed agents first. They'll be the ones who made their infrastructure legible to agents before deployment.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-09-25.html">← September 25, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
