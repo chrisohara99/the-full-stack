@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — September 29, 2026 | The Full Stack</title>
+    <meta name="description" content="Meta launches enterprise AI platform with MongoDB CEO at the helm. Salesforce Agentforce drives record revenue. Gartner: 38% of CMOs can't hire AI talent. Anthropic's hard line on discounts opens door for OpenAI.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-09-29.html">
+    
+    <meta property="og:title" content="Daily Digest — September 29, 2026 | The Full Stack">
+    <meta property="og:description" content="Meta launches enterprise AI platform. Salesforce Agentforce drives record revenue. CMO AI talent gap widens.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-09-29.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Tuesday, September 29, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">Meta Launches Enterprise AI Platform, Hires MongoDB CEO to Lead $80B Push, Salesforce Agentforce Drives Record Quarter</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Meta Launches Enterprise AI Platform, Hires MongoDB CEO CJ Desai to Lead New Business Unit</h2>
+            <p>Meta announced Monday that it's launching the "Meta Enterprise Platform," a new initiative aimed at expanding the company's AI offerings to businesses and developers. The move gives Meta a dedicated enterprise business for the first time as the company continues to pour massive resources into AI infrastructure — with capital expenditures projected to reach $80 billion this year. Former MongoDB CEO CJ Desai will report directly to Mark Zuckerberg. The platform will bring Meta's full AI technology stack to enterprises: Muse (Meta's AI agent), Muse Code, Meta Business Agent, and the Muse API. The initial go-to-market push will focus on broadening Muse adoption among enterprises and developers. The timing is significant — Meta's Muse agent hit 2.5 million downloads in its first two weeks, and the company is clearly betting that consumer adoption can translate into enterprise contracts. For product marketers, this signals that Meta is no longer content to be a social platform that uses AI; it wants to be an AI platform that happens to run social products.</p>
+            <a href="https://techcrunch.com/2026/09/28/meta-launches-enterprise-ai-platform-hires-mongodb-ceo-to-lead-new-initiative/" class="source-link" target="_blank">Read on TechCrunch →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>Salesforce Reports Record Quarter as Agentforce Revenue Expands Rapidly</h2>
+            <p>Salesforce reported record quarterly revenue with double-digit growth, positioning autonomous AI agents as its central growth driver. Agentforce and the Data Cloud platform drove rapid expansion in recurring revenue, and management framed autonomous AI agents as the future of CRM. The company has shifted away from a per-seat pricing model to usage-based pricing — a structural bet that agents will transact more than humans and that Salesforce should capture value accordingly. IBM Consulting was named Salesforce Partner of the Year for FY27, specifically for its work deploying Agentforce-powered autonomous agents for Nestlé. CRN's coverage of leading Salesforce solution providers shows the ecosystem is now organized around agentic deployments, not traditional CRM implementations. The Wall Street implication: Salesforce isn't just adding AI features to its existing product — it's betting its entire business model on agents replacing users as the primary actors in enterprise workflows.</p>
+            <a href="https://kalkinemedia.com/us/stocks/technology/is-salesforce-nysecrm-turning-agentic-ai-into-real-recurring-revenue" class="source-link" target="_blank">Read on Kalkine Media →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Gartner: 38% of CMOs Can't Hire AI Talent, Marketing's Operating Model Is Breaking</h2>
+            <p>Gartner's 2026 CMO research reveals that 38% of marketing leaders cite AI talent and skills as their biggest barrier to transformation — and that barrier is getting worse, not better. The B2B CMO 100 analysis from Hot Topics found that qualified AI candidates now command 1.5 to 2x expected salary, and the bottleneck isn't just compensation. The AI transformation of marketing has moved into the operating model itself. Marketing leaders are struggling not just to find people who can use AI tools, but to restructure teams around AI-augmented workflows. One CMO described being unable to even define the job requirements: the roles they need don't map to traditional marketing functions. The implication for enterprise AI vendors is clear: the constraint on adoption is increasingly human, not technical. The orgs that figure out how to redesign marketing functions around AI capability — rather than just layering AI on existing structures — will pull ahead. Everyone else will keep posting job reqs that no one can fill.</p>
+            <a href="https://hottopics.ht/insights/the-b2b-cmo-100-whats-keeping-b2b-marketing-leaders-busy-in-2026" class="source-link" target="_blank">Read on Hot Topics →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Anthropic Takes Hard Line on Token Overages, Creating Opening for OpenAI</h2>
+            <p>Anthropic is flexing its muscle with enterprise customers by taking a hard line on discounts once those customers use up all the tokens they purchased, according to The Information. When enterprises exceed their committed token budgets, Anthropic is holding firm on pricing rather than offering extensions or flexibility. That approach has created an opening for OpenAI to take a more flexible stance, particularly as the GPT-6 price war makes switching costs lower than ever. The strategic tension is real: Anthropic has positioned itself as the "enterprise-grade" AI provider with stronger safety guarantees and better governance tooling. But enterprise procurement doesn't just evaluate features — it evaluates relationships. A vendor that holds firm on overages during a budget cycle might win the principle but lose the renewal. OpenAI, still smarting from its rogue agent disclosures, may see flexibility as a way to rebuild enterprise trust. For buyers, the takeaway is practical: your token commitments are binding, and your leverage disappears the moment you exceed them.</p>
+            <a href="https://www.theinformation.com/" class="source-link" target="_blank">Read on The Information →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>AI Is Turning CRM from a Database into an Execution Platform</h2>
+            <p>A wave of analysis from InfotechLead, SharpAI, and OnGraph this week describes the same structural shift: AI is transforming CRM from a system that records customer interactions into an intelligent execution platform that takes action autonomously. Salesforce Agentforce, HubSpot Breeze AI, and a growing roster of agentic CRM tools now collect, organize, and update customer data across systems — reducing manual data entry and, critically, taking action without human intervention. The OnGraph analysis is particularly pointed: their "risk-first framework" for agentic AI CRM acknowledges that putting AI in the CRM loop means giving it access to customer relationships. Their architecture keeps "one door, not fifty" — a single integration point that security teams can audit. For product marketers, the implication is that "CRM data" is no longer a passive resource to mine for insights. It's an active substrate that AI agents will use to execute campaigns, route leads, and close deals. Your content strategy now needs to account for machine readers with purchasing authority.</p>
+            <a href="https://infotechlead.com/artificial-intelligence/how-ai-is-changing-crm-in-2026-ai-agents-transform-sales-service-and-customer-engagement-98509" class="source-link" target="_blank">Read on InfotechLead →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>Meta entering enterprise AI is the story everyone expected but nobody was ready for.</strong> Zuckerberg has spent years building AI infrastructure under the cover of consumer products — the world's largest social graph, billions of daily active users, $80B in annual AI capex. Now he's pointing that infrastructure at the enterprise market with a hire (CJ Desai) who spent years building MongoDB into an enterprise data platform. The comparison to Salesforce is instructive: both companies are betting that agents will become the primary actors in enterprise workflows. But Meta has a consumer distribution advantage that Salesforce doesn't — 2.5 million Muse downloads in two weeks means millions of users are already training themselves on Meta's AI interface. The talent crisis Gartner identified (38% of CMOs can't hire AI talent) is the flip side of the same trend: enterprises are scrambling to staff up for a transition that their employees are already experiencing as consumers. The companies that figure out how to let consumer AI habits flow into enterprise workflows — rather than fighting them — will define the next phase of marketing technology.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-09-28.html">← September 28, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
