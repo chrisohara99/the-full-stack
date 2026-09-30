@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — September 30, 2026 | The Full Stack</title>
+    <meta name="description" content="WFA: 96% of major brands now use AI in marketing, up from 45% in 2023. Forrester: 55% of B2B marketing teams have already cut headcount due to AI. Meta launches Muse for Small Business. Miro MCP hits 16 million calls.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-09-30.html">
+    
+    <meta property="og:title" content="Daily Digest — September 30, 2026 | The Full Stack">
+    <meta property="og:description" content="96% of brands use AI in marketing. 55% have already cut headcount. Meta goes SMB. MCP crosses the chasm.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-09-30.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Wednesday, September 30, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">WFA: 96% of Brands Use AI in Marketing, Forrester: 55% Have Already Cut Headcount, MCP Crosses the Chasm</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>WFA: 96% of Major Brands Now Use AI in Marketing, Up from 45% in 2023</h2>
+            <p>The World Federation of Advertisers' State of AI in Marketing 2026 report marks a watershed moment: AI has moved from experimentation to the mechanics of marketing. 96% of brands now use generative or agentic AI — more than doubling from 45% just three years ago. But it's the breadth of application that signals the real shift. 80% use AI for content creation (the obvious use case), but 72% now deploy it for research and insights, 54% for media buying and optimization, 48% for strategy and planning, and 46% for workflow automation and autonomous agents. The strategic objectives have evolved too: where 70% of brands focused primarily on efficiency in 2023, only 22% prioritize efficiency today. 33% now say efficiency, effectiveness, and growth are equally important. The governance infrastructure is keeping pace — 75% require human oversight of AI-generated outputs, 70% maintain approved/prohibited tool lists, and 55% now have centrally approved AI tools with clear governance processes (up from just 18% in 2023). The biggest barriers? Scaling adoption (63%), technology integration (45%), and governance requirements (43%). The study surveyed 54 senior respondents from 46 of the world's largest brand owners with a collective ad spend of $93 billion.</p>
+            <a href="https://wfanet.org/knowledge/item/2026/09/30/96-of-major-brands-now-use-ai-in-marketing-wfa-research-finds" class="source-link" target="_blank">Read on WFA →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>Forrester: 55% of B2B Marketing Teams Have Already Reduced Headcount Due to AI</h2>
+            <p>Forrester's State of AI in B2B Marketing 2026 delivers the data point that marketing leaders have been whispering about: 55% of organizations have already reduced marketing headcount due to AI use. Not "plan to reduce" — have reduced. The research shows AI is now in production across virtually every marketing use case, with adoption rates between 43% and 55% depending on function. At the individual level, 81% of B2B marketing leaders use AI multiple times per day — for drafting, brainstorming, analysis, and decision support. The primary benefit driver is productivity: teams are accomplishing more with existing resources. But the tension is real. While 76% of marketing leaders say AI will augment rather than replace people, the majority acknowledge they're reassessing hiring plans because of AI. 30% cite data privacy and security as their biggest obstacle, and 50% say AI presents incorrect information with unwarranted confidence — creating verification burdens that offset efficiency gains. Forrester's point is sharp: organizations must rethink work processes and structures to capture AI's full value. Those that only chase efficiency gains may find that technology alone can't replace the judgment, context, and expertise that marketers provide.</p>
+            <a href="https://www.forrester.com/blogs/as-ai-adoption-surges-in-b2b-marketing-work-is-changing/" class="source-link" target="_blank">Read on Forrester →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Meta Launches Muse for Small Business, Connects AI Agent to 200 Million Businesses</h2>
+            <p>Fresh off yesterday's announcement of Meta Enterprise Platform (with MongoDB CEO CJ Desai at the helm), Meta unveiled Muse for Small Business — a version of its AI agent that connects to Asana, Zoom, Intuit, Box, Canva, Slack, Meta ad accounts, and professional Instagram and Facebook profiles. The pricing mirrors consumer Muse: free with usage limits, subscription beyond. The timing is aggressive: this comes one day after Meta hired Desai to lead enterprise AI, and positions Meta to capture both ends of the business market simultaneously. Meta's pitch to SMBs is blunt: "Small businesses told us they're short on hours, not ideas." With 200 million small businesses already on Facebook, Meta has distribution that enterprise AI competitors simply don't. The consumer adoption trajectory is striking — Evercore's Mark Mahaney expects Muse to reach 100 million users within 6-12 months. For marketers, this means Meta is no longer just an ad platform with AI features; it's becoming an AI platform that happens to monetize through advertising. Zuckerberg called Muse the "centerpiece" of his AI strategy at Meta Connect last week.</p>
+            <a href="https://www.cnbc.com/2026/09/29/meta-launches-muse-for-small-business-zuckerberg-pushes-enterprise-ai.html" class="source-link" target="_blank">Read on CNBC →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Miro MCP Hits 16 Million Calls, Non-Engineers Now Outnumber Engineers 2:1</h2>
+            <p>Miro's MCP (Model Context Protocol) server has logged more than 16 million calls since its February launch, with usage more than doubling since May. September alone is on track for 6 million calls. But the demographic shift is the real story: MCP has "jumped the developer niche." Users in engineering and developer roles now account for under a quarter of MCP users — product, design, marketing, operations, and project management together outnumber engineers roughly two to one. Claude Desktop and Claude Code represent 65% of usage, with ChatGPT growing 71% in users between August and September to become the second-largest client. In total, 15 different AI clients have connected via MCP, including Microsoft Copilot, Gemini Enterprise, and Grok Build. The usage pattern reveals how teams are integrating AI into actual work: 57% of August calls were "Miro-to-code" (an agent reads a board and acts on it), while 41% were "code-to-Miro" (agents generate boards, diagrams, and layouts directly). MCP is becoming the collaboration layer for the agentic era — and it's not just for developers anymore.</p>
+            <a href="https://martechseries.com/analytics/data-management-platforms/momentum-grows-for-miro-mcp-as-users-embrace-the-canvas-for-ai-collaboration/" class="source-link" target="_blank">Read on MarTech Series →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>BCG: AI Is Rewriting CPG Marketing Economics, Forcing Traditional Brands to Operate Like Attackers</h2>
+            <p>BCG's latest research argues that AI isn't just a marketing efficiency tool — it's fundamentally rewriting the economics of consumer packaged goods marketing. The core insight: AI is raising the bar for every brand and forcing traditional CPG companies to operate more like digital-native attackers — faster, flatter, and more analytically driven. One case study stands out: after a company codified how its best marketers developed briefs, including the quality checks they applied and how they answered key questions, accuracy rose from baseline to over 90%. The tool now saves 3,000+ marketers weeks of effort each year while enabling everyone to produce briefs at the level of the company's top talent. BCG argues that leading-edge marketing functions are already structuring product data so AI systems can easily understand and surface it, optimizing content to provide clear, extractable answers, and ensuring content is authoritative enough for LLMs to retrieve, cite, and recommend. The implication for product marketers: AI isn't replacing the best performers — it's encoding their patterns and distributing their capabilities to everyone else.</p>
+            <a href="https://www.bcg.com/publications/2026/how-ai-rewrites-cpg-marketing-economics" class="source-link" target="_blank">Read on BCG →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>The 55% number from Forrester should end the "AI won't replace marketers" debate.</strong> It already has, at more than half of B2B organizations. But the WFA and Forrester data together tell a more nuanced story: AI is simultaneously creating and destroying marketing work. 96% adoption at the brand level, 81% daily use at the individual level — yet 55% headcount reductions. The organizations winning this transition aren't the ones using AI to do the same work with fewer people; they're the ones redesigning work around AI capabilities. BCG's case study makes this concrete: codifying how top performers work, then distributing that capability to everyone, doesn't eliminate marketers — it makes every marketer perform like a top performer. The Miro MCP data is the sleeper story here. When non-engineers outnumber engineers 2:1 on a protocol originally designed for developers, you're watching a technology cross the chasm in real-time. MCP is becoming the interface layer between AI agents and actual work — and marketing, product, and operations teams are adopting it faster than the engineers who built it. The next phase of enterprise AI isn't about which model you use; it's about how that model connects to the work your team is already doing.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-09-29.html">← September 29, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
