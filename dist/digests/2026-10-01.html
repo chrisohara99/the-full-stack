@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — October 1, 2026 | The Full Stack</title>
+    <meta name="description" content="Google launches Gemini 4 Argon with 1M token output. BrazeAI ships agentic decisioning and compliance agents. Experian brings identity resolution to Snowflake. 88% AI adoption, but only 5% at scale.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-10-01.html">
+    
+    <meta property="og:title" content="Daily Digest — October 1, 2026 | The Full Stack">
+    <meta property="og:description" content="Gemini 4 Argon launches with 1M token output. BrazeAI goes agentic. The 88%/5% scale gap widens.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-10-01.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Thursday, October 1, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">Google Launches Gemini 4 Argon with 1M Token Output, BrazeAI Ships Agentic Decisioning, The 88%/5% Scale Gap</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Google Launches Gemini 4 Argon: 1 Million Token Output for Long-Horizon Enterprise Workflows</h2>
+            <p>Google unveiled Gemini 4 Argon on September 30, positioning it as a "frontier model" for complex, multi-step enterprise tasks. The headline feature: output capacity of up to 1 million tokens in a single run, compared to 64,000 previously — a 15x increase that enables AI to maintain reasoning across much longer workflows. Google isn't pitching Argon as a chatbot upgrade; the focus is on software engineering, finance, legal, business process automation, and cybersecurity. Internally, Google reports using the model for C/C++ to Rust migrations, data center memory optimizations, and algorithmic research. On DeepSWE v1.1, a benchmark for long-running software engineering tasks, Argon scores 77.9%. On AutomationBench, which measures complete business process execution, it hits 51.3%. But availability is limited: as of October 1, 2026, Argon isn't yet widely accessible to agencies, developers, or enterprise customers. Google's Jean-Philippe Becane called the 1M token limit "ideal for solving massive problems all at once." For product marketers, the signal is clear: AI is moving from question-and-answer interactions to sustained multi-step work — analyzing portfolios, migrating systems, processing large datasets without constantly interrupting the workflow.</p>
+            <a href="https://infostourisme.com/en/tech-innovation/gemini-4-argon-google-ai-tourism/2026/" class="source-link" target="_blank">Read on InfosTourisme →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>BrazeAI Ships Agentic Decisioning and Compliance Agents, Testing 1 Billion+ Combinations Per Campaign</h2>
+            <p>At its Forge conference, Braze launched four AI capabilities that shift marketing automation from rules-based to agentic. The flagship: BrazeAI Decisioning Studio Go (GA expected October 14), which deploys AI decisioning agents that select message variant, time of day, day of the week, and frequency for each recipient — within guardrails marketers define. Braze claims a single Decisioning Studio Go agent can test more than one billion combinations simultaneously, replacing manual A/B testing and static rules. Early results from Torchie Award winners show the impact: Compare the Market deployed Decisioning Studio in 57 days for car insurance renewals and reported 9.07% conversion increase (later rising to 17%), with CRM revenue contribution up 55% on 25% fewer sends. Also shipping: Agentic Standards (beta), which checks every campaign and Canvas against brand-defined rules covering setup, copy, links, personalization, and compliance — reporting pass, warning, or fail. With human-in-the-loop sign-off, BrazeAI Operator can implement fixes automatically. The governance point matters: Braze Operator Connect lets marketers work from Claude, ChatGPT, Snowflake Cortex, and other MCP tools — but actions run under the user's identity and Braze permissions, meaning admin rights extend to every agent the user launches.</p>
+            <a href="https://investors.braze.com/news/news-details/2026/Braze-Accelerates-AI-Innovation-Empowering-Marketers-to-Treat-Every-Customer-Like-Their-Only-Customer/default.aspx" class="source-link" target="_blank">Read on Braze →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>88% AI Adoption, But Only 5% at Scale: The Gap Nobody Talks About</h2>
+            <p>New analysis from MeetRep surfaces the uncomfortable reality behind AI adoption headlines. McKinsey's November 2025 State of AI survey shows 88% of organizations now use AI in at least one business function — up from 78% in 2024. HubSpot's 2025 data puts sales rep AI usage at 92%. Salesforce found 81% of sales teams are either experimenting with or have fully implemented AI. That's near-universal adoption. But here's the other number: only 5% of enterprises have successfully integrated AI tools into workflows at scale (per MLQ.ai), and McKinsey's same report found just 6% qualify as "AI high performers." The article's author, who built GoCustomer.ai and now runs Rep, calls it "pilot purgatory." The data on results is split: Salesforce found 83% of AI-using sales teams reported revenue growth vs. 66% without AI. Bain showed early adopters achieving 30%+ improvement in win rates. But Gartner's November 2025 prediction landed hard: by 2028, fewer than 40% of sellers will report that AI agents actually improved their productivity. The takeaway for product marketers: the adoption story is over. The scale story is just beginning — and most organizations aren't there yet.</p>
+            <a href="https://www.meetrep.ai/blog/ai-in-sales-statistics-what-2026-data-reveals-about-adoption-roi-and-the-gap-nobody-talks-about" class="source-link" target="_blank">Read on MeetRep →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Experian Launches Snowflake Native Apps for Identity Resolution and Audience Activation</h2>
+            <p>Experian announced two new Snowflake Native Apps that bring identity resolution and audience activation directly into Snowflake's AI Data Cloud. Contact Validation enables organizations to validate and cleanse customer contact information — email, phone, address — without moving data out of Snowflake. Audience Activation lets marketers build audience segments from first-party data and activate them across paid media channels, all within the Snowflake environment. The move follows Experian's earlier Aperture Data Studio integration with Snowflake for data profiling and transformation. For enterprise marketers, the pattern is clear: identity resolution and audience building are moving from separate vendor platforms into the data warehouse itself. This matters because it keeps customer data in place — reducing security risk, simplifying governance, and enabling faster activation. The apps empower organizations to "unlock the true value from their customer data" without the traditional overhead of data extraction, transformation, and loading into separate marketing platforms. As CDPs face pressure from composable alternatives, Snowflake-native capabilities from data providers like Experian represent the emerging architecture.</p>
+            <a href="https://www.adweek.com/adweek-wire/experian-expands-its-services-in-snowflake-to-help-businesses-unlock-value-from-their-customer-data/" class="source-link" target="_blank">Read on Adweek →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>Retail Media AI Shift: Where Marketer Judgment Moves Upstream</h2>
+            <p>A detailed analysis from Bizcommunity examines how AI is restructuring retail media and marketing workflows in ways that go beyond efficiency gains. The MMA South Africa Retail Media Ecoscape 2026 Report puts the local market at R9bn–R12bn for 2025/26 — representing 7–9% of total ad spend versus 15–16% in the US and UK. That gap is the runway. But the more interesting insight is about how work changes. In AI-powered retail media platforms like Xanite, each ad candidate is scored on four factors: bid, predicted click-through rate, shopper relevance, and creative quality. The highest score wins the impression — meaning a more relevant ad with a lower bid can beat a bigger budget. Decision systems run auctions for every advertising opportunity instead of sales teams booking placements against rate cards. The author's observation cuts to the heart of the AI transition: "The reassuring version of the AI story says automation will remove administrative tasks while creative roles remain unchanged. I do not think the change will be that tidy." Instead, offer creation, audience selection, and campaign variation will increasingly be automated. The valuable human contribution moves upstream — defining commercial objectives, providing context, setting operating boundaries, and assessing whether the system is producing useful results.</p>
+            <a href="https://www.bizcommunity.com/article/retail-marketers-face-a-huge-ai-shift-in-2026-181176a" class="source-link" target="_blank">Read on Bizcommunity →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>The Gemini 4 Argon launch signals where frontier AI is heading: from conversation to sustained work.</strong> A 1 million token output limit isn't about longer chatbot responses — it's about AI that can maintain context across complex, multi-step enterprise processes without losing the thread. Migrations, portfolio analysis, contract review, code refactoring: these aren't question-and-answer tasks. They're workflows. The BrazeAI announcements make this concrete for marketing. When an agent can test a billion combinations per campaign and another can check compliance against brand-defined rules automatically, the marketer's job isn't execution — it's defining the rules the agents follow and judging whether the results are good. The 88%/5% adoption-vs-scale gap is the story of 2026. Nearly everyone has AI running somewhere. Almost no one has it working across their organization at scale. The Bizcommunity piece on retail media captures why: AI doesn't just speed up existing work, it moves where human judgment sits in the process. The teams that understand this — that invest in defining objectives, providing context, and setting boundaries rather than chasing efficiency on execution tasks — are the ones who will actually reach scale. The Experian-Snowflake announcement is worth watching too. When identity resolution and audience activation move into the data warehouse as native apps, the CDP-as-separate-platform model looks increasingly fragile. The data doesn't need to move; the capabilities come to it.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-09-30.html">← September 30, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
