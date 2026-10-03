@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — October 3, 2026 | The Full Stack</title>
+    <meta name="description" content="Anthropic pledges $100M to train 10K enterprise AI engineers. Global AI spend hits $2.5T but fragmentation plagues most deployments. Infosys and Columbia launch enterprise AI research center.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-10-03.html">
+    
+    <meta property="og:title" content="Daily Digest — October 3, 2026 | The Full Stack">
+    <meta property="og:description" content="Anthropic's $100M talent bet. $2.5T AI spend meets structural fragmentation. Infosys + Columbia launch AI for Marketing research.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-10-03.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Saturday, October 3, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">Anthropic Pledges $100M to Train 10K Enterprise Engineers, Global AI Spend Hits $2.5T But Fragmentation Stalls Returns</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Anthropic Launches Claude Frontier Academy: $100 Million to Train 10,000 Enterprise AI Engineers by End of 2027</h2>
+            <p>Anthropic is making a $100 million bet that the bottleneck to enterprise AI isn't models — it's people who know how to deploy them. The company announced Claude Frontier Academy, a first-of-its-kind residency program designed to train 10,000 "Frontier Deployed Engineers" (FDEs) to the standard of Anthropic's own engineers by the end of 2027. The first cohorts, now running in San Francisco, New York, and London, include engineers from Accenture, Bain, Capgemini, Commonwealth Bank of Australia, Deloitte, McKinsey, Morgan Stanley, and Novo Nordisk. The program follows the medical residency model: engineers nominated by their organizations attend a multi-day in-person program with Anthropic engineers, work through a simulated enterprise deployment from use case selection through security review to handover, and complete a graded practical. Those who pass earn the Claude Resident Engineer badge and enter a 12-week residency leading a real Claude use case at their organization, supported by Anthropic engineers. A final assessment yields the Claude Frontier Deployed Engineer credential. "A small team of high-agency people with the right skills, access to Claude, and a deep understanding of how their business runs can transform an entire company," said Steve Corfield, Anthropic's Global Head of Business Development. "The hard part is building that depth of talent." The framing is notable: Anthropic isn't just selling API access, it's investing in the consultants and enterprise engineers who actually put models into production.</p>
+            <a href="https://www.anthropic.com/news/claude-frontier-academy" class="source-link" target="_blank">Read on Anthropic →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>MIT Technology Review: Global AI Investment Hits $2.5 Trillion in 2026, But Structural Fragmentation Stalls Enterprise Returns</h2>
+            <p>Global AI investment will reach $2.5 trillion in 2026, up 44% from the previous year, according to a new MIT Technology Review report on autonomous enterprise AI. But here's the uncomfortable finding: for most enterprises, that investment has produced fragmentation, not transformation. Intelligence accumulates in silos — sales agents unaware of open support tickets, marketing systems personalizing content without visibility into what finance already knows about a customer. Each function may perform well in isolation, but the enterprise as a whole learns little. The report identifies the shift from "AI as a tool" to "AI as an operating model" — what the authors call the "agentic shift" — as requiring three fundamental changes: rebuilding data infrastructure for accessibility rather than volume, replacing fixed tech stacks with composable architectures that can evolve as models change, and resolving AI sovereignty questions including where intelligence runs, who controls it, and how it operates across organizational and jurisdictional boundaries. The companies generating sustained returns share a discipline: they treat process redesign as work that precedes model selection, building for how the technology will evolve rather than retrofitting roles and workflows after deployment. As the report puts it: "Data readiness, not data abundance, is what makes AI compoundable." Having data and having AI-ready data are very different things.</p>
+            <a href="https://www.technologyreview.com/2026/10/02/1143774/redefining-enterprise-intelligence-with-autonomous-ai/" class="source-link" target="_blank">Read on MIT Technology Review →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Infosys and Columbia University Launch Enterprise AI Research Center at One World Trade Center</h2>
+            <p>Infosys and Columbia University have established the Infosys Topaz – Columbia University Enterprise AI Center, a strategic research collaboration located at Infosys' One World Trade Center office in New York City. The center, led by Columbia Engineering, will focus on three primary research areas: AI-first experiences and processes (exploring natural interfaces like voice and free-form text while redesigning workflows around AI), responsible and sustainable AI (addressing regulation, ethics, cybersecurity, explainability, transparency, and energy use), and AI for marketing (examining personalization, predictive analytics, campaign optimization, AI agents, and generative content). The collaboration combines Columbia's academic research with Infosys' enterprise technology capabilities and customer relationships. Infosys plans to use the center for customer workshops, research collaborations, and co-innovation programs designed to accelerate AI adoption. "This collaboration will advance vital research and offer students and enterprises a unique opportunity to co-create the next frontier of intelligent systems," said Garud Iyengar, Founding Director of the center and Professor at Columbia Engineering. The center expands Infosys' broader Infosys Topaz portfolio of generative and agentic AI services. For product marketers watching research investment, the explicit focus on "AI for marketing" as one of three core pillars signals where enterprise IT services firms expect sustained demand.</p>
+            <a href="https://pulse2.com/infosys-and-columbia-university-launch-enterprise-ai-research-center/" class="source-link" target="_blank">Read on Pulse 2.0 →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Horizon Media Names Third HorizonOS Labs Cohort: Hightouch, Zenapse, Storyteq Among 11 Emerging MarTech Players</h2>
+            <p>Horizon Media has announced the third cohort of HorizonOS Labs, its program for identifying emerging marketing technology companies. The 11 companies named cover agentic marketing platforms, AI brand management, contextual CTV video intelligence, content production, and AI data verification. Notable inclusions: Hightouch, the composable CDP that has become a key player in the reverse ETL and warehouse-native activation space; Bluefish, focusing on AI brand management; EmberOS; Zenapse, working on AI-powered emotional intelligence for marketing; Anoki; Storyteq, a content production platform; and Fuse, focused on AI data verification. The selection signals where Horizon, one of the largest independent media agencies, sees innovation worth watching. The mix reflects broader market themes: the continued rise of composable data infrastructure (Hightouch), the push toward agentic workflows in campaign management, and the emerging need for AI output verification — a theme that showed up in this week's Pantheon survey where 79% cited manual AI validation as their top barrier to scale. For vendors, HorizonOS Labs inclusion means access to Horizon's client base and real-world testing opportunities.</p>
+            <a href="https://agilebrandguide.com/yesterdays-martech-ai-cx-news-october-2-2026/" class="source-link" target="_blank">Read on Agile Brand Guide →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>Meta Expands Muse AI Agent Into Creator Management: Brand Deal Analysis, Content Strategy, Performance Summaries</h2>
+            <p>Meta's Muse AI agent, which already crossed 2.5 million US downloads by late September, is expanding beyond shopping assistant into what the company positions as an "unofficial brand manager" for Instagram creators. Once a creator connects their Instagram account, Muse can analyze account activity, flag potential brand collaboration opportunities, compare offers against industry averages, make suggestions on content strategy, summarize account performance, and send account-management reminders. The feature set reads like a junior talent manager's checklist — the kind of work that previously required either agency representation or hours of manual research. The timing matters: creator economy infrastructure is consolidating around AI-powered assistance, with platforms racing to own the relationship layer between creators and brands. The catch, as Social Media Today notes, is the permission model. Granting an AI agent this level of access to your professional social presence raises real questions about data handling, competitive visibility (what does Meta see and how might it inform algorithm decisions?), and the reliability of AI-generated deal comparisons. For product marketers working with influencer programs, the implications are double-edged: streamlined outreach to creators who use these tools, but potentially commoditized negotiation as AI agents arm creators with market rate data.</p>
+            <a href="https://www.socialmediatoday.com/news/how-can-instagram-creators-use-muse-ai-agents/831443/" class="source-link" target="_blank">Read on Social Media Today →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>Anthropic's $100 million talent bet is the most interesting move in today's digest because it acknowledges something the rest of the industry is still dancing around: the constraint on enterprise AI adoption isn't model capability or API access — it's the scarcity of people who can actually deploy models into production systems that run real businesses.</strong> The medical residency framing is deliberate. Doctors don't learn medicine from documentation; they learn from practicing physicians, on real cases, with assessment before they practice alone. Anthropic is building that same pipeline for enterprise AI engineers, starting with the consulting firms (Accenture, McKinsey, Deloitte, Bain) that actually do the implementation work at scale. If 10,000 engineers trained to Anthropic's standards are embedded in those firms by end of 2027, Claude becomes the model they know best — and the one they're most likely to recommend to clients. The MIT Technology Review data provides the context: $2.5 trillion in global AI investment, up 44% year-over-year, but most of it producing fragmentation rather than transformation. "Data readiness, not data abundance, is what makes AI compoundable." The companies pulling ahead treat process redesign as work that precedes model selection. The Infosys-Columbia partnership follows the same logic — research explicitly focused on AI for marketing alongside responsible AI and AI-first processes. And Horizon Media's third HorizonOS Labs cohort naming companies like Hightouch and Fuse (AI data verification) signals where sophisticated buyers see gaps worth filling. Meanwhile, Meta's Muse expansion into creator management shows the other side of the talent equation: what happens when AI agents start doing the work that junior humans used to do. The question isn't whether these tools will proliferate. It's whether the humans using them will develop the judgment to direct them well.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-10-02.html">← October 2, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
