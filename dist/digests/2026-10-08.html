@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — October 8, 2026 | The Full Stack</title>
+    <meta name="description" content="Claude leads enterprise AI with 12.8% market share. TikTok ships AI commerce suite with MCP support. ElevenLabs hits $22B valuation as conversational AI goes enterprise.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-10-08.html">
+    
+    <meta property="og:title" content="Daily Digest — October 8, 2026 | The Full Stack">
+    <meta property="og:description" content="Claude leads enterprise AI with 12.8% market share. TikTok ships AI commerce with MCP. ElevenLabs hits $22B. Market intelligence gets its MCP layer.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-10-08.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Thursday, October 8, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">Claude Takes #1 in Enterprise AI with 12.8% Market Share, TikTok Ships AI Commerce Suite with MCP, ElevenLabs Hits $22B on Conversational AI Surge</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Cledara AI Market Map: Claude/Anthropic Takes #1 with 12.8% Market Share, Ahead of OpenAI</h2>
+            <p>Cledara's real-time AI market map — tracking 1,678+ AI tools by actual company adoption and spend — shows Anthropic's Claude has taken the lead in enterprise AI with 12.8% market share, surpassing OpenAI's ChatGPT at 6.2%. The data, updated as of October 8, 2026, represents a significant shift from just six months ago when the two were neck-and-neck. Google Workspace ranks third at 3.7%, followed by Cursor (the AI-native code editor) at 3.3%. The top 20 includes familiar enterprise names — Atlassian, GitHub, Figma, Slack — but the fastest-growing tool this quarter is Highperformr, an AI-native social media platform that climbed 1,624 popularity ranks. The methodology is notable: Cledara tracks what companies actually pay for, not product reviews or hype cycles. The list reveals an interesting pattern in enterprise AI adoption: while "AI-native" tools (Claude, ChatGPT, Cursor, ElevenLabs) dominate the top ranks, "AI-embedded" tools — existing enterprise software with AI features bolted on — make up most of the top 20. The implication: enterprises aren't replacing their stacks with AI-native tools; they're layering AI-native platforms alongside AI-embedded incumbents. Claude's lead, in this context, suggests it's winning the "primary AI platform" slot while enterprises continue using AI-enhanced versions of their existing tools.</p>
+            <a href="https://data.cledara.com/ai-market-map" class="source-link" target="_blank">Read on Cledara →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>TikTok Unveils AI Commerce Suite: Buy Direct, Shopping Assistant, Agentic Leads, and MCP Integrations</h2>
+            <p>TikTok announced a comprehensive AI-powered advertising update spanning shopping, lead generation, and campaign management. Buy Direct enables in-app purchases without leaving TikTok. Shopping Assistant provides conversational product guidance — essentially an AI sales associate embedded in the app. Agentic Leads helps businesses qualify prospects automatically, filtering leads before they reach human sales teams. The TikTok Ad Network extends US advertisers' campaigns across nearly 400,000 apps worldwide. But the most enterprise-significant announcement: new MCP (Model Context Protocol) integrations that let advertisers manage campaigns through external AI platforms. This means enterprise marketing teams can connect their Claude, ChatGPT, or custom AI agents directly to TikTok's campaign management APIs, orchestrating social advertising through the same AI workflows they use for other channels. Smart+ adds search advertising automation and unified creative approval, while GMV Max now accounts for commissions, coupons, and referral fees to help sellers optimize around profitability rather than just gross sales. The framing is telling: TikTok isn't just adding AI features — it's positioning itself as an AI-accessible commerce platform, opening its APIs to the agentic orchestration layer that enterprises are building. For product marketers, this signals a shift from managing channels individually to managing them through unified AI workflows.</p>
+            <a href="https://newsroom.tiktok.com/tiktok-unveils-ai-powered-updates-for-advertisers-driving-discovery-action-and-measurable-business-outcomes" class="source-link" target="_blank">Read on TikTok Newsroom →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>ElevenLabs Hits $22B Valuation: Conversational AI Now 55% of Revenue, 15M Agent Conversations Weekly</h2>
+            <p>ElevenLabs completed a $300 million employee tender offer at a $22 billion valuation — double its February valuation from Series D. Led by Wellington and T. Rowe Price, the transaction gives employees an opportunity to sell shares while the company remains private. The growth driver: enterprise demand for conversational AI. Businesses now account for 55% of ElevenLabs' revenue, up from what was primarily a consumer/creator-focused business. The ElevenAgents platform handles more than 15 million conversations weekly — triple the volume from February. Annual recurring revenue has more than tripled. Customer use cases span support, sales, healthcare appointments, insurance renewals, and public services. The enterprise pivot is significant. ElevenLabs built its reputation on voice cloning and text-to-speech for creators. The conversational AI platform — real-time, agentic voice interactions — is a different product category entirely, competing with the likes of Bland AI, Retell, and enterprise contact center platforms. At $22B, ElevenLabs is now valued higher than many publicly-traded enterprise software companies. The message to market: voice is becoming an interface layer for AI agents, and the companies that can deliver natural-sounding, real-time voice interaction at scale are capturing enterprise budgets that used to go to traditional contact center infrastructure.</p>
+            <a href="https://elevenlabs.io/blog/tender-22bn" class="source-link" target="_blank">Read on ElevenLabs →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Market Logic Ships DeepSights MCP: Market Intelligence Becomes an Enterprise AI Layer</h2>
+            <p>Market Logic Software announced general availability of DeepSights MCP, which makes its market intelligence AI an accessible layer for enterprise AI assistants. The Model Context Protocol connection means Microsoft Copilot, ChatGPT, Claude, and custom agents can now consult DeepSights as an expert source whenever questions depend on market knowledge. The pitch addresses a real enterprise problem: organizations spend tens of millions annually on consumer and market research, but the return depends on how widely those insights shape decisions. By connecting curated market intelligence to the AI assistants employees already use, Market Logic aims to extend insights impact from the dedicated insights team to every employee and every AI workflow. "Your AI knows your company. DeepSights knows your market," said Chief Innovation and Product Officer Olaf Lenzmann. The MCP connection also addresses the growing risk that business decisions get fed by incomplete or misleading information from generic AIs rather than specialized, evidence-backed sources. DeepSights cites references in every answer and works only on trusted, curated data. User permissions from DeepSights carry through the MCP into other AI assistants — so governance and security follow the knowledge wherever it flows. For enterprise architecture teams, this represents a pattern: specialized knowledge systems exposing themselves via MCP to become queryable layers for general-purpose AI assistants.</p>
+            <a href="https://martechseries.com/predictive-ai/ai-platforms-machine-learning/market-logics-deepsights-mcp-scales-market-insights-reach-and-business-impact-through-enterprise-wide-ai-workflows/" class="source-link" target="_blank">Read on MarTech Series →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>Zeta Live 2026: Palantir's Karp and Zeta's Steinberg to Debate Data Sovereignty in Enterprise AI</h2>
+            <p>Zeta Global announced that Palantir CEO Dr. Alex Karp and Zeta CEO David Steinberg will hold a public conversation on data sovereignty and enterprise AI at Zeta Live 2026, taking place today (October 8) at David Geffen Hall at Lincoln Center in New York City. The discussion comes as Zeta and Palantir advance their strategic partnership, combining Palantir's enterprise AI infrastructure with Zeta's marketing data cloud. The pairing is deliberate: Palantir has built its enterprise AI business on the premise that organizations should maintain sovereignty over their data — running AI on proprietary data without sending it to external providers. Zeta's marketing platform processes massive volumes of consumer data for personalization and targeting. Together, they're making a case that enterprises can have both AI capability and data control. The timing is notable. Yesterday's controversy over Altman's "accept bad things" statement highlighted the tension between AI velocity and AI safety. Karp has been consistently outspoken on a different axis: data sovereignty, the risk of AI infrastructure dependency on a few providers, and the importance of organizations maintaining control over their most sensitive data. For enterprise marketers watching the AI landscape consolidate around a few major platforms, the Zeta-Palantir conversation signals an alternative architecture: one where marketing AI runs on proprietary infrastructure rather than flowing through external APIs.</p>
+            <a href="https://www.businesswire.com/news/home/20261007511332/en/Zeta-Global-Announces-Palantirs-Dr.-Alex-Karp-and-Zetas-David-A.-Steinberg-Will-Discuss-Data-Sovereignty-and-Enterprise-AI-at-Zeta-Live-2026" class="source-link" target="_blank">Read on Business Wire →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>Today's stories crystallize a new phase in enterprise AI: the infrastructure wars are moving from model capability to integration architecture.</strong> Claude's leap to 12.8% market share in Cledara's data isn't just about model quality — it's about enterprise adoption patterns. Anthropic has been deliberately building for enterprise workflows while OpenAI has chased consumer scale. The MCP protocol, which appears in three of today's five stories (TikTok, Market Logic, and implicitly in the Zeta-Palantir conversation about data sovereignty), is becoming the connective tissue of this architecture. TikTok isn't just shipping AI features — it's exposing its advertising APIs to external AI orchestration. Market Logic isn't just building a market intelligence tool — it's positioning itself as a queryable layer for enterprise AI assistants. ElevenLabs' $22B valuation signals that voice is becoming an interface layer worth billions. The enterprise AI stack is taking shape: AI-native platforms (Claude, ChatGPT) at the center, specialized knowledge layers (DeepSights, internal data systems) connected via MCP, application APIs (TikTok, Salesforce, enterprise systems) exposed for agentic orchestration, and voice/conversational interfaces (ElevenLabs) handling human-agent interaction. The winners in this architecture won't be the ones with the best models — they'll be the ones who integrate most seamlessly into the orchestration layer enterprises are building. The Zeta-Palantir conversation about data sovereignty is the wildcard: as AI agents gain access to more enterprise data, the question of where that data flows — and who controls it — becomes existential. The infrastructure wars are just beginning.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-10-07.html">← October 7, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
