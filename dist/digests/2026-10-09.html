@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — October 9, 2026 | The Full Stack</title>
+    <meta name="description" content="Ironclad ships Contract Knowledge Graph for grounded agents. Microsoft publishes agent governance blueprint. BCG: 76% of B2B CMOs say AI-mediated discovery already reshaping journeys.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-10-09.html">
+    
+    <meta property="og:title" content="Daily Digest — October 9, 2026 | The Full Stack">
+    <meta property="og:description" content="Ironclad ships Contract Knowledge Graph. Microsoft publishes agent governance blueprint. BCG: 76% say AI-mediated discovery reshaping B2B.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-10-09.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Friday, October 9, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">Ironclad Ships Contract Knowledge Graph for Grounded Agents, Microsoft Publishes Agent Governance Blueprint, BCG: 76% of B2B CMOs Say AI-Mediated Discovery Already Reshaping Journeys</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Ironclad Launches AI Agent + Contract Knowledge Graph: Grounding Agent Decisions in Company Deal History</h2>
+            <p>Ironclad announced Ironclad Agent plus a new Contract Knowledge Graph (CKG) that maps clauses, relationships, obligations, and past negotiation decisions — letting legal, procurement, and sales teams query and act on contract context through conversational AI. The product is pitched as an orchestration layer that keeps contract knowledge inside a customer's environment. This is a practical example of "grounded agents" — the company claims agents will make recommendations based on your firm's prior deals and approved positions rather than generic training data, which reduces one of the common failure modes (contradictory or out-of-context advice) when agents touch sensitive commercial terms. The CKG powers all interactions and grounds them in context from each customer's contracts, approved positions, and past decisions to surface relationship patterns and potential risks while protecting sensitive data. For enterprise teams wrestling with how to deploy AI agents in high-stakes workflows, Ironclad's architecture offers a template: instead of feeding contract data to external AI models, build a proprietary knowledge graph that captures institutional knowledge and use that graph to constrain and contextualize agent behavior. The result: agents that reflect how the business actually operates, with clearer audit trails for compliance review.</p>
+            <a href="https://www.prnewswire.com/news-releases/ironclad-launches-new-ai-agents-grounded-in-commercial-context-helping-teams-negotiate-better-and-capture-more-value-from-every-deal-302900338.html" class="source-link" target="_blank">Read on PR Newswire →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>Microsoft Publishes "Customer Zero" Guide: A Governance Blueprint for Enabling Employee Agent Builders</h2>
+            <p>Microsoft published an operational playbook showing how it enables employees to create agents across three paths — natural-language Agent Builder for low-risk needs, Copilot Studio for configurable low-code workflows, and Microsoft Foundry for pro-code, enterprise-scale agent systems — accompanied by governance patterns, sensitivity labels, and lifecycle triggers for reviews. The guide gives enterprise IT leaders an explicit, tested blueprint for scaling agent programs without blocking citizen builders: pick the right tool for the right risk profile, apply reusable governance patterns, and instrument review points before agents touch critical systems. The three-tier architecture is notable: Agent Builder lets any employee create simple agents through natural language, Copilot Studio provides a visual canvas for more complex workflows with connectors and logic, and Foundry enables full code-based agent systems for mission-critical applications. Each tier has corresponding governance checkpoints. For enterprises asking "how do we let everyone build agents without losing control," Microsoft's internal playbook offers a concrete answer: tiered tooling matched to tiered oversight, with sensitivity labels that travel with the agent through its lifecycle. The question for IT teams is whether their current governance structures can adapt to this model — or whether they need to build new review and approval frameworks specifically for agent deployments.</p>
+            <a href="https://www.microsoft.com/en-us/microsoft-cloud/blog/2026/10/09/how-microsoft-employees-create-copilot-agents/" class="source-link" target="_blank">Read on Microsoft →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>BCG: 76% of B2B CMOs Say AI-Mediated Discovery Is Already Reshaping Customer Journeys</h2>
+            <p>Boston Consulting Group's 2026 global CMO study — surveying 300 CMOs across B2B and B2C organizations, supplemented by 50 structured interviews — reports that 76% of B2B CMOs say AI-mediated, no-click discovery is already reshaping their customer journeys. The numbers reveal a tension: 96% of CMOs say AI is driving significant transformation across marketing, yet 42% still primarily use generative AI as an assistant for individual tasks. Meanwhile, 90% say GenAI is already reshaping how customers discover and evaluate brands. "No-click" discovery means potential customers can learn about a market, compare solutions, or discover companies without immediately clicking through to websites. A buyer might ask an AI system which platforms solve a problem, which agencies specialize in a project, how two providers differ, or which companies belong on a shortlist. By the time that buyer eventually reaches your website, part of their opinion may already have been formed elsewhere. For B2B marketers, the implication is significant: the buying journey can start before the website visit, while the information on the website can still influence what happens before that visit. The website is becoming both a destination for humans and a source for AI systems. The BCG research suggests a fundamental shift in how visibility should be measured — not just rankings and website traffic, but whether AI systems know your company, associate it with the right topics, and include it when buyers ask relevant commercial questions.</p>
+            <a href="https://overflow.agency/insights/how-ai-search-is-changing-b2b-marketing-bcg" class="source-link" target="_blank">Read on Overflow Agency →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Forbes: B2B Sales Cycles Return to 6+ Months Despite AI — The Closing Motion Is Still Broken</h2>
+            <p>Just a year ago, AI vendors were closing enterprise deals in a single demo. Today, those same deals can take six months or longer, according to a Wall Street Journal vendor cited by Forbes contributor Ashish Srimal. The single-demo close was never normal — it was a brief window when enterprise buyers suspended their usual discipline because the technology felt unmissable. Now that window has closed. B2B tech companies are back to behaving like they always have: deliberately, skeptically, and with finance in the room for every significant decision. Meanwhile, a 2026 Gartner survey found that 80% of CEOs believe AI will force operational overhauls in their organizations. So if AI is so powerful, why isn't it helping companies close faster? The answer, per Srimal: AI has transformed early-stage sales (qualification, personalization, coaching) but has barely touched the closing motion — the exhausting coordination between pricing, billing, financing, contracts, and collections that happens between a buyer's "yes" and cash in your account. McKinsey's April 2026 research on agentic AI in B2B pricing confirms this shift is underway: pricing is moving from human-led processes to AI-orchestrated systems with humans in oversight. For product marketers watching their sales cycles stall despite AI investments, the diagnosis is clear: the automation stopped at qualification. The back-office coordination that actually closes deals remains manual, fragmented, and resistant to the same AI tools that transformed the front end of the funnel.</p>
+            <a href="https://www.forbes.com/councils/forbestechcouncil/2026/10/08/why-isnt-ai-helping-b2b-technology-companies-close-faster/" class="source-link" target="_blank">Read on Forbes →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>Shopify Canvas: Full-Store Redesigns in 20 Minutes via AI Agent Conversations</h2>
+            <p>Shopify announced Canvas, a new design surface where merchants build and redesign their stores by talking to Sidekick, Shopify's AI agent. When Shopify product director Ben Sehl built his brand Kotn on the platform 12 years ago — and he knew how to code — a rough store still took him two weeks. Now he says a merchant can build a fully custom store in twenty minutes through conversation. Canvas lays every page of the store out on one screen, so instead of editing one template at a time, merchants can pan across the whole thing and see how it hangs together. Sidekick has been making small edits for a while — over 25 million of them in the first half of 2026 — but always one section at a time. Canvas promotes it to whole-store redesigns, which until now meant hiring a developer or living with a template. The workflow is telling: you describe what you want, Sidekick writes the theme code, takes its own screenshots to check the result, and hands it back for approval. It's early — Shopify is honest that the old editor isn't going anywhere yet — but the direction is clear. For product marketers watching the "AI agent as designer" pattern, Shopify's approach is notable: instead of trying to replace human creativity, Sidekick acts as an implementer that translates natural-language descriptions into working code, then self-validates the output before presenting it. That's a different model than "AI generates options for humans to choose from" — it's "human describes, AI implements and checks, human approves."</p>
+            <a href="https://www.shopify.com/news/introducing-canvas" class="source-link" target="_blank">Read on Shopify →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>Today's stories converge on a single theme: the enterprise AI race is shifting from "can AI do this task?" to "how do we govern AI doing thousands of tasks at once?"</strong> Ironclad's Contract Knowledge Graph and Microsoft's "Customer Zero" playbook are both answering the same question from different angles — how do you deploy agents that act on sensitive business data without losing control? Ironclad's answer is to build a proprietary knowledge graph that constrains agent behavior to institutional precedent; Microsoft's answer is tiered tooling with tiered oversight. Both recognize that the bottleneck isn't model capability anymore — it's organizational readiness to supervise agents at scale. The BCG study adds urgency: 76% of B2B CMOs say AI-mediated discovery is already reshaping journeys, but 42% are still using AI as a glorified writing assistant. That gap is going to hurt. Meanwhile, the Forbes piece on six-month sales cycles exposes the uncomfortable truth that AI has mostly automated the easy parts of B2B sales — qualification, outreach, coaching — while the hard parts (pricing negotiation, contract coordination, finance approval) remain stubbornly manual. Shopify's Canvas shows a more optimistic pattern: Sidekick doesn't just suggest, it implements, self-validates, and presents for approval. That's the agent architecture that might actually scale — but only if governance structures can keep pace. The enterprises winning in 2027 won't be the ones with the most AI tools. They'll be the ones who figured out how to supervise agents before the agents started making consequential decisions.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-10-08.html">← October 8, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
