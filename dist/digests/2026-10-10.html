@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — October 10, 2026 | The Full Stack</title>
+    <meta name="description" content="Google launches Gemini workplace agent with sub-agents. Zeta ships AthenaOS enterprise intelligence OS. Snowflake previews AI Gateway for Advertising with governed MCP integrations.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-10-10.html">
+    
+    <meta property="og:title" content="Daily Digest — October 10, 2026 | The Full Stack">
+    <meta property="og:description" content="Google Gemini workplace agent creates sub-agents. Zeta AthenaOS ships. Snowflake AI Gateway for Advertising previews with Meta and TikTok MCP.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-10-10.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Saturday, October 10, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">Google Gemini Workplace Agent Spawns Sub-Agents for Multi-Day Tasks, Zeta Ships AthenaOS Enterprise Intelligence OS, Snowflake Previews AI Gateway for Advertising with Governed MCP</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Google Launches Gemini as "Universal Agent" That Creates Its Own Sub-Agents for Multi-Day Workplace Tasks</h2>
+            <p>Google Cloud CEO Thomas Kurian unveiled Gemini as a "universal agent" at Gemini at Work 2026 — one that can write and run code, create images and media, and integrate with Google products (Gmail, Docs, Drive, Sheets) plus third-party apps like Slack and Microsoft 365. The standout capability: Gemini can create "sub-agents" — temporary, job-specific agents with their own identities that coordinate across several days to accomplish complex goals. Workers can delegate tasks to Gemini and receive finished products, whether Gemini works as a personal assistant or as a team member operating on behalf of a group or an organizational role like "analyst in your finance department." The agent builds memory and skills over time based on its assigned tasks, and it runs in the cloud so "you never have to re-brief it or wonder which machine you told it to do something on." This moves the AI agent race beyond single-task chatbots into persistent, context-aware systems that can decompose goals into coordinated sub-agent workflows spanning days. For enterprise IT, the question isn't whether to adopt agent systems anymore — it's how to govern systems that spawn their own agents dynamically. The multi-day, self-spawning architecture puts Gemini in direct competition with Meta's Muse personal assistant and OpenAI's recently introduced "Dots" agents for ChatGPT Pro and Business Premium users.</p>
+            <a href="https://www.cbsnews.com/news/google-gemini-ai-workplace-agent/" class="source-link" target="_blank">Read on CBS News →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>Zeta Global Ships AthenaOS: The Enterprise Intelligence Operating System That Starts with What You Want to Achieve</h2>
+            <p>At Zeta Live 2026, Zeta Global (NYSE: ZETA) announced AthenaOS, an enterprise intelligence operating system built on the Zeta Data Cloud that combines enterprise knowledge with Zeta's intelligence about customer intent, preferences, and predicted behavior. The architectural shift is significant: instead of navigating disconnected applications, users tell Athena their business objective, and AthenaOS assembles the intelligence, applications, and actions needed to achieve it through a continuous "know, decide, act, learn" loop. CEO David Steinberg framed it as "the shift from navigating software to directing outcomes." Alongside AthenaOS, Zeta introduced Athena MCP — a headless solution that brings Zeta intelligence into external applications, agents, and workflows including ChatGPT, Claude, Gemini, and other enterprise AI environments. Zeta also unveiled the Athena Inference Model (AIM), developed with Fireworks using NVIDIA Nemotron, for specific AthenaOS use cases — and disclosed that it has begun work on a specialized AIM chip with partners. The shared-context framework integrates with Palantir Foundry and OpenAI while preserving data sovereignty. For enterprise marketers evaluating agentic platforms, Zeta's architecture represents an ambitious bet: purpose-built models, custom silicon in development, and a headless MCP interface that lets teams use Zeta intelligence wherever they already work. Synchrony Financial, an early customer, reported using Athena agents for QA, link validation, and translation tasks.</p>
+            <a href="https://www.zetaglobal.com/news/zeta-live-2026-zeta-introduces-athenaos/" class="source-link" target="_blank">Read on Zeta Global →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Snowflake Previews AI Gateway for Advertising: Governed MCP Integrations for Meta and TikTok Put Agents in the Campaign Loop</h2>
+            <p>Snowflake introduced the AI Gateway for Advertising in preview, with governed Model Context Protocol (MCP) integrations for Meta and TikTok, built on Snowflake's May 2026 acquisition of Natoma's enterprise MCP platform. The gateway connects Cortex Agents to enterprise context — business definitions, historical performance, transaction history, inventory — alongside live platform signals like delivery, catalog health, and diagnostics. Agents reason across the full picture, recommend optimizations, explain rationale to campaign managers, and act with permission. In a retail scenario, an agent can diagnose why ROAS dropped by connecting ad platform metrics with conversion event quality, catalog warnings, and inventory levels, then recommend a bounded action like reducing an affected ad set's budget by 20% while preserving LTV potential. In a media scenario, agents can identify owned-media signals worth amplifying through paid, recommending frequency increases for high-converting segments while keeping broader prospecting unchanged. PMG is an early customer. For enterprise advertisers, Snowflake's approach addresses a fundamental problem: agents that see platform metrics without business context give recommendations that miss core KPIs or don't fit the channel. By connecting first-party data in Snowflake with live ad platform signals through governed MCP, agents get the evidence they need to explain performance changes and recommend actions that actually fit the business — with audit trails that capture the recommendation, supporting evidence, and approval in one shared record.</p>
+            <a href="https://www.snowflake.com/en/blog/ai-agents-in-advertising/" class="source-link" target="_blank">Read on Snowflake →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Channel V Media: 7.7% of US Adults Use Agentic AI Today, But 40.1% Would Delegate at Least One Task — The 22.5-Point Gap</h2>
+            <p>Channel V Media published The State of AI Adoption in America based on a June 2026 survey by Prosper Insights & Analytics of 7,675 US adults. The headline numbers: 7.7% currently use agentic AI, 17.6% call AI agents a good idea, and 40.1% would let an agent handle at least one everyday task. The 22.5-point distance between calling agents "a good idea" (17.6%) and being willing to delegate a task (40.1%) describes consumers who will hand over work but withhold the endorsement — and that cohort gives the first agent error very little patience. Specific delegation willingness: 12.1% for restaurant bookings, 11.0% for grocery buying, 5.0% for buying a car. Meanwhile, 69.1% prefer a human for online shopping. The Agile Brand Guide analysis connects this to Simon-Kucher's holiday study: 55% use AI to find deals, 51% for comparisons, but only 16% would allow AI to complete a purchase — a 39-point gap between deal-finding and purchase authority. For product marketers, these numbers frame the near-term opportunity: consumers are willing to delegate research and comparison tasks to agents but draw a hard line at checkout. That means the immediate priority isn't agent-enabled purchasing — it's ensuring your product information is accurate, structured, and available where agents do their research. The brand that shows up correctly when an agent looks for "best wireless earbuds under $100" wins the consideration set before the human ever reaches a checkout page.</p>
+            <a href="https://agilebrandguide.com/yesterdays-martech-ai-cx-news-october-9-2026/" class="source-link" target="_blank">Read on Agile Brand Guide →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>Only 1.6% of Enterprises Allow Fully Automated AI Content to Reach Customers — But AI Budgets Keep Growing</h2>
+            <p>A MarTech analysis of enterprise AI adoption found that just 1.6% of organizations allow fully automated AI-generated content to reach customers without human review. The majority position: 43.3% allow external use of AI-generated content only after it's been reviewed, edited, and verified by humans. This creates what the report calls the "AI budget paradox" — spending on AI tools continues to grow faster than proof of ROI, with enterprises investing heavily in capabilities they then constrain through mandatory human oversight. The constraint isn't irrational: a single hallucinated fact in customer-facing content can damage trust built over years, and the regulatory landscape around AI-generated marketing content remains uncertain. But the 1.6%/43.3% split reveals the operational reality behind AI adoption headlines: for most enterprises, AI is an accelerant for human work, not a replacement. The implications for product marketers are practical: when building ROI cases for AI tools, assume a human-in-the-loop model rather than full automation. The 43.3% who require review before external use represent the mainstream enterprise position — and any AI workflow that can't accommodate that review step won't survive procurement. For vendors selling AI marketing tools, the selling motion should emphasize "AI-assisted" rather than "AI-automated," with clear UX for the review and approval steps that enterprises actually require.</p>
+            <a href="https://martech.org/ai-budgets-are-growing-faster-than-proof-of-roi/" class="source-link" target="_blank">Read on MarTech →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>Today's stories paint a picture of AI infrastructure racing ahead of organizational readiness — again.</strong> Google's Gemini can now spawn its own sub-agents for multi-day tasks, which is technically impressive and governance-nightmare-inducing in equal measure. Who approves sub-agent actions? Who owns sub-agent mistakes? The capability is shipping before those questions have answers. Zeta's AthenaOS and Snowflake's AI Gateway for Advertising represent a more mature pattern: purpose-built systems that connect AI capabilities to enterprise context through governed interfaces. Both recognize that raw model power without business context produces recommendations that miss the point — and both build explicit human-in-the-loop checkpoints into the architecture. The Channel V Media survey provides the consumer-side reality check: yes, 40% would delegate tasks to agents, but 69% still prefer humans for shopping, and only 16% would let an agent complete a purchase. Agents are trusted for research, not decisions. And that 1.6% number — the share of enterprises allowing fully automated AI content to reach customers — should anchor every AI strategy conversation. The median enterprise isn't deploying autonomous agents; it's deploying AI-assisted workflows with mandatory human review. The vendors winning enterprise deals in 2027 will be the ones who design for that constraint rather than against it.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-10-09.html">← October 9, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
