@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — October 12, 2026 | The Full Stack</title>
+    <meta name="description" content="Google AI Overviews hit 80%+ of brand searches. Zeta acquires Senso to own GEO tech. 95% of GenAI pilots show no P&L impact. OpenAI ships always-on Dots agents. Cisco embeds agentic AI in Webex.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-10-12.html">
+    
+    <meta property="og:title" content="Daily Digest — October 12, 2026 | The Full Stack">
+    <meta property="og:description" content="AI Overviews dominate brand search. Zeta acquires Senso. 95% of GenAI pilots fail. OpenAI Dots go always-on. Cisco agents join meetings.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-10-12.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Monday, October 12, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">AI Overviews Hit 80%+ of Brand Searches, Zeta Acquires Senso to Own GEO Stack, 95% of Enterprise GenAI Pilots Show No P&L Impact</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Google AI Overviews Now Appear on 80%+ of Branded Searches — And Most Marketers Haven't Audited Them</h2>
+            <p>DemandSphere's daily tracking shows AI Overviews now appear on more than 80% of branded queries, up from roughly 26% at the start of September. The jump happened suddenly: the metric sat between 27% and 35% for most of the month, then spiked to 69% on September 26 and peaked at 90.48% on September 27. A separate test by Chris Long at Nectiv found AI Overviews for 93 of 100 enterprise brands. Neither study measured clicks, so the impact on traffic remains unclear — but the visibility shift is undeniable. Google also updated its guidance on AI-written content this week, now stating it is "critical to manually fact-check and review all AI-generated content for accuracy and trustworthiness" before publishing. For brand marketers, the implication is straightforward: search your own business name in a private browser and read what the AI summary says about your hours, phone number, address, and services. If something is wrong, fix it at the source — typically your website, Google Business Profile, or directory listings. The AI is already speaking for your brand whether you've audited it or not.</p>
+            <a href="https://www.b2the7.com/news-blog/marketing-trends-october-12-2026" class="source-link" target="_blank">Read on B2The7 →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>Zeta Global Acquires Senso, the Y Combinator Startup That Quietly Powered Its GEO Product</h2>
+            <p>Zeta Global announced on October 5 that it has signed a definitive agreement to acquire Senso, a Toronto-based, Y Combinator-backed AI engineering company. The acquisition brings in-house a supplier Zeta never named publicly when it launched its Generative Engine Optimization (GEO) product in September 2025. According to Zeta's release, Senso's technology "helps power" the GEO product — the first public acknowledgment that a third party contributed to what Zeta had presented as its own proprietary technology. No financial terms were disclosed. Y Combinator's directory lists Senso as an 8-person team from the Winter 2024 batch. CEO Saroop Bharwani and the Senso team will join Zeta. For enterprises evaluating GEO vendors, the acquisition raises a question worth asking in every procurement: how much of the "proprietary" product you're buying is built by a third party? Zeta's consolidation of Senso suggests the company recognized the strategic risk of depending on an external supplier for a core capability — and moved to own the technology rather than license it.</p>
+            <a href="https://ppc.land/zeta-global-to-buy-senso-the-startup-behind-its-ai-search-product/" class="source-link" target="_blank">Read on PPC Land →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>The Hidden Data Tax: 95% of Enterprise GenAI Pilots Show No P&L Impact, and the Bill Arrives 12–24 Months Late</h2>
+            <p>A 2025 report from MIT's NANDA initiative found that 95% of enterprise generative AI pilots produced little or no measurable impact on the profit-and-loss statement. The missing ingredient, according to a new analysis, is not a better model — it's the architecture required to give that model useful, current, and properly controlled information. Most enterprise AI architectures assume data will move to wherever the new platform lives. That assumption creates what analysts call "data gravity": records remain tied to regulation, sovereignty, ownership, and applications built around them, and moving them incurs transfer fees, latency, bandwidth costs, security controls, and operational effort that arrive before a model produces a useful answer. The distinction matters: a model doesn't need raw data dumped in front of it — it needs context, the ability to find the right record, cross-reference it against policy, respect access rules, and work from information that is current. Organizations trying to solve a context problem with a storage strategy discover the costs 12 to 24 months after the platform is procured, well after the celebratory launch deck has been filed.</p>
+            <a href="https://www.artiverse.ca/enterprise-ais-real-bill-arrives-in-the-data-layer/" class="source-link" target="_blank">Read on Artiverse →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>OpenAI Ships "Dots" — Always-On GPT-6 Astra Agents That Keep Working Between Conversations</h2>
+            <p>OpenAI's new Dots product introduces always-on agents powered by GPT-6 Astra that can pursue user-defined goals continuously, including between conversations. Each Dot can research information, create and modify files, integrate with connected applications, and keep making progress without active user engagement, using its own cloud computer and persistent memory of user objectives. Initial rollout is to Pro and Business Premium customers, with regional restrictions on Pro availability in Europe. This shifts the agent paradigm from reactive (you ask, it responds) to proactive (you define a goal, it pursues it). For founders and operators, Dots establishes a mass-market reference for subscription-priced, goal-following agents that live beyond chat sessions. The implication for enterprise AI strategy: continuous project execution and monitoring becomes a mainstream expectation rather than a niche demo. Start by identifying one continuous process — research synthesis, backlog grooming, or account monitoring — where a Dot can run with clear guardrails, and design metrics around latency, accuracy, and unexpected behavior before expanding scope.</p>
+            <a href="https://aiagentstore.ai/ai-agent-news/this-week" class="source-link" target="_blank">Read on AI Agent Store →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>Cisco Embeds Agentic AI in Webex: Agents Can Now Join Meetings and Execute Multi-Step Workflows</h2>
+            <p>Cisco expanded its Webex collaboration platform with an agentic AI framework that lets employees invite autonomous agents into spaces, meetings, and calls. These agents can interpret goals and execute multi-step work across calendars, documents, and third-party apps while preserving human oversight and audit trails. The update ties agents into collaboration, workplace management, and customer-service workflows, letting them operate before, during, and after calls. This shifts Webex from a meeting tool into a workflow hub where AI agents can own routine coordination, follow-ups, and data entry across systems. For builders, Cisco provides a reference architecture for embedding goal-driven agents inside existing collaboration platforms rather than standing up separate dashboards. The guidance for enterprise pilots: start narrow — agent-driven meeting prep and post-call task creation — and track error rates, security findings, and employee adoption before rolling agents into sensitive workflows like approvals or customer escalations.</p>
+            <a href="https://aiagentstore.ai/ai-agent-news/this-week" class="source-link" target="_blank">Read on AI Agent Store →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>Today's stories share a common thread: the AI tools are arriving faster than the infrastructure to support them, and the bills are coming due.</strong> Google's AI Overviews now dominate branded searches — a massive visibility shift that happened in days, not quarters — yet most marketers haven't even searched their own brand name to see what the AI is saying about them. That's a governance failure hiding in plain sight. The MIT finding that 95% of GenAI pilots show no P&L impact isn't an indictment of the technology; it's an indictment of how organizations approach deployment. They solve context problems with storage strategies, then wonder why the model hallucinates when it can't find current customer data or respect access rules. The cost of that mistake arrives 12–24 months after the celebratory launch — exactly when the team that deployed it has moved on. Meanwhile, the agents are getting more capable. OpenAI's Dots run between conversations. Cisco's agents join your meetings. These aren't experimental demos; they're shipping to paying customers. The gap between what agents can do and what organizations are prepared to govern is widening by the week. Zeta's acquisition of Senso is the quiet strategic move in today's digest: they recognized that depending on a third party for a core capability created unacceptable risk, so they moved to own the technology. Every enterprise evaluating AI vendors should ask the same question: how much of what you're buying is actually built by a third party, and what happens when that relationship changes?</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-10-11.html">← October 11, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
