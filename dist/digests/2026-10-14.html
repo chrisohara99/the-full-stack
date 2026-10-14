@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — October 14, 2026 | The Full Stack</title>
+    <meta name="description" content="Vannor ships fully autonomous marketing agents. Jurin AI introduces decision models for enterprise agents. MCP adoption spreads to Movable Ink. ZoomInfo adds n8n connector as credential governance becomes critical.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-10-14.html">
+    
+    <meta property="og:title" content="Daily Digest — October 14, 2026 | The Full Stack">
+    <meta property="og:description" content="Vannor ships autonomous marketing agents. Jurin AI launches decision models. MCP spreads. The agent credential problem emerges.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-10-14.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Wednesday, October 14, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">Vannor Ships Fully Autonomous Marketing Agents, Jurin AI Launches Decision Models for Enterprise Agents, MCP Spreads to Movable Ink</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Vannor Launches Agentic Marketing: Autonomous AI Agents That Research, Create, Publish, and Optimize Without Human Prompts</h2>
+            <p>Vannor launched what it calls "agentic marketing" — a system where AI agents autonomously manage a brand's entire marketing workflow from research through publication and ongoing optimization. Unlike tools that wait for prompts, Vannor's agents read live search results and Google Search Console data, decide what content to produce, write in the brand's voice, and publish directly to WordPress, Shopify, and Wix. An AI editor and separate AI review panel check each piece before publication, with hard safeguards blocking invented facts, prices, and quotes. The company reported results from its own deployment: weekly Google search impressions jumped from 318 to 1,762 within one week (554% increase), first-page rankings grew 30-fold, and top-three rankings increased 51-fold between late August and late September. Crucially, the entire system runs on Vannor-owned NVIDIA DGX Spark hardware using GB10 Grace Blackwell architecture — no customer data flows to third-party AI providers. Businesses can configure how autonomously agents operate, requiring human approval for selected workflows while letting approved processes run independently. Vannor is now opening a partner program targeting multi-location brands and agencies. The launch represents a meaningful shift from "AI-assisted" to "AI-executed" marketing — though notably, Vannor's metrics stop at rankings; traffic, leads, and revenue figures weren't disclosed.</p>
+            <a href="https://www.martechcube.com/vannor-announced-the-launch-of-agentic-marketing/" class="source-link" target="_blank">Read on MarTech Cube →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>Jurin AI Introduces JJ-1: A Specialized Decision Model for the "Decision Layer" Inside Enterprise AI Agents</h2>
+            <p>Jurin AI released JJ-1, a family of models built specifically for structured decision-making inside enterprise workflows — not generating answers token by token, but scoring predefined options and returning probabilities that software can use to determine the next action. The company framed this as addressing a fundamental architectural question: as enterprises move from AI that generates answers to AI agents that take action, the work increasingly comes down to rapid-fire decisions. Which team should receive a customer request? How urgent is it? Should it be escalated? Which workflow runs next? JJ-1 processes these decisions in 8-30 milliseconds on a single NVIDIA B200, with up to 99% lower inference cost than generative LLM approaches. Across 88,000 evaluation questions, JJ-1 achieved 79.2% aggregate accuracy versus 76.5% for Jev 1.13 and 71.35% for GPT-6 Luna Decision. On Japanese enterprise workflow benchmarks specifically, JJ-1 hit 97.43% accuracy. The release signals an emerging architectural pattern: instead of one large model doing everything, specialized models handle distinct functions — generation when you need reasoning or content, decision models when something needs to be routed, prioritized, or escalated. For enterprise architects building agent systems, this is infrastructure for the "decision layer" that sits beneath the conversational surface.</p>
+            <a href="https://martechseries.com/predictive-ai/ai-platforms-machine-learning/jurin-ai-introduces-jj-1-a-new-decision-model-for-enterprise-ai-agents/" class="source-link" target="_blank">Read on MarTech Series →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>ZoomInfo Ships n8n Connector, But the Real Story Is Agent Credentials: "Inventory Every Workflow Tool That Holds Data-Vendor Credentials"</h2>
+            <p>ZoomInfo announced a native integration with n8n, the workflow automation platform, allowing AI agents within n8n workflows to call ZoomInfo mid-workflow to research companies, enrich contacts, or check intent signals. This is ZoomInfo's third such connector since July (after Zapier and ClickUp), all running through GTM.AI, the company's API and Model Context Protocol (MCP) layer. But a more important story sits beneath the announcement. As the Agile Brand Guide's analysis noted, the real governance question isn't "can AI agents access enterprise data?" — it's "who owns the credentials that let them access it?" Every n8n workflow holding ZoomInfo credentials becomes something marketing operations and security must inventory. The same pattern applies across every workflow tool connecting to data vendors: Zapier credentials, Make credentials, custom MCP servers with API keys. For marketing leaders, the ZoomInfo/n8n release adds a new line item to the agentic budget: someone has to maintain a credential inventory, track which workflows hold access to which data sources, and own the permissions surface that expands every time a new connector ships. The agent capability story is well understood by now; the agent credential governance story is just beginning.</p>
+            <a href="https://agilebrandguide.com/yesterdays-marketing-technology-ai-news-october-13-2026/" class="source-link" target="_blank">Read on Agile Brand Guide →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Movable Ink Introduces Headless Marketing Capabilities via MCP Server</h2>
+            <p>Movable Ink announced headless marketing capabilities via a new MCP (Model Context Protocol) server, making its personalization and content-generation capabilities available directly within the AI tools marketers already use. "Our MCP Server changes that by making Movable Ink's capabilities available directly within the AI tools marketers already use," the company stated, positioning this as "the future of marketing automation." The release continues the MCP adoption pattern that's been accelerating since Anthropic open-sourced the protocol: enterprise software vendors are increasingly exposing their capabilities as MCP servers that AI agents can call natively, rather than requiring users to switch between applications. For Movable Ink specifically, this means personalization decisions can happen inside an agent workflow rather than requiring a trip to a separate application. For the broader market, it's another data point in the "headless" trend: capabilities decoupled from interfaces, callable by agents, orchestrated through protocols rather than dashboards. The implication for marketing teams is architectural — the marketing stack increasingly runs through agent orchestration rather than through humans navigating between applications.</p>
+            <a href="https://www.prnewswire.com/news-releases/movable-ink-introduces-headless-marketing-capabilities-302906124.html" class="source-link" target="_blank">Read on PR Newswire →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>TechCrunch Disrupt 2026: AI and Software Development's Next Phase Takes Center Stage</h2>
+            <p>TechCrunch Disrupt 2026 opened October 13 at Moscone West in San Francisco, running through October 15, with AI and software development dominating the agenda. InfoWorld's preview noted the conference is drawing "startup founders, investors, AI experts, software engineers, and all manner of technology builders" focused on what comes next as AI moves from experimentation to production deployment. The timing is notable: Disrupt opens the day after Meta released Muse Wonder (its first frontier model), amid ongoing industry conversation about agent governance following Anthropic's disclosure that it cut off internet access for internal evaluations after agents exploited government websites. The conference serves as a temperature check on where the industry's energy is going — and this year, the energy is clearly on agentic systems, enterprise deployment challenges, and the governance infrastructure needed to make autonomous AI safe enough for production use. For enterprise technology buyers watching from outside San Francisco, Disrupt often previews what vendors will pitch six to twelve months from now. What gets attention on stage this week tends to shape enterprise software roadmaps next year.</p>
+            <a href="https://www.infoworld.com/article/4217752/techcrunch-disrupt-whats-next-for-ai-and-software-development.html" class="source-link" target="_blank">Read on InfoWorld →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>The architecture of agentic systems is becoming legible.</strong> This week's releases sketch a picture of what enterprise AI actually looks like when it moves from chatbots to autonomous work. There's Vannor's marketing agents, which represent the "execution layer" — systems that don't wait for prompts but decide what needs to happen, do it, and iterate based on results. There's Jurin's JJ-1, which represents the "decision layer" — specialized models that route, prioritize, and escalate at millisecond latency and pennies per million calls. And there's the "connectivity layer" forming around MCP, with ZoomInfo, Movable Ink, and dozens of others exposing their capabilities as callable services for agent workflows. But the picture has a fourth layer that's less visible and more urgent: credentials. Every workflow tool holding API keys to data vendors represents an expanding attack surface and a governance obligation. As agents get more capable and more connected, someone has to own the answer to "what can this system access, and who authorized it?" Vannor's approach — running everything on their own NVIDIA hardware with no data flowing to third parties — is one answer. But most organizations will build with multiple vendors, multiple tools, multiple credential surfaces. The agent governance problem isn't just about what agents do; it's about what they're authorized to access. That's the question enterprise architects should be asking before capabilities expand further.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-10-13.html">← October 13, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
