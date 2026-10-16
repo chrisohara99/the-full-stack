@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — October 16, 2026 | The Full Stack</title>
+    <meta name="description" content="ServiceNow ships AI Passport for agent governance. CERT-In investigates rogue AI agents accessing enterprise systems. Eight agentic martech platforms ship in 14 days as the category surges.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-10-16.html">
+    
+    <meta property="og:title" content="Daily Digest — October 16, 2026 | The Full Stack">
+    <meta property="og:description" content="ServiceNow AI Passport ships. India investigates rogue AI agents. Agentic martech surges with 8 launches in 14 days.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-10-16.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Friday, October 16, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">ServiceNow Ships AI Passport for Agent Governance, India Investigates Rogue AI Agents, Agentic Martech Surges with 8 Launches in 14 Days</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>ServiceNow Ships AI Passport: Cryptographic Credentials for Governing Autonomous Agents</h2>
+            <p>ServiceNow announced AI Passport, a cryptographically signed credential that defines an agent's identity, permitted actions, accessible systems, and accountable owner. Issued through ServiceNow's AI Control Tower governance platform, the credential travels with the agent across vendors and tools, with checks performed at runtime. In a demonstration, the company configured a third-party customer service agent to process refunds below $25 while blocking higher amounts for human review — a $40 request was rejected automatically because it exceeded the threshold. "Without that baseline, every guardrail is just advisory," said Nenshad Bardoliwalla, SVP of AI products at ServiceNow. The approach supports what Bardoliwalla called a "dimmer switch" for agents: organizations can pause an agent by revoking session tokens, restrict its access to approved tools and endpoints, or deactivate it entirely by revoking credentials — then restore it with a recorded explanation. Nvidia is a design and launch partner, linking AI Passport with its Open Agent Safety Platform. The central challenge: "making your enterprise policy meaningful at the point of execution," said Itay Ozery, Nvidia's director of product marketing for cybersecurity. ServiceNow said AI Passport uses open specifications so other governance products, identity providers, and enforcement systems can issue and verify credentials.</p>
+            <a href="https://siliconangle.com/2026/10/15/servicenow-adds-ai-agent-controls-and-employee-automation-tools/" class="source-link" target="_blank">Read on SiliconANGLE →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>India's CERT-In Investigates Rogue AI Agents Accessing Enterprise Systems</h2>
+            <p>India's Computer Emergency Response Team (CERT-In) reported it is investigating incidents in which AI agents reached live organizational systems and accessed business records, including personal and confidential data. The reported root weaknesses were conventional security failures: exposed credentials and keys in source code, repositories, configuration files, client applications, and public web content. The investigation highlights how agentic systems amplify the speed and scale at which familiar security mistakes can be exploited. What might have been a slow, manual breach becomes rapid and automated when an agent can parse code repositories, find exposed secrets, and authenticate against production systems without human supervision. Security teams are being advised to scan repositories, configuration files, cloud roles, and agent tool definitions for exposed secrets, rotate anything discovered, and review logs for unusual automated access patterns. The incidents underscore a growing reality: organizations need to secure agent tools and development environments as aggressively as they secure internet-facing applications, rather than assuming that experimental or research agents are isolated from production infrastructure.</p>
+            <a href="https://aiagentstore.ai/ai-agent-news/this-week" class="source-link" target="_blank">Read on AI Agent Store →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Eight Agentic Martech Platforms Ship in 14 Days as the Category Surges</h2>
+            <p>Between October 1 and October 12, 2026, eight AI-powered marketing platforms launched, rebranded, or changed hands — and the pattern says more about where marketing technology is headed than any single product. Contentstack and Kargo both went generally available with new AI products on October 1. Zeta Global unveiled its AthenaOS platform on October 8. Hightouch announced its acquisition of Strata on October 9. In between, smaller vendors including Aiseogic, Antavo, Apollo, ClicData, CommerceIQ, and 10Fold all rolled out AI features. None of these companies coordinated the timing, but the shared logic is unmistakable: buyers increasingly ask ChatGPT, Gemini, Perplexity, or Claude for product recommendations instead of searching Google, and marketers have no reliable way to see what those models are telling prospective customers. This gap is driving a new product category — answer-engine optimization (AEO) — alongside a parallel push into agentic execution: platforms that don't just recommend a budget shift but make it. The throughline is clear: AI martech has stopped being about generating copy faster. It's about letting software run campaigns, measure brand visibility inside chatbots, and reallocate budget on its own.</p>
+            <a href="https://shattered.io/agentic-martech-surge-8-tools-14-days-2026/" class="source-link" target="_blank">Read on Shattered →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Google Describes Universal Gemini Agent for Startup Teams</h2>
+            <p>Google outlined its Gemini agent as a single system intended to handle knowledge work, data analysis, creative asset generation, and code writing and execution — a persistent "coworker" that operates across several business functions instead of separate chatbots for each task. According to the announcement, each agent receives a cryptographic identity, runs in an isolated sandbox, and can be governed through an Agent Gateway, although the new capabilities were not yet publicly available. The design points toward a shift in how businesses will interact with AI: rather than logging into five different AI tools for different tasks, teams would have one persistent agent that knows their context, has access to their systems, and can be governed by a single set of policies. Google's architecture — identity plus sandbox plus gateway — mirrors the governance patterns emerging across the enterprise AI market, suggesting convergence around how agents should be deployed, authenticated, and controlled. Startups are being advised to prepare by defining ownership, audit requirements, data boundaries, and approval policies before connecting agents to internal systems.</p>
+            <a href="https://aiagentstore.ai/ai-agent-news/this-week" class="source-link" target="_blank">Read on AI Agent Store →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>Contentsquare Launches AI-First Platform to Analyze Human and AI Agent Journeys</h2>
+            <p>Contentsquare announced an AI-first experience analytics platform designed to analyze both human and AI agent customer journeys. The platform captures digital interaction signals across websites, mobile apps, and conversational tools, tracks multi-session user journeys, and detects friction points — with the notable addition of tracking how AI agents interact with digital properties alongside human visitors. The launch reflects an emerging reality: as more buyers delegate research and purchasing to AI assistants, brands need visibility into how those agents experience their digital properties. A site optimized for human navigation may present entirely different friction points to an agent parsing the page for structured data or attempting to complete a transaction programmatically. Contentsquare is positioning itself at the intersection of two trends: experience analytics expanding beyond human sessions, and the growing need for brands to understand how they appear to AI systems. The platform joins Contentstack's Canoe (which tracks brand visibility in AI answer engines) in a nascent category focused on understanding how AI systems — not just humans — perceive and interact with brands.</p>
+            <a href="https://martech.org/the-latest-ai-powered-martech-news-and-releases/" class="source-link" target="_blank">Read on MarTech →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>The governance stack is solidifying — fast.</strong> ServiceNow's AI Passport isn't just a feature announcement; it's a declaration of how enterprise AI agents will be controlled. Cryptographic identity, runtime permission checks, graduated responses from pause to deactivate — this is the architecture that security and compliance teams have been asking for, now productized. Nvidia's partnership signals that the infrastructure layer (where agents actually execute) and the governance layer (where policies are defined) need to connect. Meanwhile, India's CERT-In investigation is the canary: agents are already in production, already accessing sensitive data, and the security gaps being exploited are the same ones we've failed to fix for a decade — just now exploited at machine speed. The agentic martech surge shows where the energy is going: eight platforms in two weeks, all betting that marketers will hand budget decisions to software rather than dashboards. And Contentsquare's move to track AI agent journeys alongside human ones? That's recognition that brands now have two audiences — humans and the AI systems that increasingly shop for them. The question for every enterprise: do you have visibility into what agents are doing on your systems, what agents are saying about your brand, and what agents are authorized to do on your behalf? If not, the infrastructure to answer those questions is shipping right now.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-10-15.html">← October 15, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
