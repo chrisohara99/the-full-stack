@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — October 17, 2026 | The Full Stack</title>
+    <meta name="description" content="Google Universal Cart goes live with agentic checkout. FTC sends 50-page demands to OpenAI and Anthropic. AI-driven breach hits 16 Korean banks. ChatGPT Chrome extension gains browser control.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-10-17.html">
+    
+    <meta property="og:title" content="Daily Digest — October 17, 2026 | The Full Stack">
+    <meta property="og:description" content="Google Universal Cart ships agentic checkout. FTC demands AI safety records. 100K records leaked across Korean financial sector.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-10-17.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Saturday, October 17, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">Google Universal Cart Ships Agentic Checkout, FTC Sends 50-Page Demands to OpenAI and Anthropic, AI Breach Hits Korean Financial Sector</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Google Launches Universal Cart in the US with AI-Powered Checkout Running on UCP Protocol</h2>
+            <p>Google formally rolled out Universal Cart in the United States across Search and the Gemini app, enabling shoppers to consolidate items from multiple retailers into a single AI-assisted cart with price-drop and inventory alerts. Checkout runs on Google's Universal Commerce Protocol (UCP), an open standard the company says is compatible with Agent2Agent (A2A), the Agent Payments Protocol (AP2), and the Model Context Protocol (MCP). Launch partners include Ulta Beauty, Walmart, Wayfair, Newegg, and select Shopify merchants, drawing on Google's Shopping Graph of over 60 billion product listings. "Let's say you save a handbag from Steve Madden to your cart in AI Mode in Search, and later a sweater from Quince and lipgloss from Ulta Beauty in the Gemini app," explained Suresh Ganapathy, senior director of consumer shopping at Google. "Those products will be there in your cart when you come back later." The launch signals Google's intent to become the default checkout layer for agentic commerce — a position that would give it unprecedented visibility into purchase intent and transaction data across the retail ecosystem.</p>
+            <a href="https://www.digitalcommerce360.com/2026/10/16/google-universal-cart-launch-features/" class="source-link" target="_blank">Read on Digital Commerce 360 →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>FTC Sends 50-Page Civil Investigative Demands to OpenAI and Anthropic Over Safety Incidents</h2>
+            <p>The Federal Trade Commission sent extensive civil investigative demands to OpenAI and Anthropic on October 15, with each document running more than 50 pages, according to Axios. The demands seek records on security incidents and safeguarding practices, along with marketing materials and privacy policies. The investigation signals a shift in FTC posture from policing "AI-washing" marketing claims toward structural examination of how AI labs handle safety failures. The move comes the same week that a group of state attorneys general sued OpenAI under consumer protection laws for allegedly misleading users, including children, on the safety of its chatbot. For enterprise buyers evaluating AI vendors, the investigation creates a new due diligence dimension: not just what capabilities a model offers, but what safety incidents have occurred, how they were handled, and whether the vendor's marketing claims match operational reality.</p>
+            <a href="https://www.axios.com/2026/10/15/ftc-openai-anthropic-ai-safety-investigation" class="source-link" target="_blank">Read on Axios →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>AI-Driven Breach Hits 16 Korean Financial Institutions, Leaks 100,000 Records</h2>
+            <p>South Korean authorities disclosed an AI-assisted campaign that leaked approximately 100,000 personal records across 16 financial institutions — including Shinhan, KB Kookmin, Hana, BNK Busan, four savings banks, Hyundai Capital, KDB Capital, and several crypto firms. Leaked fields include names, emails, phone numbers, and resident registration numbers. Analysts quoted in reports say attackers used AI to "work through an entire sector at a speed that was previously reserved for a single target" and vary their methods per attempt, blunting signature-based defenses. The incident illustrates a new threat model: rather than targeting one institution with a sophisticated attack, adversaries can now deploy AI-coordinated campaigns that hit multiple targets simultaneously with adaptive techniques. Financial services security teams are being advised to assume sector-wide targeting is now the default attacker posture.</p>
+            <a href="https://www.securitymagazine.com/articles/102662-ai-hacking-breach-hits-16-financial-institutions-leaks-100-000-records" class="source-link" target="_blank">Read on Security Magazine →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>ChatGPT Chrome Extension Gains Browser Control Mode: "Work" Can Fill Forms, Send Messages, Download Files</h2>
+            <p>OpenAI's ChatGPT Chrome extension now has two modes: "Chat" can read across open tabs to gather information, while "Work" can actively control them — sending messages, filling forms, downloading files, and grouping tabs. The announcement extends computer-use capabilities to an extension reportedly serving approximately 7 million users and marks a pivot from the discontinued Atlas browser project toward embedding agents directly in Chrome's dominant footprint. The full ChatGPT history and sidebar are available alongside any site. The move puts OpenAI directly into the browser automation market that companies like Anthropic have been approaching through separate tools. For enterprise IT, it raises immediate questions: What happens when employees use a third-party extension that can autonomously interact with corporate web applications? The feature puts pressure on security teams to update browser extension policies before adoption spreads.</p>
+            <a href="https://aiweekly.co/ai-news-today" class="source-link" target="_blank">Read on AI Weekly →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>DataDome: AI Agent Traffic Hit 25 Billion Requests in Q3, Meta's Muse Hides Its Identity</h2>
+            <p>DataDome, the bot and agent trust management company, reported that AI agent traffic across its network reached nearly 25 billion requests in Q3 2026, up 41.5% from 17.7 billion in Q2. The company also disclosed that Meta's Muse agentic browser generated 29.1 million requests from September 22 to October 3 without identifying itself as an AI agent. Of sampled Muse requests, 8.9% touched form, login, payment, account-creation, or cart endpoints, with 99.3% coming from cloud and CDN infrastructure. The same day, Proof launched x401, an open protocol that lets websites ask an AI agent whom it represents and what that person approved, signed with the consumer's biometric on their device. The report underscores a growing tension: enterprises need to know when they're interacting with an AI agent versus a human, but the largest platform companies are shipping agents that don't self-identify — creating a cat-and-mouse dynamic that will shape agentic commerce governance.</p>
+            <a href="https://agilebrandguide.com/yesterdays-marketing-technology-ai-news-october-16-2026/" class="source-link" target="_blank">Read on Agile Brand Guide →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>The rails are being laid, and Google is positioning itself at the center.</strong> Universal Cart isn't just a shopping feature — it's an attempt to own the checkout layer for an entire era of AI-mediated commerce. By making UCP compatible with A2A, AP2, and MCP, Google is saying: however agents talk to each other, they can talk to us. That's a platform play, not a product play. Meanwhile, the FTC's 50-page demands signal that regulators have moved past marketing-speak enforcement into forensic safety audits. They want incident logs, not press releases. The Korean financial breach proves what security researchers have warned: AI-coordinated attacks can hit an entire sector simultaneously with adaptive techniques that evade pattern-matching defenses. And DataDome's revelation that Meta's Muse doesn't identify itself as an agent? That's the governance gap in action — the biggest platform companies are shipping agents that hide their nature while the rest of the industry scrambles to build authentication protocols. The question for every enterprise: Are you building your commerce and security infrastructure assuming agents will play by the rules, or assuming they won't?</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-10-16.html">← October 16, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
