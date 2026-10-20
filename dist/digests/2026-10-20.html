@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — October 20, 2026 | The Full Stack</title>
+    <meta name="description" content="AI adoption hits 98.4% but only 6.5% measure ROI. Claude catches ChatGPT at 72.3% vs 74.5%. EU publishes first AI Act harmonised standard. Silver tsunami drives B2B AI modernization. OpenCode API keys stolen in distillation attack.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-10-20.html">
+    
+    <meta property="og:title" content="Daily Digest — October 20, 2026 | The Full Stack">
+    <meta property="og:description" content="AI adoption hits 98.4% but only 6.5% measure ROI. Claude catches ChatGPT. EU publishes first AI Act standard. Silver tsunami drives AI modernization.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-10-20.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Tuesday, October 20, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">AI Adoption Hits 98.4% but Only 6.5% Measure ROI, Claude Catches ChatGPT in Market Share, EU Publishes First AI Act Harmonised Standard</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Basis Survey: AI Adoption Now 98.4% Universal — But Only 6.5% of Marketing Organizations Measure ROI Against Defined Benchmarks</h2>
+            <p>Basis Technologies released its fourth annual "AI and the Future of Marketing" report, surveying 184 marketing and advertising professionals. The headline numbers are striking: 98.4% of marketers now use generative or agentic AI, with 61.4% using it daily — up from 33.6% last year and just 10.9% in 2023. Only 1.6% don't use AI at all, down from 27.7% three years ago. The efficiency gains are compounding, with 75% reporting moderate-to-significant improvements and 33.2% reporting significant gains (up from 13.5% in 2024). But here's the measurement gap that should alarm every CMO: just 6.5% evaluate AI investments against defined metrics and benchmarks, while 65.1% either don't measure AI ROI at all or don't know if anyone does. The report notes that 51.1% of organizations now use AI agents — a 155.5% YoY increase — running reporting, drafting campaign briefs, creating content, and planning media. Half of organizations replaced human tasks with AI in the past 12 months. The question isn't whether AI works. It's whether anyone can prove which deployments are worth scaling.</p>
+            <a href="https://basis.com/reports/ai-and-the-future-of-marketing-2026-edition" class="source-link" target="_blank">Read on Basis →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>Claude Catches ChatGPT: Anthropic's Market Share Rockets to 72.3% from 17.9%, While OpenAI Falls to 74.5% from 88.6%</h2>
+            <p>Buried in the Basis survey data is a market-reshaping statistic: Anthropic's Claude climbed to 72.3% usage among marketing professionals, up from just 17.9% a year ago. Meanwhile, ChatGPT usage fell to 74.5% from 88.6%. What was a one-horse race is now genuine competition. Separately, OpenRouter's live rankings (flagged in a Hacker News thread) show roughly 84% of tokens now running on non-frontier models, with overall token usage experiencing its first decline in roughly a month. The thread noted Opus kept Anthropic "back on the map" while Google's recent releases underperformed. For enterprise buyers evaluating foundation model providers, the strategic calculus has changed: Anthropic is no longer the premium niche alternative but a mainstream choice with enterprise adoption approaching ChatGPT levels. The platform risk profile of an OpenAI-only stack is now harder to justify.</p>
+            <a href="https://basis.com/reports/ai-and-the-future-of-marketing-2026-edition" class="source-link" target="_blank">Read on Basis →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>EU Publishes EN 18286 — First AI Act Harmonised Standard Offers Presumption of Conformity for High-Risk AI Systems</h2>
+            <p>The European Commission referenced EN 18286:2026 in the Official Journal on October 19 — the first harmonised standard under the AI Act. Titled "Artificial Intelligence - Quality management system for EU AI Act regulatory purposes," the standard was developed by CEN and CENELEC to give high-risk AI providers a presumption of conformity with Article 17. Critically, EN 18286 is designed to layer on top of existing frameworks like ISO/IEC 42001 or ISO 9001, not replace them. For enterprise AI teams, this means the compliance pathway is becoming concrete: if you're building or deploying high-risk AI systems for EU markets, EN 18286 adoption becomes a practical priority rather than a theoretical exercise. The "presumption of conformity" mechanism means demonstrating EN 18286 compliance significantly reduces regulatory friction and audit burden. Organizations already aligned with ISO quality management standards have a head start.</p>
+            <a href="https://aiweekly.co/ai-news-today" class="source-link" target="_blank">Read on AI Weekly →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>The "Silver Tsunami": 6 Million Lower-Middle-Market Businesses Facing Ownership Transition — AI Becomes the Modernization Accelerator</h2>
+            <p>McKinsey estimates that by 2035, six million lower-middle-market businesses will undergo ownership changes as baby boomers retire, with more than one million positioned for acquisition. The AI Journal calls it the "silver tsunami" and argues that AI is becoming essential for these transitions — not as a nice-to-have, but as the mechanism that connects fragmented operations, surfaces actionable insights, and makes businesses legible to new owners. Many of these companies were founded before widespread computer adoption; their processes depend on employees who already know how to get things done, with technology layered on ad hoc. Buyers increasingly expect software that provides immediate visibility, strengthens financial controls, and connects information across existing systems. The article highlights three AI capabilities proving especially valuable: automating back-office work without disrupting workflows (Forrester's TEI study found ~8,700 hours saved by year three), connecting information across platforms via MCP integrations, and transforming data into decision support. For B2B software providers serving this market, the positioning opportunity is AI as modernization enabler for ownership transition — not just efficiency tooling.</p>
+            <a href="https://aijourn.com/why-the-silver-tsunami-is-shaping-the-next-wave-of-b2b-software/" class="source-link" target="_blank">Read on The AI Journal →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>OpenCode Confirms API Keys Stolen in "Large-Scale Distillation Attack" — 1.4% of Console Users Affected, Unauthorized Charges Mounting</h2>
+            <p>OpenCode notified affected customers by email on October 17 that stolen API keys from a "large-scale distillation attack" compromised 1.4% of Console users and are being used to rack up unauthorized charges. The attack vector — distillation — means adversaries weren't just exfiltrating credentials; they were using stolen API access to train competing models on OpenCode's outputs. For security teams, this is a reminder that API key hygiene extends beyond preventing unauthorized access to preventing unauthorized model training. The incident also highlights the growing attack surface as more organizations integrate AI APIs into production workflows. Organizations should audit API key rotation policies, implement usage anomaly detection, and consider whether their contracts with AI providers address liability for charges incurred during compromises. The 1.4% affected sounds small until you calculate it against the full user base and average monthly spend.</p>
+            <a href="https://aiweekly.co/ai-news-today" class="source-link" target="_blank">Read on AI Weekly →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>The measurement gap is the story.</strong> Nearly universal AI adoption combined with almost no ROI measurement is the defining tension of enterprise AI in late 2026. We've spent two decades building attribution and accountability infrastructure around every dollar of media spend, and now AI is one of the fastest-growing line items with almost no substantiation. The Basis finding that only 6.5% of organizations evaluate AI against defined benchmarks — while 51% deploy autonomous agents — is a governance vacuum waiting to become a budget crisis. Meanwhile, Claude's surge to near-parity with ChatGPT changes the competitive dynamics in ways that matter beyond vendor selection: it means enterprise buyers have actual alternatives, which means they have leverage. The EU's EN 18286 publication signals that the regulatory infrastructure is catching up faster than most anticipated — organizations building high-risk AI systems need to treat compliance as a near-term operational priority, not a future concern. And the silver tsunami story is a useful frame for understanding where AI adoption pressure will come from: not just digital-native companies optimizing at the margin, but millions of traditional businesses that need to become legible to new owners. That's a different kind of buyer with different expectations. The distillation attack on OpenCode is a preview of what happens when API access becomes both an operational dependency and an attack surface — expect more of this as AI integrations proliferate.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-10-19.html">← October 19, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
