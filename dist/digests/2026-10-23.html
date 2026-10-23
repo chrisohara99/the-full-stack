@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — October 23, 2026 | The Full Stack</title>
+    <meta name="description" content="'Black October' cyber emergency as AI discovers PHP vulnerabilities affecting millions of servers. OpenAI and Google Cloud partner for enterprise AI. Creatio finds 70% beyond experimentation. Google and NVIDIA advance Vera Rubin infrastructure.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-10-23.html">
+    
+    <meta property="og:title" content="Daily Digest — October 23, 2026 | The Full Stack">
+    <meta property="og:description" content="'Black October' cyber emergency as AI finds PHP flaws. OpenAI + Google Cloud partner. 70% beyond AI experimentation. NVIDIA Vera Rubin ships.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-10-23.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Friday, October 23, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">"Black October" Cyber Emergency as AI Finds PHP Flaws Affecting Millions, OpenAI and Google Cloud Partner on Enterprise AI, Creatio: 70% Beyond Experimentation</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>"Black October" — AI Discovers Critical PHP Vulnerabilities That Existed for Years, Triggering Global Cyber Emergency</h2>
+            <p>The internet is having a very bad week. Security researchers using AI-powered tools discovered critical vulnerabilities in PHP — the programming language that powers roughly 75% of websites including WordPress, Drupal, and Joomla — sparking what cybersecurity experts are calling "Black October." The vulnerabilities, dubbed PHP2Shell, were discovered by researchers at Wiz, Calif, and OpenAI using frontier AI models to investigate complex software weaknesses. OpenAI called it "one of the most impactful security issues in recent memory," noting that "to our knowledge, frontier AI found these vulnerabilities before attackers did." The problem: these flaws had existed for years, undetected by human researchers. Within 10 hours before public disclosure, Cloudflare observed thousands of exploitation attempts. That jumped to tens of thousands within 45 minutes of announcement, hundreds of thousands within two hours, and millions shortly after. The NSA and Europe's cybersecurity agency issued alerts. Matthew Green, a Johns Hopkins cryptographer, posted that "we're in the part of the movie where you need to throw whatever you can in the path of the zombies." The episode highlights both AI's power to find vulnerabilities and a disturbing asymmetry: defenders now face AI-powered offense while most of the internet runs on aging software no one's auditing.</p>
+            <a href="https://www.404media.co/php2shell-black-october-ai-is-changing-everything-about-hacking-no-one-knows-what-happens-next/" class="source-link" target="_blank">Read on 404 Media →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>OpenAI and Google Cloud Partner to Bring Frontier Models and Codex to Enterprise Customers</h2>
+            <p>OpenAI and Google Cloud announced a partnership to bring OpenAI's frontier models and Codex agentic workflows to Google Cloud's Model Garden, giving enterprise customers another path to access advanced AI within their existing cloud infrastructure. The integration is designed to combine OpenAI models with Google Cloud's infrastructure, access controls, and data governance capabilities. For enterprises already invested in Google Cloud, this removes a significant barrier — no need to build separate workflows or move data to access OpenAI's capabilities. The strategic significance runs deeper than convenience: this is OpenAI explicitly partnering with a direct competitor's cloud platform rather than pushing Azure exclusivity. It signals that distribution through multiple cloud providers matters more than exclusive lock-in. The move also positions agentic AI — specifically Codex for code-generation workflows — as a key enterprise battleground. General availability is planned for coming weeks, with private preview initially rolling out to selected customers. For enterprise buyers evaluating AI platforms, the takeaway is clear: the major AI providers are racing to be everywhere enterprises already are, not waiting for enterprises to come to them.</p>
+            <a href="https://openai.com/index/openai-models-google-cloud/" class="source-link" target="_blank">Read on OpenAI →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Creatio Report: 70% of Enterprises Beyond AI Experimentation, Deep Adopters 2x More Likely to Report Revenue Gains</h2>
+            <p>Creatio released its second annual State of Enterprise AI Adoption Report, surveying 600+ global IT and business decision-makers, and the data shows enterprise AI moving decisively from experimentation to execution. Seventy percent of respondents have deployed AI in selected functions, begun scaling it across the organization, or embedded it enterprise-wide. That's a significant shift from Creatio's 2025 research, when executives were still mostly talking about future intent. The report identifies a clear adoption divide: organizations automating more than half of their workflows with AI are more than twice as likely to report increased revenue as those automating less than 10%. Only 17% qualify as "AI Adoption Leaders" — organizations that automate more workflows, scale agents across departments, establish stronger governance, and measure against broader business outcomes. Perhaps the most telling finding: just 9% expect significant headcount reductions from AI, while 89% expect AI agents to expand workforce capacity, augment teams, or create new roles. The narrative is shifting from "AI replaces workers" to "AI expands what workers can do." Organizations with established AI governance are more than 4x as likely to feel confident scaling AI, positioning governance as an enabler rather than a brake.</p>
+            <a href="https://www.creatio.com/page/the-state-of-enterprise-ai-adoption" class="source-link" target="_blank">Read on Creatio →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Google Cloud and NVIDIA Advance Vera Rubin AI Infrastructure — A5X Instances Ship Next Month for Agentic Workloads</h2>
+            <p>Google Cloud and NVIDIA announced further developments in their AI infrastructure collaboration, with NVIDIA Vera Rubin-based A5X instances planned for general availability next month and European expansion to follow. The infrastructure combines NVIDIA Vera Rubin NVL72 systems with networking and other components designed to support demanding AI workloads. The timing matters: as enterprises adopt AI agents, computing needs extend well beyond answering individual questions. Agents may need to reason through multi-step tasks, use tools, process large information sets, and repeat actions based on feedback — all of which creates infrastructure demands that traditional cloud computing wasn't built for. The Vera Rubin infrastructure is specifically designed for large-scale AI inference, agentic AI applications, and reinforcement learning workloads. For enterprise AI teams, the bottleneck is increasingly infrastructure, not models. Having access to purpose-built computing for agentic workloads removes one more excuse for delayed deployment. The question becomes whether organizations have the governance, data, and processes to take advantage of infrastructure that can finally support what the models can do.</p>
+            <a href="https://blogs.nvidia.com/blog/google-cloud-vera-rubin-infrastructure/" class="source-link" target="_blank">Read on NVIDIA →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>Gartner: 45% of Martech Leaders Say Vendor-Built AI Agents Fail to Meet Promised Performance</h2>
+            <p>Amid the rush to deploy AI agents, a Gartner survey of 413 martech leaders reveals a sobering reality: 45% of those piloting vendor-built agents say they don't deliver the business performance that was promised. The finding appears in a comprehensive analysis of AI agents for marketing teams, which draws a sharp distinction between agents (software that takes a goal, works out steps, uses tools, and checks its own results) and chatbots or fixed automations. The gap between vendor promises and actual results has a name in the industry: "agent washing." Gartner identified roughly 130 vendors with genuine agentic capabilities out of thousands claiming the label. For marketing teams evaluating AI agents, the research suggests starting with repetitive, measurable problems; preparing clean data and integrations; setting clear boundaries; running controlled pilots; and measuring outcomes against specific business metrics — not just time savings. The 45% failure rate isn't necessarily a condemnation of agent technology; it may reflect enterprises deploying agents against poorly-defined problems or without the data infrastructure to support them. But it's a useful corrective to vendor hype suggesting agentic AI is plug-and-play.</p>
+            <a href="https://www.youngurbanproject.com/ai-agent-for-marketing-teams/" class="source-link" target="_blank">Read on Young Urban Project →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>"Black October" is the story that will define how we remember this moment in AI's development.</strong> For years, the cybersecurity community has warned that the internet runs on aging, under-audited code — but warnings don't create urgency like millions of exploitation attempts in the hours after disclosure. What's changed isn't that the vulnerabilities exist; it's that AI makes finding them dramatically easier. Matthew Green's comment about "teenagers finding the matches" understates the problem: the matches are now being manufactured at industrial scale. OpenAI's framing as a "Defender's Window" is technically accurate but strategically optimistic — defenders got a head start this time, but the same AI capabilities are available to attackers who don't coordinate disclosures. The OpenAI–Google Cloud partnership signals something important about enterprise AI's distribution phase: being everywhere matters more than exclusive relationships. OpenAI partnering with a direct competitor's cloud suggests the model-provider layer is commoditizing faster than the infrastructure layer. Creatio's finding that 70% are beyond experimentation while only 17% qualify as leaders reveals the messy middle of enterprise AI: most organizations have deployed something, but few have figured out how to deploy it well. The 2x revenue correlation for deep adopters confirms what BCG found this week — AI leadership compounds, but achieving it requires more than pilots. The Gartner finding that 45% of vendor-built agents fail to meet promises is the reality check the market needs. "Agent washing" is real, and the gap between agentic AI's potential and most organizations' readiness to deploy it is wider than vendor marketing suggests. Governance isn't just risk management; it's a prerequisite for scale.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-10-22.html">← October 22, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
