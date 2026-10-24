@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — October 24, 2026 | The Full Stack</title>
+    <meta name="description" content="DeepSeek raises $15B in one of China's largest AI rounds. ThoughtSpot launches AgentSpot for multiplayer enterprise AI. Zoom ships Unified Context Layer with MCP. B2B attention windows shrink to 8 seconds.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-10-24.html">
+    
+    <meta property="og:title" content="Daily Digest — October 24, 2026 | The Full Stack">
+    <meta property="og:description" content="DeepSeek $15B round. ThoughtSpot AgentSpot. Zoom Context Layer. B2B attention economy hits $1.2T. AWS sold out through 2027.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-10-24.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Saturday, October 24, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">DeepSeek Raises $15B in One of China's Largest AI Rounds, ThoughtSpot Launches AgentSpot for "Multiplayer AI," Zoom Ships Unified Context Layer with MCP</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>DeepSeek Raises ~$15B in One of China's Largest-Ever Private AI Rounds, With Tencent and CATL Among Backers</h2>
+            <p>DeepSeek has pulled in roughly $15 billion (~100 billion yuan) in one of China's largest-ever private AI funding rounds, with Tencent and battery giant CATL among the lead backers. The investment signals that China's AI race continues at full speed despite ongoing US export restrictions on advanced chips. DeepSeek made waves earlier this year by demonstrating that competitive large language models could be trained with fewer resources than Western counterparts — a narrative that rattled investor confidence in the "more compute equals better AI" assumption. The funding round positions DeepSeek to compete directly with Chinese tech giants like Alibaba, ByteDance, and Baidu in the race for AI infrastructure and model development. For enterprise buyers, the round reinforces that AI model competition is intensifying globally, with well-funded challengers emerging outside the US-dominated frontier lab ecosystem. The question is whether export restrictions create meaningful moats or simply redirect engineering talent and capital toward optimization and architectural innovation.</p>
+            <a href="https://aiweekly.co/ai-news-today" class="source-link" target="_blank">Read on AI Weekly →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>ThoughtSpot Launches AgentSpot: A Platform for Shared AI Agents, Automated Workflows, and Business Apps With Enterprise Context</h2>
+            <p>ThoughtSpot has launched AgentSpot, a platform designed around what the company calls "Multiplayer AI" — a model where employees and AI agents work together in a shared environment rather than through isolated chatbot conversations. The product allows users to create AI agents, automate recurring tasks, and build interactive business applications using natural-language prompts, then share those capabilities with colleagues for reuse and improvement. The launch addresses a persistent challenge: employees may use AI to research accounts, investigate discrepancies, or monitor competitors, but those processes remain tied to individual accounts rather than becoming repeatable company capabilities. AgentSpot connects to ThoughtSpot's semantic layer to ground agents in business definitions, reducing ambiguity when terms like "revenue" or "active customer" vary across departments. The pricing model breaks with traditional seat-based licensing — usage is tied to conversations, workflow runs, and app sessions rather than tokens or users. For enterprise AI teams, AgentSpot represents an emerging category: platforms that make individual AI productivity gains transferable across organizations.</p>
+            <a href="https://techedgeai.com/thoughtspot-launches-agentspot-for-enterprise-ai-workflows/" class="source-link" target="_blank">Read on TechEdge AI →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Zoom Unveils Unified Context Layer at Zoomtopia: Meeting Summaries Become Automated Workflows via MCP</h2>
+            <p>Zoom has introduced a Unified Context Layer and a series of AI-powered products at Zoomtopia 2026, aiming to connect conversations, business data, and workflow execution across its collaboration and customer experience platforms. The layer links conversation history with relevant documents, data, and activity from connected applications — designed to give employees and AI agents a more complete picture of what was discussed, which decisions were made, and what should happen next. My Notes Workflows, shipping this month, will turn meeting summaries into follow-up work in Zoom Chat and Salesforce, with users able to choose ready-made workflows or describe automation in natural language. Perhaps most significant for the enterprise AI ecosystem: Zoom is exposing its capabilities through MCP (Model Context Protocol) servers, enabling external AI agents to coordinate actions with Zoom data. ZoomMate Agent Teams, available now, adds specialized AI agents that can work together for task execution. The move positions Zoom to transition from meeting productivity tool to what it calls a "system of action" — though enterprise adoption will depend on how well these features perform beyond demos and whether organizations can govern AI access to meeting content.</p>
+            <a href="https://techedgeai.com/zoom-unveils-unified-context-layer-for-ai-powered-workflows/" class="source-link" target="_blank">Read on TechEdge AI →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>B2B Attention Economy Study: 8-Second Windows, $1.2T Market by 2030, 55% Drop in Per-Vendor Content Consumption</h2>
+            <p>Vereigen Media released its Buyer Attention & Engagement Study, examining how AI, first-party data, mobile-first behavior, and attention-first marketing are reshaping enterprise buying decisions — and the numbers are stark. B2B marketers are no longer competing for clicks; they're competing for genuine attention. Per-vendor content consumption has dropped 55% since 2018 (from 82 to 37 minutes per week), while the number of vendors considered rose 30%. Early engagement windows have narrowed to approximately eight seconds. The study values the global attention economy at $740 billion in 2025, projecting $1.2 trillion by 2030. AI personalization is making individualized engagement economically feasible: ABM campaigns with personalized messages generate 30-50% more responses than mass outreach, AI-scored leads convert 2x faster, and intent-qualified accounts convert 2x faster than demographic targets. Perhaps most telling: 67% of the B2B buying journey takes place in the "dark funnel" — peer conversations, reviews, and analyst reports outside traditional attribution. The study finds personalized emails achieve 29% open rates versus 21.5% for generic, reinforcing that relevance beats volume in the attention economy.</p>
+            <a href="https://www.globenewswire.com/news-release/2026/10/23/3387273/0/en/buyer-attention-engagement-study-highlights-ai-led-personalization-and-attention-first-strategies-as-global-attention-economy-moves-toward-usd-1-2-trillion-by-2030.html" class="source-link" target="_blank">Read on GlobeNewswire →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>AWS "Sold Out Through 2027" with Chunks of 2028 Gone, Jassy Says — AI Demand Outpaces Infrastructure Build</h2>
+            <p>Speaking on a call this week, Amazon CEO Andy Jassy revealed that AWS is effectively sold out of capacity through 2027, with significant chunks of 2028 already spoken for. The disclosure underscores the infrastructure strain as enterprise AI demand — for training, inference, and increasingly agentic workloads — outpaces the pace at which cloud providers can build capacity. This follows recent findings that hyperscaler capital expenditure continues to accelerate, with AI infrastructure absorbing an ever-larger share of investment. The capacity crunch creates strategic implications for enterprise AI planning: organizations may need to commit to cloud capacity further in advance than typical procurement cycles allow, and smaller enterprises may find themselves competing with well-capitalized AI labs and large enterprises for limited resources. The AWS sell-out also validates the multi-cloud bet: with no single provider able to satisfy all demand, enterprises are hedging by distributing workloads — and the OpenAI-Google Cloud partnership announced yesterday makes that easier for organizations seeking frontier model access outside Azure.</p>
+            <a href="https://aiweekly.co/ai-news-today" class="source-link" target="_blank">Read on AI Weekly →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>The infrastructure story is quietly becoming the AI story.</strong> DeepSeek's $15B round and Jassy's AWS sell-out disclosure are two sides of the same coin: compute demand is outstripping supply, which creates both strategic risk and opportunity. China's willingness to fund DeepSeek at this scale despite chip restrictions signals confidence that architectural innovation can partially offset hardware constraints — a bet that should concern anyone assuming US export controls create durable moats. Meanwhile, AWS being sold out through 2027 means enterprise AI planning horizons need to extend beyond typical procurement cycles. The ThoughtSpot and Zoom announcements represent the next phase of enterprise AI: making individual productivity gains transferable across organizations. The shift from "personal AI assistant" to "shared AI teammates" is significant because it addresses the reuse problem — employees building similar workflows in isolation is wasteful. ThoughtSpot's semantic layer approach and Zoom's MCP integration suggest the market is converging on interoperability standards faster than expected. The attention economy data from Vereigen is a wake-up call for anyone still planning content volume over engagement quality. When per-vendor content consumption drops 55% while the number of vendors considered rises 30%, the math is clear: attention is scarce, differentiation matters, and generic content wastes budget. The dark funnel finding — 67% of the journey invisible to attribution — explains why intent data and AI personalization are becoming table stakes.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-10-23.html">← October 23, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
