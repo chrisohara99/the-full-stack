@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — October 26, 2026 | The Full Stack</title>
+    <meta name="description" content="Meta makes enterprise AI customers 'solely responsible' for all risks. OpenAI and Anthropic slash API prices up to 80% in tit-for-tat war. Stagwell and Palantir expand data-sovereign marketing AI.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-10-26.html">
+    
+    <meta property="og:title" content="Daily Digest — October 26, 2026 | The Full Stack">
+    <meta property="og:description" content="Meta shifts AI liability to enterprise. 80% API price cuts. Stagwell-Palantir data sovereignty. SUSE sovereign agentic AI. Virginia data center protests.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-10-26.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Monday, October 26, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">Meta Makes Enterprise AI Customers "Solely Responsible" for All Risks, OpenAI and Anthropic Slash Prices 80% in Tit-for-Tat War</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Meta's New Business AI Terms Shift All Risk to Enterprise Customers — Effective October 30</h2>
+            <p>Meta's revised Business AI Terms, effective October 30, declare enterprise customers "solely responsible" for all risks from Meta's AI features — even as Meta explicitly acknowledges those features "may make mistakes." Under the new agreement, advertisers must indemnify Meta, its affiliates, and agents for all AI-related claims and attorneys' fees. The liability shift comes as Meta aggressively rolls out AI capabilities across its advertising and business tools, putting the legal exposure for AI errors squarely on the companies using them. For enterprise marketing and product teams, the terms demand close review before any AI-assisted campaigns go live. The explicit acknowledgment that AI "may make mistakes" combined with full liability transfer creates a new risk calculus: organizations using Meta's AI features now own the downside of hallucinations, incorrect targeting, or brand safety violations with no recourse to the platform. Legal and compliance teams should treat this as a forcing function to establish AI governance frameworks before the October 30 effective date.</p>
+            <a href="https://aiweekly.co/ai-news-today" class="source-link" target="_blank">Read on AI Weekly →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>OpenAI and Anthropic Slash API Prices Up to 80% in Four-Month Tit-for-Tat War — Luna Now at $0.20/MTok</h2>
+            <p>Max Woolf documents the extraordinary price war between OpenAI and Anthropic from June through September 2026, with flagship API prices dropping up to 80% in a series of rapid-fire announcements. The timeline shows clear retaliation: after DeepSeek V4 Flash launched at $0.14/MTok in April, OpenAI slashed GPT-5.6 Luna by 80% to $0.20/$1.20/$0.02 in July. Anthropic made its "temporary" Sonnet 5 launch pricing permanent in August, then cut Fable 5.1 cache costs by 75% in September. OpenAI responded days later with GPT-6 Sol at half the prior generation's price. Vercel's AI Gateway data shows aggregate cost-per-token dropped to 43.3% of April levels — though total spend increased as model quality improved faster than prices fell. For enterprise teams, the price collapse removes cost as a barrier to scaled AI deployment. But the speed of the cuts signals commoditization: with models becoming increasingly substitutable through harnesses like OpenRouter and Zed Agent, the differentiation battle shifts from capability to ecosystem lock-in, enterprise features, and specialized fine-tuning. The economic moat around foundation models is eroding faster than most predicted.</p>
+            <a href="https://minimaxir.com/2026/10/cheap-llms/" class="source-link" target="_blank">Read on Max Woolf's Blog →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Stagwell and Palantir Expand Enterprise AI Marketing Partnership — Data Stays Under Client Control</h2>
+            <p>Stagwell and Palantir are expanding their AI marketing partnership with a distinctive architecture: customer data and supporting infrastructure remain under direct client control rather than moving into external environments. The arrangement allows marketing, creative, and campaign management functions to activate AI models against owned data stores without surrendering access or custody. For hospitality and event teams, the same principle applies to guest and attendee information, keeping sensitive records within existing governance structures. The expansion responds to growing enterprise demand for integrated marketing activation that preserves data sovereignty. As AI agent capabilities expand, the question of who controls the data these agents access becomes increasingly critical — and the Stagwell-Palantir model offers one answer: run the AI where the data lives, rather than moving data to where the AI runs. For product marketers evaluating AI partnerships, this architecture points toward a post-cloud paradigm where data gravity, not compute economics, determines deployment topology.</p>
+            <a href="https://completeaitraining.com/news/stagwell-and-palantir-expand-enterprise-ai-marketing/" class="source-link" target="_blank">Read on CompleteAITraining →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>SUSE and NVIDIA Ship Sovereign Agentic AI Stack — Zero-Trust Agent Security via OpenShell</h2>
+            <p>SUSE announced capabilities at NVIDIA GTC Berlin enabling enterprises to deploy agentic AI while maintaining complete operational control, security, and governance. The SUSE AI Factory with NVIDIA introduces zero-trust agent security via the NVIDIA OpenShell Reference Architecture, letting agent code run inside the corporate perimeter with access policies restricting transfer of enterprise IP and proprietary datasets outside private infrastructure. The stack includes governed MCP (Model Context Protocol) agentic workflows and SLES for NVIDIA 16.1, demonstrated live at GTC Berlin. The release addresses a core tension in enterprise AI adoption: how do you let AI agents operate autonomously while maintaining the data sovereignty and compliance controls required by regulated industries? SUSE's answer is architectural — build the guardrails into infrastructure rather than relying on contractual protections. For enterprises where data sovereignty is non-negotiable, sovereign agentic stacks like this represent the path forward. For vendors, the message is clear: control is becoming table stakes.</p>
+            <a href="https://www.globenewswire.com/news-release/2026/10/21/3385421/0/en/suse-brings-sovereign-control-to-enterprise-agentic-ai-with-nvidia.html" class="source-link" target="_blank">Read on GlobeNewswire →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>Hundreds Rally at Virginia Capitol for Data Center Moratorium — Lawmakers Signal January Session Review</h2>
+            <p>Hundreds of protesters gathered at Richmond's Capitol Square on Saturday demanding a moratorium on Virginia data center development, chanting "No more data centers here" and calling for public input on projects previously negotiated under NDAs. Organizers demanded removal of non-disclosure agreements tied to data center negotiations and more transparent community engagement. Virginia lawmakers signaled they plan to revisit the issue in the January legislative session. The protest follows Friday's CNBC poll showing 63% of US voters oppose AI data centers within 10 miles of their homes — bipartisan opposition that creates real political constraints on the AI infrastructure buildout. Virginia hosts the largest concentration of data centers globally, and the backlash there may preview what's coming in other markets. For enterprises relying on cloud capacity growth, the political dimension adds planning uncertainty: "sold out through 2027" could extend further if community opposition stalls new construction. The constraint isn't technical or economic — it's democratic.</p>
+            <a href="https://wset.com/news/local/hundreds-rally-at-capital-square-urging-moratorium-on-virginia-data-center-growth-october-2026" class="source-link" target="_blank">Read on WSET →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>The enterprise AI landscape is splitting between those who control their data and those who don't — and the stakes are getting higher.</strong> Meta's new terms make the liability equation explicit: use our AI, own all the risk, even when it makes mistakes. That's a remarkable shift for a company whose entire advertising business depends on enterprise adoption. Meanwhile, Stagwell-Palantir and SUSE-NVIDIA are building alternative architectures where AI comes to the data rather than data going to the AI — the "sovereign" model that regulated enterprises increasingly demand. The 80% price collapse documented by Max Woolf suggests foundation models are commoditizing faster than anyone expected; the differentiation battle now moves to enterprise features, governance controls, and data sovereignty guarantees. And underlying all of it, the Virginia protests show that the physical infrastructure required to run AI at scale faces constraints that neither OpenAI nor Anthropic can engineer around. The enterprises that navigate this well will treat AI governance not as compliance overhead but as competitive advantage — the ability to deploy confidently while rivals hesitate over liability exposure and data sovereignty concerns.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-10-25.html">← October 25, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
