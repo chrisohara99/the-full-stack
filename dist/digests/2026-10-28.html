@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — October 28, 2026 | The Full Stack</title>
+    <meta name="description" content="OpenAI ships GPT-6.1 Terra with 50% agentic price cut. Sprinklr launches six marketing AI agents. Optimove builds audiences in Snowflake without copying data. TPG in talks to buy UK data centers for $5B.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-10-28.html">
+    
+    <meta property="og:title" content="Daily Digest — October 28, 2026 | The Full Stack">
+    <meta property="og:description" content="GPT-6.1 Terra 50% price cut. Sprinklr marketing agents. Optimove zero-copy Snowflake. TPG $5B data centers. AI supply chain shift.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-10-28.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Wednesday, October 28, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">OpenAI Ships GPT-6.1 Terra with 50% Price Cut for Agentic Workloads, Sprinklr Launches Six Marketing AI Agents</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>OpenAI Launches GPT-6.1 Terra with 50% Price Cut for Computer-Use Agents — Microsoft Foundry Ships Same Day</h2>
+            <p>OpenAI released GPT-6.1 Terra, a new model optimized for faster, cheaper AI tasks, and cut API pricing by 50% for agentic computer-use workloads — the clearest signal yet that desktop automation is moving from experiment to mainstream product. Sam Altman said the company is "especially excited" for how Terra will accelerate agentic adoption, and Microsoft immediately announced general availability of GPT-6.1 Terra in Microsoft Foundry, enabling agents that can read charts, navigate desktop applications, and process scanned documents. GitHub Copilot is evaluating Terra for enhanced coding capabilities. The pricing move matters as much as the model: by halving the cost of computer-use agents, OpenAI is betting that price is the barrier to enterprise adoption, not capability. For product marketers watching agentic tools reshape their workflows, the math on agent-powered automation just got dramatically more attractive. The simultaneous Microsoft launch suggests coordinated enterprise go-to-market — agents that can "see" and navigate desktop environments are no longer a demo curiosity but a supported production capability.</p>
+            <a href="https://ground.news/article/openai-launches-gpt-61-terra-sam-altman-says-we-are-especially-excited-for" class="source-link" target="_blank">Read on Ground News →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>Sprinklr Launches Six Marketing AI Agents in Beta — Compressing Campaign Cycles from Weeks to Days</h2>
+            <p>Sprinklr announced the beta launch of Marketing AI Agents, a connected system of six specialized AI agents designed to compress enterprise campaign development from weeks to days. The agents span the full marketing lifecycle: an Ideation Agent that surfaces campaign ideas from performance and listening signals, a Creative Agent that scales approved creative through variations and localization, a Campaign Execution Agent that translates media briefs into cross-channel campaigns, a Compliance Agent that checks content against brand standards and regulatory requirements, a Community Agent for scaled engagement, and a Budget Optimization Agent for allocation recommendations. What makes the Sprinklr approach notable is the emphasis on connected context — these aren't isolated tools but agents that share data, workflows, and governance structures. Chief Product Officer Karthik Suri framed it as "bringing together data, intelligence, workflows, and AI agents so enterprises can move from understanding the customer to taking the right action faster." For enterprise marketers facing the classic challenge of responding to fast-moving moments with slow approval processes, the agent-based approach promises to compress timelines while keeping humans in control of strategy and creative decisions.</p>
+            <a href="https://martechseries.com/content/sprinklr-launches-marketing-ai-agents-beta-to-help-enterprise-marketers-move-from-insight-to-action/" class="source-link" target="_blank">Read on MarTech Series →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Optimove Builds Audiences in Snowflake Without Copying Data — Zero Copy Customer Lists Inverts the CDP Model</h2>
+            <p>Optimove announced Zero Copy Customer Lists, a capability that runs audience queries in Snowflake and returns only customer IDs to the marketing platform — never copying sensitive attributes like credit scores or risk ratings out of the data warehouse. The release states Snowflake processes more than 8.4 billion rows of customer data daily on behalf of Optimove's brand portfolio, with historical refreshes that once took three days now completing in 40 minutes. The architecture inverts the typical Reverse ETL pattern: instead of syncing data out and enrichment in, the sync moves identifiers out and nothing in. For regulated industries where compliance teams have long blocked the export of useful segmentation attributes, this is the first production CDP-adjacent solution that keeps sensitive data where governance can control it. The trade-off is workflow: someone with warehouse privileges must approve each SQL query, and the marketer waits on that person. But for teams navigating the tension between personalization and data governance, Zero Copy may represent the pattern that unlocks segments previously forbidden to touch.</p>
+            <a href="https://agilebrandguide.com/yesterdays-marketing-technology-ai-news-october-27-2026/" class="source-link" target="_blank">Read on Agile Brand Guide →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>TPG in Talks to Buy UK Data Centre Operator Ark for $5 Billion — AI Infrastructure M&A Continues to Surge</h2>
+            <p>TPG is in talks to acquire Ark Data Centres from Elliott Management for roughly $5 billion, according to the Financial Times. Ark operates 27 facilities across the UK and Belgium, and co-owns Crown Hosting with the UK Cabinet Office, hosting workloads for IBM and Palo Alto Networks. The deal would rank among this year's five largest data center transactions, as 2026 M&A totals hit $89.4 billion — already 50% above all of 2025. The AI infrastructure buildout is creating a feeding frenzy in data center assets, with enterprises and investors racing to secure capacity before the next generation of model training and inference workloads arrives. For enterprise buyers, the competition for data center capacity has implications beyond infrastructure: as hyperscalers and private equity compete for finite real estate and power, enterprises planning AI deployments may find capacity constraints as binding as compute costs.</p>
+            <a href="https://www.ft.com/content/ark-data-centres-tpg" class="source-link" target="_blank">Read on Financial Times →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>HP, Asus, and Acer Shift PC Production Back to China as AI Component Costs Spike — Supply Chain Reversal</h2>
+            <p>HP, Asus, and Acer are rerouting some PC manufacturing from Thailand and Vietnam back to China as AI-driven component costs spike, reversing years of China+1 diversification efforts, according to Nikkei. Dell is weighing a similar move. The shift benefits emerging Chinese contract manufacturers and signals that AI-era memory and substrate shortages are now reshaping consumer electronics supply chains — not just data center hardware. Equipment lead times have stretched from 3-6 months to 6-8 months as demand for AI components crowds out capacity. Meanwhile, TSMC is considering a 10-20% CoWoS price hike alongside 3-6% wafer-out increases for 2027, with 2nm/3nm nodes facing the steepest increases. For enterprise buyers planning AI-enabled device refreshes or marketing teams forecasting holiday inventory, the supply chain pressures signal longer lead times and potential cost increases across the hardware stack.</p>
+            <a href="https://asia.nikkei.com/tech/hp-asus-acer-pc-production-china" class="source-link" target="_blank">Read on Nikkei Asia →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>💡 My Take</h3>
+            <p><strong>Today's stories reveal how quickly the AI execution layer is becoming commoditized — and where the new battlegrounds are emerging.</strong> OpenAI's 50% price cut for agentic workloads, combined with same-day Microsoft Foundry availability, signals that "agents that can see and navigate desktops" are no longer exotic research demos but priced-to-move infrastructure. Sprinklr's six marketing agents and Optimove's zero-copy architecture both reflect the same insight: the value isn't in the AI model itself, it's in how tightly the model integrates with existing enterprise data and workflows. Optimove's approach is particularly elegant — by keeping sensitive data in the warehouse and moving only identifiers to the marketing platform, they've solved a compliance problem that has blocked CDP adoption in regulated industries for years. The supply chain stories (TPG's $5B data center play, PC makers retreating to China) remind us that AI's real constraints aren't just model capabilities but physical infrastructure and component availability. Enterprises planning 2027 AI initiatives should be modeling capacity constraints as seriously as they model compute costs.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-10-27.html">← October 27, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
