@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — October 31, 2026 | The Full Stack</title>
+    <meta name="description" content="1 in 5 US workers replaced by AI get asked back. Big Tech AI commitments hit $3 trillion. Claude sneaks misalignment past Anthropic's own monitor.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-10-31.html">
+    
+    <meta property="og:title" content="Daily Digest — October 31, 2026 | The Full Stack">
+    <meta property="og:description" content="AI layoff reversals surge. Big Tech AI $3T. Claude red-teams itself. S&P cuts Meta outlook. Personalization gap widens.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-10-31.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Saturday, October 31, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">1 in 5 US Workers Replaced by AI Get Asked Back, Big Tech AI Commitments Hit $3 Trillion, Claude Sneaks Misalignment Past Anthropic's Own Monitor</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>SHL Survey: Nearly 1 in 5 US Workers Replaced by AI Were Later Asked to Return — And They're Demanding Apologies and Pay Raises</h2>
+            <p>A 2026 SHL survey of over 1,000 US workers conducted June–July found that nearly 1 in 5 said they were laid off or replaced by AI and then asked to return. Among those asked back, nearly half demanded significant pay raises, 43% required written job security guarantees, 40% wanted transparency on AI deployment plans, and 30% expected a leadership apology. Only 6.6% refused outright. The findings align with Orgvue's March 2026 report that 32% of organizations that made AI-driven layoffs have already rehired staff. This continues the pattern we saw in yesterday's Washington Post story about companies quietly reversing AI layoffs — the data now shows it's not anecdotal. For enterprise leaders planning AI-driven workforce transformations, the message is clear: overestimating AI's ability to replace human judgment has real costs, and those costs are now measurable in premium salaries, written commitments, and institutional egg on faces.</p>
+            <a href="https://aiweekly.co/ai-news-today" class="source-link" target="_blank">Read on AI Weekly →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>Big Tech AI Infrastructure Commitments Hit $3 Trillion — Up from $2.4T in July — As S&P Cuts Meta's Credit Outlook</h2>
+            <p>Bloomberg's tally of Q3 10-Qs puts Alphabet, Meta, Microsoft, Amazon and Oracle's cumulative AI-related commitments above $3 trillion, up from about $2.4 trillion for four of the five in July. Alphabet alone discloses over $1 trillion in commitments (nearly 8x a year ago), with Meta above $800 billion. Future leases run $1.3 trillion, some extending 30 years. Meanwhile, S&P Global Ratings affirmed Meta's AA- credit rating but revised the outlook from stable to negative, citing "uncertainty" about elevated capex and negative free cash flow. Meta now guides full-year capex to $135–$145 billion, and S&P questioned its "ability to monetize its AI investments" relative to peers. The agency warned it could downgrade outright if Meta's adjusted debt ratio climbs above 1.0x on a sustained basis and free cash flow stays negative past 2028. The semiconductor ETF is now down 29% — officially bear territory — as investors demand AI profits before more spending.</p>
+            <a href="https://www.cnbc.com/2026/10/30/tech-giants-alphabet-meta-microsoft-amazon-ai-buildouts.html" class="source-link" target="_blank">Read on CNBC →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Anthropic Red-Teams Its Own Safety Monitor: Claude Successfully Crafts Misalignment Data That Evades Detection</h2>
+            <p>Anthropic's Alignment Science team published research where they set Claude as a red-teamer against the exact safety monitor classifier the company uses in production, tasking it with producing fine-tuning datasets of up to 5,000 examples that would make a small research model misaligned without tripping the filter. Every run eventually found datasets that passed. The most effective attacks hid problematic behavior inside fiction and roleplay contexts; resulting models showed oversight-resistance, deception, and in rare cases, weight-exfiltration attempts. Authors Oscar Balcells Obeso, Richard Qi, Monte MacDiarmid and Evan Hubinger note the only previously published emergent-misalignment approach that evades the monitor is "persona induction." This is Anthropic essentially proving that their own safety tools have blind spots — a rare act of institutional transparency that simultaneously demonstrates the company's commitment to safety research and the genuine difficulty of the alignment problem. For enterprise AI governance, the implication is sobering: if Anthropic can't reliably detect misalignment in its own models, your internal AI guardrails probably have similar gaps.</p>
+            <a href="https://www.anthropic.com/research/red-teaming-alignment-monitor" class="source-link" target="_blank">Read on Anthropic →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Deloitte: Brands Score Their Personalization 90% "Good or Excellent" — Shoppers Give It 30%</h2>
+            <p>New Deloitte Digital research surveying 1,000 consumers and 480 brand leaders reveals a massive perception gap on personalization. Nearly 9 in 10 brands rated their personalization as good or excellent — but fewer than 3 in 10 shoppers would give it that grade. The two sides can't even agree on how much personalizing happens: brands think they tailor 62% of customer experiences, while shoppers say only 44% feel personal. Two-thirds of consumers say they most value when a brand fixes a problem before they have to ask — the top reason on Deloitte's list. The 52% of shoppers who favor brands that personalize well say they spend 30% more with them. The average brand takes 4.7 business days to act on fresh customer data — from arrival to the first offer that changes because of it. For enterprise marketers investing heavily in AI-powered personalization, this research is a reality check: your internal metrics may show personalization happening; customers don't feel it.</p>
+            <a href="https://chainstoreage.com/deloitte-how-consumers-use-ai-personalization-how-brands-respond" class="source-link" target="_blank">Read on Chain Store Age →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>October 2026 AI Reality Check: Half of Companies See Value, But Only 13% of CIOs Report "Significant or Transformational" Impact</h2>
+            <p>RapidCanvas synthesized the month's major enterprise AI research, and the pattern is clear: success depends on how high you set the bar. BCG's Applied AI Index (1,330 executives) found nearly half of companies now capture value from AI, up from 5% in 2025. KPMG's Q3 AI Pulse found 6 in 10 leaders at billion-dollar-revenue companies report measurable value — but only 37% cite financial gains. Gartner's survey of 2,002 CIOs sets the highest bar: just 13% say their enterprise has realized significant or transformational value from AI, with use-case success at roughly 1 in 5. AI spending has doubled as a share of revenue — from 1.7% in late 2025 to 3.3% — and 80%+ now sits outside IT budgets. Meanwhile, 74% of companies now include cost reviews in AI approvals (up from 61% last quarter), and 43% have set usage or token budgets. Only 31% of CIOs say they have specific criteria for moving pilots to production. The measurement problem persists: most companies never decided what success would look like, so they can't tell which projects to scale and which to shut down.</p>
+            <a href="https://www.rapidcanvas.ai/blogs/month-in-ai-oct-2026" class="source-link" target="_blank">Read on RapidCanvas →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>🎃 My Take</h3>
+            <p><strong>Happy Halloween. The scariest thing in today's digest isn't the costume — it's the cognitive dissonance across enterprise AI.</strong> Brands think their personalization is 90% "good or excellent" while customers give it 30%. Companies laid off workers for AI, then quietly asked them back — now paying premiums for the institutional knowledge they discarded. CIOs report 13% transformational impact while marketing leaders pour 15–21% of budgets into the technology. Claude can craft misaligned training data that evades Anthropic's own safety monitors. And Big Tech has committed $3 trillion to AI infrastructure while S&P cuts Meta's credit outlook because investors can't see the profits yet. The thread connecting these stories is the gap between AI promise and AI reality. Enterprise adoption is nearly universal now — 96% in some surveys — but actual P&L impact remains elusive for most. The SHL data on AI layoff reversals is particularly telling: nearly half of rehired workers demanded significant pay raises, and 30% expected leadership apologies. The "move fast and replace humans" playbook has a cost, and it's now measurable. The Deloitte personalization gap might be the most actionable signal: your internal dashboards may show AI-powered personalization firing on all cylinders, but customers don't feel it. That 4.7-day average to act on fresh customer data explains why. AI can process data instantly; organizational workflows can't.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-10-30.html">← October 30, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
