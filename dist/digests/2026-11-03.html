@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — November 3, 2026 | The Full Stack</title>
+    <meta name="description" content="Salesforce closes Loops acquisition for agentic analytics. Enterprises double down despite Wall Street AI jitters. HubSpot: 83% of marketers now expected to produce more—without redesigning work. McKinsey: 44% scaling AI enterprise-wide.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-11-03.html">
+    
+    <meta property="og:title" content="Daily Digest — November 3, 2026 | The Full Stack">
+    <meta property="og:description" content="Salesforce closes Loops. Enterprises ignore Wall Street AI jitters. 83% produce more with AI—but burnout follows. McKinsey: 44% scaling AI.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-11-03.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Tuesday, November 3, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">Salesforce Closes Loops Acquisition for Agentic Analytics, Enterprises Double Down Despite Wall Street AI Jitters, HubSpot: 83% of Marketers Expected to Produce More With AI</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Salesforce Completes Loops Acquisition — Agentic Analytics Arrives at Tableau to Turn Insights Into Action</h2>
+            <p>Salesforce announced it has completed its acquisition of Loops, an AI-powered analytics platform that continuously monitors business performance, explains why key metrics change, and surfaces opportunities to improve. The deal advances Salesforce's agentic analytics strategy as Tableau moves "from the data-driven enterprise to the agentic analytics enterprise." Loops's headless, agentic capabilities can be triggered directly from Slack and email to continuously monitor KPIs, identify trends and anomalies, and proactively surface what's driving change. "Tableau's mission has been helping people see, understand and act on data. Loops accelerates this mission, using powerful agentic AI to uncover the drivers behind business performance and surface where teams and agents can take action in real time," said Mark Recher, EVP & GM of Tableau. The acquisition signals where enterprise analytics is headed: from dashboards you query to agents that tell you what matters before you ask.</p>
+            <a href="https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-loops/" class="source-link" target="_blank">Read on Salesforce →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>Enterprises Brush Off Wall Street Jitters and Double Down on AI Deployment — CIOs Say Focus Shifts to Outcomes, Not Experiments</h2>
+            <p>Market jitters around artificial intelligence will not slow enterprise demand for the technology, although it may lead corporations to sharpen their focus on outcomes, according to CIOs and tech insiders interviewed by the WSJ Leadership Institute. The report found that enterprise leaders remain enthusiastic about AI, but companies are now paying more attention to how quickly their investments generate business value — and are less likely to pursue open-ended experiments. Experts noted the stock market sell-off is unlikely to change what enterprises buy, and may even give them stronger negotiating positions with vendors. PYMNTS Intelligence research supports this: firms in financial services, healthcare, and media rate AI a success but have pushed full payback expectations out to five to six years. Only 5-10% say they're currently getting full return on investment, but almost none are pulling back. The message: enterprises have absorbed the pilot phase and are now demanding proof of impact.</p>
+            <a href="https://www.pymnts.com/news/artificial-intelligence/2026/enterprises-brush-off-wall-street-jitters-double-down-on-ai-deployment/" class="source-link" target="_blank">Read on PYMNTS →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Forbes: Companies That Leverage AI in Marketing Without Redesigning Work Are "Automating Burnout" — HubSpot Finds 83% Expected to Produce More</h2>
+            <p>HubSpot's 2026 "State of Marketing" report found that 83% of marketers say they're now expected to produce more than ever before with the advent of AI. But as Forbes contributor Alexandre Crazover argues, more pressure to produce isn't the only consequence — AI is also shifting workloads from production to supervision without reducing them. "Imagine 50 AI agents producing hundreds of campaign variations overnight. If a CMO has to review those thousands of variations the next morning, their workload hasn't decreased. It's merely changed from content creation to content review." A Microsoft Research and Carnegie Mellon study found that higher confidence in GenAI is associated with less critical thinking, while GenAI "shifts the nature of critical thinking toward information verification, response integration, and task stewardship." The paradox of AI in marketing: we're dramatically expanding what organizations can produce without expanding people's capacity to absorb it.</p>
+            <a href="https://www.forbes.com/councils/forbesbusinesscouncil/2026/11/02/why-companies-that-leverage-ai-tools-in-marketing-without-redesigning-the-work-are-automating-burnout-/" class="source-link" target="_blank">Read on Forbes →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>McKinsey: 44% of Organizations Now Scaling AI Across the Enterprise — Up From 38% Just One Year Ago</h2>
+            <p>HubSpot's new AI maturity research reveals a striking paradox: 98% of marketing teams now use AI in some way, yet only 10% report transformational results. Meanwhile, McKinsey data shows 44% of organizations now report scaling AI across the enterprise, up from 38% a year earlier. The gap between adoption and impact defines the current moment. AI maturity — how consistently a team turns AI into measurable business outcomes — matters more than the number of tools or pilots launched. Marketing leads other GTM functions, with 42% of marketers reporting advanced AI use (Established or Transformational), compared with 27% in sales and 23% in service. The research recommends reassessing maturity quarterly in year one, then twice a year once scores stabilize. "The field moves fast" is an understatement when nearly half of enterprises are now attempting enterprise-wide AI deployment.</p>
+            <a href="https://blog.hubspot.com/marketing/ai-maturity" class="source-link" target="_blank">Read on HubSpot →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>IndiaMART Scales Agentic AI for B2B Commerce — "B2B Buying Is Moving From a Search Journey to a Decision Journey"</h2>
+            <p>Agentic AI is reshaping B2B commerce, moving digital marketplaces beyond product discovery toward intelligent buyer-supplier interactions that understand requirements, qualify intent, and improve the quality of business connections. At IndiaMART, with 129 million live product listings and millions of business enquiries, CIO Nikhil Prabhakar describes the transformation: "B2B buying is moving from a search journey to a decision journey, and agentic AI accelerates it. Software that answers is becoming software that acts." The platform now uses AI for matchmaking over discovery — weighing intent, category, order size, and supplier capacity — while their voice AI agent VANI handles over 100,000 buyer calls across languages. The next step: agents that reply on a seller's behalf using their conversation history to understand how they quote, clarify, and follow up. "Faster activity isn't better selling," Prabhakar notes. "Fewer missed enquiries and more qualified conversations are."</p>
+            <a href="https://www.cio.com/article/4243169/from-search-to-decision-how-indiamart-is-scaling-agentic-ai-for-b2b-commerce.html" class="source-link" target="_blank">Read on CIO →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>📊 My Take</h3>
+            <p><strong>The AI adoption numbers look like success. The impact numbers tell a different story.</strong> When 98% of marketing teams use AI but only 10% report transformational results, that's not an adoption problem — it's an implementation problem. And the HubSpot/Forbes data on "automating burnout" explains why: most organizations bolted AI onto existing workflows without rethinking the work itself. The result? Marketers produce more variations, review more outputs, and move faster through tasks that may not have been worth doing in the first place. The Salesforce-Loops deal points to where this needs to go. Agentic analytics that tells you what matters before you ask is fundamentally different from dashboards that wait for queries. The shift from "data you analyze" to "insights that find you" is the same transition happening everywhere: from search to decision, from production to judgment, from tools to teammates. IndiaMART's framing is exactly right: B2B buying is becoming a decision journey, not a search journey. That's true for commerce, but it's equally true for analytics, marketing, and enterprise software broadly. The companies winning aren't the ones that produce more — they're the ones that built systems smart enough to tell them what matters. Meanwhile, enterprises are ignoring the Wall Street AI wobble and pushing payback expectations out to five or six years. That's confidence — or stubbornness — depending on your perspective. But the fact that only 5-10% have achieved full ROI while almost none are pulling back suggests something important: the strategic bet on AI isn't about this quarter's returns. It's about building the capabilities that determine who wins in five years. The question is whether the work redesign catches up before the burnout does.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-11-02.html">← November 2, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
