@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — November 4, 2026 | The Full Stack</title>
+    <meta name="description" content="Menlo Ventures: Enterprise AI spending hits $177B, up 5.4x as agents consume 80% of tokens. Salesforce acquires Cresta for $2.7B. 6sense finds pre-contact favorite wins 82% of B2B deals. State of AI Marketing: 90% adopt, only 41% prove ROI.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-11-04.html">
+    
+    <meta property="og:title" content="Daily Digest — November 4, 2026 | The Full Stack">
+    <meta property="og:description" content="Enterprise AI hits $177B. Salesforce buys Cresta $2.7B. Agents now consume 80% of AI tokens. Pre-contact favorite wins 82% of B2B deals.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-11-04.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Wednesday, November 4, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">Enterprise AI Spending Hits $177B as Agents Consume 80% of Tokens, Salesforce Acquires Cresta for $2.7B, Pre-Contact Favorite Wins 82% of B2B Deals</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Menlo Ventures: Enterprise AI Spending Hits $177B, Up 5.4x in One Year — Agents Now Generate 80% of All Tokens</h2>
+            <p>Menlo Ventures released its 2026 State of Enterprise AI report, revealing that enterprise AI spending surged from $33 billion in 2025 to $176.8 billion by September 2026 — a 5.4x increase that outpaced even the 3.9x growth from the prior year. The most striking finding: agents now generate 80% of all tokens on OpenRouter, roughly seven times human-driven usage. Since overtaking human traffic in February, agent token consumption has grown 37x compared with 5x growth in human-driven usage. "Companies entered 2026 expecting to spend more on AI, so they budgeted nearly twice what they'd spent in 2025. But even that wasn't enough — our survey found they ended up spending 2.5 times what they'd budgeted," said Derek Xiao, Principal at Menlo Ventures. Enterprise AI application spending alone reached $77 billion, with coding ($34B) and AI assistants ($25B) accounting for 76% of that figure. The share of enterprises paying for AI rose from 55% to 65%, suggesting growth is driven primarily by greater spending among adopters rather than new buyers entering the market.</p>
+            <a href="https://menlovc.com/perspective/2026-the-state-of-enterprise-ai/" class="source-link" target="_blank">Read on Menlo Ventures →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>Salesforce Acquires Cresta for $2.7B — Voice Agents Meet the World's #1 CRM</h2>
+            <p>Salesforce announced a definitive agreement to acquire Cresta, a voice-first operating system for customer experience, in a deal valued at $2.7 billion according to The Information. The acquisition unites advanced voice agents with Salesforce's CRM platform, bringing together the customer, the conversation, and the outcome. Cresta has built AI-powered contact center automation software that uses real-time coaching and quality management for service agents. The deal continues Salesforce's aggressive M&A strategy following its Loops acquisition (completed November 3) for agentic analytics and its $5.66B Braze acquisition in October. As voice agents become the interface layer for customer service, Salesforce is positioning itself to own both the data (CRM) and the conversation (Cresta). For enterprise buyers, this signals where customer experience platforms are headed: from screen-based interfaces to voice-first agents that handle interactions without human involvement.</p>
+            <a href="https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-cresta/" class="source-link" target="_blank">Read on Salesforce →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>6sense: The Vendor a B2B Buyer Favors Before First Contact Wins 82% of the Time — LLM Discovery Drops to 26%</h2>
+            <p>6sense's 2026 Global B2B Buyer Experience Report, based on 4,611 recent B2B buyers across North America, APAC, Europe, and the UK, found that the vendor a buying group favored before first contact won the deal 82% of the time. A vendor missing from the first shortlist wins less than 10% of the time. Buyers spend 60% of an average 10.3-month cycle in selection before contacting any seller, arriving with a shortlist that already names the winner 92% of the time. Notably, LLM usage in B2B evaluation dropped from 94% to 81% year-over-year, while only 26% used an LLM to discover vendors. Where do vendor names actually come from? Websites (36%), prior knowledge (34%), and internal discussion (32%). The data narrows the AI visibility assignment for marketers: the LLM is a research tool buyers reach for once they already have names, and the names come from traditional awareness-building, not generative search. The battle is won before the first conversation starts.</p>
+            <a href="https://6sense.com/resources/research/b2b-buyer-experience-report" class="source-link" target="_blank">Read on 6sense →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>State of AI Marketing 2026: Over 90% Adopt AI, But Only 41% Can Prove ROI — Down From 49% Last Year</h2>
+            <p>According to MarTech's Q4 2026 review, over 90% of marketers now use AI. But Jasper's State of AI in Marketing 2026 report found that only 41% can prove AI ROI, down from 49% a year earlier. The gap between adoption and value capture is widening, not closing. Most teams added AI to the same workflow — mainly for content — and paste outputs between tools. As Mike Pastore, head of content at MarTech, notes: "Most marketers prompt a chatbot, then paste the answer into the next tool." The pattern mirrors early factory electrification, when owners swapped steam engines for electric motors but kept the floor unchanged. Productivity stayed flat for decades until factories were redesigned around the flow of work. Meanwhile, Accenture found that shoppers expect gen AI to influence 45% of holiday category spend. The AI that reads your product pages and reviews will judge your content before many humans do. The playbook emerging from the data: rebuild one workflow end to end on clean data, then write pages that AI assistants can actually parse.</p>
+            <a href="https://www.thevccorner.com/p/state-of-ai-marketing-2026" class="source-link" target="_blank">Read on The VC Corner →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>SEON Survey: 68% of Americans Use AI Agents Weekly, But 50% Won't Let Agents Use Their Credit Card</h2>
+            <p>SEON's November 2026 survey of 2,026 U.S. adults reveals the consumer side of the agentic shift — and the trust gap that blocks it. 68% of U.S. adults now use an AI agent at least weekly, but 50% are uncomfortable letting an agent use their credit card for a purchase they asked for. The liability question is even more striking: 65% of respondents with an opinion would hold the AI company responsible if an agent committed fraud. The merchant drew only 11% of the blame. For anyone building agentic commerce flows, that distribution of blame is the number to carry into vendor meetings. Consumers want agents to act on their behalf, but they don't trust them with financial authority — and when things go wrong, they'll blame the AI provider, not the retailer. The gap between weekly usage and transactional trust defines the next phase of agentic commerce: agents that research and recommend, but still pause for human approval on anything involving money.</p>
+            <a href="https://seon.io/resources/ai-agent-consumer-trust-survey/" class="source-link" target="_blank">Read on SEON →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>📊 My Take</h3>
+            <p><strong>The agent economy arrived faster than anyone budgeted for.</strong> When enterprises spend 2.5x what they planned and agents generate 80% of all tokens, we've crossed from "AI experimentation" to "AI as the dominant consumer of computing." Menlo's data rewrites the economics of software: spending is no longer constrained by the number of employees using AI, but by how much work AI can get done. That's a fundamentally different market.<br><br>The 6sense data is a cold shower for the GEO/AEO hype cycle. Only 26% of B2B buyers used an LLM to discover vendors, and the pre-contact favorite wins 82% of deals. The LLM is a research tool buyers use after they have names, not a discovery engine. Traditional awareness-building — websites, prior relationships, internal word-of-mouth — still determines who makes the shortlist. The AI visibility vendors are selling optimization for a channel that influences evaluation, not discovery.<br><br>And then there's the ROI paradox. 90%+ adoption, but provable ROI dropped from 49% to 41%. We're in the "electric motor bolted to the steam floor" phase — AI added to unchanged workflows. The productivity gains won't materialize until organizations redesign work around what AI actually does well: continuous operation, parallel processing, judgment at scale. The companies winning are the ones rebuilding workflows, not adding chatbots.<br><br>Salesforce's Cresta acquisition makes the strategic bet clear: whoever owns both the customer data and the customer conversation owns the relationship. Voice agents that handle interactions without human involvement aren't a feature — they're the future of customer service. The interface layer is shifting from screens humans use to agents that talk to customers directly. That's either terrifying or exciting, depending on whether your contact center is ready.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-11-03.html">← November 3, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
