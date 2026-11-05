@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — November 5, 2026 | The Full Stack</title>
+    <meta name="description" content="Thoughtworks Radar Vol 35: Agentic AI scaling creates growing pains around context, tokenomics, and governance. China blocks SoftBank's $5.4B ABB robotics deal. Figma AI Agent credits surge 2.5x. 100% of enterprises now use generative AI.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-11-05.html">
+    
+    <meta property="og:title" content="Daily Digest — November 5, 2026 | The Full Stack">
+    <meta property="og:description" content="Agentic AI scaling creates enterprise growing pains. China blocks SoftBank's $5.4B ABB robotics deal. Figma AI credits surge 2.5x. 100% enterprise GenAI adoption.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-11-05.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Thursday, November 5, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">Thoughtworks Radar: Agentic AI Scaling Creates "Growing Pains," China Blocks SoftBank's $5.4B ABB Robotics Deal, Figma AI Credits Surge 2.5x</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Thoughtworks Technology Radar Vol 35: Agentic AI Works for 10 People, Breaks at 200 — Context, Tokenomics, and Governance Become the Constraints</h2>
+            <p>Thoughtworks released Volume 35 of its Technology Radar, and the headline finding cuts against the agentic hype cycle: "One team of passionate people experimenting with agents can make almost anything work... Two hundred people cannot work that way." The report identifies three categories of growing pains that appear when agentic AI moves from pilot to operating model. First, context sharing: pilots run on tacit knowledge — which conventions matter, what "done" looks like, which dataset is authoritative — and none of it transfers when teams scale. Second, tokenomics: "A cheaper model with a good harness will outperform an expensive model with a bad one," writes Thoughtworks Chief Architect Chris Ford. Advanced coding agents chew through tokens faster than prompt/reply use cases, and a carelessly-used cheap model can cost more than an expensive one used well. Third, review demands: the Radar recommends moving review upstream to the spec level using techniques like "grilling" and visual plans, raising review to the level of intent rather than inspecting every diff. For enterprise leaders, the prescription is blunt: treat context as a shared asset with an owner, build one definition of "done" per domain, and create an evaluation set that encodes it.</p>
+            <a href="https://www.thoughtworks.com/en-us/insights/blog/technology-strategy/macro-trends-tech-industry-november-2026" class="source-link" target="_blank">Read on Thoughtworks →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>China Blocks SoftBank's $5.4B ABB Robotics Acquisition — Physical AI Strategy Hits Geopolitical Wall</h2>
+            <p>China's National Development and Reform Commission notified SoftBank that it will not clear the $5.4 billion acquisition of ABB's robotics division, the Financial Times reported November 5. The deal was central to Masayoshi Son's "physical AI" strategy, the vision of bringing artificial intelligence into the physical world through robots. ABB's robotics unit employs approximately 7,000 engineers and operates about 500,000 installed robots globally, with China historically its largest market. SoftBank is reportedly exploring whether a revised deal structure could win Chinese approval, but shares dropped roughly 5% on the news. The rejection follows a broader pattern of tightening cross-border AI and chip investment scrutiny across the US, China, and EU. For enterprise leaders watching the AI infrastructure race, the signal is clear: physical AI — robots, industrial automation, edge computing — is now as geopolitically sensitive as chips and cloud. The integrated supply chains that made globalized robotics possible are fragmenting along the same lines as semiconductor fabs.</p>
+            <a href="https://www.ft.com/content/softbank-abb-robotics-china" class="source-link" target="_blank">Read on Financial Times →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Figma Q3 Beats Estimates: AI Agent Credits Surge 2.5x as Design Tools Become Agent Workspaces</h2>
+            <p>Figma reported Q3 2026 revenue of $391.4 million, up 43% year-over-year and $16 million above guidance, with GAAP loss narrowing to $0.15 per share. But the number that jumped out: AI Agent credits surged 2.5x quarter-over-quarter. Figma's AI features — launched as add-ons for design generation, prototyping assistance, and collaborative workflows — are now being consumed by AI agents, not just human designers. The company didn't break out what percentage of AI credits come from human prompts versus automated agent workflows, but the 2.5x acceleration suggests that design tools are becoming agent workspaces. When Menlo Ventures reported that agents now generate 80% of all tokens on OpenRouter, the assumption was that coding and writing dominated. Figma's numbers suggest the pattern extends into creative tools: agents are starting to design. For product marketers, this means the artifacts you commission — landing pages, product screenshots, presentation graphics — may increasingly be generated by agents using tools like Figma as an execution layer.</p>
+            <a href="https://aiweekly.co/ai-news-today" class="source-link" target="_blank">Read on AI Weekly →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Flexera: 100% of Enterprises Use Generative AI, 81% Beyond Experimentation — But "Shadow IT Learned to Code"</h2>
+            <p>Flexera's 2026 State of the Cloud Report found that every respondent reported using generative AI in some capacity, with 81% saying they have moved beyond the experimental stage into production or scaled deployment. But the report's framing cuts against triumphalism: "The shadow IT problem didn't disappear. It learned to code." As AI tools become easier to deploy, individual teams and business units are spinning up AI applications without IT oversight, creating a new generation of ungoverned systems that are harder to audit, secure, and cost-control than the SaaS sprawl of the 2010s. The report recommends that enterprises shift from blocking shadow AI (which failed) to governing it through visibility and policy. That means AI cost management that spans apps, agents, models, data, and compute — treating AI consumption as a new category alongside SaaS and cloud infrastructure. For CMOs and marketing ops leaders, the implication is direct: the AI tools your team is using may not be on IT's radar, and the governance conversation is coming whether you initiate it or not.</p>
+            <a href="https://www.flexera.com/blog/ai/the-shadow-it-problem-didnt-disappear-it-learned-to-code/" class="source-link" target="_blank">Read on Flexera →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>Microsoft Agent 365 Registry Grows 30% to 50M+ Agents, ServiceNow Hits 680 Customers Above $5M ACV</h2>
+            <p>Enterprise disclosures show AI agents moving into daily work at scale. Microsoft's Agent 365 registry — its system for registering and governing AI agents across the enterprise — grew more than 30% in one quarter to over 50 million agents. ServiceNow's count of customers paying more than $5 million in annual contract value reached 680, up 23% year-over-year, driven largely by AI agent deployments. And agent-generated pull requests on GitHub rose six-fold in six months. The data suggests a phase shift: agents are no longer experimental add-ons but production systems integrated into daily workflows. Large enterprises lead adoption, but SMEs are growing faster — the gap between "we're exploring AI" and "AI does our work" is closing rapidly across company sizes. For PMM leaders, the operational question is no longer whether to use AI agents but how to govern them: who owns the agent, what can it access, how do you audit its decisions, and what happens when it breaks? Microsoft's Agent 365 and ServiceNow's governance layers are early answers to questions every enterprise will face.</p>
+            <a href="https://www.globenewswire.com/news-release/2026/11/04/3395385/0/en/ai-automation-market-growth-2027-microsoft-aws-accenture-servicenow-and-salesforce-race-to-scale-agentic-automation.html" class="source-link" target="_blank">Read on GlobeNewswire →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>📊 My Take</h3>
+            <p><strong>The Thoughtworks Radar is the cold water the industry needs.</strong> When a consultancy whose business depends on AI adoption publishes a report saying "this works for 10 people, breaks at 200," pay attention. The growing pains they identify — context sharing, tokenomics, review burden — aren't implementation details. They're architectural constraints that determine whether agentic AI scales or stalls.<br><br>The context problem is particularly brutal. Pilots succeed because the team shares tacit knowledge: which conventions matter, what "done" looks like, which dataset is authoritative. None of that transfers when you add teams. The result is agents doing inconsistent work, creating new kinds of friction that didn't exist when humans did the same tasks with shared understanding. Thoughtworks' prescription — treat context as a shared asset with an owner, one definition of done per domain — is exactly right, and almost no organization has built this.<br><br>Meanwhile, Figma's 2.5x surge in AI agent credits shows where this is heading. Design tools are becoming agent workspaces. The creative assets that used to require human designers are increasingly generated by agents using tools like Figma as an execution layer. When agents consume 80% of tokens in coding and the same pattern extends to design, we're not talking about AI as a copilot anymore — we're talking about AI as the primary producer of digital artifacts.<br><br>And then there's the SoftBank/ABB deal collapse. Physical AI — robots, industrial automation, the machinery that moves things in the real world — is now as geopolitically sensitive as chips. The integrated supply chains that made globalized robotics possible are fragmenting. If your enterprise AI strategy assumes you can buy the best technology regardless of origin, that assumption is breaking down. The winners will be the companies that figured out governance and context sharing before their competitors, not the ones that deployed the most agents fastest.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-11-04.html">← November 4, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
