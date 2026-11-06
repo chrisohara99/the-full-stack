@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — November 6, 2026 | The Full Stack</title>
+    <meta name="description" content="OpenAI launches GPT-6 Cyber with Critical rating, finds 948 Linux kernel exploits. Meta acquires Conductor for agent orchestration. E2B crosses $120M ARR. Claude discovers Xen hypervisor vulnerabilities.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-11-06.html">
+    
+    <meta property="og:title" content="Daily Digest — November 6, 2026 | The Full Stack">
+    <meta property="og:description" content="OpenAI GPT-6 Cyber finds 948 Linux exploits. Meta buys Conductor. E2B hits $120M ARR. Claude discovers Xen vulnerabilities. Anthropic ships enterprise security.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-11-06.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Friday, November 6, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">OpenAI GPT-6 Cyber Finds 948 Linux Kernel Exploits for $1.2M, Meta Acquires Conductor for Agent Orchestration, E2B Crosses $120M ARR</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>OpenAI Launches GPT-6 Cyber with "Critical" Rating — Finds 948 Working Linux Kernel Exploits, 81 Firefox Vulnerabilities Mozilla Missed</h2>
+            <p>OpenAI has launched GPT-6 Cyber, a model purpose-built for security research and rated "Critical" under its Preparedness Framework — one notch above GPT-5.6 Cyber's "High" rating. The headline numbers are extraordinary: on ExploitGym, GPT-6 Cyber hits a 48.5% success rate versus 32.1% for its predecessor. In a November 4 research writeup titled "A thousand fewer paths to root," OpenAI ran an automated pipeline across the Linux kernel: 2,308 candidate issues found, 1,724 dynamically reproduced, and 948 working local privilege escalation exploits — compared with 166 for GPT-5.6 Sol under the same framework. The entire run cost about $1.21 million in API credits, roughly $1,279 per working exploit. In Firefox, GPT-6 Cyber found 81 previously unknown vulnerabilities that Mozilla classifies as high severity, plus evidence that 30 known issues were more serious than assessed. Mozilla's distinguished engineer Brian Grinstead noted that Firefox entered 2026 as one of the most heavily reviewed codebases in the industry. The alignment work may matter more than the capability: in the ExploitGym Honeypot evaluation, GPT-6 Cyber stayed inside its authorization boundary 99.93% of the time without safety prompts, up from 94.49% for GPT-5.6 Cyber. Access is deliberately narrow: vetted Daybreak Red customers first, with IP allowlisting on by default.</p>
+            <a href="https://openai.com/" class="source-link" target="_blank">Read on OpenAI →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>Meta Acquires Conductor, the Agent Orchestration Startup — Cloud Service Shuts Down November 20</h2>
+            <p>Meta has acquired Conductor, the startup behind a tool that lets engineers run multiple AI agents in parallel workspaces to build software projects. Meta confirmed the deal to TechCrunch but declined to share terms. Founder and CEO Charlie Holtz announced it himself: "Conductor is joining Meta," adding that the team has "big and crazy plans for the next interface" and promising something new for customers early next year. Conductor was founded in 2024 and shipped its core product last summer. Its pitch is orchestration: agents deployed across cloud, local, or phone-driven workspaces, each handling independent modules of a project while staying coordinated. Notably, the agents on the platform are not homegrown — they come from Anthropic, OpenAI, and other labs, making Conductor a bet on coordination layers rather than any single model. There's a hard deadline: Conductor's cloud service shuts down on November 20, after which user data gets deleted. For Meta, the acquisition adds an orchestration team to Superintelligence Labs at the moment every lab is trying to turn chatbots into fleets of working agents. Holtz said he looks forward to working with Meta's Chief AI Officer Alexandr Wang and MSL product lead Nat Friedman.</p>
+            <a href="https://techcrunch.com/" class="source-link" target="_blank">Read on TechCrunch →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>E2B Crosses $120M ARR from $8M One Year Ago — 94 of the Fortune 100 Now Run Agent Computers on the Platform</h2>
+            <p>E2B, which provisions secure cloud computers for AI agents, said annualized run-rate reached $120M after sitting at just $8M a year earlier — a 15x surge in twelve months. The company now counts 94 of the Fortune 100 as customers, with 2 billion agent computers started as of October. Growth is almost entirely inbound through self-serve adoption at Meta, Hugging Face, Groq, and others. Total funding to date remains just $38M, including an Insight Partners-led $21M Series A from July 2025. E2B's core product gives AI agents their own isolated cloud computers where they can execute code, browse the web, and interact with files without touching the user's environment. The explosion in usage validates a thesis that's been forming all year: as agents move from chatbots to workers, they need compute environments — places where they can run code, access files, and operate safely. When Menlo Ventures reported that agents now consume 80% of tokens on OpenRouter, and when Microsoft's Agent 365 registry crossed 50 million agents, the question became: where do all these agents run? E2B is one answer, and the ARR trajectory suggests enterprises are adopting it fast.</p>
+            <a href="https://www.financialcontent.com/article/bizwire-2026-11-5-e2b-which-gives-ai-agents-their-own-cloud-computers-passes-120-million-in-annual-recurring-revenue-with-100-inbound" class="source-link" target="_blank">Read on Financial Content →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Anthropic's Claude Discovers Xen Hypervisor Vulnerabilities — AI Research Finds Flaws Human Audits Missed</h2>
+            <p>In a first for AI-discovered security vulnerabilities in critical infrastructure, Xen Project advisory XSA-523 credits Anthropic's Claude with discovering CVE-2026-102703 and CVE-2026-102704 — two flaws in Xen's grant-copy operation that let a malicious guest VM read and write the memory of other VMs, including dom0 (the privileged management domain). The Xen hypervisor underpins major cloud providers including AWS, and vulnerabilities of this severity are rare precisely because the codebase has been heavily audited for over a decade. The disclosure follows a pattern we've seen emerging this year: AI systems finding security issues that escaped human review. OpenAI's GPT-6 Cyber finding 81 Firefox vulnerabilities Mozilla missed. Google's Naptime project discovering memory safety bugs in Chrome. Anthropic's own research on Claude's agentic capabilities. The implication for enterprise security is double-edged: AI dramatically accelerates defensive vulnerability discovery, but it also accelerates offensive capability for adversaries with access to similar models. The race isn't capability anymore — it's alignment, access control, and who gets to use these tools first.</p>
+            <a href="https://aiweekly.co/ai-news-today" class="source-link" target="_blank">Read on AI Weekly →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>Anthropic Ships Enterprise Security Controls for Claude — Prompt Hooks, Security Center, and Parent Console Go Live</h2>
+            <p>Anthropic published a security-focused update for Claude Enterprise on November 5, aimed at letting security teams see and govern what Claude does without rebuilding their tooling. The core piece is now generally available: prompt hooks and pre-tool-call hooks that send prompts and proposed tool calls to supported security vendors, so companies can apply existing policies including data loss prevention rules at the moment a prompt is submitted or before a tool runs. In beta: a new security center that compares chat, Cowork, and Claude Code settings against Anthropic's own recommendations, refreshes automatically, and can export auditor-ready reports. A parent console lets one organization manage SSO, directory sync, domain verification, and groups across multiple Claude Enterprise and Claude Platform organizations. A new Admin API endpoint can sign a member out everywhere in one call. The most infrastructural piece: a supported vendor's sensor can run inside the isolated VM that Cowork and unified Claude use for local code execution, reporting to the company's existing security console on macOS and Windows. Anthropic is explicit that coverage stops at the local VM and does not extend to cloud Cowork sessions. The package reads as a response to a simple question security teams kept asking: if an agent acts on company devices, who watches it?</p>
+            <a href="https://claude.com/news" class="source-link" target="_blank">Read on Anthropic →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>📊 My Take</h3>
+            <p><strong>The GPT-6 Cyber numbers are a watershed moment for AI security.</strong> Finding 948 working Linux kernel exploits at $1,279 per exploit changes the economics of vulnerability research completely. A human security researcher might find a handful of kernel exploits in a year of dedicated work. OpenAI's pipeline found nearly a thousand in an automated run. The 81 Firefox vulnerabilities are perhaps more telling — this is a codebase that's been picked over by the best security researchers in the world for two decades, and the model still found high-severity issues they missed.<br><br>But the more important story might be E2B's 15x ARR surge. When a company goes from $8M to $120M ARR in twelve months with almost no outbound sales, something fundamental is happening. Enterprises are deploying agents at scale, and those agents need somewhere to run. E2B's business model is almost boringly simple — give AI agents their own cloud computers — but that simplicity maps to a real need. The 2 billion agent computers started tells you the volume of agentic work happening inside the Fortune 100.<br><br>Meta's acquisition of Conductor fits the pattern. Every AI lab is racing to turn chatbots into fleets of working agents, and orchestration — coordinating multiple agents working in parallel — is the bottleneck. Conductor's approach of being model-agnostic and focusing on coordination rather than capability is shrewd. The agents themselves are commoditizing; the value is in making them work together.<br><br>And then there's Claude discovering Xen hypervisor vulnerabilities. This is critical infrastructure — AWS runs on Xen. When AI finds memory safety bugs in the foundation of cloud computing that human audits missed, we're in a new regime. The security implications cut both ways: defenders get accelerated vulnerability discovery, but so do adversaries. The race now isn't capability — it's who uses these tools first, and whether alignment holds at the frontier.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-11-05.html">← November 5, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
