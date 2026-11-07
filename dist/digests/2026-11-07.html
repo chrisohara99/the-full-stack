@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — November 7, 2026 | The Full Stack</title>
+    <meta name="description" content="Visa benchmark finds AI shopping agents fail 42.8% of runs. Bank of England says AI productivity gain just 0.5% over three years. Five9 acquires Level AI for $325M. Box ships agentic workflow automation.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-11-07.html">
+    
+    <meta property="og:title" content="Daily Digest — November 7, 2026 | The Full Stack">
+    <meta property="og:description" content="Visa AI shopping agents fail 42.8% of runs. BoE: AI productivity just 0.5% in 3 years. Five9 buys Level AI $325M. Box ships agentic workflows.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-11-07.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Saturday, November 7, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">Visa Benchmark Finds AI Shopping Agents Fail 42.8% of Runs, Bank of England Says AI Productivity Gain Just 0.5% Over Three Years, Five9 Acquires Level AI for $325M</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Visa Agentic Commerce Benchmark Finds AI Shopping Agents Fail 42.8% of Runs — 54% of Failures Still Make Purchases</h2>
+            <p>Visa has released the first industry-wide benchmark for AI shopping agents, and the results are sobering. The Visa Agentic Commerce Benchmark tested 22 AI models from 12 labs across 15 realistic shopping challenges, and the models failed 42.8% of test runs. The best performer passed 82.2% of attempts, the worst just 28.9% — but the more telling number is consistency: when models attempted the same scenario three times, all three attempts passed only 34.2% of the time. For merchants planning around agent behavior, that inconsistency is the real problem. Visa also reported that 54% of failed runs still ended in a purchase, meaning more than half the time an agent got something wrong, it bought something anyway. The benchmark tests whether an agent can uncover customer requirements through conversation and make a correct buy or no-buy decision; Visa explicitly noted it has not yet tested checkout, payment, or order placement — the part where money moves has not been graded yet. At an assumed $30 fully loaded cost per return and service contact, a retailer expecting 20,000 agent sessions this holiday season could face $139K in cleanup costs from wrong orders. Visa said the benchmark creates a roadmap for delivering better agentic commerce experiences and that models which uncovered more hidden buying factors passed 70.2% of runs versus 44.4% for those that uncovered the fewest, suggesting product data completeness is the variable brands can control today.</p>
+            <a href="https://investor.visa.com/news/news-details/2026/Visa-Releases-First-of-Its-Kind-Industry-Benchmark-for-AI-Shopping-Almost-Half-of-Test-Runs-Fail/default.aspx" class="source-link" target="_blank">Read on Visa →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>Bank of England: UK AI Productivity Gain Just 0.5% Over Three Years — AI Cutting Hiring, Not Causing Layoffs</h2>
+            <p>The Bank of England's latest Monetary Policy Report delivers a cold dose of reality on AI productivity claims: UK businesses report AI has boosted their productivity by around 0.5% over the past three years, which works out to just 0.1–0.2 percentage points of additional annual productivity growth since early 2024. "So far there is only evidence of a modest AI-driven rise in UK productivity growth," the Bank said. The report notes that AI-related activity has accounted for nearly a fifth of UK GDP growth since early 2026, but most of that comes from companies developing and deploying AI technology, not from businesses becoming more productive by using it. In the Bank's words: "The contribution to growth from AI to date appears to reflect activity in the upstream development and implementation of AI technologies rather than broader gains from their adoption elsewhere in the economy." Translation: selling AI is proving more lucrative than using it. On employment, firms reported virtually no overall impact so far — AI is not causing mass layoffs but is making some employers less inclined to hire new staff or replace those who leave. The Bank cites a Gartner survey from October finding that while 75% of corporate boards expected AI to improve productivity and cut costs, just 3% of organizations had actually achieved their targets. Businesses surveyed expect AI to add around 0.9 percentage points to annual productivity growth over the next three years, split roughly equally between faster output growth and slower employment growth.</p>
+            <a href="https://www.theregister.com/ai-and-ml/2026/11/06/bank-of-england-pours-cold-water-on-ai-productivity-boom/5308059" class="source-link" target="_blank">Read on The Register →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Five9 Acquires Level AI for $325M in Cash — Contact Center AI Consolidation Continues</h2>
+            <p>Five9, the cloud contact center platform, has signed a definitive agreement to acquire Level AI for approximately $325 million in all-cash, the company announced alongside Q3 results showing revenue of $323.3 million, up 13% year-over-year. Level AI, which handles more than one billion customer interactions annually on its own Latitude models, will be sold both as a standalone product to enterprises that haven't moved their contact centers to the cloud and integrated into Five9's CCaaS platform. The deal is expected to close in Q4 2026, subject to customary conditions. Five9 shares fell more than 23% after hours on the news. The acquisition fits a pattern of contact center consolidation around AI capabilities: when your shoppers start using agents, and those agents fail 42.8% of the time as Visa's benchmark showed, someone has to handle the cleanup — and that lands in the contact center. Level AI's pitch has been using AI to analyze customer interactions in real time, coaching agents, automating quality assurance, and surfacing insights. For Five9, the acquisition adds AI-native conversation intelligence at a moment when the volume of AI-generated customer service interactions is about to surge. The valuation implies roughly 8–10x ARR based on Level AI's reported growth trajectory.</p>
+            <a href="https://www.investing.com/news/company-news/five9-to-acquire-level-ai-for-325-million-in-cash-93CH-5005602" class="source-link" target="_blank">Read on Investing.com →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Box Ships Architect for Agentic Workflow Automation — Lets Enterprises Build, Deploy, and Govern Agent-Powered Processes</h2>
+            <p>Box has unveiled Box Architect, a new capability that lets enterprises autonomously build, manage, and optimize agentic workflows across their critical business processes. Unveiled at BoxWorks 2026 in San Francisco, Architect represents Box's bet that the real AI opportunity is not helping individuals work faster but rethinking how entire processes get done. With Architect, teams can describe a process or goal in plain language, and the system uses content and procedures already in Box to define stages, decisions, and handoffs — with every step governed by existing permissions, classifications, and retention policies. Customers can choose from leading models including Anthropic, OpenAI, Google, NVIDIA, and IBM, selecting the right model for each workflow step. Box also announced new threat protection capabilities designed for the agentic era: detecting and responding to bulk exfiltration, session hijacking, account takeover, and mass deletion — attacks that become more dangerous as agents gain the ability to access and act on enterprise content at scale. CEO Aaron Levie framed the moment: "Until now, putting AI to work across those processes has often required specialized expertise and significant effort, but breakthroughs like OpenAI's Astra and Anthropic's Fable are changing what's possible." The new features complement Box's agent security controls, which are now generally available and help govern what agents can access and do with enterprise content.</p>
+            <a href="https://martechseries.com/content/box-unveils-the-next-generation-of-enterprise-ai-with-new-agentic-workflow-automation-and-advanced-threat-detection/" class="source-link" target="_blank">Read on MarTech Series →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>SeenThis Ships Studio MCP — Video Ad Production via Claude and ChatGPT, Claims 90% Time Savings</h2>
+            <p>SeenThis, the Stockholm-based video advertising technology company, has launched Studio MCP, which lets teams working in Claude, ChatGPT, and other MCP-compatible AI tools build editable, animated video ads directly from those interfaces. The product generates market and language versions automatically and can push approved ads to DV360, Meta, and TikTok. In early tests, SeenThis claims production time was cut by more than 90%, though the company provided no sample size for that figure. The product is currently in early access. The key design decision: there's an approval gate built into the workflow, keeping a human in the loop at the point where creative goes live. That mirrors what FIS found in a recent consumer survey: 56% of respondents want a human who can review or override AI decisions. SeenThis positions this as the future of creative production: describe what you want in natural language inside the tools creative teams already use, let AI generate the variants, review and approve, then push to ad platforms — all without leaving the conversation interface. If the 90% time savings holds at scale, this is the kind of efficiency gain that restructures creative production teams. The MCP (Model Context Protocol) integration means the workflow connects natively to Claude's tool ecosystem, making video ad production feel like just another capability of the AI assistant rather than a separate application to learn.</p>
+            <a href="https://agilebrandguide.com/yesterdays-marketing-technology-ai-news-november-6-2026/" class="source-link" target="_blank">Read on Agile Brand Guide →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>📊 My Take</h3>
+            <p><strong>The Visa benchmark is the most important release this week, and it's not even close.</strong> When AI shopping agents fail 42.8% of the time — and more than half of those failures still result in a purchase — we have a quantified measure of the gap between agentic AI hype and agentic AI reality. The 34.2% consistency rate across repeated attempts is the number merchants need to internalize: an agent that gets it right on Tuesday might get it wrong on Wednesday, giving you no stable behavior to build returns policies, service scripts, or product data standards around.<br><br>The Bank of England report pairs uncomfortably with the Visa data. If UK businesses report just 0.5% productivity gain from AI over three years, while agents are making wrong purchases at scale and enterprises are spending 2.5x over budget (per Menlo Ventures last week), the economics of this moment start to look fragile. The Bank's observation that "selling AI is proving more lucrative than using it" could be the epitaph of this cycle if the ROI gap doesn't close.<br><br>But here's what makes this interesting rather than depressing: the market is responding. Five9 paying $325M for Level AI is a bet that contact centers will absorb the cost of agentic errors. Box shipping Architect with threat detection for bulk exfiltration is a bet that agent governance becomes table stakes. SeenThis integrating video production into Claude and ChatGPT is a bet that creative workflows consolidate into AI interfaces.<br><br>The pattern across these stories is a market acknowledging that raw AI capability isn't enough. You need orchestration (Box Architect), error handling (Five9 + Level AI), and human-in-the-loop approval gates (SeenThis Studio MCP). The companies building those layers are positioning for a world where agents work at scale — even when those agents fail nearly half the time.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-11-06.html">← November 6, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
