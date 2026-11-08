@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — November 8, 2026 | The Full Stack</title>
+    <meta name="description" content="Only 13% of CIOs say AI delivered significant value while spending hits $176.8B (2.5x over budget). Tech stocks plunge 5.5% on midterm AI regulation fears. ChurnZero ships 20+ agentic AI products.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-11-08.html">
+    
+    <meta property="og:title" content="Daily Digest — November 8, 2026 | The Full Stack">
+    <meta property="og:description" content="Only 13% CIOs see AI value while $176.8B spent (2.5x budget). Tech stocks crash 5.5%. ChurnZero ships 20+ agents. Google buys Crusoe data center.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-11-08.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Sunday, November 8, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">Only 13% of CIOs Say AI Delivered Significant Value While Enterprise Spending Hits $176.8B at 2.5x Over Budget, Tech Stocks Plunge 5.5% on Midterm AI Regulation Fears</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Gartner: Only 13% of CIOs Say AI Has Delivered Significant Value — While Menlo Ventures Puts Enterprise AI Spend at $176.8B, 2.5x Over Budget</h2>
+            <p>Two reports released this week paint a stark picture of the gap between AI investment and AI results. Gartner's 2027 CIO and Technology Executive Agenda survey of 2,002 CIOs and technology executives found that only 13% say their enterprise has realized significant or transformational value from AI. Meanwhile, Menlo Ventures' 2026 State of Enterprise AI report, published November 3, puts enterprise AI deployment spending at $176.8 billion by September 2026 — up 5.4x from $33 billion in 2025 and approximately 2.5 times over budget. The Gartner survey, fielded May to July 2026, found that only 31% of CIOs have a rule for when an AI pilot should not move to production, and just 17% have a rule for dropping low-value AI already in production. CIOs with stop rules were 2.3 times as likely to rank among Gartner's "vanguard" group, suggesting that measurement discipline correlates with outcomes. The disconnect is troubling: enterprises are spending at a pace that far exceeds what their own executives say is delivering value. The Menlo data combines a survey of nearly 400 U.S. decision-makers with bottom-up market modeling, and the 2.5x overspend figure suggests that AI budgets are being blown through faster than planned — either because costs are higher than anticipated or because organizations are expanding scope beyond original plans. Either way, finance teams are likely to start asking harder questions.</p>
+            <a href="https://t2conline.com/only-13-of-cios-say-ai-has-delivered-significant-value-the-gap-comes-down-to-measurement/" class="source-link" target="_blank">Read on Times Square Chronicles →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>Tech Stocks Plunge 5.5% After Democrats' Midterm Sweep — $3.2 Trillion Wiped Out on AI Regulation Fears</h2>
+            <p>Wall Street suffered its worst day since April 2025 on Thursday as investors bet that Democrats' sweeping midterm victories could slow the AI buildout. The Nasdaq fell 5.5%, the S&P 500 dropped 4.4%, and more than $3.2 trillion was wiped from the value of the US stock market — larger than the annual economic output of Canada. AMD dropped 17.3% and Nvidia fell 9.3%, with the Nasdaq closing about 11.9% below its October 6 record, putting it in official correction territory. The trigger was political: Democrats won control of Congress after campaigning on challenging billionaire power and calling out big tech, with data center moratoriums effectively on the ballot in several states. Elon Musk, who spent nearly half a billion dollars backing Republicans and moved his residence to Texas (the leading state for data center construction), saw shares in both Tesla and SpaceX fall sharply. Texas governor-elect Gina Hinojosa has promised a moratorium on new data center buildouts until stronger protections are enacted. For enterprise AI buyers, the market correction is a reminder that the infrastructure layer beneath every AI product carries political and financial risk. UBS Global Wealth Management's Mark Haefele said the AI investment cycle should remain intact despite what he called "market indigestion," but analysts warn that pricing could shift, vendor health matters more, and regulation is moving from abstract to practical.</p>
+            <a href="https://www.theguardian.com/technology/2026/nov/06/us-tech-stock-ai-bubble-bursting-market-meltdown-explainer" class="source-link" target="_blank">Read on The Guardian →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>ChurnZero Ships Agentic Essentials with 20+ Ready-to-Deploy AI Agents — But 63% of Customer Leaders Can't Measure AI Impact</h2>
+            <p>ChurnZero, the customer success platform, announced at its ZERO-IN 2026 conference in Nashville a suite of AI products for customer success teams: Agentic Essentials, a single subscription with more than 20 ready-to-deploy agents covering use cases from renewal management to conversation analysis. But buried in ChurnZero's own 2026 Customer Revenue Leadership Study is a figure that should give pause: 63% of customer leaders lack a consistent way to measure AI's impact. The study found that teams without measurement are four times more likely to require human approval for every AI recommendation — effectively building approval queues that scale linearly with volume, negating the efficiency gains that AI is supposed to deliver. The 20+ agents in Agentic Essentials will only save time for teams that can identify which recommendations are safe to let through without human review. Also announced: AI CSMs (AI-powered customer success managers), AI for renewals, conversation mode, and adaptive automation — all listed as "coming soon" with no specific dates. The product vision is clear: ChurnZero wants to be the agentic layer for customer success, with AI agents handling the volume work while humans focus on strategic accounts. Whether that vision survives contact with the 63% of teams who can't prove whether AI is helping remains to be seen.</p>
+            <a href="https://agilebrandguide.com/yesterdays-marketing-technology-ai-news-november-7-2026/" class="source-link" target="_blank">Read on Agile Brand Guide →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Google Acquires Wyoming Data Center from Crusoe Energy — Expands AI Compute Capacity Amid Infrastructure Concerns</h2>
+            <p>Google has acquired a Wyoming data center facility from Crusoe Energy Systems, a strategic expansion aimed at supporting enterprise compute demands for advanced AI deployment. The facility was developed in partnership with key energy and digital infrastructure providers, and the acquisition signals Google's continued commitment to owning rather than leasing critical AI infrastructure. The deal comes at a delicate moment: just days after tech stocks plunged on fears that Democrat-controlled states would slow data center construction, Google is betting that owning infrastructure in friendly jurisdictions provides a competitive moat. Wyoming has positioned itself as data center-friendly, with favorable energy costs and regulatory environment. The Crusoe facility was originally designed with a focus on sustainable energy sources. For enterprise AI buyers, Google's infrastructure investments matter because they determine compute availability, pricing, and regional data sovereignty options. The hyperscalers — Google, Microsoft, and Amazon — are all racing to lock up power and physical capacity, with AWS reportedly sold out through 2027 in some regions. Google disclosed no financial terms for the acquisition.</p>
+            <a href="https://www.rmndigital.com/google-acquires-wyoming-data-center-crusoe-enterprise-ai/" class="source-link" target="_blank">Read on RMN Digital →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>Agencies Push Back on Bloated AI-Written Briefs — "The Brief Is the One Marketing Job You Shouldn't Hand to AI"</h2>
+            <p>A growing backlash is emerging from creative agencies against AI-generated marketing briefs, according to a report from i4u Business. Agencies are increasingly receiving briefs that are longer, more generic, and less strategically focused — the telltale signs of AI drafting without human refinement. The critique: AI can expand on bullet points and generate comprehensive-sounding documents, but it struggles to make the hard choices that define what a campaign is really about. A brief that covers every possible angle gives agencies nothing to work with. The best briefs are short, opinionated, and make clear trade-offs — exactly the kind of judgment work that current AI systems are worst at. This matters for marketing leaders who have been using AI to accelerate brief creation. The efficiency gain of faster brief generation is negated if agencies spend more time trying to figure out what the client actually wants. The recommendation from agency veterans: use AI to gather background research and competitive context, but keep the strategic choices — what we're trying to achieve, for whom, and why this approach over alternatives — firmly in human hands. The brief is the one place where clarity of intent matters more than comprehensiveness, and that's a job AI can't do yet.</p>
+            <a href="https://i4u.business/en/news/" class="source-link" target="_blank">Read on i4u Business →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>📊 My Take</h3>
+            <p><strong>The 13% figure is the headline, but the 2.5x overspend is the story.</strong> When Gartner says only 13% of CIOs have seen significant value from AI while Menlo Ventures shows enterprises spending $176.8 billion — 2.5 times what they budgeted — you're looking at a correction waiting to happen. The question isn't whether AI is valuable; it's whether the current pace of spending is sustainable before the value materializes.<br><br>Thursday's $3.2 trillion market wipeout is the first crack. Political risk just became real for enterprise AI. Data center moratoriums, tighter regulations on AI usage, and the shift from a Republican-friendly to a Democrat-controlled policy environment will slow the buildout. That doesn't mean AI stops being useful — it means the infrastructure layer gets more expensive and harder to expand. Companies that assumed infinite cheap compute may need to revise their models.<br><br>The ChurnZero 63% figure connects to both problems. When nearly two-thirds of customer leaders can't measure AI's impact, and those same companies are spending 2.5x over budget, you have the ingredients for a backlash. Finance teams will eventually demand proof, and the teams that can't provide it will see their AI budgets cut. The teams building measurement discipline now — Gartner's "vanguard" with their stop rules and baselines — will be the ones who survive the coming scrutiny.<br><br>And the agencies pushing back on AI-generated briefs? That's the leading indicator of a broader pattern. AI is great at making things bigger, longer, and more comprehensive. It's terrible at making choices. The jobs that survive AI are the ones that require judgment about what not to do — and that includes the strategic work of deciding what a campaign is really about.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-11-07.html">← November 7, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
