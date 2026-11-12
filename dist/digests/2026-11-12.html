@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — November 12, 2026 | The Full Stack</title>
+    <meta name="description" content="NinjaCat introduces Enterprise Marketing AGI. 61% of marketers face C-suite pressure to prove AI ROI. Linux Foundation launches Agent Name Service for verifiable identities.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-11-12.html">
+    
+    <meta property="og:title" content="Daily Digest — November 12, 2026 | The Full Stack">
+    <meta property="og:description" content="NinjaCat Enterprise Marketing AGI. 61% AI ROI pressure. Agent Name Service launches. Supermetrics adds ChatGPT Ads. AWS Bedrock AgentCore goes GA.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-11-12.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Thursday, November 12, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">NinjaCat Introduces "Enterprise Marketing AGI" to Run Marketing at Scale, 61% of Marketers Face C-Suite ROI Pressure as AI Budgets Grow, Linux Foundation Launches Agent Name Service</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>NinjaCat Introduces "Enterprise Marketing AGI" — A New Category of AI Technology to Run Marketing Operations at Scale</h2>
+            <p>NinjaCat, which calls itself the "AI Operating System for Enterprise Marketing," announced Enterprise Marketing AGI — a new category it says moves AI beyond individual tools and fragmented point solutions to a governed, enterprise-wide system that connects marketing data, intelligence, and workflows across an organization. The announcement argues that as AI becomes ubiquitous, enterprises face "too much AI" — whether it's a frankenstack of disconnected platforms or individuals building siloed AI assistants. Without automatic enforcement of brand, legal, and budget rules, most AI pilots stay read-only because no one will let an agent touch spend without approvals and audit trails. "The strength of the model was never the issue," said CEO Paul Deraval. "The modern enterprise needs AI that can not only analyze but actually execute." NinjaCat's solution combines a unified marketing data foundation that gives agents clean, consistent data, plus "scoped organizational memory" that gives AI context and compounds with use. Policy-driven agents evaluate proposed actions against brand, legal, media-plan, and budget rules, allowing AI to act within defined controls and escalate exceptions for human review. "Marketing is quickly moving beyond copilots and toward AI agents that can orchestrate work across the entire organization," said COO Brian Lee. "The companies that embrace this shift will be able to move from simply understanding what's happening in marketing to having AI actively help run it."</p>
+            <a href="https://www.prnewswire.com/news-releases/ninjacat-introduces-enterprise-marketing-agi-a-new-category-of-ai-technology-to-run-marketing-at-enterprise-scale-302935750.html" class="source-link" target="_blank">Read on PR Newswire →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>Validity: 61% of Marketers Face C-Suite Pressure to Prove AI ROI as AI Gets a Bigger Share of 2027 Budgets — And They'd Protect AI Over Headcount in Cuts</h2>
+            <p>Validity released its Winter 2026-2027 Marketer Survey revealing a stark tension: 66% of organizations expect marketing budgets to increase in 2027, with 53% planning to allocate at least 10% to AI — but 61% report C-suite pressure to demonstrate measurable AI gains. The disconnect is clear: executives prioritize marketing ROI and ROAS (25%), revenue and pipeline contribution (19%), and customer acquisition cost (16%), while just 6% say efficiency gains are what leadership cares about most. Early AI ROI results are mixed: half of respondents said 2026 AI investments met or exceeded expectations, but 26% said returns fell below expectations or showed no measurable return, and 24% couldn't yet say whether investments paid off. Among those reporting returns, cost savings (41%), improved engagement (39%), time saved (35%), and increased conversions (35%) were more commonly cited than actual revenue-to-cost comparisons (26%). Perhaps most telling: if forced to make mid-year cuts, 16% would protect AI tools and agents — second only to paid media (20%) and ahead of in-house headcount (15%), email marketing (15%), and events (11%). Looking ahead, only 7% currently use AI agents with minimal human oversight, but 42% expect performance reporting and analysis to operate that way by end of 2027.</p>
+            <a href="https://www.prnewswire.com/news-releases/61-of-marketers-face-c-suite-pressure-to-prove-roi-as-ai-gets-a-bigger-share-of-2027-budgets-validity-research-finds-302936213.html" class="source-link" target="_blank">Read on PR Newswire →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Linux Foundation Launches Agent Name Service (ANS) — Domain-Anchored Identities for AI Agents Using DNS and Certificates</h2>
+            <p>The Linux Foundation announced that Agent Name Service (ANS) has launched as a foundation project, creating a standard way to register, publish, and verify AI agent identities. ANS uses domain-anchored DNS records and certificate-based signals to bind agents to owning organizations, with 11 organizations listed as early supporters. The problem ANS addresses is fundamental: as autonomous agents proliferate across enterprise environments, there's no standard way to verify that an agent is who it claims to be or which organization controls it. Traditional identity systems were built for humans and deterministic software, not for agents that can spawn sub-agents, make API calls, and access sensitive data autonomously. For operators, integrators, and platform buyers, ANS creates a practical control: require ANS identities in procurement and runtime policies to reduce impersonation and supply-chain risk. The standard allows organizations to check provenance before granting access or approving automations. The launch follows the emerging pattern of agent governance infrastructure — joining WhiteMatter's Guardian agents (covered yesterday) and ServiceNow's AI Passport in what's becoming a race to define how enterprises will control their agent ecosystems.</p>
+            <a href="https://aiagentstore.ai/ai-agent-news/this-week" class="source-link" target="_blank">Read on AI Agent Store →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Supermetrics Campaign Manager Adds ChatGPT Ads as 7th Platform — In-Chat Campaign Execution Expands Beyond Analysis</h2>
+            <p>Supermetrics launched Campaign Manager, which lets marketers build and change ad campaigns on Google, Meta, LinkedIn, Microsoft Advertising, TikTok, Snapchat, and now ChatGPT Ads from within an AI chat interface. The Helsinki-based company first described the capability with Claude just one week earlier, covering six platforms — the addition of ChatGPT Ads, OpenAI's growing advertising surface, signals how quickly the conversational commerce landscape is fragmenting. The product addresses a familiar problem: teams move between several ad platforms, reconcile figures that don't match, and translate recommendations into changes by hand. Campaign Manager puts cross-platform performance data and campaign actions in the same chat window. Users can change budgets and status for campaigns, ad groups, and ads across several platforms in a single request, as well as create campaigns, update targeting, and swap creatives. Write access must be explicitly enabled per ad account, users choose which changes require sign-off, budget movements can be capped, and every change is logged. Early customer Premier Cru Solutions, a six-person agency serving luxury wineries, reports completing a Google Search campaign rebuild estimated at 14 hours in just two hours — a 30% overall time savings. The trend is clear: as AI analysis becomes commoditized, the bottleneck shifts to execution.</p>
+            <a href="https://ppc.land/supermetrics-ai-campaign-tool-gains-chatgpt-ads-its-7th-ad-platform/" class="source-link" target="_blank">Read on PPC Land →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>AWS Bedrock AgentCore Goes GA with Model Fallback Gateway and Step Functions as Agent Tools — Plus New Cost Visibility</h2>
+            <p>AWS published a recap of October updates showing Amazon Bedrock AgentCore has reached significant production milestones. The platform added a stable AgentCore CLI (v1.0) and an AgentCore Gateway that supports model fallback — automatically routing agent requests across multiple models if a primary model is throttled — and the ability to connect existing Step Functions workflows as callable tools for agents. The company also announced Strands Bidi Agents (speech-to-speech) is generally available and Strands Box is in developer preview, plus new cost and billing visibility for Bedrock workloads. For platform and ops teams, the updates solve practical production problems: you can now route agent requests across multiple models automatically, call existing business workflows (Step Functions) from agents without rebuilding them, and see which models are driving spend. The guidance from AWS is direct: if you run or plan an agent in production, test AgentCore Gateway with a fallback chain (primary to secondary model) and swap one non-critical workflow to run through a Step Functions tool to validate identity, auditing, and JSON-structured outputs before wider rollout. The maturation of AgentCore alongside similar enterprise agent infrastructure from Microsoft, Google, and Anthropic signals the platform war is shifting from "who has the best model" to "who has the best production agent runtime."</p>
+            <a href="https://aiagentstore.ai/ai-agent-news/this-week" class="source-link" target="_blank">Read on AI Agent Store →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>📊 My Take</h3>
+            <p><strong>NinjaCat's "Enterprise Marketing AGI" is audacious naming, but the problem it describes is real.</strong> The framing might raise eyebrows — AGI is doing a lot of work in that headline — but the underlying thesis is sharp: enterprises don't have an AI shortage, they have an AI coordination problem. Too many point solutions, too many siloed assistants, and no way to enforce brand, legal, and budget rules automatically. The result is that most AI pilots stay read-only because no one trusts an ungoverned agent with spend authority. The companies that solve governance will unlock execution.<br><br>The Validity findings are a snapshot of a moment in time: 61% C-suite pressure, but only 6% think efficiency gains are what leadership actually cares about. That's the measurement disconnect that will define 2027 planning cycles. Marketing teams are saving time with AI, but executives want revenue and pipeline contribution. Until those two metrics connect, AI investments will remain in a perpetual state of proving themselves.<br><br>Perhaps most telling: marketers would protect AI tools over headcount in mid-year cuts (16% vs 15%). That's a leading indicator. The technology has crossed from "nice to have" to "core infrastructure" in the mental model of the people making budget decisions, even if the ROI case isn't fully proven. The asymmetry between adoption confidence and measurement maturity is widening.<br><br>The Linux Foundation's Agent Name Service is infrastructure that will seem obvious in retrospect. Right now, when an agent makes an API call or requests access, there's no standard way to verify identity. ANS creates that primitive: domain-anchored DNS records and certificates that bind agents to owning organizations. It's not glamorous, but it's the kind of plumbing that enterprise procurement teams will eventually require.<br><br>The AWS AgentCore updates are worth watching for a different reason: model fallback. As agents become production workloads, single-model dependency becomes a reliability risk. The ability to automatically route to a secondary model if your primary is throttled is table stakes for anything mission-critical. The platform war is no longer about who has the best model — it's about who has the best production runtime.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-11-11.html">← November 11, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
