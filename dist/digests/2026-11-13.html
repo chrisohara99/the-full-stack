@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — November 13, 2026 | The Full Stack</title>
+    <meta name="description" content="IBM and Microsoft launch Imagine Enterprise with 6,000 agents. 87% use AI agents but only 27% can see how they decide. SAP: Customer journey splits as AI handles discovery before brands engage.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-11-13.html">
+    
+    <meta property="og:title" content="Daily Digest — November 13, 2026 | The Full Stack">
+    <meta property="og:description" content="IBM + Microsoft 6,000 Agents. 87% vs 27% Visibility Gap. SAP Hybrid AI Buyer. Ad Tech Decision Wars. Forbes: Thinking > Tools.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-11-13.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Friday, November 13, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">IBM and Microsoft Launch Imagine Enterprise with 6,000 Agents, 87% Use AI Agents But Only 27% Can See How They Decide, SAP: Customer Journey Splits as AI Handles Discovery Before Brands Engage</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>IBM and Microsoft Launch Imagine Enterprise — A Joint AI Agent Platform Seeded with 6,000 Pre-Built Agents from IBM Consulting</h2>
+            <p>IBM and Microsoft on November 10 unveiled Imagine Enterprise, a joint AI-agent platform seeded with more than 6,000 pre-built agents and assets drawn from IBM Consulting. The first industry frameworks ship for financial services, insurance, and retail, with manufacturing, energy, public sector, and mobility named as next targets. The platform knits IBM Consulting Advantage — including Process Studio, Context Studio, and Advantage Core tooling — to Microsoft Foundry, GitHub Copilot, Copilot Studio, Fabric, Microsoft 365, Entra, Purview, Defender, and Azure. IBM frames the governance layer as controls, observability, and AI-compliance support aimed at regulated industries. SEI, which manages, advises, or administers approximately $2 trillion in assets, is the named early customer. "Clients are no longer looking for AI that simply helps people do the same work a little faster. They want to build an agentic business," said Mohamad Ali, SVP and head of IBM Consulting. The context matters: only 4% of CIOs have implemented workforce adjustments for human-agent collaboration per Gartner, and fewer than 7% of Microsoft's 450 million Microsoft 365 seats carry paid Copilot licenses. IBM's regulated-industry relationships become the distribution channel for Microsoft's agent stack.</p>
+            <a href="https://newsroom.ibm.com/2026-11-10-ibm-and-microsoft-announce-a-new-ai-agent-platform-designed-for-industry-specific-transformation" class="source-link" target="_blank">Read on IBM Newsroom →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>Dynatrace: 87% of Enterprises Use AI Agents Extensively, But Only 27% Have Visibility Into How Those Agents Make Decisions</h2>
+            <p>The Dynatrace State of Observability 2026 report, based on a global survey of 1,202 technology leaders across 12 countries, reveals a structural accountability gap in enterprise AI. While 87% of enterprises now use AI agents moderately or extensively to support observability and IT operations, only 27% have addressed visibility into how those agents reach their decisions — despite 43% identifying such transparency as important. The appetite for autonomous operations is significant: 44% of organizations target fully autonomous operations within five years, compared with just 12% operating at that maturity level today. In the meantime, humans still verify an average of 66% of AI-powered decisions. The barriers are familiar: security vulnerabilities (30%), privacy concerns (27%), and data quality concerns (26%) top the list, with integration complexity across legacy systems cited as the leading obstacle to advancing toward autonomous IT. The cost picture is stark: 81% reported increased compute and infrastructure spending driven by AI workloads, and 77% indicated a greater need for cost-allocation visibility. "The next phase of enterprise AI is not about deploying more agents, but scaling autonomy where it creates value," said Alvaro Martin, Observability Strategy Lead at Deloitte. "Observability provides the evidence to guide that transition."</p>
+            <a href="https://www.dynatrace.com/info/ebooks/the-state-of-observability/" class="source-link" target="_blank">Read the Dynatrace Report →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>SAP Research: Meet the "Hybrid AI Buyer" — Discovery and Evaluation Now Happen Inside AI Before Customers Engage Brands</h2>
+            <p>SAP's AI in Customer Experience Report 2027, surveying 4,800 consumers, business buyers, CX practitioners, and decision-makers in the U.S. and Germany, reveals a structural shift in how businesses get chosen. The customer journey has bifurcated: the first half — discovering options, researching alternatives, comparing, and shortlisting — increasingly happens inside AI tools before a customer ever interacts with a brand channel. The operational half — purchase, fulfillment, service, returns — still falls to the business. This pattern holds in B2B: nearly all business buyers surveyed said they have used AI for purchasing or vendor selection. "If your offerings are not known to the AI engine, it won't surface them at all," said SAP CX Chief Product Officer Balaji Balasubramanian. The gap between perception and reality is striking: 93% of U.S. CX decision-makers say they feel prepared for AI-enabled customers, but just 6% report that all relevant systems are actually connected end-to-end. The implication for marketers is significant: the question is no longer "Will customers find us?" but "Can AI find us, understand us, and confidently recommend us?" Discoverability is now a continuously moving target because AI models constantly re-evaluate what to surface, compare, and recommend.</p>
+            <a href="https://news.sap.com/2026/11/hybrid-ai-buyer-customer-experience-research-data-journey-progress/" class="source-link" target="_blank">Read on SAP News →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Digiday: AI Is Turning Ad Tech Into a Fight for "The Brain Behind the Buy" — Decision-Making Becomes the New Moat</h2>
+            <p>At LUMA Partners' Digital Marketing Summit in New York, CEO Terry Kawaja and partner Conor McKenna argued that AI is changing ad tech on two fronts: how marketing technology selects and delivers ads, and how consumers discover and buy products. The first shift moves competitive advantage away from managing campaign delivery workflows to making better real-time decisions. "The workflow moat begins to evaporate with the AI technology that is coming out," McKenna said. Firms that can better establish which signals to use, what creative to show, where to place an ad, and how to improve results will thrive. Kawaja drew the distinction sharply: "I like to think of efficiency as the 10% incremental improvement, whereas effectiveness could make a 10x difference." The second shift is on the consumer side: AI assistants are compressing research, discovery, and comparison into a single interface, reshaping the traditional purchase journey. The speakers expect humans to remain involved for now, using agents to delegate tasks rather than handing over decisions entirely. The implications for the open web are significant: to maintain its (modest) share of advertiser budgets against major platforms, it must deliver both easier workflows and demonstrably stronger outcomes. "Decisioning coupled with unique signal is what will differentiate the companies," Kawaja concluded.</p>
+            <a href="https://digiday.com/media-buying/ai-is-turning-ad-tech-into-a-fight-for-the-brain-behind-the-buy/" class="source-link" target="_blank">Read on Digiday →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>Forbes: The Next Competitive Advantage in Marketing Isn't AI — It's How Leaders Think With It</h2>
+            <p>Writing in Forbes, Silent Eight CMO Vlada Grebenykova argues that while AI represents a fundamental shift in marketing, technology alone rarely creates lasting competitive advantage. "The difference comes from how leaders integrate it into their organizations, the people they surround themselves with, and the judgment they apply," she writes. The distinction she draws is practical: instead of treating AI as an assistant for individual tasks, organizations can create connected capabilities that support complex, multi-step work. For marketing leaders, three principles are becoming critical: build capabilities rather than collections of tools (technology changes, but organizational knowledge and processes should become more valuable over time); use AI to improve thinking, not simply execution speed; and keep human expertise at the center. Perhaps most striking is her observation about team composition: "Technical familiarity with AI is useful, although curiosity, critical thinking, commercial understanding and asking better questions remain equally important." The challenge for growing businesses is that resources are limited and every investment needs to contribute to meaningful progress. At Silent Eight, where AI has been central to the business for years, working alongside teams developing sophisticated financial crime compliance technology reinforces a key insight: AI's value depends on the quality of thinking, expertise, and responsibility surrounding its application.</p>
+            <a href="https://www.forbes.com/councils/forbescommunicationscouncil/2026/11/12/the-next-competitive-advantage-in-marketing-isnt-ai-its-how-leaders-think-with-it/" class="source-link" target="_blank">Read on Forbes →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>📊 My Take</h3>
+            <p><strong>The IBM-Microsoft announcement is a services play wrapped in platform branding, and that's exactly what the market needs.</strong> The 6,000 agents figure bundles agents with other consulting assets — access requires an IBM Consulting engagement. But the strategic logic is sound: fewer than 7% of Microsoft 365 seats carry paid Copilot licenses, and only 4% of CIOs have adjusted for human-agent collaboration. IBM's regulated-industry client base becomes distribution for Microsoft's agent infrastructure. The real test is whether the governance layer can move agents from read-only pilots into production systems where they actually execute decisions.<br><br>The Dynatrace numbers crystallize the accountability crisis: 87% using AI agents extensively, but only 27% with visibility into how those agents decide. That's not a technology gap — it's a trust gap. The 66% of AI-powered decisions still requiring human verification isn't necessarily a failure state; it might be the right operating mode for most enterprise workloads today. The question is whether that ratio shifts toward autonomy as observability tooling matures, or whether the complexity of legacy system integration keeps humans perpetually in the loop.<br><br>SAP's "Hybrid AI Buyer" research should alarm every B2B marketer who hasn't internalized what AI-mediated discovery means for their business. The customer journey has split: discovery and shortlisting happen inside AI before a prospect ever visits your site or speaks to your team. If you're not findable by the AI engine, you're not on the shortlist. The 93% vs. 6% gap — feeling prepared vs. actually connected end-to-end — is the enterprise delusion of the moment.<br><br>The LUMA Partners thesis on ad tech is worth sitting with: workflow automation was the moat, but AI evaporates it. The new moat is decision-making intelligence — which signals to use, which creative to show, how to improve results in real time. That's a 10x effectiveness lever, not a 10% efficiency gain. The platforms that can demonstrate better decisioning will consolidate the fragmented open web players that can't.<br><br>What ties these stories together is a single theme: AI adoption has outpaced AI accountability. Enterprises are deploying agents faster than they can monitor, govern, or explain them. The companies that solve the governance problem — with observability, with connected systems, with identity infrastructure like ANS — will be the ones that move from perpetual pilots to production-scale autonomy.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-11-12.html">← November 12, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
