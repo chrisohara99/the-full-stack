@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMNWEHT562"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YMNWEHT562');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Digest — November 14, 2026 | The Full Stack</title>
+    <meta name="description" content="Sierra ships Poppy 1.0 on every Shopify store as Meta Muse auto-enables agent protocol. AIE Code Summit publishes 'No AI Slop' manifesto modeled on Agile. Genpact: 79% run AI agents but only 15% tied to P&L.">
+    <link rel="canonical" href="https://thefullstack.chrisohara.com/digests/2026-11-14.html">
+    
+    <meta property="og:title" content="Daily Digest — November 14, 2026 | The Full Stack">
+    <meta property="og:description" content="Poppy 1.0 on Every Shopify Store. No AI Slop Manifesto. 79% vs 15% P&L Gap. MCP Write Access Ships. Structured Data Era.">
+    <meta property="og:url" content="https://thefullstack.chrisohara.com/digests/2026-11-14.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #FDFBF7;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6B6B;
+            --text-tertiary: #9A9A9A;
+            --accent: #C05626;
+            --border: #E8E4DE;
+            --border-light: #F0ECE6;
+            --tag-bg: #F5F1EB;
+            --serif: 'Newsreader', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-width: 700px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--sans);
+            color: var(--text-primary);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--mono);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand .slash { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .article-header {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 64px 24px 32px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .article-date {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            background: rgba(192, 86, 38, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .article-body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .story-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .story-number {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .story-card h2 {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .story-card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .story-card a.source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(192, 86, 38, 0.3);
+            transition: border-color 0.2s;
+        }
+        .story-card a.source-link:hover { border-color: var(--accent); }
+        
+        .take-box {
+            background: var(--tag-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .take-box h3 {
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .take-box p {
+            font-family: var(--serif);
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .nav-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-footer a:hover { text-decoration: underline; }
+        
+        .subscribe-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .subscribe-box h3 {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            opacity: 0.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .subscribe-box a {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .subscribe-box a:hover { background: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-brand {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        .footer-brand .slash { color: var(--accent); }
+        
+        @media (max-width: 640px) {
+            .article-title { font-size: 28px; }
+            .article-header { padding: 40px 20px 24px; }
+            .article-body { padding: 0 20px 60px; }
+            .story-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</a>
+            <div class="nav-links">
+                <a href="/">Essays</a>
+                <a href="/digests/">Daily Digest</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <a href="/digests/" class="back-link">← All Digests</a>
+        <div class="article-meta">
+            <span class="article-date">Saturday, November 14, 2026</span>
+            <span class="article-tag">Daily Digest</span>
+        </div>
+        <h1 class="article-title">Sierra Ships Poppy 1.0 on Every Shopify Store as Meta Muse Auto-Enables Agent Protocol, AIE Code Summit Publishes 'No AI Slop' Manifesto Modeled on Agile, Genpact: 79% Run AI Agents But Only 15% Tied to P&L</h1>
+        <p class="article-subtitle">Today's top stories in AI + enterprise tech</p>
+    </header>
+    
+    <article class="article-body">
+        
+        <div class="story-card">
+            <span class="story-number">1</span>
+            <h2>Sierra Ships Poppy 1.0 — Personal Agent Protocol Now Auto-Enabled on Every Shopify Store, Meta Muse Looks for It on Every Site</h2>
+            <p>Sierra released Personal Agent Protocol (Poppy) 1.0 on November 13, with immediate adoption that makes this the most significant agent infrastructure launch of the year. Every Shopify store in 175+ countries now automatically publishes a Poppy file with no merchant configuration required. Meta's Muse agent now searches for Poppy on every site it visits by default. The design partner roster grew from 8 to over 100 companies, including Cisco, Delta Air Lines, Intuit, Salesforce, Twilio, Zoom, SoFi, Wayfair, and Turkish Airlines. The protocol defines how a personal agent discovers a company, negotiates allowed actions, and authenticates through OAuth — built on existing standards like MCP, OpenAPI, and UCP. Shopify co-authored the commerce extension that links Poppy with Universal Commerce Protocol, handling the handoff from "agent arrives and identifies itself" to "agent shops, fills cart, checks out." "Poppy handles what happens before shopping — when an agent shows up at a store, says who it is, and finds out what it's allowed to do," Sierra wrote. Mercury, Synchrony, and Turkish Airlines are already live, letting customers' personal agents check balances, review transactions, initiate payments with approval workflows, and manage bookings.</p>
+            <a href="https://sierra.ai/blog/releasing-poppy" class="source-link" target="_blank">Read on Sierra →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">2</span>
+            <h2>AIE Code Summit Publishes 'No AI Slop' Manifesto — A Quality Standard for AI-Assisted Work Modeled on the 2001 Agile Manifesto</h2>
+            <p>Speakers and attendees at AIE Code Summit 2026 released the "No AI Slop" manifesto, explicitly modeled on the 2001 Agile Manifesto that changed how the software industry builds products. Signatories include Dex Horthy, Philip Kiely, Kent C. Dodds, Tejas Kumar, and Francisco Javier Arceo. The manifesto defines slop as "when we put less effort into producing something than we ask the consumer to spend understanding it" — a principle that applies whether AI was involved or not. The core values: outcomes over output, understanding over speed, our own thinking over a model's first draft, better work over easier work, improving the system over patching the output. The document acknowledges the asymmetry problem at the heart of the AI quality crisis: "The cost of producing a thousand-line PR or a ten-page doc is approaching zero, while the cost of reviewing it remains constant." Among the resolutions: "We do our own thinking when working with a model. We explore resources, code, and prior art to truly understand the problem before the work starts." And: "When an agent wrote something we're sending, we make that clear, and we check the parts that matter before it goes out."</p>
+            <a href="https://www.slopmanifesto.com/" class="source-link" target="_blank">Read the Manifesto →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">3</span>
+            <h2>Genpact: 79% of Enterprises Run AI Agents in Production, But Only 15% Have Tied AI Investment to P&L Outcomes</h2>
+            <p>Genpact released "Autonomy in Practice" on November 12, surveying more than 2,000 enterprise executives across 17 industries at companies with $1 billion to $50+ billion in revenue. The headline finding crystallizes the enterprise AI accountability gap: while 79% of enterprises have AI agents in production, only 15% have fully tied AI investment to P&L outcomes. On average, only 49% of AI initiatives funded in the past 24 months delivered the expected value. The deployment picture is more nuanced: 20% of enterprises use agents broadly and consistently across functions, but only 9% have completed significant operating model transformation. The workforce impact so far is minimal — 92% of respondents with agents in production kept their human workforce the same size or grew it. The decision-making shift is significant: AI now leads or fully runs 40% of decisions, more than double the prior year. But humans still decide or audit in at least 87% of cases at every decision stage. For marketing organizations, those two figures together tell the story: agents are producing work, people are still reviewing nearly all of it, and the cost line hasn't moved. The path from pilot to P&L impact remains elusive.</p>
+            <a href="https://www.genpact.com/insight/autonomy-in-practice" class="source-link" target="_blank">Read on Genpact →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">4</span>
+            <h2>Basis and Cision Release MCP Servers with Write Access — Agents Can Now Execute Campaign Changes from Chat Windows</h2>
+            <p>Basis, the advertising operations platform, and Cision both released Model Context Protocol (MCP) servers on November 12, continuing the MCP momentum that's been building across martech. The Basis implementation is notable for what it enables: read and write access to strategy, planning, activation, and operations through the MCP server. A media team that connects Basis to an external agent like Claude or ChatGPT gets write access to DSP line items from a chat window. Basis claims its Compass AI takes advertisers from brief to media plan 50% faster, though no methodology was stated. Cision's MCP connection provides query management, quick search, summaries, alerts, and access to Brandwatch Consumer Research agents. The write-access pattern is significant: MCP servers have largely been read-only, letting agents query data and return summaries. Opening write access to ad operations — the ability to actually change campaign settings, budgets, and targeting — moves agents from advisory to operational. The approval workflows become critical: who signs off when an agent recommends and executes a budget reallocation? The governance questions that seemed theoretical a year ago are now blocking production deployments.</p>
+            <a href="https://agilebrandguide.com/yesterdays-marketing-technology-ai-news-november-13-2026/" class="source-link" target="_blank">Read on Agile Brand Guide →</a>
+        </div>
+        
+        <div class="story-card">
+            <span class="story-number">5</span>
+            <h2>Why Structured Business Data Is Becoming Critical in an AI-Driven Economy — Agents Need Clean Data, Not Just Any Data</h2>
+            <p>A widely syndicated analysis this week examined why AI agent reliability depends on data infrastructure most enterprises don't have. The problem is acute in retail and manufacturing: product data flows across legacy ERPs, B2B portals, wholesale marketplaces, and manual sales rep entries. A single product often requires multiple data layers — units, inner packs, master cases, and buyer-specific price sheets. When these systems fail to sync, the fallout extends far beyond individual orders: canceled corporate contracts, thousands of dollars in misrouted bulk inventory, and broken supply chain compliance. The most popular generative AI platforms were built for unstructured data — images, text, videos. But enterprise agents need structured data that's accurate, timely, and consistent across systems. As one analysis put it: "The data quality is too poor to train or power autonomous AI agents reliably." The pattern repeats across industries: AI agents promise automation, but the underlying data isn't ready. The 79% of enterprises running AI agents (per Genpact) and the 15% with P&L accountability may reflect the same root cause — agents deployed on data foundations that can't support production-grade autonomy.</p>
+            <a href="https://keyt.com/stacker-business-economy/2026/11/13/why-structured-business-data-is-becoming-more-important-in-an-ai-driven-economy/" class="source-link" target="_blank">Read on KEYT →</a>
+        </div>
+        
+        <div class="take-box">
+            <h3>📊 My Take</h3>
+            <p><strong>Poppy 1.0 shipping on every Shopify store is the most consequential infrastructure launch since MCP went mainstream.</strong> The math is staggering: millions of merchants, 175+ countries, zero configuration required. Meta's Muse checking for Poppy on every site it visits creates the discovery layer that agent commerce needed. When an agent can arrive at any Shopify store, identify itself, authenticate through OAuth, and understand what actions are permitted — then hand off to UCP for the actual shopping — the agentic commerce stack becomes real. The 100+ design partners (including Salesforce, Intuit, Twilio, and Delta) signal that this isn't a startup protocol hoping for adoption; it's infrastructure the majors have already committed to. The question now is how quickly non-Shopify merchants implement manually, and whether Amazon, Walmart, and other walled gardens publish Poppy files or try to keep agents out.<br><br>The No AI Slop manifesto is the cultural counterweight to the infrastructure buildout. The asymmetry principle — "the cost of producing a thousand-line PR is approaching zero, while the cost of reviewing it remains constant" — explains why so many organizations feel like they're drowning in AI output. More work isn't better work. The manifesto's values (outcomes over output, understanding over speed, our own thinking over a model's first draft) read as obvious in isolation, but the signatories are acknowledging that the industry has drifted away from them. When Kent C. Dodds and other respected developers put their names on a document saying "we check the parts that matter before it goes out," they're admitting that checking has become optional. The cultural shift matters as much as the technical one.<br><br>The Genpact numbers (79% running agents, 15% tied to P&L) should be uncomfortable for every AI vendor selling "transformation." The 49% of funded initiatives delivering expected value means 51% didn't. The 92% keeping workforce size the same or growing it — while agents produce 40% of decisions — suggests that agent deployments are creating work as often as they're eliminating it. The review burden is real: humans still verify 87% of AI-powered decisions at every stage. This isn't autonomy; it's automation with perpetual human supervision. The path to P&L impact requires either trusting agents enough to reduce oversight or finding use cases where agent speed itself creates value (even with full human review).<br><br>The MCP write-access story from Basis is where governance becomes operational. Read-only MCP servers let agents answer questions. Write-enabled MCP servers let agents take action. A chat window that can reallocate ad budgets is powerful — and dangerous. The approval workflows, audit trails, and rollback capabilities that seem like enterprise overhead are actually the critical path to production deployment. The companies that ship robust write-access governance will be the ones that move agents from advisor to operator.</p>
+        </div>
+        
+        <div class="nav-footer">
+            <a href="/digests/2026-11-13.html">← November 13, 2026</a>
+            <a href="/digests/">View All Digests →</a>
+        </div>
+        
+        <div class="subscribe-box">
+            <h3>Subscribe to The Full Stack</h3>
+            <p>Get notified when new essays are published.</p>
+            <a href="/#subscribe">Subscribe →</a>
+        </div>
+        
+    </article>
+    
+    <footer>
+        <span class="footer-brand">the<span class="slash">/</span>full<span class="slash">/</span>stack</span>
+    </footer>
+</body>
+</html>
